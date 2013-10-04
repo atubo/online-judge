@@ -32,7 +32,7 @@ public class P003D {
     private PriorityQueue<RightBracket> rBrackets = new PriorityQueue<RightBracket>();
     private ArrayList<Cost> bracketCosts = new ArrayList<Cost>();
     
-    private int totalCost;
+    private long totalCost;
     
     private boolean replace() {
         if (rBrackets.isEmpty()) return false;

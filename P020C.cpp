@@ -1,11 +1,13 @@
 #include <queue>
 #include <vector>
+#include <cinttypes>
 using namespace std;
 
 class FastDijkstra {
 public:
-    static const int INF  = 2000000000;
-    typedef pair<int,int> PII;  // pair = (dist, vertex)
+    static const int64_t INF;
+
+    typedef pair<int64_t,int> PII;  // pair = (dist, vertex)
 
     FastDijkstra(const vector<vector<PII> >& edges_, int s_, int t_):
         edges(edges_), s(s_), t(t_), N(edges.size()),
@@ -14,7 +16,7 @@ public:
         solve();
     }
 
-    const vector<int>& getDist() const {
+    const vector<int64_t>& getDist() const {
         return dist;
     }
 
@@ -49,21 +51,24 @@ private:
     const int s;
     const int t;
     const int N;
-    vector<int> dist;
+    vector<int64_t> dist;
     vector<int> dad;
 };
+
+const int64_t FastDijkstra::INF = 0x7FFFFFFFFFFFFFFF;
 
 //======================
 #include <iostream>
 int main()
 {
-    typedef pair<int, int> PII;
+    typedef pair<int64_t, int> PII;
 
     int n, m;
     cin >> n >> m;
     vector<vector<PII> > edges(n);
     for (int i = 0; i < m; i++) {
-        int a, b, w;
+        int a, b;
+        int64_t w;
         cin >> a >> b >> w;
         a--; b--;
         edges[a].push_back(make_pair(w, b));
@@ -71,7 +76,7 @@ int main()
     }
 
     FastDijkstra dijkstra(edges, 0, n-1);
-    const vector<int> dist = dijkstra.getDist();
+    const vector<int64_t> dist = dijkstra.getDist();
     const vector<int> dad  = dijkstra.getDad();
 
     if (dist[n-1] == FastDijkstra::INF) {

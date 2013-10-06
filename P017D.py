@@ -420,22 +420,39 @@ def mod_exp0(b, n, c):
         r = r * b % c
     return r
 
+def mod_large(n, c):
+    nLen = len(n)
+    cRemainder = [None for i in xrange(nLen)]
+    cRemainder[0] = 1
+    for i in xrange(1, nLen):
+        cRemainder[i] = cRemainder[i-1] * 10 % c
+
+    result = 0
+    for i in xrange(nLen):
+        result += cRemainder[i] * int(n[i])
+        result %= c
+    return result
+
+
 # find (b ** n) mod (p ** m), where p is a prime
 def mod_exp_prime_power(b, n, p, m):
     c = p ** m
     if b % p == 0:
         k = get_prime_exp(b, p)
-        if k * n >= m:
+        if len(n) > 9 or k * int(n[::-1]) >= m:
             return 0
         else:
-            return mod_exp0(b, n, c)
+            return mod_exp0(b, int(n[::-1]), c)
     else:
         phic = c * (p-1) / p;
-        n = n % phic
+        n = mod_large(n, phic)
         return mod_exp0(b, n, c)
 
 # calculates (b ** n) mod c using Chinese remainder theorem
 def mod_exp(b, n, c):
+    if b == 0:
+        return 0 if n != '0' else 1
+
     pr = [] # primes
     ex = [] # exponentials
     cp = c
@@ -460,24 +477,27 @@ def mod_exp(b, n, c):
 
     return chinese_remainder(ai, ni)
 
+def decrementAndReverse(n):
+    n = list(n[::-1])
+    for i in range(len(n)):
+        if n[i] != '0':
+            n[i] = str(int(n[i])-1)
+            break
+        else:
+            n[i] = '9'
+    n = "".join(n).rstrip('0')
+    if len(n) == 0:
+        n = '0'
+    return n
 
 def solve():
     b, n, c = raw_input().split()
     b = b[::-1]
-    n = int(n)
+    n = decrementAndReverse(n)
     c = int(c)
-    bLen = len(b)
-    cRemainder = [None for i in range(bLen)]
-    cRemainder[0] = 1
-    for i in range(1, bLen):
-        cRemainder[i] = cRemainder[i-1] * 10 % c
-    accu = 0
-    for i in range(bLen):
-        accu += cRemainder[i] * int(b[i])
-        accu %= c
-    b = accu
-    r = (b + c - 1) * mod_exp(b, n-1, c) % c
-    #r = (b + c - 1) * modExp(b, n, c) % c
+
+    b = mod_large(b, c)
+    r = (b + c - 1) * mod_exp(b, n, c) % c
     return r if r > 0 else c
 
 print solve()

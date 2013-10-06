@@ -422,15 +422,26 @@ def mod_exp0(b, n, c):
 
 def mod_large(n, c):
     nLen = len(n)
-    cRemainder = [None for i in xrange(nLen)]
+    LEN = 9
+    factor = 10 ** LEN
+    nslots = nLen // LEN if nLen % LEN == 0 else nLen // LEN + 1
+    cRemainder = [None for i in xrange(nslots)]
     cRemainder[0] = 1
-    for i in xrange(1, nLen):
-        cRemainder[i] = cRemainder[i-1] * 10 % c
+    for i in xrange(1, nslots):
+        cRemainder[i] = cRemainder[i-1] * factor % c
 
     result = 0
-    for i in xrange(nLen):
-        result += cRemainder[i] * int(n[i])
+    for i in xrange(nslots-1):
+        if i > 0:
+            result += cRemainder[i] * int(n[(i+1)*LEN-1:i*LEN-1:-1])
+        else:
+            result += cRemainder[i] * int(n[(i+1)*LEN-1::-1])
         result %= c
+    if nslots > 1:
+        result += cRemainder[nslots-1] * int(n[nLen:(nslots-1)*LEN-1:-1])
+    else:
+        result += cRemainder[nslots-1] * int(n[nLen::-1])
+    result %= c
     return result
 
 

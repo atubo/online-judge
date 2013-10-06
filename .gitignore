@@ -2,3 +2,5 @@ test*.txt
 *.class
 *.java~
 a.py
+*.swp
+*.o

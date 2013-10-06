@@ -448,9 +448,9 @@ def mod_exp(b, n, c):
             cp = cp / (p ** exp)
             ex.append(exp)
 
-    # c is a prime itself
-    if len(pr) == 0:
-        pr.append(c)
+    # cp is a prime itself
+    if cp != 1:
+        pr.append(cp)
         ex.append(1)
 
     ni = map(lambda (x, y): x ** y, zip(pr, ex))

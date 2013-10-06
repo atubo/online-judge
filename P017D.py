@@ -402,7 +402,7 @@ def chinese_remainder(a, n):
     m = map(lambda x: N/x, n)
     c = map(lambda (x, y): x * mod_solve(x, 1, y), zip(m, n))
     result = 0
-    for i in range(len(a)):
+    for i in xrange(len(a)):
         result += c[i] * a[i]
     return result % N
 
@@ -416,7 +416,7 @@ def get_prime_exp(b, p):
 
 def mod_exp0(b, n, c):
     r = 1
-    for i in range(n):
+    for i in xrange(n):
         r = r * b % c
     return r
 
@@ -442,11 +442,11 @@ def mod_exp_prime_power(b, n, p, m):
         if len(n) > 9 or k * int(n[::-1]) >= m:
             return 0
         else:
-            return mod_exp0(b, int(n[::-1]), c)
+            return modExp(b, int(n[::-1]), c)
     else:
         phic = c * (p-1) / p;
         n = mod_large(n, phic)
-        return mod_exp0(b, n, c)
+        return modExp(b, n, c)
 
 # calculates (b ** n) mod c using Chinese remainder theorem
 def mod_exp(b, n, c):
@@ -472,14 +472,14 @@ def mod_exp(b, n, c):
 
     ni = map(lambda (x, y): x ** y, zip(pr, ex))
     ai = []
-    for i in range(len(pr)):
+    for i in xrange(len(pr)):
         ai.append(mod_exp_prime_power(b, n, pr[i], ex[i]))
 
     return chinese_remainder(ai, ni)
 
 def decrementAndReverse(n):
     n = list(n[::-1])
-    for i in range(len(n)):
+    for i in xrange(len(n)):
         if n[i] != '0':
             n[i] = str(int(n[i])-1)
             break

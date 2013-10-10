@@ -24,24 +24,30 @@ public class P025C {
     }
     
     private int[][] distMatrix;
-    private ArrayList<HashSet<Pair>> distArray = new ArrayList<HashSet<Pair>>(1001);
+    private TreeMap<Integer, HashSet<Pair>> distTreeOld = new TreeMap<Integer, HashSet<Pair>>();
+    private TreeMap<Integer, HashSet<Pair>> distTreeNew = new TreeMap<Integer, HashSet<Pair>>();
     private final int N;
     private Scanner sc = new Scanner(System.in);
     
     public P025C() {
-        for (int i = 0; i <= 1000; i++) {
-            distArray.add(new HashSet<Pair>());
-        }
         N = sc.nextInt();
         distMatrix = new int[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 distMatrix[i][j] = sc.nextInt();
                 if (i < j) {
-                    distArray.get(dist(i, j)).add(new Pair(i, j));
+                    putToDistTree(dist(i, j), i, j);
                 }
             }
         }
+        swapDistTrees();
+    }
+    
+    private void swapDistTrees() {
+        TreeMap<Integer, HashSet<Pair>> distTreeTmp = distTreeOld;
+        distTreeOld = distTreeNew;
+        distTreeNew = distTreeTmp;
+        distTreeNew.clear();
     }
     
     public void solve() {
@@ -52,16 +58,23 @@ public class P025C {
             int c = sc.nextInt();
             connect(a, b, c);
             System.out.printf("%d ", sum());
+            swapDistTrees();
         }
         System.out.println();
     }
     
+    private void putToDistTree(int d, int i, int j) {
+        if (!distTreeNew.containsKey(d)) {
+            distTreeNew.put(d, new HashSet<Pair>());
+        }
+        distTreeNew.get(d).add(new Pair(i, j));
+    }
+    
     private void update(int i, int j, int d_old, int d_new) {
-        Pair pair = new Pair(i, j);
+        int d = Math.min(d_old, d_new);
+        distMatrix[i][j] = distMatrix[j][i] = d;
 
-        distMatrix[i][j] = distMatrix[j][i] = d_new;
-        distArray.get(d_old).remove(pair);
-        distArray.get(d_new).add(pair);
+        putToDistTree(d, i, j);
     }
     
     private int dist(int i, int j) {
@@ -72,24 +85,30 @@ public class P025C {
         int d = Math.min(dist(k, i) + dist(i, j) + dist(j, l),
                          dist(k, j) + dist(j, i) + dist(i, l));
         d = Math.min(d, dist(k, l));
-        if (d < dist(k, l)) {
-            update(k, l, dist(k, l), d);
-        }
+ 
+        update(k, l, dist(k, l), d);
+        
     }
     
     private int sum() {
         int total = 0;
-        for (int i = 1; i <= 1000; i++) {
-            total += i * distArray.get(i).size();
+
+        for (int d: distTreeNew.keySet()) {
+            //System.out.printf("d=%d size=%d\n", d, distTreeNew.get(d).size());
+            total += d * distTreeNew.get(d).size();
         }
         return total;
     }
     
     private void connect(int a, int b, int c) {
-        if (c >= dist(a, b)) return;
+        if (c >= dist(a, b)) {
+            distTreeNew = (TreeMap<Integer, HashSet<Pair>>)distTreeOld.clone();
+            return;
+        }
         update(a, b, dist(a, b), c);
-        for (int i = 1; i <= 1000; i++) {
-            for (Pair p: distArray.get(i)) {
+
+        for (int d: distTreeOld.keySet()) {
+            for (Pair p: distTreeOld.get(d)) {
                 updateEntry(a, b, p.i, p.j);
             }
         }

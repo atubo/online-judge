@@ -30,6 +30,7 @@ public class P035C {
     private final int M;
     private final int k;
     private ArrayList<Pair> fires = new ArrayList<Pair>();
+    private ArrayList<Pair> neighbors = new ArrayList<Pair>();
     
     public P035C() throws IOException {
         Scanner sc = new Scanner(new File("input.txt"));
@@ -47,7 +48,7 @@ public class P035C {
     }
     
     private void bfs() throws IOException{
-        java.util.Queue<Pair> queue = new LinkedList<Pair>();
+        java.util.Queue<Pair> queue = new ArrayDeque<Pair>();
         for (Pair p : fires) {
             queue.add(p);
             visited[p.x][p.y] = true;
@@ -69,14 +70,14 @@ public class P035C {
         output.close();
     }
     
-    private ArrayList<Pair> getNeighbors(Pair p) {
-        ArrayList<Pair> result = new ArrayList<Pair>();
-        if (p.x > 0)   result.add(new Pair(p.x-1, p.y));
-        if (p.x < N-1) result.add(new Pair(p.x+1, p.y));
-        if (p.y > 0)   result.add(new Pair(p.x, p.y-1));
-        if (p.y < M-1) result.add(new Pair(p.x, p.y+1));
+    private Collection<Pair> getNeighbors(Pair p) {
+        neighbors.clear();
+        if (p.x > 0)   neighbors.add(new Pair(p.x-1, p.y));
+        if (p.x < N-1) neighbors.add(new Pair(p.x+1, p.y));
+        if (p.y > 0)   neighbors.add(new Pair(p.x, p.y-1));
+        if (p.y < M-1) neighbors.add(new Pair(p.x, p.y+1));
         
-        return result;
+        return neighbors;
     }
     
     public static void main(String[] args) throws IOException {

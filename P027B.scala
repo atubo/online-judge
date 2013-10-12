@@ -9,6 +9,6 @@ object P027B extends App {
     losses(opponents(1)) += 1
   }
   ids = ids.sortWith(wins(_) < wins(_))
-  val missed = ids.zipWithIndex.filter(x => wins(x._1) != x._2)
-  printf("%d %d\n", missed(0)._1+1, ids.find(x => wins(x) + losses(x) != n-1).get+1)
+  val missed = ids.filter(x => wins(x) + losses(x) != n-1)
+  printf("%d %d\n", missed(1)+1, missed(0)+1)
 }

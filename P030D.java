@@ -11,32 +11,43 @@ public class P030D {
         return Math.sqrt(dx*dx + cy*cy);
     }
     
-    private double distBetween(int i, int j) {
+    private double dist(int i, int j) {
         return (double)Math.abs(pos[i] - pos[j]);
     }
     
     private double solveC(int i, int j) {
         double d1 = distToC(i);
         double d2 = distToC(j);
-        return Math.min(d1, d2) + distBetween(i, j);
+        return Math.min(d1, d2) + dist(i, j);
     }
     
-    private double solveMiddle(int i) {
-        assert 0 < i && i < N-1;
-        double d1 = distToC(i) + solveC(0, N-1);
-        double d2 = distBetween(0, i) + distToC(0) + solveC(i+1, N-1);
-        double d3 = distBetween(i, N-1) + distToC(N-1) + solveC(0, i-1);
-        return min3(d1, d2, d3);
+    private double solveMiddle(int k) {
+        assert 0 < k && k < N-1;
+        double result = dist(0, k) + distToC(0) + solveC(k+1, N-1);
+        result = Math.min(result, dist(k, N-1) + distToC(N-1) + solveC(0, k-1));
+        for (int i = 0; i < N; i++) {
+            if (i <= k) {
+                double d0 = (i > 0 ? solveC(0, i-1) : 0);
+                result = Math.min(result, 2 * dist(k, N-1) + dist(i, k) + distToC(i) + d0);
+                result = Math.min(result, 2 * dist(i, k) + dist(k, N-1) + distToC(N-1) + d0);
+            }
+            else {
+                double d0 = (i < N-1 ? solveC(i+1, N-1) : 0);
+                result = Math.min(result, 2 * dist(0, k) + dist(k, i) + distToC(i) + d0);
+                result = Math.min(result, 2 * dist(k, i) + dist(0, k) + distToC(0) + d0);
+            }
+        }
+        return result;
     }
     
     private double solveLeftEnd() {
         double result = Double.MAX_VALUE;
         for (int i = 0; i < N-1; i++) {
-            double d = distBetween(0, i) + distToC(i) + solveC(i+1, N-1);
+            double d = dist(0, i) + distToC(i) + solveC(i+1, N-1);
             result = Math.min(result, d);
         }
         // last one
-        double d = distBetween(0, N-1) + distToC(N-1);
+        double d = dist(0, N-1) + distToC(N-1);
         result = Math.min(result, d);
         
         return result;
@@ -45,17 +56,13 @@ public class P030D {
     private double solveRightEnd() {
         double result = Double.MAX_VALUE;
         for (int i = N-1; i > 0; i--) {
-            double d = distBetween(i, N-1) + distToC(i) + solveC(0, i-1);
+            double d = dist(i, N-1) + distToC(i) + solveC(0, i-1);
             result = Math.min(result, d);
         }
-        double d = distBetween(0, N-1) + distToC(0);
+        double d = dist(0, N-1) + distToC(0);
         result = Math.min(result, d);
         
         return result;
-    }
-    
-    private double min3(double x1, double x2, double x3) {
-        return Math.min(Math.min(x1, x2), x3);
     }
     
     private double solve(int k) {

@@ -57,6 +57,7 @@ public class P039C {
     private Ring[] rings;
     private int[][] dp;
     private Predecessor[][] pred;
+    private final int N;
     
     private void printdp() {
         int n = dp.length;
@@ -118,11 +119,11 @@ public class P039C {
     
     public P039C() {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        rings = new Ring[2*n];
-        dp = new int[2*n][2*n];
-        pred = new Predecessor[2*n][2*n];
-        for (int i = 0; i < n; i++) {
+        N = sc.nextInt();
+        rings = new Ring[2*N];
+        dp = new int[2*N][2*N];
+        pred = new Predecessor[2*N][2*N];
+        for (int i = 0; i < N; i++) {
             int c = sc.nextInt();
             int r = sc.nextInt();
             rings[2*i]   = new Ring(0, c-r, r, i+1);
@@ -132,17 +133,17 @@ public class P039C {
         }
         
         Arrays.sort(rings);
-        for (int i = 0; i < 2*n; i++) {
+        for (int i = 0; i < 2*N; i++) {
             rings[i].setIndex(i);
         }
         
         solve();
         
-        System.out.printf("%d\n", dp[2*n-1][0]);
+        System.out.printf("%d\n", dp[2*N-1][0]);
         
         // print crater list
         java.util.Queue<Predecessor> queue = new ArrayDeque<Predecessor>();
-        queue.add(pred[2*n-1][0]);
+        queue.add(pred[2*N-1][0]);
         while (!queue.isEmpty()) {
             Predecessor p = queue.poll();
             System.out.printf("%d ", p.id);

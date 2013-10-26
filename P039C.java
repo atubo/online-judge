@@ -42,8 +42,21 @@ public class P039C {
         }
     };
     
+    private static class Predecessor {
+        private int id;
+        private Predecessor p1;
+        private Predecessor p2;
+        
+        public Predecessor(int id, Predecessor p1, Predecessor p2) {
+            this.id = id;
+            this.p1 = p1;
+            this.p2 = p2;
+        }
+    };
+    
     private Ring[] rings;
     private int[][] dp;
+    private Predecessor[][] pred;
     
     private void printdp() {
         int n = dp.length;
@@ -63,19 +76,42 @@ public class P039C {
             if (ring.type == 0) {
                 for (int k = j-1; k >= 0; k--) {
                     dp[k][j] = dp[k][j-1];
+                    pred[k][j] = pred[k][j-1];
                 }
                 continue;
             }
-            System.out.println(ring);
-            System.out.printf("%d %d\n", i, j);
-            printdp();
+            
             for (int k = j-1; k >= i+1; k--) {
                 dp[k][j] = dp[k][j-1];
+                pred[k][j] = pred[k][j-1];
             }
-            if (i == j-1) dp[i][j] = 1;
-            else          dp[i][j] = 1 + dp[i+1][j-1];
+            if (i == j-1) {
+                dp[i][j] = 1;
+                pred[i][j] = new Predecessor(ring.id, null, null);
+            }
+            else {
+                dp[i][j] = 1 + dp[i+1][j-1];
+                pred[i][j] = new Predecessor(ring.id, pred[i+1][j-1], null);
+            }
             for (int k = i-1; k >= 0; k--) {
-                dp[k][j] = Math.max(dp[k][j-1], dp[k][i-1] + dp[i+1][j-1] + 1);
+                if (i == j-1) {
+                    dp[k][j] = Math.max(dp[k][j-1], dp[k][i-1] + 1);
+                    if (dp[k][j-1] > dp[k][i-1]+1) {
+                        pred[k][j] = pred[k][j-1];
+                    }
+                    else {
+                        pred[k][j] = new Predecessor(ring.id, pred[k][i-1], null);
+                    }
+                }
+                else {
+                    dp[k][j] = Math.max(dp[k][j-1], dp[k][i-1] + dp[i+1][j-1] + 1);
+                    if (dp[k][j-1] > dp[k][i-1] + dp[i+1][j-1] + 1) {
+                        pred[k][j] = pred[k][j-1];
+                    }
+                    else {
+                        pred[k][j] = new Predecessor(ring.id, pred[k][i-1], pred[i+1][j-1]);
+                    }
+                }
             }
         }
     }
@@ -85,11 +121,12 @@ public class P039C {
         int n = sc.nextInt();
         rings = new Ring[2*n];
         dp = new int[2*n][2*n];
+        pred = new Predecessor[2*n][2*n];
         for (int i = 0; i < n; i++) {
             int c = sc.nextInt();
             int r = sc.nextInt();
-            rings[2*i]   = new Ring(0, c-r, r, i);
-            rings[2*i+1] = new Ring(1, c+r, r, i);
+            rings[2*i]   = new Ring(0, c-r, r, i+1);
+            rings[2*i+1] = new Ring(1, c+r, r, i+1);
             rings[2*i].setOppo(rings[2*i+1]);
             rings[2*i+1].setOppo(rings[2*i]);
         }
@@ -97,12 +134,22 @@ public class P039C {
         Arrays.sort(rings);
         for (int i = 0; i < 2*n; i++) {
             rings[i].setIndex(i);
-            System.out.println(rings[i]);
         }
         
         solve();
         
         System.out.printf("%d\n", dp[0][2*n-1]);
+        
+        // print crater list
+        java.util.Queue<Predecessor> queue = new ArrayDeque<Predecessor>();
+        queue.add(pred[0][2*n-1]);
+        while (!queue.isEmpty()) {
+            Predecessor p = queue.poll();
+            System.out.printf("%d ", p.id);
+            if (p.p1 != null) queue.add(p.p1);
+            if (p.p2 != null) queue.add(p.p2);
+        }
+        System.out.println();
     }
     
     public static void main(String[] args) {

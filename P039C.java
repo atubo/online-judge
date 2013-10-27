@@ -1,17 +1,6 @@
 import java.util.*;
 
 public class P039C {
-    private static class Predecessor {
-        private int id;
-        private Predecessor p1;
-        private Predecessor p2;
-        
-        public Predecessor(int id, Predecessor p1, Predecessor p2) {
-            this.id = id;
-            this.p1 = p1;
-            this.p2 = p2;
-        }
-    };
     
     private static class Segment implements Comparable<Segment> {
         private int left;
@@ -36,7 +25,6 @@ public class P039C {
     private int[][] dp;
     private boolean[][] r;
     private int[] prev;
-    private Predecessor[][] pred;
     private final int N;
     
     private void printdp() {
@@ -49,53 +37,6 @@ public class P039C {
             System.out.printf("\n");
         }
     }
-    
-    /*private void solve() {
-        for (Ring ring: rings) {
-            int i = ring.oppo.index;
-            int j = ring.index;
-            if (ring.type == 0) {
-                for (int k = j-1; k >= 0; k--) {
-                    dp[j][k] = dp[j-1][k];
-                    pred[j][k] = pred[j-1][k];
-                }
-                continue;
-            }
-            
-            for (int k = j-1; k >= i+1; k--) {
-                dp[j][k] = dp[j-1][k];
-                pred[j][k] = pred[j-1][k];
-            }
-            if (i == j-1) {
-                dp[j][i] = 1;
-                pred[j][i] = new Predecessor(ring.id, null, null);
-            }
-            else {
-                dp[j][i] = 1 + dp[j-1][i+1];
-                pred[j][i] = new Predecessor(ring.id, pred[j-1][i+1], null);
-            }
-            for (int k = i-1; k >= 0; k--) {
-                if (i == j-1) {
-                    dp[j][k] = Math.max(dp[j-1][k], dp[i-1][k] + 1);
-                    if (dp[j-1][k] > dp[i-1][k]+1) {
-                        pred[j][k] = pred[j-1][k];
-                    }
-                    else {
-                        pred[j][k] = new Predecessor(ring.id, pred[i-1][k], null);
-                    }
-                }
-                else {
-                    dp[j][k] = Math.max(dp[j-1][k], dp[i-1][k] + dp[j-1][i+1] + 1);
-                    if (dp[j-1][k] > dp[i-1][k] + dp[j-1][i+1] + 1) {
-                        pred[j][k] = pred[j-1][k];
-                    }
-                    else {
-                        pred[j][k] = new Predecessor(ring.id, pred[i-1][k], pred[j-1][i+1]);
-                    }
-                }
-            }
-        }
-    }*/
     
     private int solve(int i, int j) {
         if (j < 0) return 0;
@@ -138,7 +79,6 @@ public class P039C {
         for (int[] row: dp) {
             Arrays.fill(row, -1);
         }
-        pred = new Predecessor[2*N][2*N];
 
         for (int i = 0; i < N; i++) {
             int c = sc.nextInt();
@@ -165,22 +105,6 @@ public class P039C {
         
         System.out.println(solve(minIndex, N-1));
         build(minIndex, N-1);
-
-        
-        //solve();
-        
-        //System.out.printf("%d\n", dp[2*N-1][0]);
-        
-        // print crater list
-        /*java.util.Queue<Predecessor> queue = new ArrayDeque<Predecessor>();
-        queue.add(pred[2*N-1][0]);
-        while (!queue.isEmpty()) {
-            Predecessor p = queue.poll();
-            System.out.printf("%d ", p.id);
-            if (p.p1 != null) queue.add(p.p1);
-            if (p.p2 != null) queue.add(p.p2);
-        }
-        System.out.println();*/
     }
     
     public static void main(String[] args) {

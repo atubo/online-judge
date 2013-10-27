@@ -1,47 +1,6 @@
 import java.util.*;
 
 public class P039C {
-    private static class Ring implements Comparable<Ring> {
-        private int type;    // left - 0, right - 1
-        private int pos;
-        private int id;
-        private int radius;
-        
-        private Ring oppo; // opposite ring
-        private int index;
-        
-        public Ring(int type, int pos, int radius, int id) {
-            this.type    = type;
-            this.pos     = pos;
-            this.radius  = radius;
-            this.id      = id;
-        }
-        
-        public void setOppo(Ring oppo) {
-            this.oppo = oppo;
-        }
-        
-        public void setIndex(int index) {
-            this.index = index;
-        }
-        
-        public int compareTo(Ring other) {
-            if      (pos < other.pos) return -1;
-            else if (pos > other.pos) return 1;
-            else if (type > other.type) return -1;  // right < left
-            else if (type < other.type) return 1;
-            else {
-                if (type == 0) return other.radius - radius;
-                else           return radius - other.radius;
-            }
-        }
-        
-        public String toString() {
-            String result = "ring: type = " + type + " id = " + id + " index = " + index;
-            return result;
-        }
-    };
-    
     private static class Predecessor {
         private int id;
         private Predecessor p1;
@@ -54,8 +13,29 @@ public class P039C {
         }
     };
     
-    private Ring[] rings;
+    private static class Segment implements Comparable<Segment> {
+        private int left;
+        private int right;
+        private int id;
+        
+        public Segment(int left, int right, int id) {
+            this.left  = left;
+            this.right = right;
+            this.id    = id;
+        }
+        
+        public int compareTo(Segment other) {
+            if      (right < other.right) return -1;
+            else if (right > other.right) return 1;
+            else if (left  > other.left)  return -1;
+            else                          return 1;
+        }
+    }
+    
+    private Segment[] segments;
     private int[][] dp;
+    private boolean[][] r;
+    private int[] prev;
     private Predecessor[][] pred;
     private final int N;
     
@@ -70,7 +50,7 @@ public class P039C {
         }
     }
     
-    private void solve() {
+    /*private void solve() {
         for (Ring ring: rings) {
             int i = ring.oppo.index;
             int j = ring.index;
@@ -115,34 +95,84 @@ public class P039C {
                 }
             }
         }
+    }*/
+    
+    private int solve(int i, int j) {
+        if (j < 0) return 0;
+        if (segments[j].right <= segments[i].left) return 0;
+        if (dp[i][j] != -1) return dp[i][j];
+        
+        int res = solve(i, j-1);
+        if (segments[j].left >= segments[i].left) {
+            int cur = solve(i, prev[j]) + solve(j, j-1) + 1;
+            if (cur > res) {
+                res = cur;
+                r[i][j] = true;
+            }
+        }
+        return dp[i][j] = res;
     }
+    
+    private void build(int i, int j) {
+        if (j < 0) return;
+        if (segments[j].right <= segments[i].left) return;
+        if (r[i][j]) {
+            System.out.printf("%d ", segments[j].id);
+            build(i, prev[j]);
+            build(j, j-1);
+        }
+        else {
+            build(i, j-1);
+        }
+    }
+        
     
     public P039C() {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
-        rings = new Ring[2*N];
-        dp = new int[2*N][2*N];
+        
+        segments = new Segment[N];
+        dp = new int[N][N];
+        r  = new boolean[N][N];
+        prev = new int[N];
+        for (int[] row: dp) {
+            Arrays.fill(row, -1);
+        }
         pred = new Predecessor[2*N][2*N];
+
         for (int i = 0; i < N; i++) {
             int c = sc.nextInt();
             int r = sc.nextInt();
-            rings[2*i]   = new Ring(0, c-r, r, i+1);
-            rings[2*i+1] = new Ring(1, c+r, r, i+1);
-            rings[2*i].setOppo(rings[2*i+1]);
-            rings[2*i+1].setOppo(rings[2*i]);
+            segments[i] = new Segment(c-r, c+r, i+1);
         }
         
-        Arrays.sort(rings);
-        for (int i = 0; i < 2*N; i++) {
-            rings[i].setIndex(i);
+        Arrays.sort(segments);
+        int minLeft = segments[0].left;
+        int minIndex = 0;
+        for (int i = 1; i < N; i++) {
+            if (segments[i].left < minLeft) {
+                minLeft = segments[i].left;
+                minIndex = i;
+            }
         }
         
-        solve();
+        for (int i = N-1; i >= 0; i--) {
+            int left = segments[i].left;
+            int p = i-1;
+            while (p >= 0 && segments[p].right > left) p--;
+            prev[i] = p;
+        }
         
-        System.out.printf("%d\n", dp[2*N-1][0]);
+        System.out.println(solve(minIndex, N-1));
+        build(minIndex, N-1);
+
+        
+        //solve();
+        
+        //System.out.printf("%d\n", dp[2*N-1][0]);
         
         // print crater list
-        java.util.Queue<Predecessor> queue = new ArrayDeque<Predecessor>();
+        /*java.util.Queue<Predecessor> queue = new ArrayDeque<Predecessor>();
         queue.add(pred[2*N-1][0]);
         while (!queue.isEmpty()) {
             Predecessor p = queue.poll();
@@ -150,7 +180,7 @@ public class P039C {
             if (p.p1 != null) queue.add(p.p1);
             if (p.p2 != null) queue.add(p.p2);
         }
-        System.out.println();
+        System.out.println();*/
     }
     
     public static void main(String[] args) {

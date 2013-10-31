@@ -19,12 +19,12 @@ class TarjanOLCA {
     };
 
 public:
-    TarjanOLCA(const vector<Node>& tree, int root, const set<PII>& query):
+    TarjanOLCA(const vector<Node>& tree, int root, const vector<PII>& query):
         m_tree(tree), m_root(root), m_size(tree.size()), m_rank(m_size, -1),
         m_parent(m_size, -1), m_color(m_size, WHITE)
     {
         // reformat query for easier access later
-        for (set<PII>::const_iterator it = query.begin();
+        for (vector<PII>::const_iterator it = query.begin();
              it != query.end(); ++it) {
             int u = it->first;
             int v = it->second;
@@ -36,16 +36,6 @@ public:
             }
             m_query[u].insert(v);
             m_query[v].insert(u);
-        }
-
-        for (map<int, set<int> >::const_iterator it = m_query.begin();
-             it != m_query.end(); ++it) {
-            cout << it->first << ": ";
-            for (set<int>::const_iterator it2 = it->second.begin();
-                 it2 != it->second.end(); ++it2) {
-                cout << *it2 << " ";
-            }
-            cout << endl;
         }
 
         solve();
@@ -98,7 +88,6 @@ private:
     }
 
     void lca(int u) {
-        cout << "entering lca: u = " << u << endl;
         makeSet(u);
         m_tree[u].ancestor = u;
         for (int i = 0; i < (int)m_tree[u].children.size(); i++) {
@@ -118,7 +107,6 @@ private:
                 }
             }
         }
-        cout << "leaving lca: u = " << u << endl;
     }
 
     void solve() {
@@ -126,30 +114,174 @@ private:
     }
 };
 
+#include <inttypes.h>
+#include <algorithm>
+struct Fence {
+    int r;
+    int x;
+    int y;
+
+    Fence(int r_, int x_, int y_): r(r_), x(x_), y(y_) {}
+
+    bool operator < (const Fence& other) const {
+        if      (r < other.r) return true;
+        else if (r > other.r) return false;
+        else if (x < other.x) return true;
+        else if (x > other.x) return false;
+        else                  return y < other.y;
+    }
+};
+
+struct CP {
+    int x;
+    int y;
+
+    CP(int x_, int y_): x(x_), y(y_) {}
+};
+
+class Solution {
+    typedef pair<int, int> PII;
+public:
+    Solution() {
+        int n, k;
+        cin >> n >> m >> k;
+        for (int i = 0; i < n; i++) {
+            int kx, ky;
+            cin >> kx >> ky;
+            cp.push_back(CP(kx, ky));
+        }
+
+        for (int i = 0; i < m; i++) {
+            int r, cx, cy;
+            cin >> r >> cx >> cy;
+            fence.push_back(Fence(r, cx, cy));
+        }
+        sort(fence.begin(), fence.end());
+
+        for (int i = 0; i < k; i++) {
+            int a, b;
+            cin >> a >> b;
+            query.push_back(make_pair(a-1, b-1));
+        }
+
+        makeTree();
+
+        height.resize(m+1);
+        buildHeight(m, 0);
+
+        cpPos.resize(n);
+        buildCpPos();
+
+        transformQuery();
+        processQuery();
+    }
+private:
+    int m;
+    vector<CP> cp;
+    vector<Fence> fence;
+    vector<Node> tree;
+    vector<PII> query;
+    vector<int> height;
+    vector<int> cpPos;
+
+    // check if cp i is inside fence j
+    bool pointInside(int i, int j) const {
+        int64_t xi = cp[i].x;
+        int64_t yi = cp[i].y;
+        int64_t xj = fence[j].x;
+        int64_t yj = fence[j].y;
+        int64_t rj = fence[j].r;
+ 
+        return rj * rj > (xi-xj)*(xi-xj) + (yi-yj)*(yi-yj);
+    }
+
+    // check if fence i is inside fence j
+    bool fenceInside(int i, int j) const {
+        int64_t xi = fence[i].x;
+        int64_t yi = fence[i].y;
+        int64_t ri = fence[i].r;
+        int64_t xj = fence[j].x;
+        int64_t yj = fence[j].y;
+        int64_t rj = fence[j].r;
+
+        return (rj-ri)*(rj-ri) > (xi-xj)*(xi-xj) + (yi-yj)*(yi-yj);
+    }
+
+    void makeTree() {
+        tree.resize(m+1);
+
+        // initialize
+        for (int i = 0; i <= m; i++) {
+            tree[i].ancestor = i;
+        }
+
+        // construct the forest
+        for (int i = 0; i < m-1; i++) {
+            for (int j = i+1; j < m; j++) {
+                if (fenceInside(i, j)) {
+                    tree[i].ancestor = j;
+                    tree[j].children.push_back(i);
+                    break;
+                }
+            }
+        }
+
+        // connect forest into a common root
+        for (int i = 0; i < m; i++) {
+            if (tree[i].ancestor == i) {
+                tree[i].ancestor = m;
+                tree[m].children.push_back(i);
+            }
+        }
+    }
+
+    void buildHeight(int u, int h) {
+        height[u] = h;
+        for (int i = 0; i < (int)tree[u].children.size(); i++) {
+            int v = tree[u].children[i];
+            buildHeight(v, h+1);
+        }
+    }
+
+    void buildCpPos() {
+        for (int i = 0; i < (int)cp.size(); i++) {
+            int j = 0;
+            for (; j < m; j++) {
+                if (pointInside(i, j)) {
+                    break;
+                }
+            }
+            cpPos[i] = j;
+        }
+    }
+
+    // transform query from control points to fence indices
+    void transformQuery() {
+        for (int i = 0; i < (int)query.size(); i++) {
+            int a = query[i].first;
+            int b = query[i].second;
+            int u = cpPos[a];
+            int v = cpPos[b];
+            query[i] = make_pair(u, v);
+        }
+    }
+
+    void processQuery() {
+        TarjanOLCA olca(tree, m, query);
+        map<pair<int, int>, int> result = olca.getLCA();
+        for (int i = 0; i < (int)query.size(); i++) {
+            int u = query[i].first;
+            int v = query[i].second;
+            assert(result.count(make_pair(u, v)) > 0);
+            int w = result[make_pair(u, v)];
+            cout << height[u] + height[v] - 2*height[w] << endl;
+        }
+    }
+
+};
+
 int main()
 {
-    vector<Node> tree(5);
-    tree[0].ancestor = 2;
-    tree[2].ancestor = 2;
-    tree[2].children.push_back(1);
-    tree[2].children.push_back(0);
-    tree[1].ancestor = 2;
-    tree[1].children.push_back(3);
-    tree[1].children.push_back(4);
-    tree[3].ancestor = 1;
-    tree[4].ancestor = 1;
-
-    set<pair<int, int> > query;
-    query.insert(make_pair(0, 3));
-    query.insert(make_pair(0, 4));
-    query.insert(make_pair(1, 2));
-    query.insert(make_pair(0, 1));
-    query.insert(make_pair(3, 4));
-    TarjanOLCA olca(tree, 2, query);
-    map<pair<int, int>, int> result = olca.getLCA();
-    for (map<pair<int, int>, int>::const_iterator it = result.begin();
-         it != result.end(); ++it) {
-        printf("%d %d: %d\n", it->first.first, it->first.second, it->second);
-    }
+    Solution s;
     return 0;
 }

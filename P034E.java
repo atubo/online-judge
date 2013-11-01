@@ -7,6 +7,7 @@ public class P034E {
         private double m;
         private int id;
         private double t = 0;    // last time x updated
+        private double tLastCollision = 0;
         
         public Ball(double x, double v, double m, int id) {
             this.x = x;
@@ -21,6 +22,11 @@ public class P034E {
             t = t1;
         }
         
+        public void recordCollision(double t1) {
+            assert tLastCollision < t1;
+            tLastCollision = t1;
+        }
+        
         public String toString() {
             //return "Ball " + id + " x = " + x + " v = " + v + " t = " + t;
             return String.format("Ball %d: x = %.2f v = %.2f t = %.2f\n", id, x, v, t);
@@ -28,12 +34,14 @@ public class P034E {
     }
     
     private static class Event implements Comparable<Event> {
-        private int i;    // ball i will collide with ball i+1
-        private double t; // at time t
+        private int i;     // ball i will collide with ball i+1
+        private double t;  // at time t
+        private double t0; // the time it is calculated
         
-        public Event(int i, double t) {
-            this.i = i;
-            this.t = t;
+        public Event(int i, double t, double t0) {
+            this.i  = i;
+            this.t  = t;
+            this.t0 = t0;
         }
         
         public int compareTo(Event other) {
@@ -54,7 +62,7 @@ public class P034E {
         double t = currTime + timeToNextCollision(i);
 
         if (t < stopTime) {
-            eventQueue.add(new Event(i, t));
+            eventQueue.add(new Event(i, t, currTime));
         }
     }
     
@@ -69,19 +77,19 @@ public class P034E {
             Event event = eventQueue.poll();
             assert event.t > currTime;
             
-            currTime = event.t;
             int i = event.i;
+            assert i < N - 1;
+            if (event.t0 < balls[i].tLastCollision ||
+                event.t0 < balls[i+1].tLastCollision) {
+                continue;
+            }
+            
+            currTime = event.t;
             
             collide(i);
             
             checkCandidate(i-1);
-            checkCandidate(i+1);
-            
-            System.out.printf("currTime = %f\n", currTime);
-            for (int j = 0; j < N; j++) {
-                System.out.print(balls[j]);
-            }
-                
+            checkCandidate(i+1);               
         }
         
         for (int i = 0; i < N; i++) {
@@ -97,6 +105,8 @@ public class P034E {
         
         balls[i].updatePosition(currTime);
         balls[j].updatePosition(currTime);
+        balls[i].recordCollision(currTime);
+        balls[j].recordCollision(currTime);
         
         double m1 = balls[i].m;
         double v1 = balls[i].v;

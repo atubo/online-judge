@@ -157,6 +157,11 @@ public class P035E {
                     vertices.remove(vCurr);
                 }
             }
+            else if (vCurr.type == 0) {
+                assert toAppend != null;
+                toAppend.next = v2;
+                vertices.add(v2);
+            }
             
         }
         
@@ -216,22 +221,30 @@ public class P035E {
             }
             segments[n] = new Segment(0, -MAX_VAL, MAX_VAL);
             Arrays.sort(segments);
-            
-            for (int i = 0; i < n+1; i++) {
-                System.out.print(segments[i]);
-            }
-            
+                        
             Vertex v = process();
             normalize(v);
+            
+            ArrayList<Vertex> result = new ArrayList<Vertex>();
             while (v != null) {
                 if (Math.abs(v.x) != MAX_VAL) {
-                    System.out.printf("%d %d\n", v.x, v.y);
+                    result.add(v);
                 }
                 v = v.next;
             }
+            
+            PrintWriter writer = new PrintWriter("output.txt", "UTF-8");
+            writer.println(result.size());
+            for (int i = 0; i < result.size(); i++) {
+                writer.printf("%d %d\n", result.get(i).x, result.get(i).y);
+            }
+            writer.close();
         }
         catch (FileNotFoundException e) {
             System.out.println("File not found");
+        }
+        catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
     }
     

@@ -228,7 +228,8 @@ public class P035E {
                 segments[i] = new Segment(h, l, r);
             }
             segments[n] = new Segment(0, -MAX_VAL, MAX_VAL);
-            Arrays.sort(segments);
+            //Arrays.sort(segments);
+            qsort(segments);
                         
             Vertex v = process();
             normalize(v);
@@ -255,6 +256,47 @@ public class P035E {
             e.printStackTrace();
         }
     }
+    
+    private static final int H[] = new int[] {1, 4, 9, 24, 85, 126};
+    private static <T extends Comparable<T>> void ssort(T[] a, int lo, int hi) {
+        for(int k = H.length - 1; k >= 0; k--) {
+            for(int h = H[k], i = lo + h, j; i <= hi; i++) {
+                T m = a[i];
+                for(j = i - h; j >= lo && a[j].compareTo(m) > 0; j -= h)
+                    a[j + h] = a[j];
+                a[j + h] = m;
+            }
+        }
+    }
+    private static <T extends Comparable<T>> void qsort(T[] a) {
+        qsort(a, 0, a.length - 1);
+    }
+    private static <T extends Comparable<T>> void qsort(T[] a, int lo, int hi) {
+        for(;;) {
+            if(hi - lo < 256) {
+                ssort(a, lo, hi);
+                return;
+            }
+            int i = lo, j = hi;
+            for(T m = a[(lo + hi) / 2];;) {
+                while(i < hi && a[i].compareTo(m) < 0)
+                    i++;
+                while(j > lo && a[j].compareTo(m) > 0)
+                    j--;
+                if(i >= j)
+                    break;
+                T t = a[i]; a[i++] = a[j]; a[j--] = t;
+            }
+            if((--i - lo) < (hi - ++j)) {
+                qsort(a, lo, i);
+                lo = j;
+            } else {
+                qsort(a, j, hi);
+                hi = i;
+            }
+        }
+    } 
+    
     
     public P035E() {
         solve();

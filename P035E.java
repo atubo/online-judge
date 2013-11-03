@@ -15,9 +15,13 @@ public class P035E {
         
         public int compareTo(Segment other) {
             // From top to bottom and left to right
-            if (height != other.height) return -(height - other.height);
-            if (left != other.left)     return left - other.left;
-            return right - other.right;
+            if      (height > other.height) return -1;
+            else if (height < other.height) return 1;
+            else if (left < other.left) return -1;
+            else if (left > other.left) return 1;
+            else if (right < other.right) return -1;
+            else if (right > other.right) return 1;
+            else                          return 0;
         }
         
         public String toString() {
@@ -39,9 +43,13 @@ public class P035E {
         
         public int compareTo(Vertex other) {
             // left -> right, top - > bottom, rightend -> leftend
-            if (x != other.x) return x - other.x;
-            if (y != other.y) return other.y - y;
-            return other.type - type;
+            if      (x < other.x) return -1;
+            else if (x > other.x) return 1;
+            else if (y > other.y) return -1;
+            else if (y < other.y) return 1;
+            else if (type > other.type) return -1;
+            else if (type < other.type) return 1;
+            else                        return 0;
         }
         
         public String toString() {

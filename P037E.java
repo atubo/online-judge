@@ -16,6 +16,16 @@ public class P037E {
             adj.get(u).add(v);
             adj.get(v).add(u);
         }
+        
+        public void print() {
+            for (int u = 0; u < N; u++) {
+                System.out.printf("%d: ", u);
+                for (int v: adj.get(u)) {
+                    System.out.printf("%d ", v);
+                }
+                System.out.printf("\n");
+            }
+        }
     }
     
     private int[] rank;
@@ -24,6 +34,9 @@ public class P037E {
     private final int M;
     private final int NM;
     private int[][] board;  // 0 - black, 1 - white
+    private Graph graph;
+    private HashMap<Integer, Integer> b2g = new HashMap<Integer, Integer>();  // board index to graph node
+    private HashMap<Integer, Integer> g2b = new HashMap<Integer, Integer>();  // graph node to board index
     
     private int getIndex(int row, int col) {
         return row * M + col;
@@ -90,6 +103,15 @@ public class P037E {
         return getIndex(row, col-1);
     }
     
+    private int right(int k) {
+        int row = k / M;
+        int col = k % M;
+        if (col == M-1) {
+            return -1;
+        }
+        return getIndex(row, col+1);
+    }
+    
     private int upper(int k) {
         int row = k / M;
         int col = k % M;
@@ -99,12 +121,21 @@ public class P037E {
         return getIndex(row-1, col);
     }
     
+    private int lower(int k) {
+        int row = k / M;
+        int col = k % M;
+        if (row == N-1) {
+            return -1;
+        }
+        return getIndex(row+1, col);
+    }
+    
     private int getColor(int k) {
         return board[k/M][k%M];
     }
     
     // construct side-linked sets
-    private void contructSLS() {
+    private void constructSLS() {
         for (int row = 0; row < N; row++) {
             for (int col = 0; col < M; col++) {
                 makeSet(getIndex(row, col));
@@ -127,6 +158,38 @@ public class P037E {
         }
     }
     
+    private void constructGraph() {
+        // first find how many nodes there are in the graph
+        // also create map between board index and graph node
+        int nodeNum = 0;
+        for (int row = 0; row < N; row++) {
+            for (int col = 0; col < M; col++) {
+                int k = find(getIndex(row, col));
+                if (!b2g.containsKey(k)) {
+                    b2g.put(k, nodeNum);
+                    g2b.put(nodeNum, k);
+                    nodeNum++;
+                }
+            }
+        }
+        
+        graph = new Graph(nodeNum);
+        for (int row = 0; row < N; row++) {
+            for (int col = 0; col < M; col++) {
+                int id = getIndex(row, col);
+                int leftId  = left(id);
+                int upperId = upper(id);
+                int rightId = right(id);
+                int lowerId = lower(id);
+                int u = find(id);
+                if (leftId >= 0)  graph.add(u, find(leftId));
+                if (rightId >= 0) graph.add(u, find(rightId));
+                if (upperId >= 0) graph.add(u, find(upperId));
+                if (lowerId >= 0) graph.add(u, find(lowerId));
+            }
+        }
+    }
+    
     public P037E() {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
@@ -141,6 +204,9 @@ public class P037E {
                 board[i][j] = (s.charAt(j) == 'W' ? 1 : 0);
             }
         }
+        
+        constructSLS();
+        constructGraph();
     }
     
     public static void main(String[] args) {

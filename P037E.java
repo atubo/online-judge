@@ -181,13 +181,21 @@ public class P037E {
                 int upperId = upper(id);
                 int rightId = right(id);
                 int lowerId = lower(id);
-                int u = find(id);
-                if (leftId >= 0)  graph.add(u, find(leftId));
-                if (rightId >= 0) graph.add(u, find(rightId));
-                if (upperId >= 0) graph.add(u, find(upperId));
-                if (lowerId >= 0) graph.add(u, find(lowerId));
+                addEdge(id, leftId);
+                addEdge(id, rightId);
+                addEdge(id, upperId);
+                addEdge(id, lowerId);
             }
         }
+    }
+    
+    private void addEdge(int id1, int id2) {
+        assert id1 >= 0;
+        if (id2 < 0) return;
+        
+        int u = b2g.get(find(id1));
+        int v = b2g.get(find(id2));
+        if (u != v) graph.add(u, v);
     }
     
     public P037E() {

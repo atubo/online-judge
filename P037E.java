@@ -28,6 +28,26 @@ public class P037E {
         }
     }
     
+    private static class CenterInfo {
+        private int node;    // node index in the graph
+        private int radius;
+        
+        public CenterInfo(int node, int radius) {
+            this.node   = node;
+            this.radius = radius;
+        }
+    }
+    
+    private static class QueueNode {
+        private int node;
+        private int dist;
+        
+        public QueueNode(int node, int dist) {
+            this.node = node;
+            this.dist = dist;
+        }
+    }
+    
     private int[] rank;
     private int[] parent;
     private final int N;
@@ -198,6 +218,47 @@ public class P037E {
         if (u != v) graph.add(u, v);
     }
     
+    private int distCorrection(int k, int dist) {
+        int row = k / M;
+        int col = k % M;
+        if (board[row][col] == 1 && dist % 2 == 1 ||
+            board[row][col] == 0 && dist % 2 == 0) {
+            return dist + 1;
+        }
+        return dist;
+    }      
+    
+    private void dfs(int u, CenterInfo currCenter) {
+        int currMin = currCenter.radius;
+        
+        java.util.Queue<QueueNode> queue = new ArrayDeque<QueueNode>();
+        boolean[] visited = new boolean[graph.N];
+        
+        queue.add(new QueueNode(u, 0));
+        visited[u] = true;
+        int dist = 0;
+        while (!queue.isEmpty()) {
+            QueueNode qnv = queue.poll();
+            int v = qnv.node;
+            dist  = qnv.dist;
+            if (dist >= currMin) return; 
+            for (int w: graph.adj.get(v)) {
+                if (!visited[w]) {
+                    queue.add(new QueueNode(w, dist+1));
+                    visited[w] = true;
+                }
+            }
+        }
+        assert dist < currMin;
+        dist = distCorrection(g2b.get(u), dist);
+        if (dist < currMin) {
+            currCenter.node   = u;
+            currCenter.radius = dist;
+        }
+    }
+        
+        
+    
     public P037E() {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
@@ -215,6 +276,12 @@ public class P037E {
         
         constructSLS();
         constructGraph();
+        
+        CenterInfo centerInfo = new CenterInfo(-1, Integer.MAX_VALUE);
+        for (int i = 0; i < graph.N; i++) {
+            dfs(i, centerInfo);
+        }
+        System.out.println(centerInfo.radius);
     }
     
     public static void main(String[] args) {

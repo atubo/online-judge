@@ -13,7 +13,24 @@ public class P035D {
             this.day   = day;
         }
         
-        // TODO: overwrite hashCode and equal
+        @Override
+        public int hashCode() {
+            int result = 17;
+            result = 37*result + food;
+            result = 37*result + speed;
+            result = 37*result + day;
+            return result;
+        }
+        
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Key)) return false;
+            Key other = (Key)o;
+            return food  == other.food &&
+                   speed == other.speed &&
+                   day   == other.day;
+        }
     }
     
     HashMap<Key, Integer> dp = new HashMap<Key, Integer>();

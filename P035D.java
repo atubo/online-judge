@@ -2,90 +2,55 @@ import java.util.*;
 import java.io.*;
 
 public class P035D {
-    private static class Key {
-        private int food;
-        private int speed;  // food consumption speed
-        private int day;
-        
-        public Key(int food, int speed, int day) {
-            this.food  = food;
-            this.speed = speed;
-            this.day   = day;
-        }
-        
-        @Override
-        public int hashCode() {
-            int result = 17;
-            result = 37*result + food;
-            result = 37*result + speed;
-            result = 37*result + day;
-            return result;
-        }
-        
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Key)) return false;
-            Key other = (Key)o;
-            return food  == other.food &&
-                   speed == other.speed &&
-                   day   == other.day;
-        }
-    }
-    
-    HashMap<Key, Integer> dp = new HashMap<Key, Integer>();
-    private int N;
+    private PriorityQueue<Integer> queue = new PriorityQueue<Integer>(1, Collections.reverseOrder());
+    private final int N;
+    private final int X;
     private int[] consumption;
     
-    private int solve(int food, int speed, int day) {
-        Key key = new Key(food, speed, day);
-        if (dp.containsKey(key)) return dp.get(key);
-        
-        if (food < speed) return Integer.MIN_VALUE;
-        
-        int result;
-        if (day == N-1) {
-            if (food - speed >= consumption[N-1])  result = 1;
-            else result = 0;
-            dp.put(key, result);
-            return result;
+    private void solve() {
+        queue.add(0);
+        int food = X;
+        for (int i = 0; i < N; i++) {
+            int cost = consumption[i] * (N-i);
+            if (food >= cost) {
+                queue.add(cost);
+                food -= cost;
+            }
+            else {
+                int largestSaving = queue.peek();
+                if (largestSaving > cost) {
+                    queue.poll();
+                    queue.add(cost);
+                    food = food + largestSaving - cost;
+                }
+            }
         }
-        
-        int c = consumption[day];
-        result = Math.max(solve(food-speed, speed, day+1),
-                          solve(food-speed-c, speed+c, day+1) + 1);
-        dp.put(key, result);
-        return result;
     }
     
-    private void solve() throws FileNotFoundException {
+    public P035D() throws FileNotFoundException {
         Scanner sc = new Scanner(new File("input.txt"));
         N = sc.nextInt();
         consumption = new int[N];
-        int X = sc.nextInt();
+        X = sc.nextInt();
         
         for (int i = 0; i < N; i++) {
             consumption[i] = sc.nextInt();
         }
         
-        int result = Math.max(0, solve(X, 0, 0));
+        solve();
         
         PrintWriter writer = new PrintWriter("output.txt");
-        writer.println(result);
+        writer.println(queue.size()-1);
         writer.close();
     }
     
-    public P035D() {
+    public static void main(String[] args) {
         try {
-            solve();
+            P035D solution = new P035D();
         }
         catch(FileNotFoundException e) {
             System.out.println("Input file not found");
         }
-    }
-    
-    public static void main(String[] args) {
-        P035D solution = new P035D();
     }
 }
    

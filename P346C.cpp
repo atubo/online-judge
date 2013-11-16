@@ -11,7 +11,9 @@ public:
         i += nData + 1;
         data[i] = value;
         for (; i > 1; i >>= 1) {
-            data[i>>1] = min(data[i], data[i^1]);
+            int newVal = min(data[i], data[i^1]);
+            if (data[i>>1] == newVal) break;
+            data[i>>1] = newVal;
         }
     }
 
@@ -26,6 +28,21 @@ private:
 
 #include <unordered_map>
 #include <unordered_set>
+int round_up(int x, int y) {
+    return (x + y - 1) / y;
+}
+
+void updateLadder(vector<vector<int> >& ladder,
+                  const vector<int> xList, int i) {
+    int n = ladder.size();
+    for (int j: ladder[i]) {
+        if (i + xList[j] < n) {
+            ladder[i+xList[j]].push_back(j);
+        }
+    }
+    ladder[i].clear();
+}
+
 int main() {
     int n;
     cin >> n;
@@ -42,39 +59,32 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    unordered_map<int, vector<int> > ladder;
-    for (int i = 0; i < n; i++) {
-        int x = xList[i];
-        for (int k = b/x; k < a/x+1; k++) {
-            if (ladder.count(x*k) == 0) {
-                ladder[x*k] = vector<int>();
-            }
-            ladder[x*k].push_back(i);
-        }
-    }
-
     const int MAXVAL = 10000000;
     SegmentTreeMin tree(n, MAXVAL);
 
-    int dist = 0;
-    if (ladder.count(b) != 0) {
-        for (int x: ladder[b]) {
-            tree.update(x, 0);
-        }
+    vector<vector<int> > ladder(a-b+1, vector<int>());
+    for (int i = 0; i < n; i++) {
+        int x = xList[i];
+        int r = round_up(b, x) * x;
+        if (r > a) continue;
+        ladder[r-b].push_back(i);
     }
 
-    for (int i = b+1; i < a+1; i++) {
-        if (ladder.count(i) != 0) {
-            for (int x: ladder[i]) {
-                tree.update(x, MAXVAL);
-            }
+    int dist = 0;
+    for (int x: ladder[0]) {
+        tree.update(x, 0);
+    }
+    updateLadder(ladder, xList, 0);
+
+    for (int i = 1; i < a-b+1; i++) {
+        for (int x: ladder[i]) {
+            tree.update(x, MAXVAL);
         }
         dist = min(dist, tree.findMin()) + 1;
-        if (ladder.count(i) != 0) {
-            for (int x: ladder[i]) {
-                tree.update(x, dist);
-            }
+        for (int x: ladder[i]) {
+            tree.update(x, dist);
         }
+        updateLadder(ladder, xList, i);
     }
 
     cout << dist << endl;

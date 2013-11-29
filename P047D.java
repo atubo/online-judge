@@ -21,7 +21,7 @@ public class P047D {
     private int result;
     
     private int getMatchDigits(long target, long guess) {
-        long mask = ~(((~((1 << n) - 1)) | guess) ^ target);
+        long mask = ~(((~(((long)1 << n) - 1)) | guess) ^ target);
         int result = 0;
         while (mask != 0) {
             mask = mask & (mask-1);
@@ -36,10 +36,11 @@ public class P047D {
     }
     
     private boolean verify(ArrayList<Integer> pos) {
-        long mask = (1 << n) - 1;
+        long mask = ((long)1 << n) - 1;
         for (int i = 0; i < pos.size(); i++) {
-            mask = mask & (~ (1 << pos.get(i)));
+            mask = mask & (~ ((long)1 << pos.get(i)));
         }
+
         long target = attemps[0].s ^ mask;
         
         for (int i = 1; i < m; i++) {

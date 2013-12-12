@@ -111,8 +111,10 @@ public class P041D {
         
         int pos = maxPos;
         char[] path = new char[N-1];
+        int r = 0;
         for (int j = N - 1; j > 0; j--) {
-            char dir = pred.get(j).get(pos).get(0);
+            char dir = pred.get(j).get(pos).get(r);
+            r = (r + k + 1 - (board[j][pos]%(k+1))) % (k+1);
             path[j-1] = dir;
             assert dir == 'R' || dir == 'L';
             if (dir == 'R') pos--;

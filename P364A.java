@@ -37,12 +37,22 @@ public class P364A {
         }
         
         long result = 0;
-        for (int i = 0; i < N; i++) {
-            for (int j = i; j < N; j++) {
-                if (a % b[i][j] == 0) {
-                    int key = a / b[i][j];
-                    if (!count.containsKey(key)) continue;
-                    result += count.get(key);
+        if (a != 0) {
+            for (int i = 0; i < N; i++) {
+                for (int j = i; j < N; j++) {
+                    if (b[i][j] != 0 && a % b[i][j] == 0) {
+                        int key = a / b[i][j];
+                        if (!count.containsKey(key)) continue;
+                        result += count.get(key);
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < N; i++) {
+                for (int j = i; j < N; j++) {
+                    if (b[i][j] == 0) {
+                        result += N * (N + 1) - count.get(0);
+                    }
                 }
             }
         }

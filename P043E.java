@@ -1,6 +1,32 @@
 import java.util.*;
 
 public class P043E {
+    private static class BIT {
+        private final int N;
+        private int[] tree;
+        
+        public BIT(int N) {
+            this.N = N;
+            tree = new int[N + 1];
+        }
+        
+        private void set(int x, int v) {
+            while (x <= N) {
+                tree[x] += v;
+                x += (x & -x);
+            }
+        }
+        
+        private int get(int x) {
+            int res = 0;
+            while (x != 0) {
+                res += tree[x];
+                x -= (x & -x);
+            }
+            return res;
+        }
+    }
+        
     private static class Car {
         private int v;
         private int x;
@@ -107,17 +133,17 @@ public class P043E {
     
     private int calcNumOfPasses(ArrayList<Integer> prevRank,
                                 ArrayList<Integer> currRank) {
-        /*HashMap<Integer, Integer> prevPos = new HashMap<Integer, Integer>();
-        for (int i = 0; i < prevRank.size(); i++) {
-            prevPos.put(prevRank.get(i), i);
-        }*/
         int result = 0;
-        for (int i = 0; i < currRank.size(); i++) {
-            result += Math.abs(prevPos.get(currRank.get(i)) - i);
+        BIT bit = new BIT(N);
+        for (int i = 0; i < N; i++) {
+            int pos = prevPos.get(currRank.get(i));  // previous position in the rank
+            if (pos > 0) {
+                result += Math.max(0, pos - bit.get(pos));  // how many it passed
+            }
+            bit.set(pos+1, 1);
         }
         
-        assert(result % 2 == 0);
-        return result / 2;
+        return result;
     }
     
     private int process() {
@@ -145,16 +171,6 @@ public class P043E {
             }
             Collections.sort(currRank, this.new SortByPosition());
             
-            // DEBUG
-            System.out.printf("At t = %d\n", currT);
-            for (int i = 0; i < N; i++) {
-                System.out.printf("%d ", prevRank.get(i));
-            }
-            System.out.println();
-            for (int i = 0; i < N; i++) {
-                System.out.printf("%d ", currRank.get(i));
-            }
-            System.out.println();
             numOfPasses += calcNumOfPasses(prevRank, currRank);
         }
         

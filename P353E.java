@@ -49,7 +49,7 @@ public class P353E {
             color[pos] = WHITE;
             int endPos = result.endPos;
             for (int i = next(pos); i != endPos; i = next(i)) {
-                color[pos] = BLACK;
+                color[i] = BLACK;
             }
             pos = next(endPos);
         }

@@ -41,116 +41,100 @@ public class P337E {
         
         return result;
     }
-    
-    private static class Node {
-        private long x;
-        private int numNodes;
-        private int numPrimes;
-        
-        public Node(long x, int numNodes, int numPrimes) {
-            this.x         = x;
-            this.numNodes  = numNodes;
-            this.numPrimes = numPrimes;
+   
+    private void checkDivisible(TreeSet<Integer> divisible,
+                                TreeSet<Integer> selected,
+                                int s, int i) {
+        if (divisible.isEmpty()) {
+            if (selected.isEmpty()) return;
+            long x = a[i];
+            for (int j: selected) {
+                long fct = a[j];
+                if (x % fct != 0) return;
+                x = x / fct;
+            }
+            int nNodes = 1 + np[i] + dp[s];
+            int sp = (1 << i) | s;
+            for (int j: selected) {
+                sp &= ~(1 << j);
+                nNodes -= np[j];
+            }
+            dp[sp] = Math.min(dp[sp], nNodes);
+            return;
         }
+        
+        int x = divisible.pollFirst();
+        
+        checkDivisible(divisible, selected, s, i);
+        selected.add(x);
+        checkDivisible(divisible, selected, s, i);
+        selected.remove(x);
+        divisible.add(x);
     }
+        
+            
     
-    private static ArrayList<Node> buildForest(long x, ArrayList<Node> nodes) {
-        int numPrimes = getNumPrimes(x);
-
-        ArrayList<Node> result = new ArrayList<Node>();
-        if (nodes.isEmpty()) {
-            int nnode = (numPrimes == 1 ? numPrimes : numPrimes + 1);
-            result.add(new Node(x, nnode, numPrimes));
-            return result;
-        }
-        
-        final int N = nodes.size();
-
-        int total = 0;
-        for (Node node: nodes) {
-            total += node.numNodes;
-        }
-        total += numPrimes + 1;
-        
-        int numNodes = total;
-        HashSet<Integer> subtreeNodes = new HashSet<Integer>();
-        
-        int s = 1;
-        HashSet<Integer> selected = new HashSet<Integer>();
-        while (s < (1 << N)) {
-            int numNodesCurr = total;
-            selected.clear();
-            long xtmp = x;
-            boolean found = true;
-            for (int i = 0; i < N; i++) {
-                if ((s & (1 << i)) != 0) {
-                    if (xtmp % nodes.get(i).x != 0) {
-                        found = false;
-                        break;
-                    }
-                    xtmp = xtmp / nodes.get(i).x;
-                    numNodesCurr -= nodes.get(i).numPrimes;
-                    selected.add(i);
-                }
-            }
-            s++;
-            if (!found) continue;
-            if (numNodesCurr < numNodes) {
-                numNodes = numNodesCurr;
-                subtreeNodes.clear();
-                subtreeNodes.addAll(selected);
-            }
-        }
-        
-        numNodes = 1 + numPrimes;
-        for (int i: subtreeNodes) {
-            numNodes += nodes.get(i).numNodes - nodes.get(i).numPrimes;
-        }
-        
-        result.add(new Node(x, numNodes, numPrimes));
-        for (int i = 0; i < N; i++) {
-            if (!subtreeNodes.contains(i)) {
-                result.add(nodes.get(i));
-            }
-        }
-        
-        return result;
-    }
+    private final int N;
+    private final long[] a;
+    private final int[] np;
+    private final int[] dp;
     
-    public static void main(String[] args) {
+    public P337E() {
         sieve();
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        long[] a = new long[N];
+        N = sc.nextInt();
+        a = new long[N];
         for (int i = 0; i < N; i++) {
             a[i] = sc.nextLong();
         }
         Arrays.sort(a);
-        ArrayList<Node> nodes = new ArrayList<Node>();
+        np = new int[N];
         for (int i = 0; i < N; i++) {
-            ArrayList<Node> divisible = new ArrayList<Node>();
-            for (int j = nodes.size() - 1; j >= 0; j--) {
-                if (a[i] % nodes.get(j).x == 0) {
-                    divisible.add(nodes.get(j));
-                    nodes.remove(j);
+            np[i] = getNumPrimes(a[i]);
+        }
+        
+        final int M = 1 << N;
+        dp = new int[M];
+        
+        for (int i = 0; i < M; i++) {
+            dp[i] = Integer.MAX_VALUE;
+        }
+        
+        dp[1] = (np[0] > 1 ? 1 + np[0] : 1);
+        
+        for (int i = 1; i < N; i++) {
+            int NI = (1 << i);
+            for (int s = (1 << i-1); s < NI; s++) {
+                if (dp[s] != Integer.MAX_VALUE) {
+                    dp[NI|s] = Math.min(dp[NI|s], 1 + np[i] + dp[s]);
+                
+                // find all j in s such that ai|aj
+                TreeSet<Integer> divisible = new TreeSet<Integer>();
+                for (int j = 0; j < i; j++) {
+                    if (((s & (1 << j)) != 0) && (a[i] % a[j] == 0)) {
+                        divisible.add(j);
+                    }
+                }
+                TreeSet<Integer> selected = new TreeSet<Integer>();
+                checkDivisible(divisible, selected, s, i);
                 }
             }
-            ArrayList<Node> forest = buildForest(a[i], divisible);
-            for (Node node: forest) {
-                nodes.add(node);
-            }
         }
         
-        int numNodes = 0;
-        for (Node node: nodes) {
-            numNodes += node.numNodes;
+        int result = Integer.MAX_VALUE;
+        for (int s = 1 << (N-1); s < M; s++) {
+            result = Math.min(result, dp[s]);
         }
         
-        if (nodes.size() > 1) {
-            numNodes++;
+        if (dp[1 << (N-1)] != result) {
+            result++;
         }
         
-        System.out.println(numNodes);
+        System.out.println(result);
+    }
+    
+    public static void main(String[] args) {
+        P337E solution = new P337E();
     }
 }
 

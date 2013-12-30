@@ -106,7 +106,7 @@ public class P337E {
             int NI = (1 << i);
             for (int s = (1 << i-1); s < NI; s++) {
                 if (dp[s] != Integer.MAX_VALUE) {
-                    dp[NI|s] = Math.min(dp[NI|s], 1 + np[i] + dp[s]);
+                    dp[NI|s] = Math.min(dp[NI|s], (np[i] == 1 ? 1 : 1 + np[i]) + dp[s]);
                 
                 // find all j in s such that ai|aj
                 TreeSet<Integer> divisible = new TreeSet<Integer>();

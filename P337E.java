@@ -108,15 +108,15 @@ public class P337E {
                 if (dp[s] != Integer.MAX_VALUE) {
                     dp[NI|s] = Math.min(dp[NI|s], (np[i] == 1 ? 1 : 1 + np[i]) + dp[s]);
                 
-                // find all j in s such that ai|aj
-                TreeSet<Integer> divisible = new TreeSet<Integer>();
-                for (int j = 0; j < i; j++) {
-                    if (((s & (1 << j)) != 0) && (a[i] % a[j] == 0)) {
-                        divisible.add(j);
+                    // find all j in s such that ai|aj
+                    TreeSet<Integer> divisible = new TreeSet<Integer>();
+                    for (int j = 0; j < i; j++) {
+                        if (((s & (1 << j)) != 0) && (a[i] % a[j] == 0)) {
+                            divisible.add(j);
+                        }
                     }
-                }
-                TreeSet<Integer> selected = new TreeSet<Integer>();
-                checkDivisible(divisible, selected, s, i);
+                    TreeSet<Integer> selected = new TreeSet<Integer>();
+                    checkDivisible(divisible, selected, s, i);
                 }
             }
         }

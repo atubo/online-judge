@@ -18,13 +18,13 @@ public class P337D {
     }
     
     private static class Graph {
-        private HashMap<Integer, HashSet<Integer>> edges = new HashMap<Integer, HashSet<Integer>>();
+        private ArrayList<ArrayList<Integer>> edges = new ArrayList<ArrayList<Integer>>();
         private final int N;
         
         public Graph(int N) {
             this.N = N;
             for (int i = 0; i < N; i++) {
-                edges.put(i, new HashSet<Integer>());
+                edges.add(new ArrayList<Integer>());
             }
         }
         
@@ -70,19 +70,22 @@ public class P337D {
         }
         
         public void markAffected(Integer[] a) {
-            Arrays.sort(a, new Comparator<Integer>() {
-                public int compare(Integer i, Integer j) {
-                    if (nodes[i].depth > nodes[j].depth) return -1;
-                    if (nodes[i].depth < nodes[j].depth) return 1;
-                    return 0;
+            TreeMap<Integer, ArrayList<Integer>> affected = new TreeMap<Integer, ArrayList<Integer>>();
+            for (int x: a) {
+                int d = - nodes[x].depth;
+                if (!affected.containsKey(d)) {
+                    affected.put(d, new ArrayList<Integer>());
                 }
-            });
-            for (int u: a) {
-                nodes[u].isAffected = true;
-                int v = u;
-                while (v != -1 && nodes[v].depthMax < nodes[u].depth) {
-                    nodes[v].depthMax = nodes[u].depth;
-                    v = nodes[v].father;
+                affected.get(d).add(x);
+            }
+            for (int d: affected.keySet()) {
+                for (int u: affected.get(d)) {
+                    nodes[u].isAffected = true;
+                    int v = u;
+                    while (v != -1 && nodes[v].depthMax < nodes[u].depth) {
+                        nodes[v].depthMax = nodes[u].depth;
+                        v = nodes[v].father;
+                    }
                 }
             }
         }
@@ -92,37 +95,56 @@ public class P337D {
     private final int D;
     private int possible = 0;
     
-    private void inspect(int u, int distMax) {
-        if (distMax > D) return;
+    private static class InspectItem {
+        private final int u;
+        private final int distMax;
         
-        Node node = tree.nodes[u];
-        if ((node.depthMax - node.depth) <= D) {
-            possible++;
+        public InspectItem(int u, int distMax) {
+            this.u       = u;
+            this.distMax = distMax;
         }
+    }
+    
+    private void inspect() {
+        java.util.Queue<InspectItem> queue = new ArrayDeque<InspectItem>();
+        queue.add(new InspectItem(0, -1));
         
-        int subtreeDepthMax = -1;
-        int subtreeMaxDepthId = -1;
-        int subtreeDepthNext = -1;
-        for (int v: node.children) {
-            if (tree.nodes[v].depthMax >= subtreeDepthMax) {
-                subtreeDepthNext = subtreeDepthMax;
-                subtreeDepthMax = tree.nodes[v].depthMax;
-                subtreeMaxDepthId = v;
-            }
-            else if (tree.nodes[v].depthMax > subtreeDepthNext) {
-                subtreeDepthNext = tree.nodes[v].depthMax;
-            }
-        }
-
-        for (int v: node.children) {
-            int d1 = (v == subtreeMaxDepthId ? subtreeDepthNext : subtreeDepthMax);
-            if (d1 > -1) {
-                d1 = d1 - node.depth + 1;
-            }
-            int d2 = (distMax > -1 ? distMax + 1 : -1);
-            int d3 = (node.isAffected ? 1 : -1);
+        while (!queue.isEmpty()) {
+            InspectItem item = queue.poll();
+            int u       = item.u;
+            int distMax = item.distMax;
+            if (distMax > D) continue;
             
-            inspect(v, Math.max(d1, Math.max(d2, d3)));
+            Node node = tree.nodes[u];
+            if ((node.depthMax - node.depth) <= D) {
+                possible++;
+            }
+            
+            int subtreeDepthMax = -1;
+            int subtreeMaxDepthId = -1;
+            int subtreeDepthNext = -1;
+            for (int v: node.children) {
+                if (tree.nodes[v].depthMax >= subtreeDepthMax) {
+                    subtreeDepthNext = subtreeDepthMax;
+                    subtreeDepthMax = tree.nodes[v].depthMax;
+                    subtreeMaxDepthId = v;
+                }
+                else if (tree.nodes[v].depthMax > subtreeDepthNext) {
+                    subtreeDepthNext = tree.nodes[v].depthMax;
+                }
+            }
+            
+            for (int v: node.children) {
+                int d1 = (v == subtreeMaxDepthId ? subtreeDepthNext : subtreeDepthMax);
+                if (d1 > -1) {
+                    d1 = d1 - node.depth + 1;
+                }
+                int d2 = (distMax > -1 ? distMax + 1 : -1);
+                int d3 = (node.isAffected ? 1 : -1);
+                
+                int d = Math.max(d1, Math.max(d2, d3));
+                queue.add(new InspectItem(v, d));
+            }
         }
     }
     
@@ -147,7 +169,7 @@ public class P337D {
         
         tree = new Tree(g);
         tree.markAffected(affected);
-        inspect(0, -1);
+        inspect();
         
         System.out.println(possible);
     }

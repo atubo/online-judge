@@ -100,26 +100,22 @@ public class P337D {
             possible++;
         }
         
-        Integer[] children = new Integer[node.children.size()];
-        children = node.children.toArray(children);
-        Arrays.sort(children, new Comparator<Integer>() {
-            public int compare(Integer i, Integer j) {
-                if (tree.nodes[i].depthMax > tree.nodes[j].depthMax) return -1;
-                if (tree.nodes[i].depthMax < tree.nodes[j].depthMax) return 1;
-                return 0;
+        int subtreeDepthMax = -1;
+        int subtreeMaxDepthId = -1;
+        int subtreeDepthNext = -1;
+        for (int v: node.children) {
+            if (tree.nodes[v].depthMax >= subtreeDepthMax) {
+                subtreeDepthNext = subtreeDepthMax;
+                subtreeDepthMax = tree.nodes[v].depthMax;
+                subtreeMaxDepthId = v;
             }
-        });
-        
+            else if (tree.nodes[v].depthMax > subtreeDepthNext) {
+                subtreeDepthNext = tree.nodes[v].depthMax;
+            }
+        }
 
         for (int v: node.children) {
-            int d1 = -1;
-            if (children.length > 1) {
-                if (v == children[0]) {
-                    d1 = tree.nodes[children[1]].depthMax;
-                } else {
-                    d1 = tree.nodes[children[0]].depthMax;
-                }
-            }
+            int d1 = (v == subtreeMaxDepthId ? subtreeDepthNext : subtreeDepthMax);
             if (d1 > -1) {
                 d1 = d1 - node.depth + 1;
             }

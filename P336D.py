@@ -27,7 +27,7 @@ if n == 0:
     sys.exit(0)
 
 if m == 0:
-    if (n % 2 == 0 and g == 1) or (n % 2 == 1 and g == 1):
+    if (n % 2 == 0 and g == 1) or (n % 2 == 1 and g == 0):
         result = 1
     else:
         result = 0

@@ -15,28 +15,19 @@ def mod_solve(a, b, n):
     else:
         return None
 
-def choose(n, m, MOD):
-    result = 1
-    for i in xrange(1, n+1):
-        result = (result * i) % MOD
-    for i in xrange(1, n-m+1):
-        result = (result * mod_solve(i, 1, MOD)) % MOD
-    for i in xrange(1, m+1):
-        result = (result * mod_solve(i, 1, MOD)) % MOD
-    return result
 
 MOD = 1000000007
-(m, n, g) = map(lambda x: int(x), raw_input().split())
-if m == 0:
-    if (n == 1 and g == 1) or (n > 1 and g == 0):
+(n, m, g) = map(lambda x: int(x), raw_input().split())
+if n == 0:
+    if (m == 1 and g == 1) or (m > 1 and g == 0):
         result = 1
     else:
         result = 0
     print(result)
     sys.exit(0)
 
-if n == 0:
-    if (m % 2 == 0 and g == 1) or (m % 2 == 1 and g == 1):
+if m == 0:
+    if (n % 2 == 0 and g == 1) or (n % 2 == 1 and g == 1):
         result = 1
     else:
         result = 0
@@ -51,12 +42,16 @@ for i in xrange(1, n+1):
         result = (result + term) % MOD
     else:
         result = (result + MOD - term) % MOD
+choosenm = term
 if n % 2 == 1:
     result = (MOD - result) % MOD
-if n == 1:
-    result = (result + 1) % MOD
+if m == 1:
+    if n % 2 == 0:
+        result = (result + MOD - 1) % MOD
+    else:
+        result = (result + 1) % MOD
 if g == 1:
-    result = (choose(n+m, m, MOD) + MOD - result) % MOD
+    result = (choosenm + MOD - result) % MOD
 print(result)
 
 

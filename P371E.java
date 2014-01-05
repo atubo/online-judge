@@ -3,7 +3,7 @@ import java.util.*;
 public class P371E {
     private final int N;
     private final int k;
-    private final long[] d;
+    private final int[] d;
     
     private class Pos implements Comparable<Pos> {
         private final int x;
@@ -33,7 +33,7 @@ public class P371E {
         }
         Arrays.sort(pos);
         
-        d = new long[N];
+        d = new int[N];
         for (int i = 1; i < N+1; i++) {
             d[i-1] = pos[i].x - pos[i-1].x;
         }
@@ -43,21 +43,21 @@ public class P371E {
         long D2 = 0;
         for (int i = k-1; i >= 0; i--) {
             D1 += d[i];
-            D2 += (2*k - 2*i) * d[i];
+            D2 += (2*k - 2*i) * (long)d[i];
         }
         
         long T = 0;
         long Tmin = 0;
         int posMin = k-1;
         
-        java.util.Deque<Long> deque = new ArrayDeque<Long>();
+        java.util.Deque<Integer> deque = new ArrayDeque<Integer>();
         for (int i = 0; i < k; i++) {
             deque.add(d[i]);
         }
         
         for (int i = k; i < N; i++) {
-            long d0 = deque.pollFirst();
-            long dn = d[i];
+            int d0 = deque.pollFirst();
+            int dn = d[i];
             deque.add(dn);
             T = T + k*(D1 + dn) - D2;
             D1 = D1 - d0 + dn;

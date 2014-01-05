@@ -61,7 +61,7 @@ public class P371E {
             deque.add(dn);
             T = T + k*(D1 + dn) - D2;
             D1 = D1 - d0 + dn;
-            D2 = D2 - 2*k*d0 + 2*D1;
+            D2 = D2 - 2*k*(long)d0 + 2*D1;
             if (T < Tmin) {
                 Tmin = T;
                 posMin = i;

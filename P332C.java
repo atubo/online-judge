@@ -53,16 +53,21 @@ public class P332C {
         Arrays.sort(candidates);
         
         int min_b = Integer.MAX_VALUE;
+        int max_a = 0;  // corresponding a value
         Order[] selected = new Order[p];
         for (int i = 0; i < k; i++) {
             selected[i] = candidates[i];
-            min_b = Math.min(min_b, selected[i].b);
+            if (selected[i].b < min_b) {
+                min_b = selected[i].b;
+                max_a = selected[i].a;
+            }
         }
         
         // find the remaining p-k orders
         ArrayList<Order> remaining = new ArrayList<Order>();
         for (int i = k; i < n-p+k; i++) {
-            if (candidates[i].b <= min_b) {
+            if (candidates[i].b < min_b || 
+                (candidates[i].a == max_a && candidates[i].b == min_b)) {
                 remaining.add(candidates[i]);
             }
         }

@@ -64,7 +64,7 @@ int main() {
     int fact[n+1];
     fact[0] = 1;
     for (int i = 1; i <= n; i++) {
-        fact[i] = (fact[i-1] * (long) i) % MOD;
+        fact[i] = (fact[i-1] * (int64_t) i) % MOD;
     }
 
     int perm[n+1];
@@ -72,7 +72,7 @@ int main() {
     for (int i = 1; i <= freeNode + partial; i++) {
         perm[i] = fact[i];
         for (int j = 1; j <= i; j++) {
-            perm[i] = (perm[i] + MOD - (choose[i][j] * (long)perm[i-j]) % MOD)
+            perm[i] = (perm[i] + MOD - (choose[i][j] * (int64_t)perm[i-j]) % MOD)
                        % MOD;
         }
     }
@@ -80,7 +80,7 @@ int main() {
     int result = (freeNode == 0 ? 0 : perm[freeNode]);
     for (int i = 1; i <= partial; i++) {
         result = (result +
-                  choose[partial][i] * (long)perm[freeNode + i] % MOD) % MOD;
+                  choose[partial][i] * (int64_t)perm[freeNode + i] % MOD) % MOD;
     }
 
     printf("%d\n", result);

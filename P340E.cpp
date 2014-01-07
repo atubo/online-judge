@@ -77,7 +77,7 @@ int main() {
         }
     }
 
-    int result = (freeNode == 0 ? 0 : perm[freeNode]);
+    int result = perm[freeNode];
     for (int i = 1; i <= partial; i++) {
         result = (result +
                   choose[partial][i] * (int64_t)perm[freeNode + i] % MOD) % MOD;

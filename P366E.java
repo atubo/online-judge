@@ -27,7 +27,7 @@ public class P366E {
             }
         }
         
-        for (int col = 1; col < M; col++) {
+        for (int col = 0; col < M; col++) {
             for (int i = 0; i < K; i++) {
                 if (highest[col][i] == -1) continue;
                 assert lowest[col][i] != -1;

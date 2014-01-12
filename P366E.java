@@ -82,9 +82,11 @@ public class P366E {
             }
         }
         
+        sc.nextLine();
         for (int i = N-1; i >= 0; i--) {
+            StringTokenizer st = new StringTokenizer(sc.nextLine());
             for (int j = 0; j < M; j++) {
-                int a = sc.nextInt() - 1;
+                int a = Integer.parseInt(st.nextToken()) - 1;
                 if (highest[j][a] == -1) highest[j][a] = i;
                 lowest[j][a] = i;
             }

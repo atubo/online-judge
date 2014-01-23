@@ -28,7 +28,7 @@ public class P386C {
     }
     
     private BIT[] letterCount = new BIT[26];
-    private int[][] dp;
+    private long[][] dp;
     private int[] prev;
     private int divMax;
     private final int N;
@@ -70,7 +70,7 @@ public class P386C {
             letterCount[i] = new BIT(N);
         }
         
-        dp = new int[N][];
+        dp = new long[N][];
         prev = new int[N];
         
         int[] last = new int[26];
@@ -93,7 +93,7 @@ public class P386C {
         System.out.println(divMax);
         
         for (int i = 0; i < N; i++) {
-            dp[i] = new int[divMax+1];
+            dp[i] = new long[divMax+1];
             dp[i][0] = 1;
         }
         dp[0][1] = 1;
@@ -103,7 +103,7 @@ public class P386C {
         }
         
         for (int d = 1; d <= divMax; d++) {
-            int result = 0;
+            long result = 0;
             for (int i = 0; i < N; i++) {
                 result += dp[i][d];
             }

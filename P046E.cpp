@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 int main()
@@ -9,7 +10,9 @@ int main()
     for (int i = 0; i < n; i++) {
         a[i][0] = 0;
         for (int j = 1; j <= m; j++) {
-            cin >> a[i][j];
+            int x;
+            scanf("%d", &x);
+            a[i][j] = x;
         }
     }
 

@@ -36,22 +36,22 @@ int main()
             for (int j = 1; j < m; j++) {
                 dp[i][j] = sum[i][j] + dp[i-1][j+1];
             }
-            for (int j = 2; j <= m; j++) {
+            for (int j = 2; j < m; j++) {
                 dp[i][j] = max(dp[i][j-1], dp[i][j]);
             }
         } else {
             for (int j = 2; j <= m; j++) {
                 dp[i][j] = sum[i][j] + dp[i-1][j-1];
             }
-            for (int j = m-1; j >= 1; j--) {
+            for (int j = m-1; j > 1; j--) {
                 dp[i][j] = max(dp[i][j+1], dp[i][j]);
             }
         }
     }
     if (n % 2 == 1) {
-        cout << dp[n-1][1] << endl;
+        cout << dp[n-1][2] << endl;
     } else {
-        cout << dp[n-1][m] << endl;
+        cout << dp[n-1][m-1] << endl;
     }
 
     return 0;

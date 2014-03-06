@@ -24,7 +24,7 @@ double dist(const Point& p1, const Point& p2) {
 
 pair<bool, double> canCatch(const Point& pCurr, const Point& pNext,
                             const Point& p0, int vs, int vp, double t0) {
-    double delta = 1e-9;
+    double delta = 1e-14;
     double t1 = dist(pCurr, pNext)/vs + t0;
     double t2 = dist(p0, pNext)/vp;
     return make_pair(t1 >= t2 - delta, t1);

@@ -24,9 +24,10 @@ double dist(const Point& p1, const Point& p2) {
 
 pair<bool, double> canCatch(const Point& pCurr, const Point& pNext,
                             const Point& p0, int vs, int vp, double t0) {
+    double delta = 1e-9;
     double t1 = dist(pCurr, pNext)/vs + t0;
     double t2 = dist(p0, pNext)/vp;
-    return make_pair(t1 >= t2, t1);
+    return make_pair(t1 >= t2 - delta, t1);
 }
 
 Point findPos(const Point& pCurr, const Point& pNext,
@@ -62,7 +63,7 @@ int main() {
     }
 
     int vs, vp;
-    cin >> vs >> vp;
+    cin >> vp >> vs;
 
     int x, y, z;
     cin >> x >> y >> z;

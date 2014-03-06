@@ -84,7 +84,7 @@ int main() {
             found = true;
             break;
         }
-        tau += rt.second;
+        tau = rt.second;
     }
 
     if (!found) {

@@ -35,7 +35,8 @@ class Solution
           bseq.count += 1
         else
           @st.shift
-          bseq.count += @st.shift.count + 1
+          below = @st.shift
+          bseq.count += (below.nil?? 0 : below.count) + 1
         end
         @st.unshift(bseq)
       else

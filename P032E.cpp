@@ -119,7 +119,8 @@ int main()
             }
         }
     } else if (orientation(pm1, pm2, victor) == 0 &&
-               orientation(pm1, pm2, peter) == 0) {
+               orientation(pm1, pm2, peter) == 0 &&
+               !doIntersect(pw1, pw2, victor, peter)) {
         canSee = true;
     }
 

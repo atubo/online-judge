@@ -114,7 +114,11 @@ int main()
             canSee = true;
         } else {
             Point pv_m = mirror(victor, pm1.x, pm1.y, pm2.x, pm2.y);
-            if (doIntersect(pm1, pm2, pv_m, peter)) {
+            Point pw1_m = mirror(pw1, pm1.x, pm1.y, pm2.x, pm2.y);
+            Point pw2_m = mirror(pw2, pm1.x, pm1.y, pm2.x, pm2.y);
+            if (doIntersect(pm1, pm2, pv_m, peter) &&
+                !doIntersect(pw1, pw2, pv_m, peter) &&
+                !doIntersect(pw1_m, pw2_m, pv_m, peter)) {
                 canSee = true;
             }
         }

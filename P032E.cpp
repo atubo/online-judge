@@ -5,8 +5,8 @@ struct Point
 {
     Point(): x(0), y(0) {}
     Point(int x_, int y_): x(x_), y(y_) {}
-    int x;
-    int y;
+    double x;
+    double y;
 };
 
 // Given three colinear points p, q, r, the function checks if
@@ -29,8 +29,8 @@ int orientation(Point p, Point q, Point r)
 {
     // See 10th slides from following link for derivation of the formula
     // http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf
-    int val = (q.y - p.y) * (r.x - q.x) -
-              (q.x - p.x) * (r.y - q.y);
+    double val = (q.y - p.y) * (r.x - q.x) -
+        (q.x - p.x) * (r.y - q.y);
 
     if (val == 0) return 0;  // colinear
 
@@ -113,7 +113,10 @@ int main()
         if (!doIntersect(pw1, pw2, victor, peter)) {
             canSee = true;
         } else {
-            Point pv_m = mirror(victor, pm1, pm2);
+            Point pv_m = mirror(victor, pm1.x, pm1.y, pm2.x, pm2.y);
+            if (doIntersect(pm1, pm2, pv_m, peter)) {
+                canSee = true;
+            }
         }
     } else if (orientation(pm1, pm2, victor) == 0 &&
                orientation(pm1, pm2, peter) == 0) {

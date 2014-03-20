@@ -61,7 +61,7 @@ int64_t getSum(const vector<Segment>& seg)
 {
     int64_t result = 0;
     int offset = 0;
-    for (Segment s: seg) {
+    for (const Segment& s: seg) {
         result += s.sum[(7-offset)%5];
         offset = (offset + s.size) % 5;
     }

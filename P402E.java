@@ -44,11 +44,13 @@ public class P402E {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
+        sc.nextLine();
         List<Integer>[] graph = new List[N];
         for (int i = 0; i < N; i++) {
             graph[i] = new ArrayList<>();
+            StringTokenizer st = new StringTokenizer(sc.nextLine());
             for (int j = 0; j < N; j++) {
-                int a = sc.nextInt();
+                int a = Integer.parseInt(st.nextToken());
                 if (a > 0) {
                     graph[i].add(j);
                 }

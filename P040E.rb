@@ -7,20 +7,38 @@ def remainder(n, p)
 end
 
 n, m = gets.split.map(&:to_i)
+# for simplicity, assume n >= m
+transpose = false
+if n < m
+  n, m = m, n
+  transpose = true
+end
+
+plus_one = Array.new(n, 0)
+minus_one = Array.new(n, 0)
+
 k = gets.to_i
-has_one = false
 (1..k).each do
   a, b, c = gets.split.map(&:to_i)
-  has_one = true if c == 1
+  a, b = b, a if transpose
+  if c > 0
+    plus_one[a-1] += 1
+  else
+    minus_one[a-1] += 1
+  end
 end
 p = gets.to_i
-if n > 1 and m > 1
-  puts(remainder((n-1)*(m-1)-k, p))
-else
-  if has_one
-    result = 0
-  else
-    result = ((n + m - 1) % 2 == 0 ? 0 : 1)
-  end
-  puts result
+
+if (n + m) % 2 == 1
+  puts 0
+  exit
 end
+
+(0...n).each do |i|
+  if (plus_one[i] + minus_one[i] == m and minus_one[i] % 2 == 0)
+    puts 0
+    exit
+  end
+end
+
+puts(remainder((n-1)*(m-1)-k, p))

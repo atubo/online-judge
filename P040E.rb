@@ -34,11 +34,14 @@ if (n + m) % 2 == 1
   exit
 end
 
+exponent = - m + 1
 (0...n).each do |i|
   if (plus_one[i] + minus_one[i] == m and minus_one[i] % 2 == 0)
     puts 0
     exit
+  else
+    exponent += [m - plus_one[i] - minus_one[i] - 1, 0].max
   end
 end
 
-puts(remainder((n-1)*(m-1)-k, p))
+puts(remainder(exponent, p))

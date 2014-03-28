@@ -75,7 +75,7 @@ public class P073E {
         int i;
         for (i = 0; i < primes.size(); i++) {
             int p = primes.get(i);
-            if (p > x) break;
+            if (p >= x) break;
             if (!a.contains(p)) {
                 return -1;
             }

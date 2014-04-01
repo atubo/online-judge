@@ -13,7 +13,7 @@ def is_solvable(a, b, c1, c2):
     if a == 0 and b == 0:
         return c1 == 0 and c2 == 0
     if (c1*b + c2*a) % (a*a + b*b) != 0:
-        return false
+        return False
     y = (c1*b + c2*a) / (a*a + b*b)
     if a != 0:
         return (c1 - b*y) % a == 0

@@ -87,6 +87,7 @@ public class P101B {
     
     private void remap() {
         TreeSet<Integer> pos = new TreeSet<>();
+        pos.add(0);
         for (Bus b: buses) {
             pos.add(b.s);
             pos.add(b.t);

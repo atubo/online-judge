@@ -24,7 +24,7 @@ end
 
 n, w = gets.split.map(&:to_i)
 a = gets.split.map(&:to_i).map.with_index(1).to_a
-a.sort_by{|x, i| x}
+a.sort_by!{|x, i| x}
 sum = a.inject(0) {|s, item| s + item[0]}
 if w <= 0 or w > sum
   puts "No"

@@ -73,16 +73,18 @@ public class P101B {
     public void processStop(TreeSet<EndPoint> eps) {
         int totalTmp = total;
         for (EndPoint ep: eps) {
-            if (ep.type == 0) {
-                total = (total + MOD - count[ep.pos]) % MOD;
-            } else {
-                int x = buses[ep.id].s;
-                int incr = (ep.pos == N ? 1 : total);
-                count[x] = (count[x] + incr) % MOD;
-                totalTmp = (totalTmp + incr) % MOD;
-            }
+            if (ep.type == 0) break;
+            int x = buses[ep.id].s;
+            int incr = (ep.pos == N ? 1 : total);
+            count[x] = (count[x] + incr) % MOD;
+            totalTmp = (totalTmp + incr) % MOD;       
         }
         total = totalTmp;
+        for (EndPoint ep: eps) {
+            if (ep.type == 1) continue;
+            total = (total + MOD - count[ep.pos]) % MOD;
+            break;
+        }
     }
     
     private void remap() {

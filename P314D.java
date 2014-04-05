@@ -121,12 +121,12 @@ public class P314D {
     
     private double getWidthX(TreeSet<Point> pSet) {
         if (pSet.size() == 0) return 0;
-        return pSet.last().x - pSet.first().x;
+        return (double)pSet.last().x - pSet.first().x;
     }
     
     private double getWidthY(TreeSet<Point> pSet) {
         if (pSet.size() == 0) return 0;
-        return pSet.last().y - pSet.first().y;
+        return (double)pSet.last().y - pSet.first().y;
     }  
     
     private void updateResult(double wx, double wy) {

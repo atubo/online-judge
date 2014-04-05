@@ -85,8 +85,8 @@ public class P314D {
             ySet.add(points.get(i));
         }
         
-        double wx = getWidth(xSet);
-        double wy = getWidth(ySet);
+        double wx = getWidthX(xSet);
+        double wy = getWidthY(ySet);
         updateResult(wx, wy);
         
         mainLoop:
@@ -100,18 +100,18 @@ public class P314D {
                 }
                 xSet.add(points.get(right));
                 ySet.remove(points.get(right));
-                wx = getWidth(xSet);
-                wy = getWidth(ySet);
+                wx = getWidthX(xSet);
+                wy = getWidthY(ySet);
                 updateResult(wx, wy);
             }
             
             while (wx > wy) {
                 // move left end to right
-                left++;
                 xSet.remove(points.get(left));
                 ySet.add(points.get(left));
-                wx = getWidth(xSet);
-                wy = getWidth(ySet);
+                left++;
+                wx = getWidthX(xSet);
+                wy = getWidthY(ySet);
                 updateResult(wx, wy);
             }
         }
@@ -119,10 +119,15 @@ public class P314D {
         return result/2;
     }
     
-    private double getWidth(TreeSet<Point> pSet) {
+    private double getWidthX(TreeSet<Point> pSet) {
         if (pSet.size() == 0) return 0;
         return pSet.last().x - pSet.first().x;
     }
+    
+    private double getWidthY(TreeSet<Point> pSet) {
+        if (pSet.size() == 0) return 0;
+        return pSet.last().y - pSet.first().y;
+    }  
     
     private void updateResult(double wx, double wy) {
         result = Math.min(result, Math.max(wx, wy));
@@ -131,7 +136,7 @@ public class P314D {
     public static void main(String[] args) throws IOException {
         P314D solution = new P314D();
         double result = solution.solve();
-        System.out.println(result);
+        System.out.printf("%.7f\n", result);
     }
                 
         

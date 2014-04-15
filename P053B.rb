@@ -15,6 +15,7 @@ def solve(x, y)
 end
 
 y, x = gets.split.map(&:to_i)
+x0, y0 = x, y
 swap = false
 if x > y
   x, y = y, x
@@ -23,6 +24,9 @@ end
 
 p, q = solve(x, y)
 if swap
+  p, q = q, p
+end
+if p > q and (p <= y0 and q <= x0)
   p, q = q, p
 end
 printf("%d %d\n", q, p)

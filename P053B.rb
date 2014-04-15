@@ -2,7 +2,7 @@ def solve(x, y)
   m = Math.log2(x).to_i
   n = Math.log2(y).to_i
   if n == m
-    return 2 ** n, [y, (1.25*x).to_i].min
+    return 2 ** n, [y, (1.25*2**n).to_i].min
   elsif n == m + 1
     if x > (2 ** n / 1.25).to_i
       return (2 ** n / 1.25).to_i, 2 ** n

@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class P407A {
-    private static int sqrtInt(int x) {
+    private static int sqrtInt(long x) {
         int y = (int)(Math.sqrt(x) + 0.5);
         if (y * y == x) return y;
         return -1;
@@ -9,8 +9,8 @@ public class P407A {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        long a = sc.nextInt();
+        long b = sc.nextInt();
         boolean found = false;
         for (int x1 = 1; x1 < a; x1++) {
             int y1 = sqrtInt(a*a - x1*x1);

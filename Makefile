@@ -10,3 +10,5 @@ latest:
 clean:
 	ls *.cpp|sed 's/\.cpp/.o/'|xargs rm -f
 	ls *.cpp|sed 's/\.cpp//'|xargs rm -f
+	ls *.java|sed 's/\.java/.class/'|xargs rm -f
+	ls *.java|sed 's/\.java/.java~/'|xargs rm -f

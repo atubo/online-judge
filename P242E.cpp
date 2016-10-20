@@ -173,7 +173,7 @@ class Solution {
 private:
     int N;
     vector<int> A;
-    vector<SegmentTree> segForest;
+    vector<SegmentTree*> segForest;
 public:
     Solution() {
         cin >> N;
@@ -190,7 +190,7 @@ public:
             for (int j = 0; j < N; j++) {
                 b[j] = (A[j] >> i) & 1;
             }
-            segForest.push_back(SegmentTree(b, 0, 1, comb, accu, appl));
+            segForest.push_back(new SegmentTree(b, 0, 1, comb, accu, appl));
         }
 
         int M;
@@ -213,7 +213,7 @@ public:
         int64_t ret = 0;
         int64_t carry = 0;
         for (int d = 0; d < 32; d++) {
-            int64_t s = segForest[d].query(left, right) + carry;
+            int64_t s = segForest[d]->query(left, right) + carry;
             ret = ret | ((s & 1) << d);
             carry = (s >> 1);
         }
@@ -223,7 +223,7 @@ public:
 
     void update(int left, int right, int x) {
         for (int d = 0; d < 32; d++) {
-            segForest[d].update(left, right, ((x >> d) & 1) == 1 ? -1 : 1);
+            segForest[d]->update(left, right, ((x >> d) & 1) == 1 ? -1 : 1);
         }
     }
 };

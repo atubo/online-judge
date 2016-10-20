@@ -185,7 +185,7 @@ public:
         auto comb = [](int a, int b) {return a + b;};
         auto accu = [](int a, int b) {return a * b;};
         auto appl = [](int v, int d, int n) {return (d == 1 ? v : n-v);};
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < 20; i++) {
             vector<int> b(N);
             for (int j = 0; j < N; j++) {
                 b[j] = (A[j] >> i) & 1;
@@ -212,17 +212,17 @@ public:
     int64_t query(int left, int right) {
         int64_t ret = 0;
         int64_t carry = 0;
-        for (int d = 0; d < 32; d++) {
+        for (int d = 0; d < 20; d++) {
             int64_t s = segForest[d]->query(left, right) + carry;
             ret = ret | ((s & 1) << d);
             carry = (s >> 1);
         }
-        ret = ret | (carry << 32);
+        ret = ret | (carry << 20);
         return ret;
     }
 
     void update(int left, int right, int x) {
-        for (int d = 0; d < 32; d++) {
+        for (int d = 0; d < 20; d++) {
             segForest[d]->update(left, right, ((x >> d) & 1) == 1 ? -1 : 1);
         }
     }

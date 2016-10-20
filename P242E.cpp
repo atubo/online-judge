@@ -209,14 +209,15 @@ public:
         }
     }
 
-    int query(int left, int right) {
-        int ret = 0;
-        int carry = 0;
+    int64_t query(int left, int right) {
+        int64_t ret = 0;
+        int64_t carry = 0;
         for (int d = 0; d < 32; d++) {
-            int s = segForest[d].query(left, right) + carry;
+            int64_t s = segForest[d].query(left, right) + carry;
             ret = ret | ((s & 1) << d);
             carry = (s >> 1);
         }
+        ret = ret | (carry << 32);
         return ret;
     }
 

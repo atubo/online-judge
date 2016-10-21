@@ -8,7 +8,7 @@ using namespace std;
 
 #define READ_ARRAY(N, A) \
     for (int i = 0; i < N; i++) {\
-        cin >> A[i];\
+        scanf("%d", &A[i]);\
     }
 
 template <typename T>
@@ -39,10 +39,8 @@ class SegmentTreeTD {
     };
 
 public:
-    SegmentTreeTD(const vector<V>& A, V zero_, D zeroUpdate_,
-                  function<D(D, D)> accu_):
-        N(A.size()), zero(zero_), zeroUpdate(zeroUpdate_),
-        accu(accu_) {
+    SegmentTreeTD(const vector<V>& A, V zero_, D zeroUpdate_):
+        N(A.size()), zero(zero_), zeroUpdate(zeroUpdate_) {
         int nlog = 0;
         int n = N;
         while (n > 0) {
@@ -86,8 +84,6 @@ private:
     const V zero;   // zero element for combine
     const D zeroUpdate; // zero for update
 
-    function<D(D, D)> accu;
-
     Node* M;
 
     V query(int node, int b, int e, int i, int j) const {
@@ -99,8 +95,8 @@ private:
 
         if (M[node].update != zeroUpdate) {
             if (b != e) {
-                M[2*node].update = accu(M[node].update, M[2*node].update);
-                M[2*node+1].update = accu(M[node].update, M[2*node+1].update);
+                M[2*node].update = M[node].update;
+                M[2*node+1].update = M[node].update;
                 M[node].update = zeroUpdate;
             }
         }
@@ -123,12 +119,12 @@ private:
             return;
         }
         if (b >= i && e <= j) {
-            M[node].update = accu(d, M[node].update);
+            M[node].update = d;
             return;
         }
         if (M[node].update != zeroUpdate) {
-            M[2*node].update = accu(M[node].update, M[2*node].update);
-            M[2*node+1].update = accu(M[node].update, M[2*node+1].update);
+            M[2*node].update = M[node].update;
+            M[2*node+1].update = M[node].update;
         }
 
         update(2*node, b, (b+e)/2, i, j, d);
@@ -152,10 +148,9 @@ public:
     void solve() {
         using SegmentTree = SegmentTreeTD<int, int>;
 
-        auto accu = [](int a, int b) {return a;};
         vector<int> idx(N);
         iota(idx.begin(), idx.end(), 0);
-        SegmentTree st(idx, 0, INT_MAX, accu);
+        SegmentTree st(idx, 0, INT_MAX);
 
         for (int m = 0; m < M; m++) {
             int t;

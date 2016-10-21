@@ -25,30 +25,31 @@ def generate_input(size):
     #a = rand_array(size)
     with open("input.txt", "w") as f:
         n = size
-        f.write("%d\n" % n)
+        m = 2 * n
+        f.write("%d %d\n" % (n, m))
         print_array(f, rand_array(n))
-        #m = random.randint(n, 2*n)
-        m = 1000
-        f.write("%d\n" % m)
+        print_array(f, rand_array(n))
         for i in range(m):
             t = random.randint(1, 2)
-            l = random.randint(1, n)
-            r = random.randint(l, n)
-            f.write("%d %d %d" % (t, l, r))
-            if t == 2:
-                f.write(" %d" % random.randint(1, 100000))
+            if t == 1:
+                x = random.randint(1, n)
+                y = random.randint(1, n)
+                k = random.randint(1, min(n+1-x, n+1-y))
+                f.write("1 %d %d %d" % (x, y, k))
+            else:
+                f.write("2 %d" % random.randint(1, n))
             f.write("\n")
 
 
 def one_test(size):
     generate_input(size)
     os.system("bench <input.txt> out1.txt")
-    os.system("P242E <input.txt > out2.txt")
+    os.system("P292E <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 
 def test_suite():
-    for size in range(100000, 1000001):
+    for size in range(5, 100):
         print "size = "  + str(size)
         for t in range(1, 100):
             ok = one_test(size)

@@ -78,19 +78,22 @@ public:
     }
 
     void solve() {
-        auto comb = [](int a, int b) {return min(a, b);};
-        SegmentTreeMin st(N, 0, comb);
-        vector<int> hiMark, loMark;
+        auto combMin = [](int a, int b) {return min(a, b);};
+        auto combMax = [](int a, int b) {return max(a, b);};
+
+        SegmentTreeMin st(N, 0, combMin);
+        SegmentTreeMin hiMark(N, 0, combMax);
+        SegmentTreeMin loMark(N, 0, combMin);
+
         vector<int> dp(N, INF);
-        hiMark.push_back(0);
-        loMark.push_back(0);
+        hiMark.update(0, A[0]);
+        loMark.update(0, A[0]);
         dp[0] = (L == 1 ? 1 : INF);
+        st.update(0, dp[0]);
         for (int i = 1; i < N; i++) {
-            printf("i=%d\n", i);
-            printVector(hiMark);
-            printVector(loMark);
-            int j = searchBoundary(hiMark, loMark, A[i]);
-            printf("j=%d\n", j);
+            hiMark.update(i, A[i]);
+            loMark.update(i, A[i]);
+            int j = searchBoundary(hiMark, loMark, i);
             if (i - j < L) {
                 dp[i] = INF;
             } else {
@@ -102,43 +105,27 @@ public:
                 }
             }
             st.update(i, dp[i]);
-            update(hiMark, loMark, i);
         }
-        cout << dp[N-1] << endl;
-        printVector(dp);
+        cout << (dp[N-1] == INF ? -1 : dp[N-1]) << endl;
     }
 
-    int searchBoundary(const vector<int>& hiMark,
-                       const vector<int>& loMark,
-                       int x) {
-        return max(search(hiMark, x), search(loMark, x));
+    int rangeDiff(const SegmentTreeMin& hiMark,
+                  const SegmentTreeMin& loMark,
+                  int i, int j) {
+        return hiMark.findMin(i, j) - loMark.findMin(i, j);
     }
 
-    int search(const vector<int>& mark, int x) {
-        if (ptInRange(mark[0], x)) return -1;
-        int lo = 0, hi = mark.size()-1;
-        if (!ptInRange(mark[hi], x)) return mark[hi];
+    int searchBoundary(const SegmentTreeMin& hiMark,
+                       const SegmentTreeMin& loMark,
+                       int pos) {
+        if (rangeDiff(hiMark, loMark, 0, pos) <= S) return -1;
+        int lo = 0, hi = pos;
         while (lo < hi - 1) {
             int mid = (lo + hi) / 2;
-            if (ptInRange(mark[mid], x)) hi = mid;
+            if (rangeDiff(hiMark, loMark, mid, pos) <= S) hi = mid;
             else lo = mid;
         }
-        return mark[lo];
-    }
-
-    bool ptInRange(int pos, int x) {
-        return abs(A.at(pos) - x) <= S;
-    }
-
-    void update(vector<int>& hiMark, vector<int>& loMark, int pos) {
-        while (!hiMark.empty() && A[pos] >= A[hiMark.back()]) {
-            hiMark.pop_back();
-        }
-        hiMark.push_back(pos);
-        while (!loMark.empty() && A[pos] <= A[loMark.back()]) {
-            loMark.pop_back();
-        }
-        loMark.push_back(pos);
+        return lo;
     }
 };
 

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <deque>
 #include <iostream>
 #include <map>
 #include <vector>
@@ -12,8 +13,8 @@ using namespace std;
 
 template <typename T>
 void printVector(const vector<T>& A) {
-    for (const T& x: A) {
-        cout << x << " ";
+    for (int i = 0; i < (int)A.size(); i++) {
+        cout << A[i] << (i == (int)A.size()-1 ? "" : " ");
     }
     cout << endl;
 }

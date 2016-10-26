@@ -11,7 +11,7 @@ using namespace std;
 
 #define READ_ARRAY(N, A) \
     for (int i = 0; i < N; i++) {\
-        cin >> A[i];\
+        scanf("%d", &A[i]);\
     }
 
 template <typename T>
@@ -35,7 +35,7 @@ public:
         READ_ARRAY(N, P);
         foePairs.resize(M);
         for (int i = 0; i < M; i++) {
-            cin >> foePairs[i].first >> foePairs[i].second;
+            scanf("%d %d", &foePairs[i].first, &foePairs[i].second);
         }
     }
 
@@ -47,31 +47,27 @@ public:
 
         vector<PII> foeIdxPair;
         for (const auto& fp: foePairs) {
-            int p, q;
-            tie(p, q) = fp;
-            int pi = valueToIdx.at(p);
-            int qi = valueToIdx.at(q);
+            int pi = valueToIdx.at(fp.first);
+            int qi = valueToIdx.at(fp.second);
             if (pi > qi) swap(pi, qi);
             foeIdxPair.push_back(make_pair(pi, qi));
         }
 
         vector<int> foeMapping(N+1, INT_MAX);
         for (const auto& fp: foeIdxPair) {
-            int p, q;
-            tie(p, q) = fp;
-            foeMapping[p] = min(foeMapping[p], q);
+            foeMapping[fp.first] = min(foeMapping[fp.first], fp.second);
         }
 
         int64_t ret = 0;
         int p = 0, q = 0;
-        map<int, int> lookfor;
+        vector<int> lookfor(N+1, INT_MAX);
         while (p < N) {
             int m = -1;
             while (q < N) {
                 if (foeMapping[q] < INT_MAX) {
                     lookfor[foeMapping[q]] = q;
                 }
-                if (lookfor.count(q) > 0) {
+                if (lookfor[q] < INT_MAX) {
                     m = lookfor[q];
                     break;
                 }
@@ -87,7 +83,7 @@ public:
                 ret += q - p;
                 if (foeMapping[p] < INT_MAX &&
                     lookfor.at(foeMapping[p]) == p) {
-                    lookfor.erase(foeMapping[p]);
+                    lookfor.at(foeMapping[p]) = INT_MAX;
                 }
             }
             q++;

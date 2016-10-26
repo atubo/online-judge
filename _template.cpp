@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cassert>
 #include <deque>
 #include <iostream>
 #include <map>

@@ -1,6 +1,7 @@
 // http://codeforces.com/problemset/problem/652/C
 #include <algorithm>
 #include <cassert>
+#include <climits>
 #include <deque>
 #include <iostream>
 #include <map>
@@ -39,7 +40,7 @@ public:
     }
 
     void solve() {
-        map<int, int> valueToIdx;
+        vector<int> valueToIdx(N+1);
         for (int i = 0; i < N; i++) {
             valueToIdx[P[i]] = i;
         }
@@ -54,15 +55,11 @@ public:
             foeIdxPair.push_back(make_pair(pi, qi));
         }
 
-        map<int, int> foeMapping;
+        vector<int> foeMapping(N+1, INT_MAX);
         for (const auto& fp: foeIdxPair) {
             int p, q;
             tie(p, q) = fp;
-            if (foeMapping.count(p) == 0) {
-                foeMapping[p] = q;
-            } else {
-                foeMapping[p] = min(foeMapping[p], q);
-            }
+            foeMapping[p] = min(foeMapping[p], q);
         }
 
         int64_t ret = 0;
@@ -71,7 +68,7 @@ public:
         while (p < N) {
             int m = -1;
             while (q < N) {
-                if (foeMapping.count(q) > 0) {
+                if (foeMapping[q] < INT_MAX) {
                     lookfor[foeMapping[q]] = q;
                 }
                 if (lookfor.count(q) > 0) {
@@ -88,7 +85,7 @@ public:
             assert(p <= m && m < q);
             for (; p <= m; p++) {
                 ret += q - p;
-                if (foeMapping.count(p) > 0 &&
+                if (foeMapping[p] < INT_MAX &&
                     lookfor.at(foeMapping[p]) == p) {
                     lookfor.erase(foeMapping[p]);
                 }

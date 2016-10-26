@@ -26,6 +26,11 @@ def rand_unique_array(size, lo=1, hi=100000):
         seen.add(x)
     return ret
 
+def rand_permutation(size):
+    ret = [i for i in range(1, size+1)]
+    random.shuffle(ret)
+    return ret
+
 def print_array(f, a):
     for x in a:
         f.write("%d " % x)
@@ -37,17 +42,19 @@ def generate_input(size):
     #a = rand_array(size)
     with open("input.txt", "w") as f:
         n = size
-        m = randint(1, 5)
-        k = randint(0, 1000)
-        f.write("%d %d %d\n" % (n, m, k))
-        for i in range(n):
-            print_array(f, rand_array(m, 0, 100))
+        #m = randint(1, n)
+        m = 3 * n
+        f.write("%d %d\n" % (n, m))
+        print_array(f, rand_permutation(n))
+        for i in range(m):
+            a, b = rand_unique_array(2, 1, n)
+            f.write("%d %d\n" % (a, b))
 
 
 def one_test(size):
     generate_input(size)
     os.system("bench <input.txt> out1.txt")
-    os.system("P514D <input.txt > out2.txt")
+    os.system("P652C <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 

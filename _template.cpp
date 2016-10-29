@@ -1,10 +1,4 @@
-#include <algorithm>
-#include <cassert>
-#include <climits>
-#include <deque>
-#include <iostream>
-#include <map>
-#include <vector>
+#include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 

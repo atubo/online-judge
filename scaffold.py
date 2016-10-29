@@ -43,16 +43,19 @@ def generate_input(size):
     with open("input.txt", "w") as f:
         n = size
         f.write("%d\n" % n)
-        pts = rand_unique_array(2*n, -1000, 1000)
         for i in range(n):
-            a, b = sorted(pts[2*i:2*i+2])
-            f.write("%d %d\n" % (a, b))
+            a, b, c = rand_array(3, -50, 50)
+            if randint(0, 1) == 0:
+                x1, y1, x2, y2 = c, a, c, b
+            else:
+                x1, y1, x2, y2 = a, c, b, c
+            f.write("%d %d %d %d\n" % (x1, y1, x2, y2))
 
 
 def one_test(size):
     generate_input(size)
     os.system("bench <input.txt> out1.txt")
-    os.system("P652D <input.txt > out2.txt")
+    os.system("P610D <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 

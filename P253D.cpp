@@ -72,8 +72,7 @@ public:
         vector<PII> ret;
         for (int i = 0; i < M; i++) {
             if (mat[row1][i] == mat[row2][i]) {
-                ret.push_back(make_pair(mat[row1][i],
-                                        countA(row1, row2, i, occu)));
+                ret.push_back(make_pair(mat[row1][i], i));
             }
         }
         return ret;
@@ -84,12 +83,16 @@ public:
                 occu[row2][col] : occu[row2][col] - occu[row1-1][col]);
     }
 
-    int countRange(const vector<PII>& repr, int lo, int hi) {
-        return repr[hi].second - (lo == 0 ? 0 : repr[lo-1].second);
+    int countRange(const Matrix& occu, int r1, int r2, int c1, int c2) {
+        int ret = occu[r2][c2] - (r1 == 0 ? 0 : occu[r1-1][c2]);
+        if (c1 > 0) {
+            ret -= occu[r2][c1-1] - (r1 == 0 ? 0 : occu[r1-1][c1-1]);
+        }
+        return ret;
     }
 
     int64_t count(int row1, int row2, const Matrix& occu) {
-        printf("row1=%d row2=%d\n", row1, row2);
+        //printf("row1=%d row2=%d\n", row1, row2);
         int64_t ret = 0;
         vector<PII> repr = buildReprVec(row1, row2, occu);
         const int sz = repr.size();
@@ -101,7 +104,8 @@ public:
         while (p < sz) {
             while (q < sz) {
                 freq[repr[q].first]++;
-                if (countRange(repr, p, q) > K) break;
+                if (countRange(occu, row1, row2,
+                               repr[p].second, repr[q].second) > K) break;
                 q++;
             }
 
@@ -112,20 +116,22 @@ public:
                 }
                 break;
             }
-            while (countRange(repr, p, q) > K) {
+            while (p < sz &&
+                   countRange(occu, row1, row2,
+                              repr[p].second, repr[q].second) > K) {
                 ret += calc(freq, repr[p].first, repr[q].first);
                 freq[repr[p].first]--;
                 p++;
             }
             q++;
         }
-        printf("ret=%lld\n", ret);
+        //cout << ret << endl;
         return ret;
     }
 
     int calc(const vector<int>& freq, int x, int y) {
         int f = freq.at(x) - (x == y);
-        return f - 1;
+        return max(0, f - 1);
     }
 };
 

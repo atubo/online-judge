@@ -42,20 +42,19 @@ def generate_input(size):
     #a = rand_array(size)
     with open("input.txt", "w") as f:
         n = size
-        f.write("%d\n" % n)
-        for i in range(n):
-            a, b, c = rand_array(3, -50, 50)
-            if randint(0, 1) == 0:
-                x1, y1, x2, y2 = c, a, c, b
-            else:
-                x1, y1, x2, y2 = a, c, b, c
-            f.write("%d %d %d %d\n" % (x1, y1, x2, y2))
+        m = randint(1, 5)
+        f.write("%d %d\n" % (n, m))
+        print_array(f, rand_array(n, -1000, 1000))
+        for j in range(m):
+            t = randint(1, 2)
+            r = randint(1, n)
+            f.write("%d %d\n" % (t, r))
 
 
 def one_test(size):
     generate_input(size)
     os.system("bench <input.txt> out1.txt")
-    os.system("P610D <input.txt > out2.txt")
+    os.system("P631C <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 

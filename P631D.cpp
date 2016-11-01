@@ -10,6 +10,8 @@ private:
     vector<int> f;
     vector<PII> T;
     vector<PII> S;
+    vector<PII> PAT;
+    PII head, tail;
 public:
     Solution() {
         int n, m;
@@ -30,6 +32,9 @@ public:
 
         normalize(T);
         normalize(S);
+
+        head = *S.begin();
+        tail = *S.rbegin();
     }
 
     void normalize(vector<PII>& v) {
@@ -52,13 +57,16 @@ public:
     }
 
     void buildKMP() {
-        f.resize(S.size());
+        assert(S.size() > 2);
+        PAT.resize(S.size()-2);
+        copy_n(S.begin() + 1, PAT.size(), PAT.begin());
+        f.resize(PAT.size());
         int t = 0;
         f[0] = 0;
 
         // prefix function
-        for (int s = 1; s < (int)S.size(); s++) {
-            while (t > 0 && S[s] != S[t]) {
+        for (int s = 1; s < (int)PAT.size(); s++) {
+            while (t > 0 && PAT[s] != PAT[t]) {
                 t = f[t-1];
             }
             if (match1(s, t)) {
@@ -91,8 +99,10 @@ public:
     void solve() {
         if (S.size() == 1) {
             solve1();
-        } else {
+        } else if (S.size() == 2) {
             solve2();
+        } else {
+            solve3();
         }
     }
 
@@ -107,8 +117,17 @@ public:
     }
 
     void solve2() {
+        int ret = 0;
+        for (int i = 0; i < (int)T.size()-1; i++) {
+            if (contains(T[i], head) && contains(T[i+1], tail)) ret++;
+        }
+        cout << ret << endl;
+    }
+
+
+    void solve3() {
         buildKMP();
-#if 1
+#if 0
         for (int x: f) {
             cout << x << " ";
         }
@@ -118,16 +137,24 @@ public:
         int s = 0;
         int ret = 0;
         for (int i = 0; i < (int)T.size(); i++) {
-            while (s > 0 && !match2(s, i)) {
+            while (s > 0 && T[i] != PAT[s]) {
                 s = f[s-1];
             }
-            if (match2(s, i)) s++;
-            if (s == (int)S.size()) {
-                ret++;
+            if (T[i] == PAT[s]) s++;
+            if (s == (int)PAT.size()) {
+                if (checkBoundary(i)) ret++;
                 s = f[s-1];
             }
         }
         cout << ret << endl;
+    }
+
+    bool checkBoundary(int p) {
+        int i = p - PAT.size();
+        int j = p + 1;
+        if (i < 0 || !contains(T[i], head)) return false;
+        if (j >= (int)T.size() || !contains(T[j], tail)) return false;
+        return true;
     }
 };
 

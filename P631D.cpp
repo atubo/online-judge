@@ -69,25 +69,10 @@ public:
             while (t > 0 && PAT[s] != PAT[t]) {
                 t = f[t-1];
             }
-            if (match1(s, t)) {
+            if (PAT[s] == PAT[t]) {
                 t++;
             }
             f[s] = t;
-        }
-    }
-
-    bool match1(int s, int t) {
-        assert(s > 0);
-        if (t > 0) return S[s] == S[t];
-        else return contains(S[s], S[t]);
-    }
-
-    bool match2(int s, int t) {
-        const int M = S.size();
-        if (s == 0 || s == M -1) {
-            return contains(T[t], S[s]);
-        } else {
-            return T[t] == S[s];
         }
     }
 
@@ -127,12 +112,6 @@ public:
 
     void solve3() {
         buildKMP();
-#if 0
-        for (int x: f) {
-            cout << x << " ";
-        }
-        cout << endl;
-#endif
 
         int s = 0;
         int ret = 0;

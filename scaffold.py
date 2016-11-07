@@ -31,6 +31,24 @@ def rand_permutation(size):
     random.shuffle(ret)
     return ret
 
+def rand_tree(size):
+    """return adj array, index from 0 to size-1"""
+    adj = [[] for i in range(size)]
+    for u in range(1, size):
+        v = randint(0, u-1)
+        adj[u].append(v)
+        adj[v].append(u)
+    return adj
+
+def print_tree_edges(f, adj):
+    # Note here index is from 1
+    N = len(adj)
+    for u in range(N):
+        for v in adj[u]:
+            if u < v:
+                f.write("%d %d\n" % (u+1, v+1))
+
+
 def print_array(f, a):
     for x in a:
         f.write("%d " % x)
@@ -38,23 +56,26 @@ def print_array(f, a):
 
 def generate_input(size):
     os.system("rm input.txt")
-    #a = rand_str(size)
-    #a = rand_array(size)
     with open("input.txt", "w") as f:
         n = size
-        m = randint(1, 5)
+        m = size
         f.write("%d %d\n" % (n, m))
-        print_array(f, rand_array(n, -1000, 1000))
-        for j in range(m):
+        print_array(f, rand_array(n, 1, 1000))
+        print_tree_edges(f, rand_tree(n))
+        for i in range(m):
             t = randint(1, 2)
-            r = randint(1, n)
-            f.write("%d %d\n" % (t, r))
+            x = randint(1, n)
+            if t == 1:
+                val = randint(1, 1000)
+                f.write("%d %d %d\n" % (t, x, val))
+            else:
+                f.write("%d %d\n" % (t, x))
 
 
 def one_test(size):
     generate_input(size)
     os.system("bench <input.txt> out1.txt")
-    os.system("P631C <input.txt > out2.txt")
+    os.system("P383C <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 

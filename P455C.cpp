@@ -48,7 +48,6 @@ public:
     }
 };
 class Solution {
-    using PII = pair<int, int>;
     using Adj = vector<vector<int>>;
 private:
     int N, M, Q;
@@ -60,6 +59,7 @@ public:
         cin >> N >> M >> Q;
         uf = new UnionFind(N);
         adj.resize(N);
+        D.resize(N, 0);
         for (int i = 0; i < M; i++) {
             int a, b;
             scanf("%d %d", &a, &b);
@@ -68,40 +68,25 @@ public:
             adj[b].push_back(a);
             uf->join(a, b);
         }
-        D.resize(N, -1);
     }
 
-    PII bfs(int s) {
-        vector<bool> visited(N, false);
-        queue<PII> q;
-        q.push(make_pair(0, s));
-        visited[s] = true;
-        PII last;
-        while (!q.empty()) {
-            int d, u;
-            tie(d, u) = last = q.front();
-            q.pop();
-            for (int v: adj[u]) {
-                if (!visited[v]) {
-                    q.push(make_pair(d+1, v));
-                    visited[v] = true;
-                }
+    int dfs(int u, vector<bool>& visited) {
+        visited[u] = true;
+        int t, mx = 0;
+        for (int v: adj[u]) {
+            if (!visited[v]) {
+                D[uf->find(u)] = max(D[uf->find(u)], mx + (t = 1 + dfs(v, visited)));
+                mx = max(mx, t);
             }
         }
-        return last;
-    }
-
-    int dia(int s) {
-        PII p = bfs(s);
-        p = bfs(p.second);
-        return p.first;
+        return mx;
     }
 
     void solve() {
+        vector<bool> visited(N, false);
         for (int i = 0; i < N; i++) {
-            if (D[uf->find(i)] == -1) {
-                D[uf->find(i)] = dia(i);
-            }
+            if (!visited[i]) dfs(i, visited);
+           
         }
 
         for (int q = 0; q < Q; q++) {
@@ -115,9 +100,11 @@ public:
                 scanf("%d %d", &x, &y);
                 x--;
                 y--;
-                if (uf->find(x) != uf->find(y)) {
-                    int d1 = D[uf->find(x)];
-                    int d2 = D[uf->find(y)];
+                int root_x = uf->find(x);
+                int root_y = uf->find(y);
+                if (root_x != root_y) {
+                    int d1 = D[root_x];
+                    int d2 = D[root_y];
                     uf->join(x, y);
                     if (d1 < d2) swap(d1, d2);
                     D[uf->find(x)] = (d1+1)/2 + max(1+(d2+1)/2, d1/2);

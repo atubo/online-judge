@@ -1,6 +1,5 @@
 // http://www.tyvj.cn/p/1011
 #include <bits/stdc++.h>
-#define DEBUG
 using namespace std;
 
 const int MAXN = 50;
@@ -14,16 +13,11 @@ private:
     vector<vector<int>> score;
 public:
     Solution() {
-#ifdef DEBUG
-        istream& in = cin;
-#else
-        ifstream in("message.in");
-#endif
-        in >> M >> N;
+        cin >> M >> N;
         score.resize(M, vector<int>(N, 0));
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                in >> score[i][j];
+                cin >> score[i][j];
             }
         }
     }
@@ -54,12 +48,7 @@ public:
                 }
             }
         }
-#ifdef DEBUG
-        ostream& out = cout;
-#else
-        ofstream out("message.out");
-#endif
-        out << dp[M-1][N-2][M-2][N-1] << endl;
+        cout << dp[M-1][N-2][M-2][N-1] << endl;
     }
 };
 

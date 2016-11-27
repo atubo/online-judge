@@ -1,2 +1,2 @@
+CPP98=1
 include ../Makefile
-CC=/usr/bin/g++-4.6

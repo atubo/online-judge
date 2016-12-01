@@ -7,36 +7,23 @@
 using namespace std;
 
 double dp[2001][2001][2];
+int dist[301][301];
 
-class FloydWarshall {
-public:
-    FloydWarshall(vector<vector<int> >& dist)
-        :m_dist(dist)
-    {
-        int V = m_dist.size();
-
-        for (int k = 0; k < V; k++) {
-            for (int i = 0; i < V; i++) {
-                for (int j = 0; j < V; j++) {
-                    if (m_dist[i][k] + m_dist[k][j] < m_dist[i][j]) {
-                        m_dist[i][j] = m_dist[i][k] + m_dist[k][j];
-                    }
-                }
+void floyd(int V) {
+    for (int k = 0; k < V; k++) {
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
             }
         }
     }
-
-private:
-    vector<vector<int> >& m_dist;
-};
+}
 
 class Solution {
-    typedef vector<vector<int> > Adj;
 private:
     int N, M, V, E;
     vector<int> C, D;
     vector<double> K;
-    Adj dist;
 public:
     Solution() {
         scanf("%d %d %d %d", &N, &M, &V, &E);
@@ -54,9 +41,10 @@ public:
         for (int i = 0; i < N; i++) {
             scanf("%lf", &K[i]);
         }
-        dist.resize(V);
         for (int i = 0; i < V; i++) {
-            dist[i].resize(V, 123456789);
+            for (int j = 0; j < V; j++) {
+                dist[i][j] = 123456789;
+            }
         }
         for (int i = 0; i < E; i++) {
             int a, b, w;
@@ -72,7 +60,7 @@ public:
 
     void solve() {
         const double INF = 1e12;
-        FloydWarshall fw(dist);
+        floyd(V);
         // initialize all to INF
         for (int i = 0; i < N; i++) {
             for (int j = 0; j <= M; j++) {

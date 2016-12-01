@@ -10,10 +10,10 @@ double dp[2001][2001][2];
 
 class FloydWarshall {
 public:
-    FloydWarshall(const vector<vector<int> >& graph)
-        :m_graph(graph), m_dist(graph)
+    FloydWarshall(vector<vector<int> >& dist)
+        :m_dist(dist)
     {
-        int V = m_graph.size();
+        int V = m_dist.size();
 
         for (int k = 0; k < V; k++) {
             for (int i = 0; i < V; i++) {
@@ -26,12 +26,8 @@ public:
         }
     }
 
-    const vector<vector<int> > getDist() const {
-        return m_dist;
-    }
 private:
-    vector<vector<int> > m_graph;
-    vector<vector<int> > m_dist;
+    vector<vector<int> >& m_dist;
 };
 
 class Solution {
@@ -40,10 +36,10 @@ private:
     int N, M, V, E;
     vector<int> C, D;
     vector<double> K;
-    Adj adj;
+    Adj dist;
 public:
     Solution() {
-        cin >> N >> M >> V >> E;
+        scanf("%d %d %d %d", &N, &M, &V, &E);
         C.resize(N);
         D.resize(N);
         K.resize(N);
@@ -58,26 +54,28 @@ public:
         for (int i = 0; i < N; i++) {
             scanf("%lf", &K[i]);
         }
-        adj.resize(V, vector<int>(V, 123456789));
+        dist.resize(V);
+        for (int i = 0; i < V; i++) {
+            dist[i].resize(V, 123456789);
+        }
         for (int i = 0; i < E; i++) {
             int a, b, w;
             scanf("%d %d %d", &a, &b, &w);
             a--; b--;
-            adj[a][b] = min(adj[a][b], w);
-            adj[b][a] = adj[a][b];
+            dist[a][b] = min(dist[a][b], w);
+            dist[b][a] = dist[a][b];
         }
         for (int i = 0; i < V; i++) {
-            adj[i][i] = 0;
+            dist[i][i] = 0;
         }
     }
 
     void solve() {
         const double INF = 1e12;
-        FloydWarshall fw(adj);
-        vector<vector<int> > dist = fw.getDist();
+        FloydWarshall fw(dist);
         // initialize all to INF
-        for (int i = 0; i < 2001; i++) {
-            for (int j = 0; j < 2001; j++) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j <= M; j++) {
                 dp[i][j][0] = dp[i][j][1] = INF;
             }
         }
@@ -103,7 +101,7 @@ public:
             }
         }
         double minlen = INF;
-        for (int i = 0; i < 2001; i++) {
+        for (int i = 0; i <= M; i++) {
             minlen = min(minlen, dp[N-1][i][0]);
             minlen = min(minlen, dp[N-1][i][1]);
         }

@@ -2,65 +2,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class UnionFind {
-private:
-    const int N;
-    vector<int> rank;
-    vector<int> parent;
-    vector<int> size;
+const int MAXN = 10005;
+int rnk[MAXN];
+int parent[MAXN];
+int size[MAXN];
 
-    void makeSet(int k) {
-        assert(0 <= k && k < N);
-
-        parent[k] = k;
-        rank[k] = 0;
-        size[k] = 1;
+void init(int N) {
+    for (int i = 0; i < N; i++) {
+        parent[i] = i;
+        rnk[i] = 0;
+        size[i] = 1;
     }
+}
 
-    void link(int u, int v) {
-        parent[u] = v;
-        size[v] += size[u];
-        rank[u] = 1;
-    }
+int find(int k) {
+    if (parent[k] == k) return k;
+    int root = find(parent[k]);
+    rnk[k] += rnk[parent[k]];
+    return parent[k] = root;
+}
 
-public:
-    UnionFind(int n): N(n) {
-        rank.resize(N);
-        parent.resize(N);
-        size.resize(N);
-
-        for (int i = 0; i < N; i++) {
-            makeSet(i);
-        }
-    }
-
-    int find(int k) {
-        if (parent[k] != k) {
-            int oldp = parent[k];
-            parent[k] = find(parent[k]);
-            rank[k] += rank[oldp];
-        }
-        return parent[k];
-    }
-
-    void join(int u, int v) {
-        link(find(u), find(v));
-    }
-
-    int count(int u) {
-        return size[find(u)];
-    }
-
-    int mergeCount(int u) {
-        find(u);
-        return rank[u];
-    }
-};
+void join(int u, int v) {
+    int fu = find(u);
+    int fv = find(v);
+    parent[fu] = fv;
+    size[fv] += size[fu];
+    rnk[fu] = 1;
+}
 
 void solve() {
     int N, q;
     scanf("%d %d", &N, &q);
-    UnionFind uf(N);
+    init(N);
     char t;
     int a, b;
     while (q--) {
@@ -68,15 +41,13 @@ void solve() {
         if (t == 'T') {
             scanf("%d %d", &a, &b);
             a--; b--;
-            if (uf.find(a) != uf.find(b)) {
-                uf.join(a, b);
-            }
+            if (find(a) != find(b)) join(a, b);
         } else {
             scanf("%d", &a);
             a--;
-            int x = uf.find(a);
-            int y = uf.count(a);
-            int z = uf.mergeCount(a);
+            int x = find(a);
+            int y = size[x];
+            int z = rnk[a];
             printf("%d %d %d\n", x+1, y, z);
         }
     }

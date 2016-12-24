@@ -40,6 +40,12 @@ def rand_tree(size):
         adj[v].append(u)
     return adj
 
+def rand_bigint(size):
+    ret = chr(ord('0') + randint(1, 9))
+    for i in range(size-1):
+        ret += chr(ord('0') + randint(0, 9))
+    return ret
+
 def print_tree_edges(f, adj):
     # Note here index is from 1
     N = len(adj)
@@ -57,23 +63,14 @@ def print_array(f, a):
 def generate_input(size):
     os.system("rm input.txt")
     with open("input.txt", "w") as f:
-        n = size
-        m = size
-        f.write("%d %d\n" % (n, m))
-        print_array(f, rand_array(n, 1, 1000))
-        print_tree_edges(f, rand_tree(n))
-        for i in range(m):
-            t = randint(1, 2)
-            x = randint(1, n)
-            if t == 1:
-                val = randint(1, 1000)
-                f.write("%d %d %d\n" % (t, x, val))
-            else:
-                f.write("%d %d\n" % (t, x))
+        a = rand_bigint(size)
+        b = rand_bigint(size)
+        f.write("%s\n%s\n" % (a, b))
 
 
 def one_test(size):
     generate_input(size)
+    exit(0)
     os.system("bench <input.txt> out1.txt")
     os.system("P383C <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
@@ -88,6 +85,6 @@ def test_suite():
                 print("diff!")
                 exit(0)
 
-test_suite()
+#test_suite()
 
-#generate_input(5)
+generate_input(10000)

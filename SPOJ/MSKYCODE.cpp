@@ -50,32 +50,31 @@ class Solution {
 private:
     EulerSieve *sieve;
     int N;
-    vector<int> A;
+    vector<bool> vis;
 public:
     Solution() {
         sieve = new EulerSieve(MAXN);
+        vis.resize(MAXN+1);
     }
 
     void solve() {
         while (scanf("%d", &N) != EOF) {
-            A.resize(N);
+            vis.assign(MAXN+1, false);
+            int t;
             for (int i = 0; i < N; i++) {
-                scanf("%d", &A[i]);
+                scanf("%d", &t);
+                vis[t] = true;
             }
 
             cout << calc() << endl;
         }
     }
 
-    void collectStat(int x, vector<int>& C) {
-        for (int i = 1; i * i <= x; i++) {
-            if (x % i == 0) {
-                if (i * i == x) {
-                    C[i]++;
-                } else {
-                    C[i]++;
-                    C[x/i]++;
-                }
+    void collectStat(vector<int>& C) {
+        C[1] = N;
+        for (int i = 2; i <= MAXN; i++) {
+            for (int j = i; j <= MAXN; j += i) {
+                if (vis[j]) C[i]++;
             }
         }
     }
@@ -86,9 +85,7 @@ public:
 
     int64_t calc() {
         vector<int> C(MAXN+1);
-        for (int x: A) {
-            collectStat(x, C);
-        }
+        collectStat(C);
 
         int64_t ans = 0;
         for (int i = 1; i <= MAXN; i++) {

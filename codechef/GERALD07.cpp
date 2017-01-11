@@ -36,7 +36,7 @@ public:
         parentCommitted.resize(N);
 
         mark.resize(N);
-        cg.reserve(N);
+        cg.resize(N+1);
 
         for (int i = 0; i < N; i++) {
             makeSet(i);
@@ -74,11 +74,11 @@ public:
         v = findCommitted(v);
         if (!mark[u]) {
             mark[u] = true;
-            cg.push_back(u);
+            cg[++cg[0]] = u;
         }
         if (!mark[v]) {
             mark[v] = true;
-            cg.push_back(v);
+            cg[++cg[0]] = v;
         }
 
         u = findTentative(u);
@@ -90,8 +90,8 @@ public:
     }
 
     void rollback() {
-        for (int i = (int)cg.size()-1; i >= 0; i--) {
-            int u = cg[i];
+        for (; cg[0]; cg[0]--) {
+            int u = cg[cg[0]];
             mark[u] = false;
             parentTentative[u] = u;
         }
@@ -103,6 +103,7 @@ public:
         }
     }
 };
+
 class Solution {
     using PII = pair<int, int>;
     struct Query {

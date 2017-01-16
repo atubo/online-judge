@@ -15,16 +15,16 @@ int64_t gcd(int64_t a, int64_t b) {
     return gcd(b, a%b);
 }
 
-
+int A[1100];
 
 class Solution {
 private:
     int N;
-    vector<int> A;
+    //vector<int> A;
 public:
     Solution() {
         scanf("%d", &N);
-        A.resize(N);
+        //A.resize(N);
         for (int i = 0; i < N; i++) {
             scanf("%d", &A[i]);
         }

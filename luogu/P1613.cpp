@@ -23,7 +23,7 @@ public:
             int u, v;
             scanf("%d %d", &u, &v);
             u--; v--;
-            origNbr[u] |= (1 << v);
+            origNbr[u] |= (1LL << v);
         }
     }
 

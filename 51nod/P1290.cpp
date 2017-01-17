@@ -4,14 +4,59 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-
 using PII = pair<int, int>;
 
-using namespace __gnu_pbds;
-typedef tree<PII, null_type, less<PII>, rb_tree_tag,
-        tree_order_statistics_node_update> ordered_set;
+class BIT {
+public:
+    // Note size needs to be power of 2
+    BIT(int size): N(size) {
+        tree = (int64_t*)malloc((size+1) * sizeof(int64_t));
+        memset(tree, 0, (size+1) * sizeof(int64_t));
+    }
+    
+    ~BIT() {
+        free(tree);
+        tree = NULL;
+    }
+    // add v to value at x
+    void set(int x, int v) {
+        while(x <= N) {
+            tree[x] += v;
+            x += (x & -x);
+        }
+    }
+
+    // get cumulative sum up to and including x
+    int64_t get(int x) const {
+        int64_t res = 0;
+        while(x) {
+            res += tree[x];
+            x -= (x & -x);
+        }
+        return res;
+    }
+
+    // get largest value with cumulative sum less than or equal to x;
+    // for smallest, pass x-1 and add 1 to result
+    int getind(int x) {
+        int idx = 0, mask = N;
+        while(mask && idx < N) {
+            int t = idx + mask;
+            if(x >= tree[t]) {
+                idx = t;
+                x -= tree[t];
+            }
+            mask >>= 1;
+        }
+        return idx;
+    }
+
+private:
+    int64_t* tree;
+    const int N;
+};
+
+BIT fenwick(65536);
 
 class Solution {
     struct Query {
@@ -26,22 +71,25 @@ class Solution {
 private:
     int N, K, Q;
     vector<int> A;
+    int ND; // number of distinct elements
+    vector<int> norm;
+    vector<int> toOrig;
+    vector<PII> normBounds; // normalized bounds, index is normalized value
+
     int BLOCK_SIZE;
     int64_t currAns;
     vector<Query> queries;
     vector<int64_t> ans;
 
-    ordered_set nums;
-
     void move(int pos, int sign) {
-        int x = A[pos];
-        if (sign == -1) nums.erase(make_pair(x, pos));
-        int high = nums.order_of_key(make_pair(x + K + 1, -1));
-        int low  = nums.order_of_key(make_pair(x - K, -1));
-        int cnt = high - low;
+        int x = norm[pos];
+        int low, high;
+        tie(low, high) = normBounds[x];
+        if (sign == -1) fenwick.set(x+1, -1);
+        int cnt = fenwick.get(high+1) - (low > 0 ? fenwick.get(low) : 0);
         if (sign == 1) {
             currAns += cnt;
-            nums.insert(make_pair(x, pos));
+            fenwick.set(x+1, 1);
         } else {
             currAns -= cnt;
         }
@@ -55,6 +103,10 @@ public:
         for (int i = 0; i < N; i++) {
             scanf("%d", &A[i]);
         }
+        norm.resize(N);
+        toOrig.resize(N);
+
+        normalize();
 
         BLOCK_SIZE = int(ceil(pow(double(N)*N/Q, 0.5)));
         queries.resize(Q);
@@ -67,6 +119,38 @@ public:
             queries[i].r = r;
             queries[i].id = i;
             queries[i].block_id = l/BLOCK_SIZE;
+        }
+    }
+
+    void normalize() {
+        vector<PII> xAndPos(N);
+        for (int i = 0; i < N; i++) {
+            xAndPos[i] = make_pair(A[i], i);
+        }
+        sort(xAndPos.begin(), xAndPos.end());
+
+        int idx = -1;
+        for (int i = 0; i < N; i++) {
+            if (i == 0 || xAndPos[i].first != xAndPos[i-1].first) {
+                idx++;
+            }
+            norm[xAndPos[i].second] = idx;
+            toOrig[idx] = xAndPos[i].first;
+        }
+        ND = idx + 1;
+        toOrig.resize(ND);
+
+        normBounds.resize(ND);
+        for (int i = 0; i < ND; i++) {
+            int high = toOrig[i] + K;
+            auto it = lower_bound(toOrig.begin(), toOrig.end(), high);
+            if (it == toOrig.end() || *it > high) --it;
+            int highVal = it - toOrig.begin();
+
+            int low = toOrig[i] - K;
+            it = lower_bound(toOrig.begin(), toOrig.end(), low);
+            int lowVal = it - toOrig.begin();
+            normBounds[i] = make_pair(lowVal, highVal);
         }
     }
 

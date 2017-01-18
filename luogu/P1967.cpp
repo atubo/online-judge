@@ -188,7 +188,7 @@ public:
                 v = father[v][b];
             }
         }
-        return min(ans, minWgt[u][0]);
+        return min(ans, min(minWgt[v][0], minWgt[u][0]));
     }
 };
 

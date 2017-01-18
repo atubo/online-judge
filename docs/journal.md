@@ -6,6 +6,7 @@ title: Journal
 <p class="message">
 Journal of the problems I have worked on
 </p>
+
 ### 01/17
 * [洛谷P1967] 货车运输： 先求出最大生成树，再用倍增LCA的方法求出
 任意两结点间路径的边权最小值。

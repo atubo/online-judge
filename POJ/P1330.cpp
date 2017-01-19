@@ -5,18 +5,22 @@
 #include <vector>
 using namespace std;
 
+vector<vector<int> > adj(10000);
+
 class Solution {
 public:
     int N, root;
     int MAXB;
-    vector<vector<int> > adj;
+    //vector<vector<int> > adj;
     vector<int> depth;
     vector<vector<int> > father;
 
 public:
     Solution() {
         scanf("%d", &N);
-        adj.resize(N);
+        for (int i = 0; i < N; i++) {
+            adj[i].clear();
+        }
         vector<bool> isRoot(N, true);
         for (int i = 0; i < N-1; i++) {
             int x, y;

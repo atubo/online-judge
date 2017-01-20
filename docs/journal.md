@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/19
+* [洛谷P2597]  [ZJOI2012]灾难： 由无环有向图求出“灭绝树”，
+见[这里](http://fanhq666.blog.163.com/blog/static/8194342620124274154996/).
+
 ### 01/18
 * [Codeforces 609E] 与[洛谷P1967]类似，求最小生成树两结点间路径
 的边权最大值。

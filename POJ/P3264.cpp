@@ -6,17 +6,22 @@
 #include <vector>
 using namespace std;
 
+const int MAXN = 50000;
+int A[MAXN];
+int stMin[MAXN][20];
+int stMax[MAXN][20];
+
 class Solution {
 public:
     int N, Q, MAXB;
-    vector<int> A;
-    vector<vector<int> > stMin;
-    vector<vector<int> > stMax;
+    //vector<int> A;
+    //vector<vector<int> > stMin;
+    //vector<vector<int> > stMax;
 
 public:
     Solution() {
         scanf("%d %d", &N, &Q);
-        A.resize(N);
+        //A.resize(N);
         for (int i = 0; i < N; i++) {
             scanf("%d", &A[i]);
         }
@@ -30,11 +35,11 @@ public:
             x = x * 2;
         }
 
-        stMin.resize(N);
-        stMax.resize(N);
+        //stMin.resize(N);
+        //stMax.resize(N);
         for (int i = 0; i < N; i++) {
-            stMin[i].resize(MAXB, INT_MAX);
-            stMax[i].resize(MAXB, INT_MIN);
+            //stMin[i].resize(MAXB, INT_MAX);
+            //stMax[i].resize(MAXB, INT_MIN);
             stMin[i][0] = stMax[i][0] = A[i];
         }
 

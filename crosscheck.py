@@ -55,6 +55,19 @@ def print_tree_edges(f, adj):
                 f.write("%d %d\n" % (u+1, v+1))
 
 
+def print_weighted_tree_edges(f, adj, lo, hi):
+    """Given adj, this function adds random weight and print the tree"""
+    # Note here index is from 1
+    N = len(adj)
+    for u in range(N):
+        for v in adj[u]:
+            if u < v:
+                if randint(1, 2) == 1:
+                    u, v = v, u
+                w = randint(lo, hi)
+                f.write("%d %d %d\n" % (u+1, v+1, w))
+
+
 def print_array(f, a):
     for x in a:
         f.write("%d " % x)
@@ -63,16 +76,24 @@ def print_array(f, a):
 def generate_input(size):
     os.system("rm input.txt")
     with open("input.txt", "w") as f:
-        a = rand_bigint(size)
-        b = rand_bigint(size)
-        f.write("%s\n%s\n" % (a, b))
+        n = size
+        f.write("%d\n" % n)
+        adj = rand_tree(n)
+        print_weighted_tree_edges(f, adj, 1, 1000)
+        m = 10
+        f.write("%d\n" % m)
+        for i in range(m):
+            k = n/5
+            f.write("%d " % k)
+            a = rand_unique_array(k, 2, n)
+            print_array(f, a)
 
 
 def one_test(size):
     generate_input(size)
-    exit(0)
+    #exit(0)
     os.system("bench <input.txt> out1.txt")
-    os.system("P383C <input.txt > out2.txt")
+    os.system("P2495 <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 
@@ -85,6 +106,6 @@ def test_suite():
                 print("diff!")
                 exit(0)
 
-#test_suite()
+test_suite()
 
-generate_input(10000)
+#generate_input(250000)

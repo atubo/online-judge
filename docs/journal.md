@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/21
+* [洛谷P2495] [SDOI2011]消耗战: 虚树+树形DP，虚树讲解[见此](https://blog.sengxian.com/algorithms/virtual-tree)
+
 ### 01/19
 * [洛谷P2597]  [ZJOI2012]灾难： 由无环有向图求出“灭绝树”，
 见[这里](http://fanhq666.blog.163.com/blog/static/8194342620124274154996/).

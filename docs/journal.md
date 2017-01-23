@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 01/22
 * [洛谷P2375] 动物园: z-函数 + Fenwick Tree
 [解题报告]({{ site.baseurl }}/{% post_url 2017-01-22-luogu-p2375 %}).
+* [BZOJ 1022] [SHOI2008]小约翰的游戏: 简单应用SJ定理.
 
 ### 01/21
 * [洛谷P2495] [SDOI2011]消耗战: 虚树+树形DP，虚树讲解[见此](https://blog.sengxian.com/algorithms/virtual-tree)

@@ -8,7 +8,8 @@ Journal of the problems I have worked on
 </p>
 
 ### 01/23
-* [洛谷P3195] [HNOI2008]玩具装箱TOY DP斜率优化模板
+* [洛谷P3195] [HNOI2008]玩具装箱TOY: DP斜率优化模板
+* [HDU 3507] Print Article: DP斜率优化模板
 
 ### 01/22
 * [洛谷P2375] 动物园: z-函数 + Fenwick Tree

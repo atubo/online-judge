@@ -74,7 +74,7 @@ def print_array(f, a):
     f.write("\n")
 
 def generate_input(size):
-    os.system("rm input.txt")
+    os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
         f.write("%d\n" % n)

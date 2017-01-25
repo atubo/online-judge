@@ -4,6 +4,7 @@
 #include <inttypes.h>
 #include <cstdio>
 #include <deque>
+#include <iostream>
 using namespace std;
 
 const int MAXN = 500010;
@@ -29,7 +30,7 @@ int64_t denom(int k, int j) {
 }
 
 bool isConvex(int a, int b, int c) {
-    return numer(a, b) * denom(b, c) < numer(b, c) * denom(a, b);
+    return numer(a, b) * denom(b, c) <= numer(b, c) * denom(a, b);
 }
 
 int64_t getDp(int i, int j) {
@@ -48,6 +49,10 @@ int main() {
         deque<int> q;
         q.push_back(0);
         for (int i = 1; i <= N; i++) {
+            if (S[i] == S[i-1]) {
+                dp[i] = dp[i-1];
+                continue;
+            }
             while (q.size() > 1 && numer(q[0], q[1]) <= denom(q[0], q[1]) * S[i]) {
                 q.pop_front();
             }

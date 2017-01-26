@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/25
+* [HDU 2993] MAX Average Problem: 数形结合，求凸包，但输入卡得太严，倒是测快速IO的好题？！
+
 ### 01/24
 * [HDU 2829] Lawrence: DP斜率优化 [解题报告]({{ site.baseurl }}/{% post_url 2017-01-25-HDU-2829-Lawrence %}).
 

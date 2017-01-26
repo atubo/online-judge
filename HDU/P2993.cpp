@@ -4,6 +4,8 @@
 #include <inttypes.h>
 #include <algorithm>
 #include <cstdio>
+#include <iostream>
+#include <sstream>
 using namespace std;
 
 const int MAXN = 1e5+10;
@@ -17,15 +19,18 @@ int direction(int k, int j, int i) {
     return (cross > 0 ? 1 : (cross < 0 ? -1 : 0));
 }
 
+const int BUFSIZE = 30*1024*1024;
+char buf[BUFSIZE];
+char *ptr = buf;
+
 inline int nextInt()
 {
-    char c;c=getchar();
-    while(c!='-'&&(c<'0'||c>'9'))c=getchar();
-    int n=0,s=1;if(c=='-')s=-1,c=getchar();
-    while(c>='0'&&c<='9')n*=10,n+=c-'0',c=getchar();
+    char c = *(ptr++);
+    while(c!='-'&&(c<'0'||c>'9'))c=*(ptr++);
+    int n=0,s=1;if(c=='-')s=-1,c=*(ptr++);
+    while(c>='0'&&c<='9')n*=10,n+=c-'0',c=*(ptr++);
     return n*s;
 }
-
 
 double calcMaxSlope(int k) {
     double ans = 0;
@@ -48,15 +53,18 @@ double calcMaxSlope(int k) {
 
 
 int main() {
-    while (scanf("%d %d", &N, &K) == 2) {
+    int sz = fread(buf, 1, BUFSIZE, stdin);
+    while (true) {
+        N = nextInt();
+        K = nextInt();
         for (int i = 1; i <= N; i++) {
-            //scanf("%d", &S[i]);
             S[i] = nextInt();
             S[i] += S[i-1];
         }
 
         double maxSlope = calcMaxSlope(K);
         printf("%.2f\n", maxSlope);
+        if (ptr - buf == sz) break;
     }
     return 0;
 }

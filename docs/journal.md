@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/24
+* [HDU 2829] Lawrence: DP斜率优化 [解题报告]({{ site.baseurl }}/{% post_url 2017-01-25-HDU-2829-Lawrence %}).
+
 ### 01/23
 * [洛谷P3195] [HNOI2008]玩具装箱TOY: DP斜率优化模板
 * [HDU 3507] Print Article: DP斜率优化模板

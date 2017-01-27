@@ -9,7 +9,8 @@ Journal of the problems I have worked on
 
 ### 01/26
 * [POJ 2299] Ultra-QuickSort: 求逆序对数。
-* [HDU 3401] DP单调队列优化好题，[解题报告]({{ site.baseurl }}/{% post_url 2017-01-26-HDU-3401-Trade %})
+* [HDU 3401] Trade: DP单调队列优化好题，[解题报告]({{ site.baseurl }}/{% post_url 2017-01-26-HDU-3401-Trade %})
+* [洛谷 1474] 货币系统 Money Systems: 简单DP
 
 ### 01/25
 * [HDU 2993] MAX Average Problem: 数形结合，求凸包，但输入卡得太严，倒是测快速IO的好题?!
@@ -18,11 +19,11 @@ Journal of the problems I have worked on
 * [HDU 2829] Lawrence: DP斜率优化 [解题报告]({{ site.baseurl }}/{% post_url 2017-01-25-HDU-2829-Lawrence %}).
 
 ### 01/23
-* [洛谷P3195] [HNOI2008]玩具装箱TOY: DP斜率优化模板
+* [洛谷 3195] [HNOI2008]玩具装箱TOY: DP斜率优化模板
 * [HDU 3507] Print Article: DP斜率优化模板
 
 ### 01/22
-* [洛谷P2375] 动物园: z-函数 + Fenwick Tree
+* [洛谷 2375] 动物园: z-函数 + Fenwick Tree
 [解题报告]({{ site.baseurl }}/{% post_url 2017-01-22-luogu-p2375 %}).
 * [BZOJ 1022] [SHOI2008]小约翰的游戏: 简单应用SJ定理.
 
@@ -30,7 +31,7 @@ Journal of the problems I have worked on
 * [洛谷P2495] [SDOI2011]消耗战: 虚树+树形DP，虚树讲解[见此](https://blog.sengxian.com/algorithms/virtual-tree)
 
 ### 01/19
-* [洛谷P2597]  [ZJOI2012]灾难： 由无环有向图求出“灭绝树”，
+* [洛谷 2597]  [ZJOI2012]灾难： 由无环有向图求出“灭绝树”，
 见[这里](http://fanhq666.blog.163.com/blog/static/8194342620124274154996/).
 * [POJ 3264] Balanced Lineup: RMQ模板题。
 
@@ -43,7 +44,7 @@ Journal of the problems I have worked on
 可枚举求解。
 
 ### 01/17
-* [洛谷P1967] 货车运输： 先求出最大生成树，再用倍增LCA的方法求出
+* [洛谷 1967] 货车运输： 先求出最大生成树，再用倍增LCA的方法求出
 任意两结点间路径的边权最小值。
 
 ### 01/16

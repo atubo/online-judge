@@ -7,9 +7,9 @@ using namespace std;
 const int MAXN = 2010;
 const int64_t MINF = -1e9;
 
-int64_t dp[MAXN][MAXN];
+int dp[MAXN][MAXN];
 
-int64_t f(int e, int j, int a) {
+int f(int e, int j, int a) {
     return dp[e][j] + j * a;
 }
 
@@ -25,8 +25,8 @@ int main() {
         int T, maxp, W;
         scanf("%d %d %d", &T, &maxp, &W);
         for (int d = 1; d <= T; d++) {
-            int64_t A, B, C, D;
-            scanf("%lld %lld %lld %lld", &A, &B, &C, &D);
+            int A, B, C, D;
+            scanf("%d %d %d %d", &A, &B, &C, &D);
             int e = max(0, d-W-1);
 
             deque<int> q;
@@ -54,7 +54,7 @@ int main() {
                 dp[d][j] = max(dp[d][j], f(e, q.front(), B) - j*B);
             }
         }
-        printf("%lld\n", dp[T][0]);
+        printf("%d\n", dp[T][0]);
     }
 
     return 0;

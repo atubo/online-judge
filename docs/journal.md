@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 01/26
 * [POJ 2299] Ultra-QuickSort: 求逆序对数。
+* [HDU 3401] DP单调队列优化好题，[解题报告]({{ site.baseurl }}/{% post_url 2017-01-26-HDU-3401-Trade %})
 
 ### 01/25
 * [HDU 2993] MAX Average Problem: 数形结合，求凸包，但输入卡得太严，倒是测快速IO的好题?!

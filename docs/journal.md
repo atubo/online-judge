@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/27
+* [HDU 3530] Subsequence: DP单调队列优化，[解题报告]({{ site.baseurl }}{% post_url 2017-01-27-HDU-3530-Subsequence %})
+
 ### 01/26
 * [POJ 2299] Ultra-QuickSort: 求逆序对数。
 * [HDU 3401] Trade: DP单调队列优化好题，[解题报告]({{ site.baseurl }}/{% post_url 2017-01-26-HDU-3401-Trade %})

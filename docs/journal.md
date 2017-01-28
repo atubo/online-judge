@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 01/27
 * [HDU 3530] Subsequence: DP单调队列优化，[解题报告]({{ site.baseurl }}{% post_url 2017-01-27-HDU-3530-Subsequence %})
+* [洛谷 1113] 杂务： 拓扑排序 + DP求最长路径。
 
 ### 01/26
 * [POJ 2299] Ultra-QuickSort: 求逆序对数。

@@ -19,6 +19,9 @@ url:                 http://atubo.github.io
 baseurl:             /online-judge
 paginate:            5
 
+github:
+    repo:            https://github.com/atubo/online-judge
+
 # About/contact
 author:
   name:              Mark Otto

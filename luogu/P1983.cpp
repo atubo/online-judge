@@ -8,11 +8,12 @@ using namespace std;
 
 const int MAXN = 1010;
 int station[MAXN];
+bool adj[MAXN][MAXN];
 
 class Solution {
 public:
     int N, M;
-    vector<vector<int> > adj;
+    //vector<vector<int> > adj;
     vector<vector<int> > in;
     vector<int> topo;  // topologically sorted result
 
@@ -21,9 +22,10 @@ private:
                              stack<int> &order) {
         visited[v] = true;
 
-        for (int i = 0; i < (int)adj[v].size(); i++) {
-            int m = adj[v][i];
-            if (!visited[m]) {
+        //for (int i = 0; i < (int)adj[v].size(); i++) {
+        for (int m = 0; m < N; m++) {
+            //int m = adj[v][i];
+            if (adj[v][m] && !visited[m]) {
                 topologicalSortUtil(m, visited, order);
             }
         }
@@ -34,10 +36,10 @@ private:
 public:
     Solution() {
         scanf("%d %d", &N, &M);
-        adj.resize(N);
+        //adj.resize(N);
         in.resize(N);
         for (int i = 0; i < N; i++) {
-            adj.reserve(N);
+            //adj.reserve(N);
             in.reserve(N);
         }
         for (int i = 0; i < M; i++) {
@@ -58,7 +60,8 @@ public:
                     continue;
                 }
                 for (int k = 0; k < sz; k++) {
-                    adj[station[k]].push_back(j);
+                    //adj[station[k]].push_back(j);
+                    adj[station[k]][j] = true;
                     in[j].push_back(station[k]);
                 }
             }

@@ -9,6 +9,9 @@ using namespace std;
 
 typedef set<int>::const_iterator Iter;
 
+const int MAXN = 1010;
+int station[MAXN];
+
 class Solution {
 public:
     int N, M;
@@ -41,24 +44,36 @@ public:
             in.reserve(N);
         }
         for (int i = 0; i < M; i++) {
-            set<int> s;
+            //set<int> s;
             int sz;
             scanf("%d", &sz);
             for (int j = 0; j < sz; j++) {
                 int u;
                 scanf("%d", &u);
                 u--;
-                s.insert(u);
+                //s.insert(u);
+                station[j] = u;
             }
-            int first = *s.begin();
-            int last = *s.rbegin();
+            int first = station[0];
+            int last = station[sz-1];
+            int p = 0;
             for (int j = first; j <= last; j++) {
+                if (j == station[p]) {
+                    p++;
+                    continue;
+                }
+                for (int k = 0; k < sz; k++) {
+                    adj[station[k]].push_back(j);
+                    in[j].push_back(station[k]);
+                }
+#if 0
                 if (s.count(j) == 0) {
                     for (Iter it = s.begin(); it != s.end(); ++it) {
                         adj[*it].push_back(j);
                         in[j].push_back(*it);
                     }
                 }
+#endif
             }
         }
     }

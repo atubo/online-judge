@@ -2,12 +2,9 @@
 // P1983 车站分级
 
 #include <cstdio>
-#include <set>
 #include <stack>
 #include <vector>
 using namespace std;
-
-typedef set<int>::const_iterator Iter;
 
 const int MAXN = 1010;
 int station[MAXN];
@@ -44,14 +41,12 @@ public:
             in.reserve(N);
         }
         for (int i = 0; i < M; i++) {
-            //set<int> s;
             int sz;
             scanf("%d", &sz);
             for (int j = 0; j < sz; j++) {
                 int u;
                 scanf("%d", &u);
                 u--;
-                //s.insert(u);
                 station[j] = u;
             }
             int first = station[0];
@@ -66,14 +61,6 @@ public:
                     adj[station[k]].push_back(j);
                     in[j].push_back(station[k]);
                 }
-#if 0
-                if (s.count(j) == 0) {
-                    for (Iter it = s.begin(); it != s.end(); ++it) {
-                        adj[*it].push_back(j);
-                        in[j].push_back(*it);
-                    }
-                }
-#endif
             }
         }
     }

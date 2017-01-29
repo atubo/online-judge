@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 01/28
 * [洛谷 1268] 树的重量： 图论， 构造性解法， [解题报告]({{ site.baseurl }}{% post_url 2017-01-28-luogu-1268 %})
+* [洛谷 1525] 关押罪犯： 二分查找 + 构建二分图。
 
 ### 01/27
 * [HDU 3530] Subsequence: DP单调队列优化，[解题报告]({{ site.baseurl }}{% post_url 2017-01-27-HDU-3530-Subsequence %})

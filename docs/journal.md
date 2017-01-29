@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/28
+* [洛谷 1268] 树的重量： 图论， 构造性解法， [解题报告]({{ site.baseurl }}{% post_url 2017-01-28-luogu-1268 %})
+
 ### 01/27
 * [HDU 3530] Subsequence: DP单调队列优化，[解题报告]({{ site.baseurl }}{% post_url 2017-01-27-HDU-3530-Subsequence %})
 * [洛谷 1113] 杂务： 拓扑排序 + DP求最长路径。

@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 01/28
 * [洛谷 1268] 树的重量： 图论， 构造性解法， [解题报告]({{ site.baseurl }}{% post_url 2017-01-28-luogu-1268 %})
 * [洛谷 1525] 关押罪犯： 二分查找 + 构建二分图。
+* [洛谷 1983] 车站分级： 对每一车次始终区间内每一个不停靠的车站$i$, 均可向每一个停靠的车站$j$
+引一条有向边，问题转化为求图的最长路径。注意此题重边极多，须用邻接矩阵，否则会TLE。
 
 ### 01/27
 * [HDU 3530] Subsequence: DP单调队列优化，[解题报告]({{ site.baseurl }}{% post_url 2017-01-27-HDU-3530-Subsequence %})

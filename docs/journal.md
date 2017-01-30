@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/29
+* [POJ 2431] Expedition: 贪心+优先队列。尽可能走远，如果油不够则从已经过的加油站中
+按储量从大到小加直到油量为正。
+
 ### 01/28
 * [洛谷 1268] 树的重量： 图论， 构造性解法， [解题报告]({{ site.baseurl }}{% post_url 2017-01-28-luogu-1268 %})
 * [洛谷 1525] 关押罪犯： 二分查找 + 构建二分图。

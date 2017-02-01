@@ -180,7 +180,6 @@ public:
 
     BigInt solveRow(int row) {
         BigInt ans;
-        BigInt TWO("2");
 
         vector<vector<BigInt> > dp(M);
         vector<BigInt> A(M);
@@ -196,10 +195,11 @@ public:
         for (int L = 2; L <= M; L++) {
             for (int p = 0; p <= M-L; p++) {
                 int q = p + L - 1;
-                dp[p][q] = max(A[p] + TWO * dp[p+1][q], A[q] + TWO * dp[p][q-1]);
+                dp[p][q] = max(A[p] + dp[p+1][q] + dp[p+1][q],
+                               A[q] + dp[p][q-1] + dp[p][q-1]);
             }
         }
-        return TWO * dp[0][M-1];
+        return dp[0][M-1] + dp[0][M-1];
     }
 
     void solve() {

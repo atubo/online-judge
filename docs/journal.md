@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/31
+* [洛谷 1005] 矩阵取数游戏：DP + 高精
+
 ### 01/30
 * [洛谷 1064] 金明的预算方案：背包套背包， 选了主件后选不同的附件是小背包，选不同的主件是
 大背包。

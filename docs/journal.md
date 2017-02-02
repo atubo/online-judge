@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/01
+* [洛谷 1373] 小a和uim之大逃离：DP， $dp[i][j][k]$ 表示初始位置 $(i,j)$ , 最终差值模
+$(K+1)$ 等于 $k$ 的方法数。
+
 ### 01/31
 * [洛谷 1005] 矩阵取数游戏：DP + 高精
 * [洛谷 1220] 关路灯：简单DP

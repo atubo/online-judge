@@ -6,7 +6,7 @@ using namespace std;
 
 const int MAXN = 810;
 int A[MAXN][MAXN];
-int dp[MAXN][MAXN][15];
+int dp[MAXN][MAXN][16];
 int N, M, K;
 const int MOD = 1000000007;
 

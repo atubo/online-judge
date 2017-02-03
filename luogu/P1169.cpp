@@ -11,6 +11,7 @@ int H[MAXN];
 int V[MAXN];
 int N, M;
 int maxSq = 0, maxRc = 0;
+int LEFT;
 
 void tie(const PII& p, int& x, int& y) {
     x = p.first;
@@ -23,12 +24,12 @@ void update(int w, int h) {
     maxSq = max(maxSq, s * s);
 }
 
-void popAll(stack<PII>& st, int p) {
+void popAll(stack<int>& st, int p) {
     while (!st.empty()) {
-        int x, h;
-        tie(st.top(), x, h);
+        int x = st.top();
         st.pop();
-        update(p-x+1, h);
+        int left = st.empty() ? LEFT : st.top();
+        update(p-left, V[x]);
     }
 }
 
@@ -43,7 +44,8 @@ int main() {
         }
     }
     for (int i = 0; i < N; i++) {
-        stack<PII> st;
+        stack<int> st;
+        LEFT = -1;
         for (int j = 0; j < M; j++) {
             if (i == 0) {
                 V[j] = 1;
@@ -58,18 +60,16 @@ int main() {
 
             if (j > 0 && grid[i][j] == grid[i][j-1]) {
                 popAll(st, j-1);
+                LEFT = j-1;
             }
 
-            while (!st.empty() && st.top().second > V[j]) {
-                int x, h;
-                tie(st.top(), x, h);
+            while (!st.empty() && V[st.top()] >= V[j]) {
+                int x = st.top();
                 st.pop();
-                update(j-x, h);
-                update(j-x+1, V[j]);
+                int left = (st.empty() ? LEFT : st.top());
+                update(j-left-1, V[x]);
             }
-            if (st.empty() || V[j] > st.top().second) {
-                st.push(make_pair(j, V[j]));
-            }
+            st.push(j);
         }
         popAll(st, M-1);
     }

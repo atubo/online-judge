@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/02
+* [洛谷 1040] 加分二叉树： DP
+
 ### 02/01
 * [洛谷 1373] 小a和uim之大逃离：DP， $dp[i][j][k]$ 表示初始位置 $(i,j)$ , 最终差值模
 $(K+1)$ 等于 $k$ 的方法数。

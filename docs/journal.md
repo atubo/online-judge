@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/04
+* [洛谷 1088] 火星人： next permutation 的水题，第一遍居然写错了。
+
 ### 02/03
 * [洛谷 1020] 导弹拦截： 最长递增子序列（LIS）
 * [洛谷 1019] 单词接龙： 先预处理单词 $i$ 后接单词 $j$ 龙长度的增加量，然后暴力深搜。

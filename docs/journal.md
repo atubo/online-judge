@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/03
+* [洛谷 1020] 导弹拦截： 最长递增子序列（LIS）
+
 ### 02/02
 * [洛谷 1040] 加分二叉树： DP
 * [洛谷 1169] [ZJOI2007]棋盘制作：对每一列用求最大矩形的方法算一遍，复杂度 $O(MN)$.

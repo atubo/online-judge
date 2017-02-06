@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 * [洛谷 2051] [AHOI2009]中国象棋： 看了[题解](http://blog.csdn.net/jiangyuze831/article/details/41518243)
 才知道怎么做，用 $f(i,j,k)$ 表示进行到第 $i$ 行时， 有一枚棋子的列数为 $j$,
 有两枚棋子的列数为 $k$ 的合法状态数。
+* [洛谷 2216] [HAOI2007] 理想的正方形：可以用类似ST求RMQ的方法求出每一个
+$n\cdot n$ 的正方形内的最大和最小值。
 
 ### 02/04
 * [洛谷 1088] 火星人： next permutation 的水题，第一遍居然写错了。

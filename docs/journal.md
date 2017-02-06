@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/05
+* [洛谷 2331] [SCOI2005] 最大子矩阵：DP单调性优化，[解题报告]({{ site.baseurl }}{% post_url 2017-02-05-luogu-2331 %})
+
 ### 02/04
 * [洛谷 1088] 火星人： next permutation 的水题，第一遍居然写错了。
 * [洛谷 1156] 垃圾陷阱：简单DP， $dp(t,h)$ 表示在 $t$ 时刻，垃圾堆高度为 $h$ 的情况下

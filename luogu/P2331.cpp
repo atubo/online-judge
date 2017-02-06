@@ -61,11 +61,11 @@ public:
     }
 
     void solve() {
-        vector<int> maxDpb(N+1);
         for (int k = 1; k <= K; k++) {
+            vector<int> maxDpb(N+1);
+            int maxDpc = 0;
             for (int b = 1; b <= N; b++) {
                 int maxDpa = 0;
-                int maxDpc = 0;
                 for (int a = 1; a <= N; a++) {
                     maxDpa = max(maxDpa, dpPrev[a][b] - S[a]);
                     maxDpb[a] = max(maxDpb[a], dpPrev[a][b] - T[b]);

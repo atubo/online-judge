@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/06
+* [POJ 2823] Sliding Window: 单调队列，奇葩的是此题用G++提交就TLE了，用C++才能AC。
+
 ### 02/05
 * [洛谷 2331] [SCOI2005] 最大子矩阵：DP单调性优化，[解题报告]({{ site.baseurl }}{% post_url 2017-02-05-luogu-2331 %})
 * [洛谷 2051] [AHOI2009]中国象棋： 看了[题解](http://blog.csdn.net/jiangyuze831/article/details/41518243)

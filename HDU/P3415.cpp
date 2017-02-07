@@ -10,7 +10,7 @@ int N, K;
 
 void solve() {
     scanf("%d %d", &N, &K);
-    for (int i = 1; i <= N; i++) {
+    for (int i = N; i >= 1; i--) {
         scanf("%d", &A[i]);
         A[i+N] = A[i];
     }
@@ -19,20 +19,20 @@ void solve() {
     deque<int> q;
     int ans = INT_MIN, left, right;
     q.push_back(0);
-    for (int i = 1; i < N+K; i++) {
+    for (int i = 1; i <= N+N; i++) {
         while (i - q.front() > K) q.pop_front();
-        if (ps[i] - ps[q.front()] > ans) {
+        if (ps[i] - ps[q.front()] >= ans) {
             ans = ps[i] - ps[q.front()];
             left = q.front() + 1;
-            left = (left > N ? (left % N) : left);
-            right = (i > N ? (i % N) : i);
+            left = (left-1) % N + 1;
+            right = (i-1) % N + 1;
         }
         while (!q.empty() && ps[q.back()] >= ps[i]) {
             q.pop_back();
         }
         q.push_back(i);
     }
-    printf("%d %d %d\n", ans, left, right);
+    printf("%d %d %d\n", ans, N+1-right, N+1-left);
 }
 
 int main() {

@@ -11,6 +11,9 @@ Journal of the problems I have worked on
 * [POJ 2823] Sliding Window: 单调队列，奇葩的是此题用G++提交就TLE了，用C++才能AC。
 * [洛谷 1091] 合唱队形：LIS，求到每点结束的最长递增子序列的长度，正反各求一遍
 就可以了。
+* [HDU 3415] Max Sum of Max-K-sub-sequence: 转化为部分和，求长度小于等于K的区间
+的最大差值。用单调队列解。将原数组复制一份拼接起来处理绕回的情况。为满足多个解情况下
+题目的要求，将原数组倒排了一下（也许有更优雅的处理办法？）
 
 ### 02/05
 * [洛谷 2331] [SCOI2005] 最大子矩阵：DP单调性优化，[解题报告]({{ site.baseurl }}{% post_url 2017-02-05-luogu-2331 %})

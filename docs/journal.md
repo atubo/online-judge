@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 02/06
 * [POJ 2823] Sliding Window: 单调队列，奇葩的是此题用G++提交就TLE了，用C++才能AC。
+* [洛谷 1091] 合唱队形：LIS，求到每点结束的最长递增子序列的长度，正反各求一遍
+就可以了。
 
 ### 02/05
 * [洛谷 2331] [SCOI2005] 最大子矩阵：DP单调性优化，[解题报告]({{ site.baseurl }}{% post_url 2017-02-05-luogu-2331 %})

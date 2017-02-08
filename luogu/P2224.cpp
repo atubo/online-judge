@@ -5,6 +5,7 @@
 using namespace std;
 
 int dp[30010];
+int t[6010][3];
 int mx;
 
 int readInt () {
@@ -36,17 +37,22 @@ int main() {
     memset(dp, 0x7F, sizeof(dp));
     dp[0] = 0;
     for (int i = 0; i < N; i++) {
+        t[i][0] = readInt();
+        t[i][1] = readInt();
+        t[i][2] = readInt();
+    }
+    for (int i = 0; i < N; i++) {
         int a, b, c;
+        a = t[i][0] == 0 ? INT_MAX: t[i][0];
+        b = t[i][1] == 0 ? INT_MAX: t[i][1];
+        c = t[i][2] == 0 ? INT_MAX: t[i][2];
         //scanf("%d %d %d", &a, &b, &c);
-        a = readInt();
-        b = readInt();
-        c = readInt();
-        mx += max(a, c);
+        mx += min(min(a, b), c);
         for (int j = mx; j >= 0; j--) {
-            if (b) dp[j] += b;
+            if (b != INT_MAX) dp[j] += b;
             else dp[j] = 0x7F7F7F7F;
-            if (a && j >= a) dp[j] = min(dp[j], dp[j-a]);
-            if (c && j >= c) dp[j] = min(dp[j], dp[j-c]+c);
+            if (j >= a) dp[j] = min(dp[j], dp[j-a]);
+            if (j >= c) dp[j] = min(dp[j], dp[j-c]+c);
         }
     }
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/07
+* [洛谷 1280] 尼克的任务：简单DP， $dp(i)$ 表示 时刻 $i$ 开始的最短工作时间。
+
 ### 02/06
 * [POJ 2823] Sliding Window: 单调队列，奇葩的是此题用G++提交就TLE了，用C++才能AC。
 * [洛谷 1091] 合唱队形：LIS，求到每点结束的最长递增子序列的长度，正反各求一遍

@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 02/07
 * [洛谷 1280] 尼克的任务：简单DP， $dp(i)$ 表示 时刻 $i$ 开始的最短工作时间。
 * [洛谷 2224] [HNOI2001]产品加工：DP神题，本蒟蒻只能看[题解](http://qkxue.net/info/144153/Bzoj-HNOI-1222-2001),基本思想是用 $dp(i)$ 表示A机器耗时 $i$ 的情况下机器B的最短耗时。
+* [洛谷 2261] [CQOI2007]余数求和：有意思的数学题，分块求解，
+[解题报告]({{ site.baseurl}}{% post_url 2017-02-07-luogu-2261 %})
 
 ### 02/06
 * [POJ 2823] Sliding Window: 单调队列，奇葩的是此题用G++提交就TLE了，用C++才能AC。

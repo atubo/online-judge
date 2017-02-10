@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 1282] 多米诺骨牌：简单DP类似背包问题，用 $dp(k,i)$ 表示处理到第 $k$ 个骨牌
 时 上下差值为 $i$ 的最小翻转数。注意每次翻转差值改变是骨牌点数差的两倍。
 * [Leetcode 139] Word Break: 一开始试图暴力搜未果（TLE），DP之。
+* [Leetcode 140] Word Break II: 类似Word Break， 不过要存所有合法的断开点。注意
+重建时也要记忆化，否则TLE。神犇们也许有更优雅的解法？
 
 ### 02/08
 * [洛谷 1880] 石子合并：简单DP，数组拼接一下处理绕回的情况就可以了。

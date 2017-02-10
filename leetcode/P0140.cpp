@@ -49,9 +49,12 @@ public:
                 }
             }
         }
-        vector<string> result = build(dp, s, 0, s.length()-1);
-        sort(result.begin(), result.end());
-        result.erase(unique(result.begin(), result.end()), result.end());
+        vector<vector<set<string> > > dp2(N);
+        for (int i = 0; i < N; i++) {
+            dp2[i].resize(N);
+        }
+        set<string> resultSet = build(dp, s, 0, s.length()-1, dp2);
+        vector<string> result(resultSet.begin(), resultSet.end());
         return result;
     }
 
@@ -59,19 +62,21 @@ public:
         return binary_search(wordDict.begin(), wordDict.end(), s);
     }
 
-    vector<string> build(const vector<vector<vector<int> > >& dp, const string& s,
-               int p, int q) {
-        vector<string> result;
+    set<string> build(const vector<vector<vector<int> > >& dp, const string& s,
+                      int p, int q,
+                      vector<vector<set<string> > >& dp2) {
+        if (!dp2[p][q].empty()) return dp2[p][q];
+        set<string>& result = dp2[p][q];
 
         for (int k: dp[p][q]) {
             if (k == q + 1) {
-                result.push_back(s.substr(p, q-p+1));
+                result.insert(s.substr(p, q-p+1));
             } else {
-                auto left  = build(dp, s, p, k-1);
-                auto right = build(dp, s, k, q);
+                auto left  = build(dp, s, p, k-1, dp2);
+                auto right = build(dp, s, k, q, dp2);
                 for (auto& l: left) {
                     for (auto& r: right) {
-                        result.push_back(l + " " + r);
+                        result.insert(l + " " + r);
                     }
                 }
             }

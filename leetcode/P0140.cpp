@@ -25,14 +25,14 @@ public:
     vector<string> wordBreak(string s, vector<string>& wordDict) {
         sort(wordDict.begin(), wordDict.end());
         const int N = s.length();
-        vector<vector<int> > dp(N);
+        vector<vector<vector<int> > >dp(N);
         for (int i = 0; i < N; i++) {
-            dp[i].resize(N, -1);
+            dp[i].resize(N);
         }
 
         for (int i = 0; i < N; i++) {
             if (inDict(s.substr(i, 1), wordDict)) {
-                dp[i][i] = i + 1;
+                dp[i][i].push_back(i+1);
             }
         }
 
@@ -40,18 +40,18 @@ public:
             for (int i = 0; i <= N-len; i++) {
                 int j = i + len - 1;
                 if (inDict(s.substr(i, len), wordDict)) {
-                    dp[i][j] = j + 1;
+                    dp[i][j].push_back(j+1);
                 }
                 for (int k = i; k <= j-1; k++) {
-                    if (dp[i][k] >= 0 && dp[k+1][j] >= 0) {
-                        dp[i][j] = k + 1;
-                        break;
+                    if (!dp[i][k].empty() && !dp[k+1][j].empty()) {
+                        dp[i][j].push_back(k+1);
                     }
                 }
             }
         }
-        vector<string> result;
-        build(dp, s, 0, s.length()-1, result);
+        vector<string> result = build(dp, s, 0, s.length()-1);
+        sort(result.begin(), result.end());
+        result.erase(unique(result.begin(), result.end()), result.end());
         return result;
     }
 
@@ -59,16 +59,24 @@ public:
         return binary_search(wordDict.begin(), wordDict.end(), s);
     }
 
-    void build(const vector<vector<int> >& dp, const string& s,
-               int p, int q, vector<string>& result) {
-        if (dp[p][q] == q+1) {
-            result.push_back(s.substr(p, q-p+1));
-            return;
-        }
+    vector<string> build(const vector<vector<vector<int> > >& dp, const string& s,
+               int p, int q) {
+        vector<string> result;
 
-        int k = dp[p][q];
-        build(dp, s, p, k-1, result);
-        build(dp, s, k, q, result);
+        for (int k: dp[p][q]) {
+            if (k == q + 1) {
+                result.push_back(s.substr(p, q-p+1));
+            } else {
+                auto left  = build(dp, s, p, k-1);
+                auto right = build(dp, s, k, q);
+                for (auto& l: left) {
+                    for (auto& r: right) {
+                        result.push_back(l + " " + r);
+                    }
+                }
+            }
+        }
+        return result;
     }
 };
 

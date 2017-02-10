@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/10
+* [Leetcode 127] Word Ladder: BFS.
+
 ### 02/09
 * [洛谷 1282] 多米诺骨牌：简单DP类似背包问题，用 $dp(k,i)$ 表示处理到第 $k$ 个骨牌
 时 上下差值为 $i$ 的最小翻转数。注意每次翻转差值改变是骨牌点数差的两倍。

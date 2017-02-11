@@ -27,24 +27,22 @@ int lcm(int a, int b) {
 
 int64_t dfs(int prer, int prelcm, int pos, int d, const vector<int>& digits,
             bool bounded) {
+    if (!bounded && dp[prer][idx[prelcm]][pos][d] != -1) {
+        return dp[prer][idx[prelcm]][pos][d];
+    }
     int currlcm = (d == 0 ? prelcm : lcm(prelcm, d));
     int currr = (prer * 10 + d) % MOD;
+    int64_t ret = 0;
     if (pos == 0) {
-        return (currr % currlcm) == 0;
-    }
-    if (bounded && d == digits[pos]) {
-        int64_t ret = 0;
-        for (int nextd = 0; nextd <= digits[pos-1]; nextd++) {
-            ret += dfs(currr, currlcm, pos-1, nextd, digits, true);
+        ret = ((currr % currlcm) == 0);
+    } else {
+        int maxd = (bounded && d == digits[pos]) ? digits[pos-1]: 9;
+        for (int nextd = 0; nextd <= maxd; nextd++) {
+            ret += dfs(currr, currlcm, pos-1, nextd, digits, bounded && d==digits[pos]);
         }
-        return ret;
     }
-    int64_t& ret = dp[prer][idx[prelcm]][pos][d];
-    if (ret != -1) return ret;
-
-    ret = 0;
-    for (int nextd = 0; nextd < 10; nextd++) {
-        ret += dfs(currr, currlcm, pos-1, nextd, digits, false);
+    if (!(bounded && d == digits[pos])) {
+        dp[prer][idx[prelcm]][pos][d] = ret;
     }
     return ret;
 }

@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 02/11
 * [洛谷 1855] 榨取kkksc03：简单二维背包。
 * [Codeforces 55D] Beautiful numbers: 数位DP经典题。
+* [洛谷 1387] 最大正方形：水题不表。
 
 ### 02/10
 * [Leetcode 127] Word Ladder: BFS.

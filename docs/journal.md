@@ -8,6 +8,9 @@ Journal of the problems I have worked on
 </p>
 
 ### 02/10
+* [洛谷 1108] 低价购买：类似LIS，但要求拥有最大购买次数的方案数，用 $dp(i)$ 表示
+数字 $i$ 结尾的 （最大递增长度，方案数）二元组。复杂度 $O(N^2)$ 。用线段树应该可以
+达到 $O(N \log N)$ 。
 * [Leetcode 127] Word Ladder: BFS.
 
 ### 02/09

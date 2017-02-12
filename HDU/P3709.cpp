@@ -22,9 +22,6 @@ int64_t dfs(int torq, int pos, int d, int ps, bool bounded) {
     int64_t ret = 0;
     int maxd = (bounded ? digits[pos-1] : 9);
     int currTorq = torq + d * (pos  - pivot);
-    if (pos > pivot) {
-        currTorq += ps;
-    }
     if (currTorq > MAXTORQ || currTorq < 0) {
         ret = 0;
         goto FINISH;
@@ -40,7 +37,6 @@ int64_t dfs(int torq, int pos, int d, int ps, bool bounded) {
     }
 
 FINISH:
-    //printf("pivot=%d pos=%d d=%d ret=%lld\n", pivot, pos, d, ret);
 
     if (!bounded) {
         dp[torq][pos][d] = ret;
@@ -72,7 +68,6 @@ int64_t solve(int64_t a, int64_t b) {
 }
 
 int main() {
-    //memset(dp, -1, sizeof(dp));
     int T;
     cin >> T;
     while (T--) {

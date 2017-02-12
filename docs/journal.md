@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 1855] 榨取kkksc03：简单二维背包。
 * [Codeforces 55D] Beautiful numbers: 数位DP经典题。
 * [洛谷 1387] 最大正方形：水题不表。
+* [HDU 3709] Balanced Number: 数位DP， $dp[t][p][d]$ 表示对于特定的支撑点，
+力矩为 $t$, 位置为 $p$, 数字为 $d$ 的方案数，最外层枚举所有可能的支撑点。
 
 ### 02/10
 * [Leetcode 127] Word Ladder: BFS.

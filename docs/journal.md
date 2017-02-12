@@ -13,6 +13,8 @@ Journal of the problems I have worked on
 * [洛谷 1387] 最大正方形：水题不表。
 * [HDU 3709] Balanced Number: 数位DP， $dp[t][p][d]$ 表示对于特定的支撑点，
 力矩为 $t$, 位置为 $p$, 数字为 $d$ 的方案数，最外层枚举所有可能的支撑点。
+* [洛谷 1417] 烹调方案：贪心+DP。先按 $\frac {c_i}{b_i}$ 从小到大排序，
+再做背包DP。
 
 ### 02/10
 * [Leetcode 127] Word Ladder: BFS.

@@ -26,13 +26,13 @@ int main() {
         scanf("%d", &A[i].c);
     }
     sort(A, A+N);
-    vector<int> dp(T+1);
+    vector<int64_t> dp(T+1);
     for (int i = 1; i <= T; i++) {
         dp[i]= INT_MIN;
     }
 
     for (int i = 0; i < N; i++) {
-        int a = A[i].a, b = A[i].b, c = A[i].c;
+        int64_t a = A[i].a, b = A[i].b, c = A[i].c;
         for (int t = T; t >= c; t--) {
             if (dp[t-c] != INT_MIN) {
                 dp[t] = max(dp[t], dp[t-c] + (a-b*t));
@@ -40,10 +40,10 @@ int main() {
         }
     }
 
-    int ans = 0;
+    int64_t ans = 0;
     for (int t = T; t >= 0; t--) {
         ans = max(ans, dp[t]);
     }
-    printf("%d\n", ans);
+    printf("%lld\n", ans);
     return 0;
 }

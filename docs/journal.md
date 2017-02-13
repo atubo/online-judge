@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 02/12
 * [洛谷 1006] 传纸条：双路DP。
+* [洛谷 1508] Likecloud-吃、吃、吃：简单DP。
 
 ### 02/11
 * [洛谷 1855] 榨取kkksc03：简单二维背包。

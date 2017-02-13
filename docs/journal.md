@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/12
+* [洛谷 1006] 传纸条：双路DP。
+
 ### 02/11
 * [洛谷 1855] 榨取kkksc03：简单二维背包。
 * [Codeforces 55D] Beautiful numbers: 数位DP经典题。

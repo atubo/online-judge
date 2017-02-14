@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 * [HDU 3652] B-number: 数位DP。$dp(seen, r, pos, d', d)$ 表示当前位置为
 pos, 前一位数字为 $d'$, 当前数字为 $d$, 前缀模13为 $r$, 前缀包含13的状态为
 seen 的方案数。
+* [Leetcode 295] Find Median from Data Stream: 上下各一个heap.
 
 ### 02/12
 * [洛谷 1006] 传纸条：双路DP。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/13
+* [洛谷 1541] 乌龟棋： DP， $dp(a,b,c,d)$ 表示用过面值为1，2，3，4的牌数分别
+为 $a,b,c,d$ 时的最大分值。
+
 ### 02/12
 * [洛谷 1006] 传纸条：双路DP。
 * [洛谷 1508] Likecloud-吃、吃、吃：简单DP。

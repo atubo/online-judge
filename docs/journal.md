@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 不再发生变化，利用这个可有效地缩小DP搜索范围。
 * [洛谷 1063] 能量项链：DP， $dp(i,j)$ 表示 $[i,j]$ 段的最大能量。数组拼接
 自身处理绕回。
+* [洛谷 1641] [SCOI2010]生成字符串：答案是
+ ${n+m \choose n}-{n+m \choose n+1}$ . 与Catalan数有关。
 
 ### 02/13
 * [洛谷 1541] 乌龟棋： DP， $dp(a,b,c,d)$ 表示用过面值为1，2，3，4的牌数分别

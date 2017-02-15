@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/14
+* [洛谷 1052] 过河：同Tyvj 1059, 注意到当两颗石子相距 $d\gt T^2+1$ 时，结果
+不再发生变化，利用这个可有效地缩小DP搜索范围。
+
 ### 02/13
 * [洛谷 1541] 乌龟棋： DP， $dp(a,b,c,d)$ 表示用过面值为1，2，3，4的牌数分别
 为 $a,b,c,d$ 时的最大分值。

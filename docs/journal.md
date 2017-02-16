@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/15
+* [POJ 3252] Round Numbers: 数位DP。 $dp(ndiff, pos, d)$ 表示0和1的数目
+差为ndiff,当前位置为pos，当前数字为d的方案数。
+
 ### 02/14
 * [洛谷 1052] 过河：同Tyvj 1059, 注意到当两颗石子相距 $d\gt T^2+1$ 时，结果
 不再发生变化，利用这个可有效地缩小DP搜索范围。

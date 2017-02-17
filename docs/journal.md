@@ -12,6 +12,9 @@ Journal of the problems I have worked on
 每种方案都已排序的情况。第一个元素为1的方案数为 $dp(n-1,k-1)$,
 第一个元素为2的方案数为 $dp(n-1-k,k-1)$, 由此
 $dp(n,k)=\sum\limits_{k=1}^{\lfloor \frac {n}{k} \rfloor} dp(n-1-(j-1)\cdot k, k-1)$
+* [洛谷 2059] [JLOI2013]卡牌游戏：类似Josephus问题， 用 $dp(n,i)$ 表示
+$n$ 个玩家的情况下， 第 $i$ 个玩家获胜的概率。只须找到对于卡牌面值 $x$,
+玩家 $i$ 在下一轮中相对于庄家的位置就可得出转移方程。
 
 ### 02/15
 * [POJ 3252] Round Numbers: 数位DP。 $dp(ndiff, pos, d)$ 表示0和1的数目

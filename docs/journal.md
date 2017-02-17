@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/16
+* [洛谷 1025] 数的划分： $dp(n, k)$ 表示 $n$ 分成 $k$ 份的方案数。考虑
+每种方案都已排序的情况。第一个元素为1的方案数为 $dp(n-1,k-1)$,
+第一个元素为1的方案数为 $dp(n-1-k,k-1)$, 由此
+$dp(n,k)=\sum\limits_{k=1}^{\lfloor \frac {n}{k} \rfloor} dp(n-1-(j-1)\cdot k, k-1)$
+
 ### 02/15
 * [POJ 3252] Round Numbers: 数位DP。 $dp(ndiff, pos, d)$ 表示0和1的数目
 差为ndiff,当前位置为pos，当前数字为d的方案数。

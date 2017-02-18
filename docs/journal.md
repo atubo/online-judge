@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/17
+* [洛谷 1316] 丢瓶盖：二分查找。
+
 ### 02/16
 * [洛谷 1025] 数的划分： $dp(n, k)$ 表示 $n$ 分成 $k$ 份的方案数。考虑
 每种方案都已排序的情况。第一个元素为1的方案数为 $dp(n-1,k-1)$,

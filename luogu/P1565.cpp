@@ -4,10 +4,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef pair<int64_t, int> PII;
-typedef vector<PII>::const_iterator Iter;
+typedef vector<int>::const_iterator Iter;
 
-int64_t A[210][210];
+int64_t A[210][210], B[210];
 int N, M;
+
+bool comp(int i, int j) {
+    return B[i] > B[j];
+}
 
 int main() {
     scanf("%d %d", &N, &M);
@@ -21,17 +25,18 @@ int main() {
     int ans = 0;
     for (int i = 1; i <= N; i++) {
         for (int j = i; j <= N; j++) {
-            vector<PII> q;
-            q.push_back(make_pair((int64_t)0, 0));
+            vector<int> q;
+            q.push_back(0);
+            B[0] = 0;
             for (int k = 1; k <= M; k++) {
                 int64_t s = A[j][k] - A[i-1][k];
-                Iter it = lower_bound(q.begin(), q.end(), make_pair(s, k),
-                                      greater<PII>());
+                B[k] = s;
+                Iter it = lower_bound(q.begin(), q.end(), k, comp);
                 if (it != q.end()) {
-                    ans = max(ans, (j-i+1) * (k-it->second));
+                    ans = max(ans, (j-i+1) * (k-*it));
                 }
-                if (s < q.back().first) {
-                    q.push_back(make_pair(s, k));
+                if (s < B[q.back()]) {
+                    q.push_back(k);
                 }
             }
         }

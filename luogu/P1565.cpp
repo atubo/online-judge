@@ -31,12 +31,11 @@ int main() {
             for (int k = 1; k <= M; k++) {
                 int64_t s = A[j][k] - A[i-1][k];
                 B[k] = s;
-                Iter it = lower_bound(q.begin(), q.end(), k, comp);
-                if (it != q.end()) {
-                    ans = max(ans, (j-i+1) * (k-*it));
-                }
                 if (s < B[q.back()]) {
                     q.push_back(k);
+                } else {
+                    Iter it = lower_bound(q.begin(), q.end(), k, comp);
+                    ans = max(ans, (j-i+1) * (k-*it));
                 }
             }
         }

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/18
+* [洛谷 1565] 牛宫：枚举(row1, row2) 对，对每一个(row1, row2) 对，维持一个
+前缀和的单调队列，扫到第k列时，二分查找第一个满足 $S_j \le S_k$ 的 $j$ .
+
 ### 02/17
 * [洛谷 1316] 丢瓶盖：二分查找。
 * [洛谷 1627] 中位数：设b所在的位置为k,将原数列转化：大于b的变为1，小于b的

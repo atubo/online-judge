@@ -3,27 +3,23 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+const int SZ1 = 75855;
+const int SZ2 = SZ1 * 390;
+int stat[SZ2];
 
-int* stat[390][390];
 int A[150010];
 int N, M;
 int BLOCKSIZE;
 
-void alloc() {
-    for (int i = 0; i < 390; i++) {
-        for (int j = 1; j < 390; j++) {
-            stat[i][j] = (int*)malloc(j*sizeof(int));
-            memset(stat[i][j], 0, j*sizeof(int));
-        }
-    }
+int& statRef(int b, int p, int k) {
+    return stat[b*SZ1 + p*(p-1)/2 + k];
 }
 
 void preprocess() {
-    alloc();
     for (int i = 0; i < N; i++) {
         int blockId = i / BLOCKSIZE;
         for (int p = 1; p < BLOCKSIZE; p++) {
-            stat[blockId][p][(i+1)%p] += A[i];
+            statRef(blockId, p, (i+1)%p) += A[i];
         }
     }
 }
@@ -36,7 +32,7 @@ int solve(int p, int k) {
         }
     } else {
         for (int i = 0; i <= (N-1)/BLOCKSIZE; i++) {
-            ans += stat[i][p][k];
+            ans += statRef(i, p, k);
         }
     }
     return ans;
@@ -45,7 +41,7 @@ int solve(int p, int k) {
 void update(int k, int x) {
     int blockId = (k-1) / BLOCKSIZE;
     for (int p = 1; p < BLOCKSIZE; p++) {
-        stat[blockId][p][k%p] += (x - A[k-1]);
+        statRef(blockId, p, k%p) += (x - A[k-1]);
     }
     A[k-1] = x;
 }

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/20
+* [洛谷 1057] 传球游戏：答案是
+$\sum\limits_{k=-\lfloor \frac {m}{n}\rfloor}^{\lfloor \frac {m}{n}\rfloor}{m \choose \frac {m+k\cdot n}{2}}$ 
+
 ### 02/19
 * [洛谷 3396] 哈希冲突：分块，将序列分块， 每块大小为 $\sqrt{n}$ 。
 stat[b][p][k] 表示块b内模为p, 余数为k的池内数的总和。只须处理 $p<\sqrt{n}$

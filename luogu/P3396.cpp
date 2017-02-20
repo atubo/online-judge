@@ -3,8 +3,8 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-const int SZ1 = 75855;
-const int SZ2 = SZ1 * 390;
+const int SZ1 = 75078;
+const int SZ2 = SZ1 * 388;
 int stat[SZ2];
 
 short A[150010];

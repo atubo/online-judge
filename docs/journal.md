@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/19
+* [洛谷 3396] 哈希冲突：分块，将序列分块， 每块大小为 $\sqrt{n}$ 。
+stat[b][p][k] 表示块b内模为p, 余数为k的池内数的总和。只须处理 $p<\sqrt{n}$
+的情况， $p\ge \sqrt{n}$ 时暴力处理。预处理时间 $O(n \sqrt {n})$ , 查询时间
+$O(m \sqrt {n})$. AC后看题解发现stat的第一维虽然帮助理解，但完全没有必要
+(因为查询均为全序列查询)，可以大幅降低内存使用。
+
 ### 02/18
 * [洛谷 1565] 牛宫：枚举(row1, row2) 对，对每一个(row1, row2) 对，维持一个
 前缀和的单调队列，扫到第k列时，二分查找第一个满足 $S_j \le S_k$ 的 $j$ .

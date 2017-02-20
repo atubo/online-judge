@@ -7,7 +7,7 @@ const int SZ1 = 75855;
 const int SZ2 = SZ1 * 390;
 int stat[SZ2];
 
-int A[150010];
+short A[150010];
 int N, M;
 int BLOCKSIZE;
 
@@ -49,7 +49,7 @@ void update(int k, int x) {
 int main() {
     scanf("%d %d", &N, &M);
     for (int i = 0; i < N; i++) {
-        scanf("%d", &A[i]);
+        scanf("%hd", &A[i]);
     }
 
     BLOCKSIZE = (int)sqrt((double)N);

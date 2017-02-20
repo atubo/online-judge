@@ -4,12 +4,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int stat[400][400][400];
+int* stat[390][390];
 int A[150010];
 int N, M;
 int BLOCKSIZE;
 
+void alloc() {
+    for (int i = 0; i < 390; i++) {
+        for (int j = 1; j < 390; j++) {
+            stat[i][j] = (int*)malloc(j*sizeof(int));
+            memset(stat[i][j], 0, j*sizeof(int));
+        }
+    }
+}
+
 void preprocess() {
+    alloc();
     for (int i = 0; i < N; i++) {
         int blockId = i / BLOCKSIZE;
         for (int p = 1; p < BLOCKSIZE; p++) {

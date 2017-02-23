@@ -9,6 +9,10 @@ Journal of the problems I have worked on
 
 ### 02/22
 * [洛谷 2814] 家谱（gen）：并查集。
+* [洛谷 1472] 奶牛家谱 Cow Pedigrees：DP，$dp(n,k)$ 表示大小为 $n$, 高度小于等于
+$k$ 的方案数。有
+$dp(n,k)=\sum\limits_{m=1}^{n-2} dp(m,k-1)\cdot dp(n-m-1,k-1)$ 。答案为
+$dp(N,K)-dp(N,K-1)$ 。
 
 ### 02/21
 * [洛谷 1192] 台阶问题：DP水题。

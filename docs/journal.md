@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/22
+* [洛谷 2814] 家谱（gen）：并查集。
+
 ### 02/21
 * [洛谷 1192] 台阶问题：DP水题。
 

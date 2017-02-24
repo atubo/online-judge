@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/23
+* [洛谷 1226] 取余运算||快速幂：分治水题。
+
 ### 02/22
 * [洛谷 2814] 家谱（gen）：并查集。
 * [洛谷 1472] 奶牛家谱 Cow Pedigrees：DP，$dp(n,k)$ 表示大小为 $n$, 高度小于等于

@@ -7,11 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/24
+* [洛谷 1010] 幂次方：分治水题。
+
 ### 02/23
 * [洛谷 1226] 取余运算 快速幂：分治水题。
 * [洛谷 2513] [HAOI2009]逆序对数列：DP。 $dp(n,k)$ 表示n个元素，逆序对数为k的
 方案数。如果1出现在位置j，则关于1的逆序对为j-1，所以有
-$dp(n,k)=\sum\limits_{j=1}^{\min(n,k+1)} dp(n-1,k-j+1)$ 
+$dp(n,k)=\sum\limits_{j=1}^{\min(n,k+1)} dp(n-1,k-j+1)$
 
 ### 02/22
 * [洛谷 2814] 家谱（gen）：并查集。

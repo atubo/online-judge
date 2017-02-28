@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/27
+* [洛谷 1498] 南蛮图腾：递归水题。
+
 ### 02/24
 * [洛谷 1010] 幂次方：分治水题。
 

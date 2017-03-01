@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/28
+* [洛谷 1908] 逆序对：Merge sort
+
 ### 02/27
 * [洛谷 1498] 南蛮图腾：递归水题。
 * [洛谷 3402] 最长公共子序列：用 $dp(j)$ 表示以序列B中下标为i的元素结尾的公共子序列

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 02/28
 * [洛谷 1908] 逆序对：Merge sort
+* [洛谷 2985] [USACO10FEB]吃巧克力Chocolate Eating：二分查找。
 
 ### 02/27
 * [洛谷 1498] 南蛮图腾：递归水题。

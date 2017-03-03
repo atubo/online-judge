@@ -4,54 +4,88 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int INF = 123456789;
+typedef vector<map<int, int>> Adj;
 
-struct Edge {
-    Edge(int u_, int v_, int w_): u(u_), v(v_), w(w_) {}
-    int u, v, w;
-};
+class SPFA {
+    const static int64_t INF;
 
-bool bellman_ford(const vector<Edge>& edges, int n, int src,
-                  vector<int>& dist) {
-    // intialize
-    for (int i = 0; i < n; i++) dist[i] = INF;
-    dist[src] = 0;
+public:
+    SPFA(const Adj& adj_):adj(adj_) {
+        N = adj.size();
+    }
 
-    for (int i = 0; i < n-1; i++) {
-        for (const Edge& e: edges) {
-            int t = dist[e.u] + e.w;
-            if (dist[e.u] != INF && t < dist[e.v]) {
-                dist[e.v] = t;
+    void init(int src) {
+        while (!Q.empty()) Q.pop();
+        inq.clear();
+        dist.clear();
+        path.clear();
+
+        inq.resize(N, 0);
+        dist.resize(N, INF);
+        path.resize(N, src);
+
+        dist[src] = 0;
+        inq[src]++;
+    }
+
+    void solve(int src) {
+        init(src);
+
+        Q.push(src);
+        while (!Q.empty()) {
+            int u = Q.front();
+            Q.pop();
+            inq[u]--;
+
+            for (const auto& nbr: adj[u]) {
+                int v;
+                int64_t w;
+                tie(v, w) = nbr;
+                if (dist[v] > dist[u] + w) {
+                    dist[v] = dist[u] + w;
+                    path[v] = u;
+                    if (!inq[v]) {
+                        Q.push(v);
+                        inq[v]++;
+                    }
+                }
             }
         }
     }
 
-    // check negative loop
-    for (const Edge& e: edges) {
-        if (dist[e.u] != INF && dist[e.u] + e.w < dist[e.v]) {
-            return false;
-        }
-    }
-    return true;
-}
+    const vector<int64_t>& getDist() const {return dist;}
+
+    const vector<int>& getPath() const {return path;}
+
+private:
+    const Adj& adj;
+    queue<int> Q;
+    int N;
+    vector<int> inq;    // if node is in queue
+    vector<int64_t> dist;
+    vector<int> path;
+};
+
+const int64_t SPFA::INF = LLONG_MAX/4;
 
 int main() {
     int N, M;
     scanf("%d %d", &N, &M);
-    vector<Edge> edges;
+    Adj adj(N+1);
     for (int i = 0; i < M; i++) {
         int a, b, c;
         scanf("%d %d %d", &a, &b, &c);
-        edges.push_back(Edge(b, a-1, -c));
+        adj[b][a-1] = -c;
     }
 
     for (int i = 0; i < N; i++) {
-        edges.push_back(Edge(i, i+1, 1));
-        edges.push_back(Edge(i+1, i, 0));
+        adj[i][i+1] = 1;
+        adj[i+1][i] = 0;
     }
 
-    vector<int> dist(N+1);
-    bellman_ford(edges, N+1, N, dist);
-    printf("%d\n", -dist[0]);
+    SPFA spfa(adj);
+    spfa.solve(N);
+
+    printf("%lld\n", -spfa.getDist()[0]);
     return 0;
 }

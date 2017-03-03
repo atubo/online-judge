@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/02
+* [洛谷 1553] 数字反转（升级版）
+
 ### 03/01
 * [洛谷 1026] 统计单词个数。用 $dp(i,j,k)$ 表示 $s_{i,j}$ 分 $k$ 份的最大
 个数。则 $dp(i,j,k)=\max\limits_{p=i+k-1}^{j-1}(dp(i,p,k-1)+dp(p,j,1))$ 。

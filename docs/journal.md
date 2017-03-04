@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/03
+* [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。
+
 ### 03/02
 * [洛谷 1553] 数字反转（升级版）
 * [洛谷 1986] 元旦晚会：差分约束，SPFA求最短路。

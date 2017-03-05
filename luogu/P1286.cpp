@@ -4,58 +4,47 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N;
+int N, M;
 int S[70], A[12];
+bool used[70];
 
-bool verify() {
-    vector<int> actual;
-    for (int i = 0; i < N-1; i++) {
-        for (int j = i+1; j < N; j++) {
-            actual.push_back(A[i] + A[j]);
-        }
+bool check(int idx, int p, vector<int>& added) {
+    int x = S[idx] - A[0];
+    if (x < A[p-1]) return false;
+    for (int i = 0; i < p; i++) {
+        int target = A[i] + x;
+        int* it = lower_bound(S, S + M, target);
+        int j = it - S;
+        while (j < M&& S[j] == target && used[j]) j++;
+        if (j == M|| S[j] != target) return false;
+        used[j] = true;
+        added.push_back(j);
     }
-    sort(actual.begin(), actual.end());
-    
-    for (int i = 0; i < N*(N-1)/2; i++) {
-        if (S[i] != actual[i]) return false;
-    }
+
+    A[p] = x;
     return true;
 }
 
-int findMissing(int p, int q, const vector<int>& t) {
-    assert((int)t.size() == q - p - 1);
-    bool found = false;
-    int ret = -1;
-    for (int i = p, j = 0; i < q; i++, j++) {
-        if (j == q-p-1 || S[i] != t[j]) {
-            if (!found) {
-                found = true;
-                ret = S[i];
-                j--;
-            } else {
-                return -1;
+bool dfs(int p) {
+    if (p == N) return true;
+    for (int i = 0; i < M; i++) {
+        if (!used[i]) {
+            vector<int> added;
+            if (check(i, p, added)) {
+                if (dfs(p+1)) return true;
+            }
+            for (int j: added) {
+                used[j] = false;
             }
         }
     }
-    return ret;
+    return false;
 }
 
+
 bool guess(int a0) {
-    int p = 0;
     A[0] = a0;
-    for (int k = 1; k < N; k++) {
-        int q = p + (k-1)/2 + 1;
-        vector<int> tmp;
-        for (int r = (k-1)/2; r >= 1; r--) {
-            tmp.push_back(A[r] + A[k-r]);
-        }
-        sort(tmp.begin(), tmp.end());
-        int x = findMissing(p, q, tmp);
-        if (x == -1) return false;
-        A[k] = x - A[0];
-        p = q;
-    }
-    return verify();
+    return dfs(1);
 }
 
 void solve() {
@@ -79,10 +68,12 @@ void solve() {
 
 int main() {
     while (scanf("%d", &N) == 1) {
-        for (int i = 0; i < N*(N-1)/2; i++) {
+        M = N * (N-1) / 2;
+        for (int i = 0; i < M; i++) {
             scanf("%d", &S[i]);
         }
-        sort(S, S + N*(N-1)/2);
+        sort(S, S + M);
+        memset(used, 0, sizeof(used));
 
         solve();
     }

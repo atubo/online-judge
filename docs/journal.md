@@ -15,6 +15,7 @@ Journal of the problems I have worked on
 * [洛谷 3110] [USACO14DEC]驮运Piggy Back：分别对点1，2，N 求单源最短距离，
 枚举u 求最优解。
 * [洛谷 2936] [USACO09JAN]全流Total Flow：网络流。
+* [洛谷 3198] [HNOI2008]遥远的行星：奇技淫巧，[题解](https://zhtjtcz.github.io/2017/01/24/%E3%80%90HNOI2008%E3%80%91-%E9%81%A5%E8%BF%9C%E7%9A%84%E8%A1%8C%E6%98%9F-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/)。
 
 ### 03/03
 * [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。

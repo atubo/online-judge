@@ -41,18 +41,19 @@ bool dfs(int p) {
     return false;
 }
 
-
-bool guess(int a0) {
-    A[0] = a0;
-    return dfs(1);
-}
-
 void solve() {
     bool found = false;
-    for (int a = 0; a <= S[0]/2; a++) {
-        if (guess(a)) {
-            found = true;
-            break;
+    for (int i = 2; i < M; i++) {
+        if (((S[0] ^ S[1] ^ S[i]) & 1) == 0) {
+            used[0] = used[1] = used[i] = true;
+            A[0] = (S[0] + S[1] - S[i]) >> 1;
+            A[1] = (S[0] + S[i] - S[1]) >> 1;
+            A[2] = (S[1] + S[i] - S[0]) >> 1;
+            if (dfs(3)) {
+                found = true;
+                break;
+            }
+            used[i] = false;
         }
     }
 

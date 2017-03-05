@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/05
+* [洛谷 1286] 两数之和：搜索+剪枝。DFS搜索和序列中哪一项可能是 $a_0+a_i$ 。
+
 ### 03/04
 * [洛谷 2659] 美丽的序列：与直方图最大面积相同。
 * [洛谷 1392] 取数：使用优先队列，

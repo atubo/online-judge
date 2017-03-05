@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 * [洛谷 1392] 取数：使用优先队列，
 见[题解](http://lixinzhang.github.io/jiu-zhang-suan-fa-mian-shi-ti-zong-jie.html)。本题要手写heap,否则TLE。
 * [洛谷 2759] 奇怪的函数：二分查找。
+* [洛谷 3110] [USACO14DEC]驮运Piggy Back：分别对点1，2，N 求单源最短距离，
+枚举u 求最优解。
 
 ### 03/03
 * [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。

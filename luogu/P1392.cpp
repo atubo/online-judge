@@ -5,22 +5,35 @@
 using namespace std;
 
 typedef tuple<int, int, int> TIII;
-typedef priority_queue<TIII, vector<TIII>, greater<TIII> > PQ;
+
+struct Node {
+    int x, r, c;
+    Node(int x_, int r_, int c_):x(x_), r(r_), c(c_) {}
+
+    bool operator < (const Node& other) const {
+        return x > other.x;
+    }
+};
+
+typedef priority_queue<Node> PQ;
 
 vector<int> topK(const vector<int>& a, const vector<int>& b, int k) {
     PQ pq;
     for (int i = 0; i < k; i++) {
-        pq.push(make_tuple(a[i] + b[0], i, 0));
+        pq.push(Node(a[i]+b[0], i, 0));
     }
 
     vector<int> ret;
     while (true) {
         int x, r, c;
-        tie(x, r, c) = pq.top();
+        Node node = pq.top();
+        x = node.x;
+        r = node.r;
+        c = node.c;
         pq.pop();
         ret.push_back(x);
         if ((int)ret.size() == k) break;
-        pq.push(make_tuple(a[r]+b[c+1], r, c+1));
+        pq.push(Node(a[r]+b[c+1], r, c+1));
     }
     return ret;
 }

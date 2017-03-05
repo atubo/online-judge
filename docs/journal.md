@@ -14,6 +14,7 @@ Journal of the problems I have worked on
 * [洛谷 2759] 奇怪的函数：二分查找。
 * [洛谷 3110] [USACO14DEC]驮运Piggy Back：分别对点1，2，N 求单源最短距离，
 枚举u 求最优解。
+* [洛谷 2936] [USACO09JAN]全流Total Flow：网络流。
 
 ### 03/03
 * [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。

@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 03/04
 * [洛谷 2659] 美丽的序列：与直方图最大面积相同。
+* [洛谷 1392] 取数：使用优先队列，
+见[题解](http://lixinzhang.github.io/jiu-zhang-suan-fa-mian-shi-ti-zong-jie.html)。本题要手写heap,否则TLE。
 
 ### 03/03
 * [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。

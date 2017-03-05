@@ -4,36 +4,55 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef tuple<int, int, int> TIII;
+int h;
 
 struct Node {
     int x, r, c;
+    Node():x(0), r(0), c(0) {}
     Node(int x_, int r_, int c_):x(x_), r(r_), c(c_) {}
+} q[805];
 
-    bool operator < (const Node& other) const {
-        return x > other.x;
+void up(int x) {
+    while (x > 1) {
+        if (q[x].x < q[x>>1].x) {
+            swap(q[x], q[x>>1]);
+            x>>=1;
+        } else break;
     }
-};
+}
+
+void down(int x) {
+    x <<= 1;
+    while (x <= h) {
+        if (x < h && q[x+1].x < q[x].x) x++;
+        if (q[x].x < q[x>>1].x) {
+            swap(q[x>>1], q[x]);
+            x <<= 1;
+        } else break;
+    }
+}
 
 typedef priority_queue<Node> PQ;
 
 vector<int> topK(const vector<int>& a, const vector<int>& b, int k) {
-    PQ pq;
+    h = 0;
     for (int i = 0; i < k; i++) {
-        pq.push(Node(a[i]+b[0], i, 0));
+        q[++h] = Node(a[i]+b[0], i, 0);
+        up(h);
     }
 
     vector<int> ret;
     while (true) {
         int x, r, c;
-        Node node = pq.top();
+        Node node = q[1];
+        q[1] = q[h--]; down(1);
         x = node.x;
         r = node.r;
         c = node.c;
-        pq.pop();
         ret.push_back(x);
         if ((int)ret.size() == k) break;
-        pq.push(Node(a[r]+b[c+1], r, c+1));
+        q[++h] = Node(a[r]+b[c+1], r, c+1);
+        up(h);
     }
     return ret;
 }

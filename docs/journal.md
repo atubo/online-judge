@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/04
+* [洛谷 2659] 美丽的序列：与直方图最大面积相同。
+
 ### 03/03
 * [洛谷 3420] [POI2005]SKA-Piggy Banks：拓扑排序。
 

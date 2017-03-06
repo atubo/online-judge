@@ -3,9 +3,8 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-using PII = pair<int, int>;
+using PII = pair<int64_t, int64_t>;
 
-map<int64_t, int> toId;
 int N;
 int SZ;
 int deg[250010];
@@ -69,11 +68,14 @@ public:
     }
 };
 
-bool solve(const vector<PII>& edges) {
+bool solve(const vector<PII>& edges, const vector<int64_t>& colors) {
     UnionFind uf(N);
     int ncomp = N;
     for (const auto& e: edges) {
-        int u = e.first, v = e.second;
+        int u = lower_bound(colors.begin(), colors.end(), e.first) - colors.begin();
+        int v = lower_bound(colors.begin(), colors.end(), e.second) - colors.begin();
+        deg[u]++;
+        deg[v]++;
         if (uf.find(u) != uf.find(v)) {
             uf.join(u, v);
             ncomp--;
@@ -90,27 +92,22 @@ bool solve(const vector<PII>& edges) {
 
 int main() {
     vector<PII> edges;
+    vector<int64_t> colors;
     SZ = fread(buf, 1, BUFSIZE, stdin);
 
     while (true) {
         int64_t a = read();
         int64_t b = read();
-        if (toId.count(a) == 0) {
-            toId.insert(make_pair(a, toId.size()));
-        }
-        if (toId.count(b) == 0) {
-            toId.insert(make_pair(b, toId.size()));
-        }
-        int u = toId[a];
-        int v = toId[b];
-        edges.push_back(make_pair(u, v));
-        deg[u]++;
-        deg[v]++;
+        edges.push_back(make_pair(a, b));
+        colors.push_back(a);
+        colors.push_back(b);
         if (ptr - buf == SZ) break;
     }
-    N = toId.size();
+    sort(colors.begin(), colors.end());
+    colors.erase(unique(colors.begin(), colors.end()), colors.end());
+    N = colors.size();
 
-    bool possible = solve(edges);
+    bool possible = solve(edges, colors);
     printf("%s\n", possible ? "Possible" : "Impossible");
 
     return 0;

@@ -6,7 +6,7 @@ using namespace std;
 using Adj = vector<vector<int> >;
 using PII = pair<int, int>;
 
-map<string, int> toId;
+map<int64_t, int> toId;
 Adj adj;
 int N;
 int SZ;
@@ -15,13 +15,13 @@ const int BUFSIZE = 24*250000;
 char buf[BUFSIZE];
 char *ptr = buf;
 
-void read(char *a) {
-    int i = 0;
+int64_t read() {
+    int64_t ret = 0;
     while ('a' <= *ptr && *ptr <= 'z') {
-        a[i++] = *(ptr++);
+        ret = ret * 26 + *(ptr++) - 'a';
     }
-    a[i] = '\0';
     while (ptr-buf < SZ && (*ptr < 'a' || *ptr > 'z')) ptr++;
+    return ret;
 }
 
 bool bfs() {
@@ -66,13 +66,12 @@ bool solve() {
 }
 
 int main() {
-    char a[11], b[11];
     vector<PII> edges;
     SZ = fread(buf, 1, BUFSIZE, stdin);
 
     while (true) {
-        read(a);
-        read(b);
+        int64_t a = read();
+        int64_t b = read();
         if (toId.count(a) == 0) {
             toId.insert(make_pair(a, toId.size()));
         }

@@ -9,6 +9,20 @@ using PII = pair<int, int>;
 map<string, int> toId;
 Adj adj;
 int N;
+int SZ;
+
+const int BUFSIZE = 24*250000;
+char buf[BUFSIZE];
+char *ptr = buf;
+
+void read(char *a) {
+    int i = 0;
+    while ('a' <= *ptr && *ptr <= 'z') {
+        a[i++] = *(ptr++);
+    }
+    a[i] = '\0';
+    while (ptr-buf < SZ && (*ptr < 'a' || *ptr > 'z')) ptr++;
+}
 
 bool bfs() {
     vector<bool> visited(N, false);
@@ -54,7 +68,11 @@ bool solve() {
 int main() {
     char a[11], b[11];
     vector<PII> edges;
-    while (scanf("%s %s", a, b) == 2) {
+    SZ = fread(buf, 1, BUFSIZE, stdin);
+
+    while (true) {
+        read(a);
+        read(b);
         if (toId.count(a) == 0) {
             toId.insert(make_pair(a, toId.size()));
         }
@@ -62,6 +80,7 @@ int main() {
             toId.insert(make_pair(b, toId.size()));
         }
         edges.push_back(make_pair(toId.at(a), toId.at(b)));
+        if (ptr - buf == SZ) break;
     }
     N = toId.size();
     adj.resize(N);

@@ -4,79 +4,104 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class MergeTree {
+class PartitionTree {
 private:
     int N;
     const vector<int>& A;
-    vector<vector<int> > sorted;
+    vector<int> as;
+    vector<vector<int> > tree;
+    vector<vector<int> > sum;
 
     void build(int depth, int left, int right) {
-        if (left == right) {
-            sorted[depth][left] = A[left];
-            return;
+        int mid = (left + right) / 2, lm = mid - left + 1, lp = left, rp = mid + 1;
+        for (int i = left; i <= mid; i++) {
+            if (as[i] < as[mid]) lm--;
         }
-
-        int mid = (left + right) / 2;
-        build(depth+1, left, mid);
-        build(depth+1, mid+1, right);
-
-        int i = left, j = mid + 1, k = left;
-        while (i <= mid && j <= right) {
-            if (sorted[depth+1][i] <= sorted[depth+1][j]) {
-                sorted[depth][k++] = sorted[depth+1][i++];
+        for (int i = left; i <= right; i++) {
+            if (i == left) {
+                sum[depth][i] = 0;
             } else {
-                sorted[depth][k++] = sorted[depth+1][j++];
+                sum[depth][i] = sum[depth][i-1];
+            }
+            if (tree[depth][i] == as[mid]) {
+                if (lm) {
+                    lm--;
+                    sum[depth][i]++;
+                    tree[depth+1][lp++] = tree[depth][i];
+                } else {
+                    tree[depth+1][rp++] = tree[depth][i];
+                }
+            } else if (tree[depth][i] < as[mid]) {
+                sum[depth][i]++;
+                tree[depth+1][lp++] = tree[depth][i];
+            } else {
+                tree[depth+1][rp++] = tree[depth][i];
             }
         }
-        while (i <= mid) sorted[depth][k++] = sorted[depth+1][i++];
-        while (j <= right) sorted[depth][k++] = sorted[depth+1][j++];
+        if (left == right) return;
+        build(depth+1, left, mid);
+        build(depth+1, mid+1, right);
     }
 
-    // find number of elements < key
-    int query(int depth, int left, int right, int qleft, int qright, int key) {
-        if (qright < left || qleft > right) return 0;
-        if (qleft <= left && right <= qright) {
-            auto b = sorted[depth].begin() + left;
-            auto e = sorted[depth].begin() + right + 1;
-            return lower_bound(b, e, key) - b;
-        }
+    // find k-th element in [qleft, qright], counting from 1
+    int query(int depth, int left, int right, int qleft, int qright, int k) {
+        int s;  // [left, qleft) how many go to left child
+        int ss; // [qleft, qright] how many go to left child
 
         int mid = (left + right) / 2;
-        return query(depth+1, left, mid, qleft, qright, key) +
-               query(depth+1, mid+1, right, qleft, qright, key);
+        if (left == right) {
+            return tree[depth][left];
+        }
+
+        if (left == qleft) {
+            s = 0;
+            ss = sum[depth][qright];
+        } else {
+            s = sum[depth][qleft-1];
+            ss = sum[depth][qright] - s;
+        }
+
+        if (k <= ss) {
+            return query(depth+1, left, mid, left+s, left+s+ss-1, k);
+        } else {
+            return query(depth+1, mid+1, right,
+                         mid - left + 1 + qleft - s,
+                         mid - left + 1 + qright -s - ss,
+                         k - ss);
+        }
     }
 
 public:
-    MergeTree(const vector<int>& A_): A(A_) {
+    PartitionTree(const vector<int>& A_): A(A_) {
         N = A.size();
         int depth = 1, len = 1;
         while (len < 2*N) {
             depth++;
             len <<= 1;
         }
-        sorted.resize(depth);
+        tree.resize(depth);
         for (int i = 0; i < depth; i++) {
-            sorted[i].resize(N);
+            tree[i].resize(N);
         }
 
+        sum.resize(depth);
+        for (int i = 0;i < depth; i++) {
+            sum[i].resize(N);
+        }
+
+        as = A;
+        sort(as.begin(), as.end());
+
+        for (int i = 0; i < N; i++) {
+            tree[0][i] = A[i];
+        }
         build(0, 0, N-1);
     }
 
-    // find number of elements < key
-    int order_of_key(int qleft, int qright, int key) {
-        return query(0, 0, N-1, qleft, qright, key);
-    }
 
     // k-the element in [qleft, qright], counting from 0
     int find_by_order(int qleft, int qright, int k) {
-        int lo = 0, hi = N;
-        while (lo < hi - 1) {
-            int mid = (lo + hi) / 2;
-            int cnt = order_of_key(qleft, qright, sorted[0][mid]);
-            if (cnt <= k) lo = mid;
-            else hi = mid;
-        }
-        return sorted[0][lo];
+        return query(0, 0, N-1, qleft, qright, k);
     }
 };
 
@@ -87,11 +112,11 @@ int main() {
     for (int i = 0; i < N; i++) {
         scanf("%d", &A[i]);
     }
-    MergeTree mt(A);
+    PartitionTree pt(A);
     for (int i = 0; i < M; i++) {
         int a, b, c;
         scanf("%d %d %d", &a, &b, &c);
-        printf("%d\n", mt.find_by_order(a-1, b-1, c-1));
+        printf("%d\n", pt.find_by_order(a-1, b-1, c));
     }
     return 0;
 }

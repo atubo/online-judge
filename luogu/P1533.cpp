@@ -13,25 +13,14 @@ private:
     vector<vector<int> > sum;
 
     void build(int depth, int left, int right) {
-        int mid = (left + right) / 2, lm = mid - left + 1, lp = left, rp = mid + 1;
-        for (int i = left; i <= mid; i++) {
-            if (as[i] < as[mid]) lm--;
-        }
+        int mid = (left + right) / 2, lp = left, rp = mid + 1;
         for (int i = left; i <= right; i++) {
             if (i == left) {
                 sum[depth][i] = 0;
             } else {
                 sum[depth][i] = sum[depth][i-1];
             }
-            if (tree[depth][i] == as[mid]) {
-                if (lm) {
-                    lm--;
-                    sum[depth][i]++;
-                    tree[depth+1][lp++] = tree[depth][i];
-                } else {
-                    tree[depth+1][rp++] = tree[depth][i];
-                }
-            } else if (tree[depth][i] < as[mid]) {
+            if (tree[depth][i] <= as[mid]) {
                 sum[depth][i]++;
                 tree[depth+1][lp++] = tree[depth][i];
             } else {

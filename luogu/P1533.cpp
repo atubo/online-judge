@@ -4,12 +4,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const int MAXN = 524288;
+int tree[21][MAXN];
+
 class PartitionTree {
 private:
     int N;
     const vector<int>& A;
     vector<int> as;
-    vector<vector<int> > tree;
+    //vector<vector<int> > tree;
     vector<vector<int> > sum;
 
     void build(int depth, int left, int right) {
@@ -68,10 +71,12 @@ public:
             depth++;
             len <<= 1;
         }
+#if 0
         tree.resize(depth);
         for (int i = 0; i < depth; i++) {
             tree[i].resize(N);
         }
+#endif
 
         sum.resize(depth);
         for (int i = 0;i < depth; i++) {

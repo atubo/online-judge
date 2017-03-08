@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/07
+* [洛谷 1055] ISBN号码：水题。
+
 ### 03/06
 * [洛谷 1533] 可怜的狗狗：划分树模板题。
 * [洛谷 1308] 统计单词数：水题。

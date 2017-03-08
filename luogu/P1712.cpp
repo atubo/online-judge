@@ -153,13 +153,14 @@ int main() {
     }
     sort(B.begin(), B.end());
     B.erase(unique(B.begin(), B.end()), B.end());
-    const int L = B.back();
 
+    int L = 0;
     for (int i = 0; i < N; i++) {
         intervals[i].left = lower_bound(B.begin(), B.end(), intervals[i].left) -
                             B.begin();
         intervals[i].right = lower_bound(B.begin(), B.end(), intervals[i].right) -
                              B.begin();
+        L = max(L, max(intervals[i].left, intervals[i].right));
     }
 
     vector<int> C(L+1, 0);

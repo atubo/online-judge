@@ -8,12 +8,35 @@ using namespace std;
 
 typedef vector<map<int, int>> Adj;
 
+struct Graph {
+    static const int MAXN = 10010;
+    vector<int> head;
+    int N;
+
+    int next[MAXN];
+    int to[MAXN];
+    int weight[MAXN];
+
+    Graph(int N_): N(N_) {
+        head.resize(N);
+    }
+
+    void addEdge(int u, int v, int w) {
+        static int q = 1;
+        to[q] = v;
+        weight[q] = w;
+        next[q] = head[u];
+        head[u] = q++;
+    }
+};
+
+
 class SPFA {
     const static int INF;
 
 public:
-    SPFA(const Adj& adj_):adj(adj_) {
-        N = adj.size();
+    SPFA(const Graph& g): graph(g) {
+        N = graph.N;
     }
 
     void init(int src) {
@@ -41,10 +64,9 @@ public:
             Q.pop();
             inq[u]--;
 
-            for (const auto& nbr: adj[u]) {
-                int v;
-                int w;
-                tie(v, w) = nbr;
+            for (int j = graph.head[u]; j; j = graph.next[j]) {
+                int v = graph.to[j];
+                int w = graph.weight[j];
                 if (dist[v] > dist[u] + w) {
                     dist[v] = dist[u] + w;
                     path[v] = u;
@@ -65,7 +87,7 @@ public:
     const vector<int>& getPath() const {return path;}
 
 private:
-    const Adj& adj;
+    const Graph& graph;
     queue<int> Q;
     int N;
     vector<int> inq;    // if node is in queue
@@ -79,9 +101,10 @@ const int SPFA::INF = INT_MAX;
 int main() {
     int N, M;
     scanf("%d %d", &N, &M);
-    Adj adj(N+1);
+
+    Graph g(N+1);
     for (int i = 1; i <= N; i++) {
-        adj[0][i] = 0;
+        g.addEdge(0, i, 0);
     }
 
     for (int i = 0; i < M; i++) {
@@ -89,34 +112,18 @@ int main() {
         scanf("%d", &t);
         if (t == 1) {
             scanf("%d %d %d", &a, &b, &c);
-            if (adj[b].count(a) > 0) {
-                adj[b][a] = min(adj[b][a], -c);
-            } else {
-                adj[b][a] = -c;
-            }
+            g.addEdge(b, a, -c);
         } else if (t == 2) {
             scanf("%d %d %d", &a, &b, &c);
-            if (adj[a].count(b) > 0) {
-                adj[a][b] = min(adj[a][b], c);
-            } else {
-                adj[a][b] = c;
-            }
+            g.addEdge(a, b, c);
         } else {
             scanf("%d %d", &a, &b);
-            if (adj[a].count(b) > 0) {
-                adj[a][b] = min(adj[a][b], 0);
-            } else {
-                adj[a][b] = 0;
-            }
-            if (adj[b].count(a) > 0) {
-                adj[b][a] = min(adj[b][a], 0);
-            } else {
-                adj[b][a] = 0;
-            }
+            g.addEdge(a, b, 0);
+            g.addEdge(b, a, 0);
         }
     }
 
-    SPFA spfa(adj);
+    SPFA spfa(g);
     bool ret = spfa.solve(0);
     if (ret) {
         printf("Yes\n");

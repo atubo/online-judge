@@ -4,11 +4,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int mergeSort(vector<int>& a, int lo, int hi, vector<int>& tmp) {
+const int64_t MOD = 99999997;
+
+int64_t add(int64_t a, int64_t b) {
+    return (a + b) % MOD;
+}
+
+int64_t mergeSort(vector<int>& a, int lo, int hi, vector<int>& tmp) {
     if (lo >= hi - 1) return 0;
     int mid = (lo + hi) / 2;
-    int ret = mergeSort(a, lo, mid, tmp);
-    ret += mergeSort(a, mid, hi, tmp);
+    int64_t ret = mergeSort(a, lo, mid, tmp);
+    ret = add(ret, mergeSort(a, mid, hi, tmp));
 
     int i = lo, j = mid, k = lo;
     while (i < mid && j < hi) {
@@ -16,7 +22,7 @@ int mergeSort(vector<int>& a, int lo, int hi, vector<int>& tmp) {
             tmp[k++] = a[i++];
         } else {
             tmp[k++] = a[j++];
-            ret += mid - i;
+            ret = add(ret, mid - i);
         }
     }
 
@@ -60,6 +66,6 @@ int main() {
         bp[i] = ap[B[i]];
     }
 
-    printf("%d\n", mergeSort(bp, 0, N, ap));
+    printf("%lld\n", mergeSort(bp, 0, N, ap));
     return 0;
 }

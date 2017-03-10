@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/09
+* [洛谷 1993] 小 K 的农场：差分约束 + DFS SPFA 判负环。
+
 ### 03/08
 * [洛谷 1801] 黑匣子_NOI导刊2010提高（06）：划分树求区间第K大。看题解发现
 用两个堆也可解决，编码难度更小。

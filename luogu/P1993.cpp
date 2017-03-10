@@ -4,12 +4,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
-typedef vector<map<int, int>> Adj;
-
 struct Graph {
-    static const int MAXN = 10010;
+    static const int MAXN = 20010;
     vector<int> head;
     int N;
 
@@ -48,43 +44,24 @@ public:
         inq.resize(N, 0);
         dist.resize(N, INF);
         path.resize(N, src);
-        cnt.resize(N, 0);
 
         dist[src] = 0;
-        inq[src]++;
     }
 
-    bool solve(int src) {
-        init(src);
-
-        Q.push(src);
-        cnt[src]++;
-        while (!Q.empty()) {
-            int u = Q.front();
-            Q.pop();
-            inq[u]--;
-
-            for (int j = graph.head[u]; j; j = graph.next[j]) {
-                int v = graph.to[j];
-                int w = graph.weight[j];
-                if (dist[v] > dist[u] + w) {
-                    dist[v] = dist[u] + w;
-                    path[v] = u;
-                    if (!inq[v]) {
-                        Q.push(v);
-                        inq[v]++;
-                        cnt[v]++;
-                        if (cnt[v] > N) return false;
-                    }
-                }
+    bool dfs(int u) {
+        if (inq[u]) return false;
+        inq[u] = 1;
+        for (int j = graph.head[u]; j; j = graph.next[j]) {
+            int v = graph.to[j];
+            int w = graph.weight[j];
+            if (dist[v] > dist[u] + w) {
+                dist[v] = dist[u] + w;
+                if (!dfs(v)) return false;
             }
         }
+        inq[u] = 0;
         return true;
     }
-
-    const vector<int>& getDist() const {return dist;}
-
-    const vector<int>& getPath() const {return path;}
 
 private:
     const Graph& graph;
@@ -93,7 +70,6 @@ private:
     vector<int> inq;    // if node is in queue
     vector<int> dist;
     vector<int> path;
-    vector<int> cnt;
 };
 
 const int SPFA::INF = INT_MAX;
@@ -124,7 +100,8 @@ int main() {
     }
 
     SPFA spfa(g);
-    bool ret = spfa.solve(0);
+    spfa.init(0);
+    bool ret = spfa.dfs(0);
     if (ret) {
         printf("Yes\n");
     } else {

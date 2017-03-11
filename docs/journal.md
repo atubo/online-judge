@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/11
+* [洛谷 1914] 小书童——密码：水题。
+
 ### 03/09
 * [洛谷 1993] 小 K 的农场：差分约束 + DFS SPFA 判负环。
 

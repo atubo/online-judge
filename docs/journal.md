@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 03/11
 * [洛谷 1914] 小书童——密码：水题。
+* [洛谷 2054] [AHOI2005]洗牌：求 $x\cdot 2^m \equiv L \mod (N+1)$ 。
+见[题解](http://www.itwendao.com/article/detail/169731.html)。
 
 ### 03/09
 * [洛谷 1993] 小 K 的农场：差分约束 + DFS SPFA 判负环。

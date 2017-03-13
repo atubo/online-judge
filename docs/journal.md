@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/12
+* [洛谷 3095] [USACO13DEC]贝西洗牌The Bessie Shuffle：仔细考察长度为M的移动
+窗口可知变化规律是一个从右端点到左端点的流动+若干不相交的旋转的叠加。
+
 ### 03/11
 * [洛谷 1914] 小书童——密码：水题。
 * [洛谷 2054] [AHOI2005]洗牌：求 $x\cdot 2^m \equiv L \mod (N+1)$ 。

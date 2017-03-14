@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/13
+* [洛谷 1999] 高维正方体：答案是 $2^{a-b}\cdot {a \choose b}$ 。
+
 ### 03/12
 * [洛谷 3095] [USACO13DEC]贝西洗牌The Bessie Shuffle：仔细考察长度为M的移动
 窗口可知变化规律是一个从右端点到左端点的流动+若干不相交的旋转的叠加。

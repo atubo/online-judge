@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 * [洛谷 2345] 奶牛集会：将奶牛按V排序，对于奶牛k，位于其左方的奶牛们的贡献为
 $V_k\cdot(m x_k - \sum x_i)$ ，类似的其右方的奶牛们的贡献为
 $V_k\cdot(\sum x_i - m x_k)$ 。用树状数组来维护部分和。
+* [洛谷 1437] [HNOI2004]敲砖块：DP， 见[题解](http://www.voidcn.com/blog/skyfisherman/article/p-4012716.html)。
 
 ### 03/12
 * [洛谷 3095] [USACO13DEC]贝西洗牌The Bessie Shuffle：仔细考察长度为M的移动

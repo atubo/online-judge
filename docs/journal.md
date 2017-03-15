@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/14
+* [洛谷2239] 螺旋矩阵
+
 ### 03/13
 * [洛谷 1999] 高维正方体：答案是 $2^{a-b}\cdot {a \choose b}$ 。
 * [洛谷 2345] 奶牛集会：将奶牛按V排序，对于奶牛k，位于其左方的奶牛们的贡献为

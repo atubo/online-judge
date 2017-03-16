@@ -7,8 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/15
+* [洛谷 1795] 无穷的序列_NOI导刊2010提高（05）：水题。
+
 ### 03/14
-* [洛谷2239] 螺旋矩阵
+* [洛谷2239] 螺旋矩阵：水题。
 
 ### 03/13
 * [洛谷 1999] 高维正方体：答案是 $2^{a-b}\cdot {a \choose b}$ 。

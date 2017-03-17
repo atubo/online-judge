@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/16
+* [洛谷 1174] 打砖块：DP神题，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1174)。
+
 ### 03/15
 * [洛谷 1795] 无穷的序列_NOI导刊2010提高（05）：水题。
 

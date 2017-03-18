@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 03/17
 * [洛谷 2804] 神秘数字： $S_i-S_j>m(i-j)$ ， 写成 $S_i-m i > S_j - m j$ 。
 令 $T_i = S_i-m i$ 。对T中每个元素，求其左方有多少小于它的元素。用树状数组解之。
+* [洛谷 1195] 口袋的天空：Kruskal 解之。
 
 ### 03/16
 * [洛谷 1174] 打砖块：DP神题，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1174)。

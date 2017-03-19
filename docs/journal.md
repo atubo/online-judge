@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/18
+* [洛谷 1550] [USACO08OCT]打井Watering Hole：Kruskal 解之。
+
 ### 03/17
 * [洛谷 2804] 神秘数字： $S_i-S_j>m(i-j)$ ， 写成 $S_i-m i > S_j - m j$ 。
 令 $T_i = S_i-m i$ 。对T中每个元素，求其左方有多少小于它的元素。用树状数组解之。

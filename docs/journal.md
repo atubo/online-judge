@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/19
+* [洛谷 3608] [USACO17JAN]Balanced Photo平衡的照片：树状数组解之。
+
 ### 03/18
 * [洛谷 1550] [USACO08OCT]打井Watering Hole：Kruskal 解之。
 * [洛谷 3197] [HNOI2008]越狱：答案是 $M^N-(M-1)^{N-1}\cdot M$ 。

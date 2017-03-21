@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/20
+* [洛谷 1637] 三元上升子序列：离散化后用树状数组解之。
+
 ### 03/19
 * [洛谷 3608] [USACO17JAN]Balanced Photo平衡的照片：树状数组解之。
 

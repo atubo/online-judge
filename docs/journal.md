@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/21
+* [UVa 1451] Average：单调队列求斜率极值，模板题。
+
 ### 03/20
 * [洛谷 1637] 三元上升子序列：离散化后用树状数组解之。
 

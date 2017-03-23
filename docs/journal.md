@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 03/22
 * [洛谷 2115] [USACO14MAR]破坏Sabotage：前缀和数列拼接自身，问题转化为
 求斜率极值。单调队列+三分求极值。
+* [POJ 1087] A Plug for UNIX：网络流。
 
 ### 03/21
 * [UVa 1451] Average：单调队列求斜率极值，模板题。

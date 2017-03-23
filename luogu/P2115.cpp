@@ -30,8 +30,8 @@ double minSlope(int t, int i, int j) {
     }
 }
 
-int slopeCmp(int x1, int x2, int x3, int x4) {
-    return (ps[x2]-ps[x1])*(x4-x3) - (ps[x4]-ps[x3])*(x2-x1);
+int64_t slopeCmp(int x1, int x2, int x3, int x4) {
+    return ((int64_t)ps[x2]-ps[x1])*(x4-x3) - ((int64_t)ps[x4]-ps[x3])*(x2-x1);
 }
 
 int main() {

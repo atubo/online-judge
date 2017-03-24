@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 03/23
 * [洛谷 2740] [USACO4.2]草地排水Drainage Ditches：网络流模板题。
+* [洛谷 1101] 单词方阵：水题。
 
 ### 03/22
 * [洛谷 2115] [USACO14MAR]破坏Sabotage：前缀和数列拼接自身，问题转化为

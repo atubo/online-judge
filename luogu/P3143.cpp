@@ -12,7 +12,7 @@ class BIT {
 public:
     // Note size needs to be power of 2
     BIT(int size): N(size) {
-        tree = (int64_t*)malloc((size+1) * sizeof(int64_t));
+        tree = (int*)malloc((size+1) * sizeof(int));
         clear();
     }
     
@@ -22,7 +22,7 @@ public:
     }
 
     void clear() {
-        memset(tree, 0, (N+1) * sizeof(int64_t));
+        memset(tree, 0, (N+1) * sizeof(int));
     }
 
     // add v to value at x
@@ -34,8 +34,8 @@ public:
     }
 
     // get cumulative sum up to and including x
-    int64_t get(int x) const {
-        int64_t res = 0;
+    int get(int x) const {
+        int res = 0;
         while(x) {
             res += tree[x];
             x -= (x & -x);
@@ -44,7 +44,7 @@ public:
     }
 
     // get result for [x, y]
-    int64_t get(int x, int y) const {
+    int get(int x, int y) const {
         return get(y) - (x > 1 ? get(x-1) : 0);
     }
 
@@ -64,7 +64,7 @@ public:
     }
 
 private:
-    int64_t* tree;
+    int* tree;
     const int N;
 };
 

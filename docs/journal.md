@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 03/24
 * [洛谷 3076] [USACO13FEB]出租车Taxi：贪心神题，见[题解](http://www.usaco.org/current/data/sol_taxi.html)。
+* [洛谷 3143] [USACO16OPEN]钻石收藏家Diamond Collector：先求每个点出发的
+最大陈列数，在扫描一遍即可。用了树状数组，看题解发现只要用简单的区间扫描即可。
 
 ### 03/23
 * [洛谷 2740] [USACO4.2]草地排水Drainage Ditches：网络流模板题。

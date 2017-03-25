@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/24
+* [洛谷 3076] [USACO13FEB]出租车Taxi：贪心神题，见[题解](http://www.usaco.org/current/data/sol_taxi.html)。
+
 ### 03/23
 * [洛谷 2740] [USACO4.2]草地排水Drainage Ditches：网络流模板题。
 * [洛谷 1101] 单词方阵：水题。

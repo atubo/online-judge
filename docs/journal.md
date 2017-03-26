@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 03/25
 * [洛谷 1767] 家族_NOI导刊2010普及（10）：DFS
+* [洛谷 3147] [USACO16OPEN]262144：DP神题，类似倍增思想。见[题解](http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/)。
 
 ### 03/24
 * [洛谷 3076] [USACO13FEB]出租车Taxi：贪心神题，见[题解](http://www.usaco.org/current/data/sol_taxi.html)。

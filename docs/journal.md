@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 03/25
 * [洛谷 1767] 家族_NOI导刊2010普及（10）：DFS
 * [洛谷 3147] [USACO16OPEN]262144：DP神题，类似倍增思想。见[题解](http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/)。
+* [洛谷 2982] [USACO10FEB]慢下来Slowing down：先生成DFS序，对每头出发的牛，
+将其牧场的子树对应的区间整体+1，用树状数组来维护区间部分和。
 
 ### 03/24
 * [洛谷 3076] [USACO13FEB]出租车Taxi：贪心神题，见[题解](http://www.usaco.org/current/data/sol_taxi.html)。

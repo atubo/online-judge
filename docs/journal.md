@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/25
+* [洛谷 1767] 家族_NOI导刊2010普及（10）：DFS
+
 ### 03/24
 * [洛谷 3076] [USACO13FEB]出租车Taxi：贪心神题，见[题解](http://www.usaco.org/current/data/sol_taxi.html)。
 * [洛谷 3143] [USACO16OPEN]钻石收藏家Diamond Collector：先求每个点出发的

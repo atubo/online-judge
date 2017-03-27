@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/26
+* [洛谷 1368] 均分纸牌（加强版）：神题。见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1368)。
+
 ### 03/25
 * [洛谷 1767] 家族_NOI导刊2010普及（10）：DFS
 * [洛谷 3147] [USACO16OPEN]262144：DP神题，类似倍增思想。见[题解](http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/)。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/27
+* [洛谷 1331] 海战：BFS。
+
 ### 03/26
 * [洛谷 1368] 均分纸牌（加强版）：神题。见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1368)。
 * [洛谷 1031] 均分纸牌：水题。

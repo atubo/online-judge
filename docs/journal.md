@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/28
+* [洛谷 3252] [JLOI2012]树：DFS + 维护前缀和 + 二分查找。
+
 ### 03/27
 * [洛谷 1331] 海战：BFS。
 * [洛谷 2751] [USACO4.2]工序安排Job Processing：贪心神题，见[题解](https://yufeizhaome.wordpress.com/2014/08/01/usaco-job-processing-solution/)。

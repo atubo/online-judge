@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/29
+* [POJ 3422] Kaka's Matrix Travels：最小费用最大流。
+
 ### 03/28
 * [洛谷 3252] [JLOI2012]树：DFS + 维护前缀和 + 二分查找。
 

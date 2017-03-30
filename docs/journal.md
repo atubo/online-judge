@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 03/29
 * [POJ 3422] Kaka's Matrix Travels：最小费用最大流。
+* [洛谷 2255] [USACO14JAN]记录奥林比克：用了最小费用最大流。看题解发现似乎用
+简单贪心就可以了。
 
 ### 03/28
 * [洛谷 3252] [JLOI2012]树：DFS + 维护前缀和 + 二分查找。

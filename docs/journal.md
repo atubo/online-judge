@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 03/30
 * [洛谷 1678] 烦恼的高考志愿：排序。
+* [BZOJ 1061] [Noi2008]志愿者招募：最小费用最大流。
 
 ### 03/29
 * [POJ 3422] Kaka's Matrix Travels：最小费用最大流。

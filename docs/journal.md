@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/30
+* [洛谷 1678] 烦恼的高考志愿：排序。
+
 ### 03/29
 * [POJ 3422] Kaka's Matrix Travels：最小费用最大流。
 * [洛谷 2255] [USACO14JAN]记录奥林比克：用了最小费用最大流。看题解发现似乎用

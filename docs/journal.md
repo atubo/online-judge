@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 1678] 烦恼的高考志愿：排序。
 * [BZOJ 1061] [Noi2008]志愿者招募：最小费用最大流。
 * [POJ 2195] Going Home：最小费用最大流。
+* [洛谷 1158] 导弹拦截：将点到雷达的距离对按离其中一个雷达的距离排序，再从大到
+小扫描一遍即可。
 
 ### 03/29
 * [POJ 3422] Kaka's Matrix Travels：最小费用最大流。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/31
+* [洛谷 3410] 拍照：最大权闭合图，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P3410:w
+  )。
+
 ### 03/30
 * [洛谷 1678] 烦恼的高考志愿：排序。
 * [BZOJ 1061] [Noi2008]志愿者招募：最小费用最大流。

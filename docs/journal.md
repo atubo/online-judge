@@ -7,9 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/01
+* [洛谷 1937] [USACO10MAR]仓配置Barn Allocation：贪心，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1937)。
+
 ### 03/31
-* [洛谷 3410] 拍照：最大权闭合图，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P3410:w
-  )。
+* [洛谷 3410] 拍照：最大权闭合图，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P3410)。
 
 ### 03/30
 * [洛谷 1678] 烦恼的高考志愿：排序。

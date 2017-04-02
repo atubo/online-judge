@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 04/01
 * [洛谷 1937] [USACO10MAR]仓配置Barn Allocation：贪心，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1937)。
+* [洛谷 1607] [USACO09FEB]庙会班车Fair Shuttle：贪心，优先安排终点近的牛。
 
 ### 03/31
 * [洛谷 3410] 拍照：最大权闭合图，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P3410)。

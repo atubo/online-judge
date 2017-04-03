@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/02
+* [洛谷 1325] 雷达安装：贪心。每个岛屿对应一个区间，从左向右扫描，遇到未覆盖
+的区间的右端点时，设一雷达，并标记所有当前区间为已覆盖。
+
 ### 04/01
 * [洛谷 1937] [USACO10MAR]仓配置Barn Allocation：贪心，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1937)。
 * [洛谷 1607] [USACO09FEB]庙会班车Fair Shuttle：贪心，优先安排终点近的牛。

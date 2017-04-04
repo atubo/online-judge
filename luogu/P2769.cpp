@@ -7,7 +7,7 @@ using namespace std;
 const int MAXN = 5010;
 int X[MAXN], Y[MAXN];
 int M, N;
-int64_t dp[MAXN][MAXN];
+int64_t dp[MAXN];
 
 int dist(int i, int j) {
     return abs(X[i] - Y[j]);
@@ -26,16 +26,17 @@ int main() {
     sort(X + 1, X + N + 1);
     sort(Y + 1, Y + M + 1);
 
-    dp[0][0] = 0;
-    for (int i = 1; i <= N; i++) {
-        dp[i][0] = INT_MAX;
-        for (int j = 1; j <= M; j++) {
-            if (j > i) break;
-            dp[i][j] =  dp[i-1][j-1];
-            if (i >= j + 1) dp[i][j] = min(dp[i][j], dp[i-1][j]);
-            dp[i][j] += dist(i, j);
-        }
+    dp[0] = 0;
+    for (int i = 1; i <= M; i++) {
+        dp[i] = INT_MAX;
     }
-    printf("%lld\n", dp[N][M]);
+    for (int i = 1; i <= N; i++) {
+        for (int j = min(M, i); j >= 1; j--) {
+            dp[j] = min(dp[j], dp[j-1]) + dist(i, j);
+        }
+        dp[0] = INT_MAX;
+    }
+
+    printf("%lld\n", dp[M]);
     return 0;
 }

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/07
+* [洛谷 1011] 车站：水题。
+
 ### 04/03
 * [洛谷 2769] 猴子上树：DP. 两边排序后有
 $dp(n,m)=D_{n,m} + \min(dp(n-1,m), dp(n-1. m-1))$ .

@@ -161,19 +161,28 @@ public:
         return a.splits == b.splits;
     }
 };
-int father[10], depth[10];
+vector<vector<int>> to(10);
+int cnt[10];
 int S[32], N, K;
 
-void calcDepth(int x) {
-    int f = father[x];
-    if (f == 0) {
-        depth[x] = 1;
-        return;
+void bfs(int x) {
+    int ret = 0;
+    vector<bool> visited(10);
+    queue<int> q;
+    q.push(x);
+    visited[x] = true;
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        ret++;
+        for (int v: to[u]) {
+            if (!visited[v]) {
+                q.push(v);
+                visited[v] = true;
+            }
+        }
     }
-    if (depth[f] == 0) {
-        calcDepth(f);
-    }
-    depth[x] = depth[f] + 1;
+    cnt[x] = ret;
 }
 
 int main() {
@@ -186,15 +195,15 @@ int main() {
     for (int i = 0; i < K; i++) {
         int u, v;
         cin >> u >> v;
-        father[u] = v;
+        to[u].push_back(v);
     }
     for (int i = 0; i < 10; i++) {
-        if (depth[i] == 0) calcDepth(i);
+        bfs(i);
     }
 
     BigInt res("1");
     for (int i = 0; i < N; i++) {
-        res = res * BigInt(string(1, '0' + depth[S[i]]));
+        res = res * BigInt(string(1, '0' + cnt[S[i]]));
     }
     cout << res.toString() << endl;
     return 0;

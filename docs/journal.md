@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/10
+* [洛谷 1106] 删数问题：维持单调队列。
+
 ### 04/09
 * [洛谷 1037] 产生数：遍历从每个数字出发可以变换到的数字数，相乘即可。
 * [洛谷 1078] 文化之旅：暴力深搜，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1078)。

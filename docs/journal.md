@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/13
+* [洛谷 2932] [USACO09JAN]地震造成的破坏Earthquake Damage：
+将每个无法到达的牛棚和它所有邻居标记为无法到达，再从农庄出发作BFS搜索
+所有可到达的牛棚。
+
 ### 04/12
 * [洛谷 2233] [HNOI2002] 公交车路线：用 $dp(i,n)$ 表示从点 $i$ 出发到E步数
 为 $n$ 的方案数。有 $dp(i,n)=dp(i-1,n-1)+dp(i+1,n-1)$ ，转化为矩阵乘法。

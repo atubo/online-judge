@@ -34,11 +34,34 @@ public:
 };
 
 const int MAXN = 30010;
-bool noreturn[MAXN];
+bool reachable[MAXN];
 int P, C, N;
+
+int bfs(const Graph &g) {
+    vector<bool> vis(P);
+    queue<int> q;
+    q.push(0);
+    vis[0] = true;
+    int ret = 0;
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        ret++;
+        for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
+            int v = g.E[eidx].to;
+            if (!vis[v] && reachable[v]) {
+                q.push(v);
+                vis[v] = true;
+            }
+        }
+    }
+    return ret;
+}
 
 int main() {
     scanf("%d%d%d", &P, &C, &N);
+    for (int i = 0; i < P; i++) reachable[i] = true;
+
     Graph g(P);
     for (int i = 0; i < C; i++) {
         int u, v;
@@ -52,17 +75,13 @@ int main() {
         int u;
         scanf("%d", &u);
         u--;
-        noreturn[u] = true;
+        reachable[u] = false;
         for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
             int v = g.E[eidx].to;
-            noreturn[v] = true;
+            reachable[v] = false;
         }
     }
 
-    int ret = 0;
-    for (int i = 0; i < P; i++) {
-        ret += noreturn[i];
-    }
-    printf("%d\n", ret);
+    printf("%d\n", P - bfs(g));
     return 0;
 }

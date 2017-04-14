@@ -11,7 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 2932] [USACO09JAN]地震造成的破坏Earthquake Damage：
 将每个无法到达的牛棚和它所有邻居标记为无法到达，再从农庄出发作BFS搜索
 所有可到达的牛棚。
-* [洛谷 3308] Paratroopers：最小割。
+* [POJ 3308] Paratroopers：最小割。
+* [洛谷 2937] [USACO09JAN]激光电话Laserphones：BFS。
 
 ### 04/12
 * [洛谷 2233] [HNOI2002] 公交车路线：用 $dp(i,n)$ 表示从点 $i$ 出发到E步数

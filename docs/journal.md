@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/14
+* [洛谷 2881] [USACO07MAR]排名的牛Ranking the Cows：拓扑排序，再在每个
+点用一个bit mask表示从它出发可达的结点，用DP求每个点的 mask 值。不可达点
+的总数即解。
+
 ### 04/13
 * [洛谷 2932] [USACO09JAN]地震造成的破坏Earthquake Damage：
 将每个无法到达的牛棚和它所有邻居标记为无法到达，再从农庄出发作BFS搜索

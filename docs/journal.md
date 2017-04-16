@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/15
+* [洛谷 2252] 取石子游戏：[威佐夫博奕](https://hrbust-acm-team.gitbooks.io/acm-book/content/game_theory/wei_zuo_fu_bo_yi.html)。
+
 ### 04/14
 * [洛谷 2881] [USACO07MAR]排名的牛Ranking the Cows：拓扑排序，再在每个
 点用一个bit mask表示从它出发可达的结点，用DP求每个点的 mask 值。不可达点

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 04/15
 * [洛谷 2252] 取石子游戏：[威佐夫博奕](https://hrbust-acm-team.gitbooks.io/acm-book/content/game_theory/wei_zuo_fu_bo_yi.html)。
+* [HDU 2177] 取(2堆)石子游戏：威佐夫博奕，同上，但要找出取胜解。
 
 ### 04/14
 * [洛谷 2881] [USACO07MAR]排名的牛Ranking the Cows：拓扑排序，再在每个

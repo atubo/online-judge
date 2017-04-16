@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 2252] 取石子游戏：[威佐夫博奕](https://hrbust-acm-team.gitbooks.io/acm-book/content/game_theory/wei_zuo_fu_bo_yi.html)。
 * [HDU 2177] 取(2堆)石子游戏：威佐夫博奕，同上，但要找出取胜解。
 * [洛谷 1247] 取火柴游戏：简单Nim博弈。
+* [洛谷 2774] 方格取数问题：总权值-最小点权覆盖。用最小割求最小点权覆盖。
 
 ### 04/14
 * [洛谷 2881] [USACO07MAR]排名的牛Ranking the Cows：拓扑排序，再在每个

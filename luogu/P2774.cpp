@@ -98,7 +98,7 @@ struct PushRelabel {
 int M, N;
 int A[110][110], C[110][110];
 
-const int DX[4] = {1, 0 -1, 0};
+const int DX[4] = {1, 0, -1, 0};
 const int DY[4] = {0, 1, 0, -1};
 
 bool inRange(int i, int j) {

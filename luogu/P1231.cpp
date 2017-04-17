@@ -99,27 +99,30 @@ int N1, N2, N3, M1, M2;
 
 int main() {
     scanf("%d%d%d", &N1, &N2, &N3);
-    const int S = 0, T = N1+N2+N3+1;
+    const int S = 0, T = 2*N1+N2+N3+1;
     PushRelabel pr(T+1);
 
     for (int i = 1; i <= N2; i++) {
         pr.AddEdge(S, i, 1);
     }
-    for (int i = N1+N2+1; i <= N1+N2+N3; i++) {
+    for (int i = 2*N1+N2+1; i <= 2*N1+N2+N3; i++) {
         pr.AddEdge(i, T, 1);
+    }
+    for (int i = 1; i <= N1; i++) {
+        pr.AddEdge(N2+2*i-1, N2+2*i, 1);
     }
 
     scanf("%d", &M1);
     int x, y;
     for (int i = 0; i < M1; i++) {
         scanf("%d%d", &x, &y);
-        pr.AddEdge(y, N2+x, 1);
+        pr.AddEdge(y, N2+2*x-1, 1);
     }
 
     scanf("%d", &M2);
     for (int i = 0; i < M2; i++) {
         scanf("%d%d", &x, &y);
-        pr.AddEdge(N2+x, N1+N2+y, 1);
+        pr.AddEdge(N2+2*x, 2*N1+N2+y, 1);
     }
 
     printf("%lld\n", pr.GetMaxFlow(S, T));

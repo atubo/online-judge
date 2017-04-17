@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/16
+* [洛谷1231] 教辅的组成：网络流。PushRelabel TLE (?)，用Dinic才AC。
+
 ### 04/15
 * [洛谷 2252] 取石子游戏：[威佐夫博奕](https://hrbust-acm-team.gitbooks.io/acm-book/content/game_theory/wei_zuo_fu_bo_yi.html)。
 * [HDU 2177] 取(2堆)石子游戏：威佐夫博奕，同上，但要找出取胜解。

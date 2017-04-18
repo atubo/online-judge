@@ -9,7 +9,7 @@ private:
     static const int inf = 0x3f3f3f3f;
     static const int MAXN = 810;
     static const int MAXM = 20010;
-    int head[MAXN], q[MAXN], curr[MAXN];
+    int head[MAXN], curr[MAXN];
     struct Edge {
         int to, next, cap;
     } E[MAXM];
@@ -35,17 +35,17 @@ public:
     int fwd_bfs(int s) {
         int ret = 0;
         memset(vis, 0, sizeof(vis));
-        int fron = 0, rear = 0;
-        q[rear++] = s;
+        queue<int> q;
+        q.push(s);
         vis[s] = true;
-        while (fron < rear) {
-            int u = q[fron];
-            fron++;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
             ret++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (!vis[v] && E[i].cap) {
-                    q[rear++] = v;
+                    q.push(v);
                     vis[v] = true;
                 }
             }
@@ -56,17 +56,17 @@ public:
     int bwd_bfs(int t) {
         int ret = 0;
         memset(vis, 0, sizeof(vis));
-        int fron = 0, rear = 0 ;
-        q[rear++] = t;
+        queue<int> q;
+        q.push(t);
         vis[t] = true;
-        while (fron < rear) {
-            int u = q[fron];
-            fron++;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
             ret++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (!vis[v] && E[i^1].cap) {
-                    q[rear++] = v;
+                    q.push(v);
                     vis[v] = true;
                 }
             }
@@ -81,18 +81,17 @@ private:
 
     bool bfs(int s, int t) {
         memset(d, -1, sizeof(d));
-        int fron = 0, rear = 0;
-        q[rear++] = t;
+        queue<int> q;
+        q.push(t);
         d[t] = 0;
-        while (fron < rear) {
-            int u = q[fron];
-            fron++;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (d[v] == -1 && E[i^1].cap) {
                     d[v] = d[u] + 1;
-                    q[rear] = v;
-                    rear++;
+                    q.push(v);
                     if (v == s) return true;
                 }
             }

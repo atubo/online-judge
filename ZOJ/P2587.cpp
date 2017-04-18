@@ -9,7 +9,7 @@ private:
     static const int inf = 0x3f3f3f3f;
     static const int MAXN = 810;
     static const int MAXM = 20010;
-    int head[MAXN];
+    int head[MAXN], q[MAXN];
     struct Edge {
         int to, next, cap;
     } E[MAXM];
@@ -35,17 +35,17 @@ public:
     int fwd_bfs(int s) {
         int ret = 0;
         memset(vis, 0, sizeof(vis));
-        queue<int> q;
-        q.push(s);
+        int fron = 0, rear = 0;
+        q[rear++] = s;
         vis[s] = true;
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
+        while (fron < rear) {
+            int u = q[fron];
+            fron++;
             ret++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (!vis[v] && E[i].cap) {
-                    q.push(v);
+                    q[rear++] = v;
                     vis[v] = true;
                 }
             }
@@ -56,17 +56,17 @@ public:
     int bwd_bfs(int t) {
         int ret = 0;
         memset(vis, 0, sizeof(vis));
-        queue<int> q;
-        q.push(t);
+        int fron = 0, rear = 0 ;
+        q[rear++] = t;
         vis[t] = true;
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
+        while (fron < rear) {
+            int u = q[fron];
+            fron++;
             ret++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (!vis[v] && E[i^1].cap) {
-                    q.push(v);
+                    q[rear++] = v;
                     vis[v] = true;
                 }
             }
@@ -80,22 +80,24 @@ private:
 
 
     bool bfs(int s, int t) {
-        queue<int> q;
         memset(d, -1, sizeof(d));
-        q.push(t);
+        int fron = 0, rear = 0;
+        q[rear++] = t;
         d[t] = 0;
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
+        while (fron < rear) {
+            int u = q[fron];
+            fron++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (d[v] == -1 && E[i^1].cap) {
                     d[v] = d[u] + 1;
-                    q.push(v);
+                    q[rear] = v;
+                    rear++;
+                    if (v == s) return true;
                 }
             }
         }
-        return d[s] != -1;
+        return false;
     }
 
     int dfs(int x, int low, int t) {

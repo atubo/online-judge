@@ -9,7 +9,7 @@ private:
     static const int inf = 0x3f3f3f3f;
     static const int MAXN = 810;
     static const int MAXM = 20010;
-    int head[MAXN], q[MAXN];
+    int head[MAXN], q[MAXN], curr[MAXN];
     struct Edge {
         int to, next, cap;
     } E[MAXM];
@@ -103,7 +103,7 @@ private:
     int dfs(int x, int low, int t) {
         if (x == t || !low) return low;
         int ret = 0;
-        for (int i = head[x]; i != -1; i = E[i].next) {
+        for (int &i = curr[x]; i != -1; i = E[i].next) {
             int v = E[i].to;
             if (d[v] == d[x] - 1) {
                 int k = dfs(v, min(low-ret, E[i].cap), t);
@@ -121,6 +121,9 @@ public:
     int dinic(int s, int t) {
         int ans = 0;
         while (bfs(s, t)) {
+            for (int i = 0; i < MAXN; i++) {
+                curr[i] = head[i];
+            }
             int k = dfs(s, inf, t);
             if (k > 0) ans += k;
         }

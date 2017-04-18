@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/17
+* [ZOJ 2587] Unique Attack：最小割的唯一性判断。
+
 ### 04/16
 * [洛谷1231] 教辅的组成：网络流。PushRelabel TLE (?)，用Dinic才AC。
 

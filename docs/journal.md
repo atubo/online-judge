@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/19
+* [洛谷 2280] [HNOI2003]激光炸弹：将目标按x排序，y方向上用线段树维护。
+见[题解](http://blog.leanote.com/post/gintoki/fa37afdd4337http://blog.leanote.com/post/gintoki/fa37afdd4337)。
+
 ### 04/18
 * [ZOJ 2788] Panic Room：如果两个房间有门连接，从有控制面板的房间向另一个
 房间连一条容量为1的有向边。找到所有可到达安全房的房间（集合D），再找到所有入侵者可到达

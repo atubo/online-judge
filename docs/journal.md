@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 04/20
 * [洛谷 2055] [ZJOI2009]假期的宿舍：二部图，人为一边，床为一边，若A认识B，
 则从A向B 的床连一条边，求最大匹配。Dinic 超时，匈牙利算法AC。
+* [洛谷 1345] [USACO5.4]奶牛的电信Telecowmunication：顶点连通度。
 
 ### 04/19
 * [洛谷 2280] [HNOI2003]激光炸弹：将目标按x排序，y方向上用线段树维护。

@@ -10,91 +10,62 @@ int adj[MAXN][MAXN];
 int isStudent[MAXN], leave[MAXN];
 int N;
 
-class Dinic {
+class Hungarian {
 private:
-    static const int inf = 0x3f3f3f3f;
-    static const int MAXM = 5 * MAXN * MAXN;
-    int head[MAXN], curr[MAXN];
-    struct Edge {
-        int to, next, cap;
-    } E[MAXM];
-    int e;
+    static const int MAXN = 55;
+    int nx, ny;
+    int g[MAXN][MAXN];
 
-public:
-    Dinic() {
-        reset();
-    }
+    int cx[MAXN], cy[MAXN];
+    int mk[MAXN];
 
-    void reset() {
-        e = 0;
-        memset(head, -1, sizeof(head));
-    }
-
-    void addEdge(int x, int y, int w, int rw = 0) {
-        E[e] = {y, head[x], w};
-        head[x] = e++;
-        E[e] = {x, head[y], rw};
-        head[y] = e++;
-    }
-
-private:
-    int d[MAXN];
-
-    bool bfs(int s, int t) {
-        memset(d, -1, sizeof(d));
-        queue<int> q;
-        q.push(t);
-        d[t] = 0;
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
-            for (int i = head[u]; i != -1; i = E[i].next) {
-                int v = E[i].to;
-                if (d[v] == -1 && E[i^1].cap) {
-                    d[v] = d[u] + 1;
-                    q.push(v);
-                    if (v == s) return true;
+    int path(int u) {
+        for (int v = 0; v < ny; v++) {
+            if (g[u][v] && !mk[v]) {
+                mk[v] = 1;
+                if (cy[v] == -1 || path(cy[v])) {
+                    cx[u] = v;
+                    cy[v] = u;
+                    return 1;
                 }
             }
         }
-        return false;
-    }
-
-    int dfs(int x, int low, int t) {
-        if (x == t || !low) return low;
-        int ret = 0;
-        for (int &i = curr[x]; i != -1; i = E[i].next) {
-            int v = E[i].to;
-            if (d[v] == d[x] - 1) {
-                int k = dfs(v, min(low-ret, E[i].cap), t);
-                if (k > 0) {
-                    E[i].cap -= k;
-                    E[i^1].cap += k;
-                    ret += k;
-                }
-            }
-        }
-        return ret;
+        return 0;
     }
 
 public:
-    int dinic(int s, int t) {
-        int ans = 0;
-        while (bfs(s, t)) {
-            for (int i = 0; i < MAXN; i++) {
-                curr[i] = head[i];
+    Hungarian() {
+        reset(MAXN-1, MAXN-1);
+    }
+
+    void reset(int nx_, int ny_) {
+        nx = nx_;
+        ny = ny_;
+        memset(g, 0, sizeof(g));
+    }
+
+    void addEdge(int x, int y) {
+        g[x][y] = 1;
+    }
+
+    int maxMatch() {
+        int res = 0;
+        memset(cx, -1, sizeof(cx));
+        memset(cy, -1, sizeof(cy));
+        for (int i = 0; i < nx; i++) {
+            if (cx[i] == -1) {
+                memset(mk, 0, sizeof(mk));
+                res += path(i);
             }
-            int k = dfs(s, inf, t);
-            if (k > 0) ans += k;
         }
-        return ans;
+        return res;
     }
 };
 
 int main() {
     int tests;
     scanf("%d", &tests);
-    Dinic dinic;
+    Hungarian hungarian;
     while (tests--) {
         scanf("%d", &N);
         int cnt = 0;
@@ -116,30 +87,20 @@ int main() {
             adj[i][i] = 1;
         }
 
-        dinic.reset();
-        const int S = 0, T = N + cnt + 1;
+        hungarian.reset(N, cnt);
         int needed = 0;
-        for (int i = 1; i <= N; i++) {
-            if (!(isStudent[i-1] && leave[i-1])) {
-                dinic.addEdge(S, i, 1);
-                needed++;
-            }
-        }
-
-        for (int i = 1; i <= cnt; i++) {
-            dinic.addEdge(N+i, T, 1);
-        }
-
         for (int i = 0; i < N; i++) {
+            if (isStudent[i] && leave[i]) continue;
+            needed++;
             for (int j = 0; j < N; j++) {
                 if (adj[i][j] && isStudent[j]) {
-                    dinic.addEdge(i+1, N+bed[j]+1, 1);
+                    hungarian.addEdge(i, bed[j]);
                 }
             }
         }
 
-        int flow = dinic.dinic(S, T);
-        printf(flow == needed ? "^_^\n" : "T_T\n");
+        int match = hungarian.maxMatch();
+        printf(match == needed ? "^_^\n" : "T_T\n");
     }
     return 0;
 }

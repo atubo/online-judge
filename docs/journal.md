@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 04/21
 * [洛谷 2085] 最小函数值(minval)：堆。
 * [POJ 3041] Asteroids：最小点权覆盖，转化为最小割。
+* [洛谷 1631] 序列合并：堆。
 
 ### 04/20
 * [洛谷 2055] [ZJOI2009]假期的宿舍：二部图，人为一边，床为一边，若A认识B，

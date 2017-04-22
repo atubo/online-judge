@@ -3,10 +3,10 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-using TI = tuple<int, int, int>;
+using PII = pair<int, int>;
 
 const int MAXN = 100010;
-int A[MAXN], B[MAXN];
+int A[MAXN], B[MAXN], pos[MAXN];
 int N;
 
 int main() {
@@ -18,17 +18,21 @@ int main() {
         scanf("%d", &B[i]);
     }
 
-    priority_queue<TI, vector<TI>, greater<TI>> pq;
+    priority_queue<PII, vector<PII>, greater<PII>> pq;
     for (int i = 0; i < N; i++) {
-        pq.push(make_tuple(A[i]+B[0], i, 0));
+        pq.push(make_pair(A[i]+B[0], i));
     }
 
     for (int k = 0; k < N; k++) {
-        int s, i, j;
-        tie(s, i, j) = pq.top();
+        int s, i;
+        tie(s, i) = pq.top();
         printf("%d ", s);
         pq.pop();
-        if (j < N-1) pq.push(make_tuple(A[i]+B[j+1], i, j+1));
+        int j = pos[i];
+        if (j < N-1) {
+            pq.push(make_pair(A[i]+B[j+1], i));
+            pos[i]++;
+        }
     }
     printf("\n");
     return 0;

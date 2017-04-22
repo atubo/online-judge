@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/21
+* [洛谷 2085] 最小函数值(minval)：堆。
+
 ### 04/20
 * [洛谷 2055] [ZJOI2009]假期的宿舍：二部图，人为一边，床为一边，若A认识B，
 则从A向B 的床连一条边，求最大匹配。Dinic 超时，匈牙利算法AC。

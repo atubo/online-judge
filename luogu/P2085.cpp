@@ -3,41 +3,22 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-using Tp = tuple<int, int, int, double>;
+using Tp = tuple<int, int, int>;
 
 const int MAXN = 10010;
 int A[MAXN], B[MAXN], C[MAXN];
 int N, M;
 
-int next(int x, double mid) {
-    if (x < mid) {
-        x = ceil(2*mid - x);
-    } else {
-        x = floor(2*mid - x);
-    }
-    return x;
+int f(int i, int x) {
+    return A[i]*x*x + B[i]*x + C[i];
 }
 
 Tp init(int i) {
-    double mid = - (double)B[i]/(2.0*A[i]);
-    int f = floor(mid);
-    int x;
-    if (mid - f == 0.5) mid -= 0.00001;
-    if (mid - f < 0.5) {
-        x = f;
-    } else {
-        x = f + 1;
-    }
-    while (x <= 0) x = next(x, mid);
-    int y = A[i]*x*x + B[i]*x + C[i];
-    return make_tuple(y, i, x, mid);
+    return make_tuple(f(i, 1), i, 1);
 }
 
-Tp next(int i, int x, double mid) {
-    do {
-        x = next(x, mid);
-    } while (x <= 0);
-    return make_tuple(A[i]*x*x + B[i]*x + C[i], i, x, mid);
+Tp next(int i, int x) {
+    return make_tuple(f(i, x+1), i, x+1);
 }
 
 int main() {
@@ -52,11 +33,10 @@ int main() {
 
     while (M--) {
         int y, i, x;
-        double mid;
-        tie(y, i, x, mid) = pq.top();
+        tie(y, i, x) = pq.top();
         printf("%d ", y);
         pq.pop();
-        pq.push(next(i, x, mid));
+        pq.push(next(i, x));
     }
     printf("\n");
     return 0;

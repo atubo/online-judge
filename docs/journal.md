@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/23
+* [洛谷 2278] [HNOI2003]操作系统：优先队列处理任务。
+
 ### 04/22
 * [洛谷 1650] 赛马：将速度从大到小排序后DP。令 $dp(i,j)$ 表示田忌的第i号马开始，
 齐王的第j号马开始的最大获胜数。

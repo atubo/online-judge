@@ -58,19 +58,29 @@ public:
     }
 };
 
-using TIII = tuple<int, int, int>;  // (weight, u, v)
+using PII = pair<int, int>;  // (weight, eidx)
+const int MAXN = 2010;
+int X[MAXN], Y[MAXN];
+int N, C;
+struct Edge {
+    int u, v, w;
+    bool operator < (const Edge &other) const {
+        return w < other.w;
+    }
+} E[MAXN*MAXN/2];
+int eidx;
+
 
 int cost, ncomp;
 
 class Kruskal {
 public:
-    static void mst(vector<TIII>& edges, int N) {
+    static void mst() {
         ncomp = N;
         UnionFind uf(N);
-        sort(edges.begin(), edges.end());
-        for (const TIII& e: edges) {
-            int w, u, v;
-            tie(w, u, v) = e;
+        sort(E, E+eidx);
+        for (int i = 0; i < eidx; i++) {
+            int u = E[i].u, v = E[i].v, w = E[i].w;
             if (uf.find(u) == uf.find(v)) continue;
             ncomp--;
             uf.join(u, v);
@@ -78,10 +88,6 @@ public:
         }
     }
 };
-
-const int MAXN = 2010;
-int X[MAXN], Y[MAXN];
-int N, C;
 
 int dist(int i, int j) {
     int dx = X[i] - X[j];
@@ -95,17 +101,17 @@ int main() {
         scanf("%d%d", &X[i], &Y[i]);
     }
 
-    vector<TIII> edges;
     for (int i = 0; i < N; i++) {
         for (int j = i+1; j < N; j++) {
             int d = dist(i, j);
             if (d >= C) {
-                edges.push_back(make_tuple(d, i, j));
+                E[eidx] = {i, j, d};
+                eidx++;
             }
         }
     }
 
-    Kruskal::mst(edges, N);
+    Kruskal::mst();
 
     printf("%d\n", ncomp == 1 ? cost : -1);
     return 0;

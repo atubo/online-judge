@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/24
+* [洛谷 2119] 魔法阵：暴力，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2119)。
+
 ### 04/23
 * [洛谷 2278] [HNOI2003]操作系统：优先队列处理任务。
 * [洛谷 2629] 好消息，坏消息：求长度为N的连续区间的最小值，用单调队列维护。

@@ -44,14 +44,14 @@ public:
         printf("%lld\n", ret);
     }
 
-    int countRev1(vector<int>& v) {
+    int64_t countRev1(vector<int>& v) {
         return mergeSort(v, 0, N);
     }
 
-    int mergeSort(vector<int>& v, int lo, int hi) {
+    int64_t mergeSort(vector<int>& v, int lo, int hi) {
         if (lo >= hi - 1) return 0;
         int mid = (lo + hi) / 2;
-        int ret = mergeSort(v, lo, mid);
+        int64_t ret = mergeSort(v, lo, mid);
         ret += mergeSort(v, mid, hi);
 
         int p = lo, q = mid, k = lo;
@@ -89,7 +89,7 @@ public:
                 ret += x - pos - 1;
                 ret -= upper_bound(v2.begin(), v2.end(), x-1) -
                     upper_bound(v2.begin(), v2.end(), pos);
-            } else {
+            } else if (x < pos) {
                 ret += pos - x - 1;
                 ret -= upper_bound(v2.begin(), v2.end(), pos-1) -
                     upper_bound(v2.begin(), v2.end(), x);

@@ -9,6 +9,9 @@ Journal of the problems I have worked on
 
 ### 04/25
 * [洛谷 2642] 双子序列最大和：正反向各求一遍到每个位置的子序列最大和。
+* [洛谷 2711] 小行星：将每个y坐标拆成y 和 y' 两点，
+每个行星对应一条从S到T的路径，用最小割解，类似[洛谷 1231]。可以推广到N维。
+见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2711)。
 
 ### 04/24
 * [洛谷 2119] 魔法阵：暴力，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2119)。

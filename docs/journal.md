@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/25
+* [洛谷 2642] 双子序列最大和：正反向各求一遍到每个位置的子序列最大和。
+
 ### 04/24
 * [洛谷 2119] 魔法阵：暴力，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2119)。
 * [洛谷 2448] 无尽的生命：将参与交换的数字叫做演员，未参与交换的数字叫做背景。

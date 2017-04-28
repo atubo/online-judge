@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/27
+* [洛谷 1363] 幻想迷宫：有技巧的BFS，没想出来，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1363https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1363)。
+
 ### 04/26
 * [洛谷 2417] 课程：二部图最大匹配模板题。
 * [洛谷 3605] [USACO17JAN]Promotion Counting晋升者计数：好题。先求出DFS序，

@@ -60,11 +60,10 @@ bool bfs(int p, int q) {
 
 int main() {
     while (scanf("%d%d", &N, &M) == 2) {
-        string line;
-        getline(cin, line);
         int p, q;
         for (int i = 0; i < N; i++) {
-            getline(cin, line);
+            char line[1600];
+            scanf("%s", line);
             for (int j = 0; j < M; j++) {
                 switch(line[j]) {
                     case 'S':

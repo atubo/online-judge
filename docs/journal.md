@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/28
+* [洛谷 1489] 猫狗大战：背包问题，用 $dp(n,k,m)$ 表示前n个元素中选k个，
+和为m的可能性，有 $dp(n,k,m)=dp(n-1,k,m)|dp(n-1,k-1,m-a_n)$ 。
+
 ### 04/27
 * [洛谷 1363] 幻想迷宫：有技巧的BFS，没想出来，见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1363https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P1363)。
 

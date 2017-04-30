@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/29
+* [洛谷 3623] [APIO2008]免费道路：并查集，先连接所有水泥路再连接最多
+K条鹅卵石路，如果连通则从鹅卵石路出发找生成树。
+
 ### 04/28
 * [洛谷 1489] 猫狗大战：背包问题，用 $dp(n,k,m)$ 表示前n个元素中选k个，
 和为m的可能性，有 $dp(n,k,m)=dp(n-1,k,m)|dp(n-1,k-1,m-a_n)$ 。

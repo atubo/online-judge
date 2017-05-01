@@ -62,22 +62,21 @@ public:
     }
 };
 
-using Adj = vector<unordered_set<int>>;
 using PII = pair<int, int>;
 int N;
+bool adj[2001][2001];
 
 int main() {
     scanf("%d", &N);
     UnionFind uf(2*N);
-    Adj adj(N);
     for (int i = 0; i < N; i++) {
         int j;
         while (scanf("%d", &j) && j) {
             j--;
-            adj[i].insert(j);
+            adj[i][j] = true;
         }
         for (j = 0; j < N; j++) {
-            if (j != i && adj[i].count(j) == 0) {
+            if (j != i && !adj[i][j]) {
                 int u = 2 * i;
                 int up = u + 1;
                 int v = 2 * j;

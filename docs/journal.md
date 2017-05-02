@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 05/01
 * [洛谷 2889] [USACO07NOV]挤奶的时间Milking Time：DP。
+* [洛谷 2843] 暗杀：哈希维护前缀和。
 
 ### 04/30
 * [洛谷 2175] 小Z的游戏分队：并查集+背包。若A不信任B，则A和B在不同的队伍中。

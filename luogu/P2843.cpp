@@ -8,6 +8,22 @@ const int MAXN = 100010;
 int N, K;
 int ps[MAXN][31];
 
+const int PRIME1 = 22279;
+const int PRIME2 = 982451653;
+
+namespace std {
+template<>
+struct hash<vector<int>> {
+    size_t operator()(const vector<int> &v) const {
+        size_t ret = 0;
+        for (int x: v) {
+            ret = (ret * PRIME1 + x) % PRIME2;
+        }
+        return ret;
+    }
+};
+}
+
 int main() {
     scanf("%d%d", &N, &K);
     if (K == 1) {
@@ -15,7 +31,7 @@ int main() {
         return 0;
     }
     int ret = 0;
-    map<vector<int>, int> m;
+    unordered_map<vector<int>, int> m;
     vector<int> key(K-1);
     m[key] = 0;
     for (int i = 1; i <= N; i++) {

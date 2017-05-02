@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/01
+* [洛谷 2889] [USACO07NOV]挤奶的时间Milking Time：DP。
+
 ### 04/30
 * [洛谷 2175] 小Z的游戏分队：并查集+背包。若A不信任B，则A和B在不同的队伍中。
 据此可将图分解成若干对偶的连通分量。对这些连通分量作背包处理。

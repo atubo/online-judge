@@ -7,6 +7,8 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+* [洛谷 2512] [HAOI2008]糖果传递：环形均分纸牌。
+
 ### 05/01
 * [洛谷 2889] [USACO07NOV]挤奶的时间Milking Time：DP。
 * [洛谷 2843] 暗杀：哈希维护前缀和。

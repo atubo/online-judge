@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/03
+* [洛谷 1241] 括号序列：栈维护，一旦发现不匹配，立即加上匹配括号。
+
+### 05/02
 * [洛谷 2512] [HAOI2008]糖果传递：环形均分纸牌。
 
 ### 05/01

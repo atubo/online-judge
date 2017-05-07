@@ -7,6 +7,15 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/07
+* [洛谷 3182] [HAOI2016]放棋子：其实答案只与N有关，与障碍摆放无关。
+从第一行出发，找到第一行所在棋子的列j,再找到j列所在障碍的行i...最终会回到第一行。
+假设此回路长度为j,回路选择数为 $(n-j+1)\cdot(n-j+2)...\cdot(n-1)$ ,故有
+$dp(n) = \sum\limits_{j=2}^{n}(n-j+1)\cdot(n-j+2)...\cdot(n-1)\cdot dp(n-j)$ 。
+直接用此式会TLE，看AC提交后发现此式可化简为
+$dp(n) = (n-1) \cdot [dp(n-1) + dp(n-2)]$ 。
+
+
 ### 05/06
 * [洛谷 2647] 最大收益：很显然所选物品必须按R升序排列。剩下的问题是应该
 选那些物品，用DP解决。见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2647)。

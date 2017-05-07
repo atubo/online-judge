@@ -136,6 +136,29 @@ public:
         return ret;
     }
 
+    BigInt& operator += (const BigInt& b) {
+        const int N = splits.size();
+        const int M = b.splits.size();
+
+        const int L = max(N, M);
+
+        if (L > N) splits.resize(L);
+
+        int carry = 0;
+        for (int i = 0; i < L; i++) {
+            int d = (i < N ? splits[i] : 0) + (i < M ? b.splits[i] : 0) + carry;
+            splits[i] = d % SPLIT_OVERFLOW;
+            carry = (d >= SPLIT_OVERFLOW);
+        }
+
+        if (carry) {
+            splits.push_back(1);
+        }
+
+        return *this;
+    }
+
+
     friend BigInt operator - (const BigInt& a, const BigInt& b) {
         // precondition: a >= b
         assert(b <= a);
@@ -186,25 +209,7 @@ public:
 const int MAXN = 200;
 int N;
 
-vector<vector<BigInt>> perm(MAXN+1, vector<BigInt>(MAXN+1));
 vector<BigInt> dp(MAXN+1);
-
-void init() {
-    for (int i = 1; i <= N; i++) {
-        perm[i][i] = BigInt(to_string(i));
-        for (int j = i+1; j <= N; j++) {
-            perm[i][j] = perm[i][j-1] * BigInt(to_string(j));
-        }
-    }
-}
-
-BigInt prod(int i, int j) {
-    BigInt ret(to_string(i));
-    for (int k = i+1; k <= j; k++) {
-        ret = ret * BigInt(to_string(k));
-    }
-    return ret;
-}
 
 int main() {
     scanf("%d", &N);
@@ -212,13 +217,11 @@ int main() {
         printf("0\n");
         return 0;
     }
-    init();
     dp[0] = BigInt(to_string(1));
     dp[1] = BigInt(to_string(0));
     for (int i = 2; i <= N; i++) {
-        for (int j = 2; j <= i; j++) {
-            dp[i] = dp[i] + perm[i-j+1][i-1] * dp[i-j];
-        }
+        dp[i] = dp[i-1] + dp[i-2];
+        dp[i] = dp[i] * BigInt(to_string(i-1));
     }
     printf("%s\n", dp[N].toString().c_str());
 

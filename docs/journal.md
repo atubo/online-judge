@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/06
+* [洛谷 2647] 最大收益：很显然所选物品必须按R升序排列。剩下的问题是应该
+选那些物品，用DP解决。见[题解](https://www.luogu.org/wiki/show?name=%E9%A2%98%E8%A7%A3+P2647)。
+
 ### 05/03
 * [洛谷 1241] 括号序列：栈维护，一旦发现不匹配，立即加上匹配括号。
 

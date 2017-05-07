@@ -14,6 +14,8 @@ Journal of the problems I have worked on
 $dp(n) = \sum\limits_{j=2}^{n}(n-j+1)\cdot(n-j+2)...\cdot(n-1)\cdot dp(n-j)$ 。
 直接用此式会TLE，看AC提交后发现此式可化简为
 $dp(n) = (n-1) \cdot [dp(n-1) + dp(n-2)]$ 。
+* [洛谷 1438] 无聊的数列：将原数组差分，则求原数组元素转化为求新数组前缀和。
+新数组的更新极为简单，位置L加k，位置[L+1, R] 加d, 位置R+1减 k+(R-L)* d 即可。
 
 
 ### 05/06

@@ -4,8 +4,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool iscut[100];
-
 class Graph {
     static const int MAXM = 400;
 public:
@@ -16,13 +14,16 @@ public:
     vector<int> head;
     int eidx;
     int N;
+    vector<int> dist;
 
     Graph(int N_):N(N_) {
         head.resize(N);
+        dist.resize(N);
         eidx = 0;
 
         for (int i = 0; i < N; i++) {
             head[i] = -1;
+            dist[i] = -1;
         }
     }
 
@@ -52,59 +53,45 @@ public:
         }
         return false;
     }
-};
 
-class DFS {
-public:
-    static const int MAXN = 100;
-    static const int MAXM = 400;
-
-    struct Edge {
-        int next, to;
-    } E[MAXM];
-
-    int head[MAXN], dfn[MAXN], low[MAXN];
-    bool vis[MAXN], instack[MAXN];
-    int eidx;
-    int tmpdfn;
-    int N;
-
-    DFS(int N_):N(N_) {
-        eidx = 0;
-
-        for (int i = 0; i < N; i++) {
-            head[i] = -1;
-        }
-        memset(vis, 0, sizeof(vis));
-        memset(instack, 0, sizeof(instack));
-        tmpdfn = 0;
-    }
-
-    // assume 0-indexed and no duplication
-    void addEdge(int u, int v) {
-        E[eidx].to = v;
-        E[eidx].next = head[u];
-        head[u] = eidx++;
-    }
-
-    void dfs(int u, int father) {
-        vis[u] = true;
-        dfn[u] = low[u] = tmpdfn++;
-        for (int i = head[u]; i != -1; i = E[i].next) {
-            int v = E[i].to;
-            if (v != father && vis[v]) {
-                low[u] = min(low[u], dfn[v]);
+    bool bfs2(int x) {
+        vector<bool> vis(N);
+        queue<int> q;
+        q.push(x);
+        vis[x] = true;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
+            for (int i = head[u]; i != -1; i = E[i].next) {
+                int v = E[i].to;
+                if (dist[v] < dist[x]) return false;
+                if (!vis[v]) {
+                    q.push(v);
+                    vis[v] = true;
+                }
             }
-            if (!vis[v]) {
-                dfs(v, u);
-                low[u] = min(low[u], low[v]);
-                // if low[v] > dfn[u], (u, v) is a bridge
-                // if low[v] >= dfn[u], u is a cut vertex
-                if (low[v] >= dfn[u]) iscut[u] = true;
+        }
+        return true;
+    }
+
+    void bfs3() {
+        queue<int> q;
+        q.push(0);
+        dist[0] = 0;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
+            for (int i = head[u]; i != -1; i = E[i].next) {
+                int v = E[i].to;
+                if (dist[v] == -1) {
+                    q.push(v);
+                    dist[v] = dist[u] + 1;
+                }
             }
         }
     }
 };
+
 
 int main() {
     vector<vector<int>> adj;
@@ -140,17 +127,11 @@ int main() {
     }
     printf("\n");
 
-    DFS dfs(N);
-    for (int i = 0; i < (int)adj.size(); i++) {
-        for (int v: adj[i]) {
-            dfs.addEdge(i, v);
-            dfs.addEdge(v, i);
-        }
-    }
-    dfs.dfs(0, -1);
+    graph.bfs3();
+
     vector<int> middle;
     for (int x: inevitable) {
-        if (iscut[x]) {
+        if (graph.bfs2(x)) {
             middle.push_back(x);
         }
     }

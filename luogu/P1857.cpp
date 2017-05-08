@@ -47,25 +47,26 @@ public:
 
 using PII = pair<int, int>;
 const int MAXN = 20000;
+int dp[MAXN+1];
+int type[MAXN+1];
 
 int main() {
     EulerSieve es(MAXN);
-    vector<PII> dp(MAXN+1);
-    dp[0] = dp[1] = make_pair(0, 0);
+    dp[0] = dp[1] = 0;
+    type[0] = type[1] = 0;
     for (int i = 0; i <= MAXN; i++) {
         for (int p: es.primes) {
             if (i + p > MAXN) break;
-            int type, step;
-            tie(type, step) = dp[i];
-            if (type == 0) {
-                if (dp[i+p].first == 0) {
-                    dp[i+p] = make_pair(1, step+1);
+            if (type[i] == 0) {
+                if (type[i+p] == 0) {
+                    type[i+p] = 1;
+                    dp[i+p] = dp[i]+1;
                 } else {
-                    dp[i+p].second = min(dp[i+p].second, step+1);
+                    dp[i+p] = min(dp[i+p], dp[i]+1);
                 }
             } else {
-                if (dp[i+p].first == 0) {
-                    dp[i+p].second = max(dp[i+p].second, step+1);
+                if (type[i+p] == 0) {
+                    dp[i+p] = max(dp[i+p], dp[i]+1);
                 }
             }
         }
@@ -76,7 +77,7 @@ int main() {
     while (nt--) {
         int n;
         scanf("%d", &n);
-        printf("%d\n", dp[n].first ? dp[n].second : -1);
+        printf("%d\n", type[n] ? dp[n] : -1);
     }
 
     return 0;

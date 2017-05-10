@@ -65,8 +65,8 @@ int main() {
     do {
         x = xp;
         y = yp;
-        xp = x - fx(x, y)/dfx(x, y);
-        yp = y - fy(x, y)/dfy(x, y);
+        xp = x - 0.2 * fx(x, y)/dfx(x, y);
+        yp = y - 0.2 * fy(x, y)/dfy(x, y);
     } while (fabs(x - xp) > 1e-5 || fabs(y - yp) > 1e-5);
 
     printf("%.3lf %.3lf\n", x, y);

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/09
+* [洛谷 1337] [JSOI]平衡点：牛顿法。注意要加 damping。
+
 ### 05/08
 * [洛谷 1840] Color the Axis_NOI导刊2011提高（05）：线段树。需注意结点
 的eval函数在重复更新的情况下要满足idempotent的条件。

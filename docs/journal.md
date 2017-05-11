@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/10
+* [洛谷 2258] 子矩阵：枚举行，在列的方向上做DP。
+
 ### 05/09
 * [洛谷 1337] [JSOI]平衡点：牛顿法。注意要加 damping。
 

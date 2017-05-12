@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/11
+* [洛谷 1896] [SCOI2005]互不侵犯King：第一次写轮廓线DP，见[题解](http://blog.csdn.net/zzkksunboy/article/details/71511986)。
+
 ### 05/10
 * [洛谷 2258] 子矩阵：枚举行，在列的方向上做DP。
 * [洛谷 1730] 最小密度路径：拓扑排序+DP。 dp(u, v, m) 表示从u到v经过m条边

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/12
+* [洛谷 2704] 炮兵阵地：DP。从 i 行和 i+1 行可推出 i+2 行的状态，注意须
+预处理每一行的可行状态。
+
 ### 05/11
 * [洛谷 1896] [SCOI2005]互不侵犯King：第一次写轮廓线DP，见[题解](http://blog.csdn.net/zzkksunboy/article/details/71511986)。
 * [洛谷 2313] [HNOI2005]汤姆的游戏：暴力。对于圆的情况似乎也只能用暴力。

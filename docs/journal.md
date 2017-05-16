@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/15
+* [洛谷 1468] 派对灯 Party Lamps：不难看出变化周期为6，dp(n,k) 表示计数器
+为n, 状态为k的可能性。
+
 ### 05/13
 * [洛谷 2244] 选举预测：出度最大的一定是可能的胜者。从它出发作BFS，任何它
 不必胜的点视作相邻。如此可达的集合就是答案。

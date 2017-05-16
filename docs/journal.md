@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 05/15
 * [洛谷 1468] 派对灯 Party Lamps：不难看出变化周期为6，dp(n,k) 表示计数器
 为n, 状态为k的可能性。
+* [洛谷 3026] [USACO11OPEN]学习语言Learning Languages：求二分图连通分量数。
 
 ### 05/13
 * [洛谷 2244] 选举预测：出度最大的一定是可能的胜者。从它出发作BFS，任何它

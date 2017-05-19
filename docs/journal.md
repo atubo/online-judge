@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/18
+* [洛谷 2968] [USACO09DEC]雪橇Bobsledding：将拐点按速限压入堆中，弹出时
+调节邻居拐点的速限。处理完后从左到右扫描一遍即可。
+
 ### 05/17
 * [洛谷 2781] 传教：考虑到 m 很小，对每个更新 (l, r, k) 作
 $A[l] = A[l]+k, A[r+1] = A[r+1]-k$ , 对每个查询用类似前缀和的方法求出。

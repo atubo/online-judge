@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/19
+* [洛谷 2893] [USACO08FEB]修路Making the Grade：单调队列DP。容易证明
+每个山头修改后的高度一定是之前N个高度中的一个。$dp(n,k)$ 表示前 n 个山头，
+第 n 个山头修改为之前N个高度中的第 k 个的最小费用。
+
 ### 05/18
 * [洛谷 2968] [USACO09DEC]雪橇Bobsledding：将拐点按速限压入堆中，弹出时
 调节邻居拐点的速限。处理完后从左到右扫描一遍即可。

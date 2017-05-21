@@ -46,12 +46,8 @@ class SegmentTreeTD {
     };
 
 public:
-    SegmentTreeTD(const vector<V>& A, V zero_, D zeroUpdate_,
-                  function<V(V, V)> combine_,
-                  function<D(D, D)> accu_,
-                  function<V(V, D, int)> apply_):
-        N(A.size()), zero(zero_), zeroUpdate(zeroUpdate_),
-        combine(combine_), accu(accu_), apply(apply_) {
+    SegmentTreeTD(const vector<V>& A, V zero_, D zeroUpdate_) :
+        N(A.size()), zero(zero_), zeroUpdate(zeroUpdate_) {
         int nlog = 0;
         int n = N;
         while (n > 0) {
@@ -76,7 +72,7 @@ public:
         else {
             initialize(2*node, b, (b+e)/2, A);
             initialize(2*node+1, (b+e)/2+1, e, A);
-            M[node].value = combine(eval(M[2*node]), eval(M[2*node+1]));
+            M[node].value = eval(M[2*node]) + eval(M[2*node+1]);
             M[node].count = M[2*node].count + M[2*node+1].count;
         }
     }
@@ -95,14 +91,10 @@ private:
     const V zero;   // zero element for combine
     const D zeroUpdate; // zero for update
 
-    function<V(V, V)> combine;
-    function<D(D, D)> accu;
-    function<V(V, D, int)> apply;
-
     Node* M;
 
     V eval(const Node& node) const {
-        return apply(node.value, node.update, node.count);
+        return node.value + node.update * node.count;
     }
 
     V query(int node, int b, int e, int i, int j) const {
@@ -114,8 +106,8 @@ private:
         if (M[node].update != zeroUpdate) {
             M[node].value = eval(M[node]);
             if (b != e) {
-                M[2*node].update = accu(M[node].update, M[2*node].update);
-                M[2*node+1].update = accu(M[node].update, M[2*node+1].update);
+                M[2*node].update = M[node].update + M[2*node].update;
+                M[2*node+1].update = M[node].update + M[2*node+1].update;
             }
             M[node].update = zeroUpdate;
         }
@@ -127,7 +119,7 @@ private:
         V p1 = query(2*node, b, (b+e)/2, i, j);
         V p2 = query(2*node+1, (b+e)/2+1, e, i, j);
 
-        return combine(p1, p2);
+        return p1 + p2;
     }
 
     void update(int node, int b, int e, int i, int j, D d) {
@@ -135,17 +127,17 @@ private:
             return;
         }
         if (b >= i && e <= j) {
-            M[node].update = accu(d, M[node].update);
+            M[node].update = d + M[node].update;
             return;
         }
         if (M[node].update != zeroUpdate) {
-            M[2*node].update = accu(M[node].update, M[2*node].update);
-            M[2*node+1].update = accu(M[node].update, M[2*node+1].update);
+            M[2*node].update = M[node].update + M[2*node].update;
+            M[2*node+1].update = M[node].update + M[2*node+1].update;
         }
 
         update(2*node, b, (b+e)/2, i, j, d);
         update(2*node+1, (b+e)/2+1, e, i, j, d);
-        M[node].value = combine(eval(M[2*node]), eval(M[2*node+1]));
+        M[node].value = eval(M[2*node]) + eval(M[2*node+1]);
         M[node].update = zeroUpdate;
     }
 };
@@ -231,10 +223,7 @@ public:
     void prepare() {
         // set up segment tree
         vector<int> A(N-1, 0);
-        auto comb = [](int x, int y) {return x + y;};
-        auto accu = [](int x, int y) {return x + y;};
-        auto appl = [](int x, int d, int sz) {return x + d * sz;};
-        st = new SegmentTreeTD<int>(A, 0, 0, comb, accu, appl);
+        st = new SegmentTreeTD<int>(A, 0, 0);
 
         dfs1(root, root);
         top[root] = root;

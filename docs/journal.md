@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/20
+* [洛谷 2713] 铲雪：树链剖分。
+
 ### 05/19
 * [洛谷 2893] [USACO08FEB]修路Making the Grade：单调队列DP。容易证明
 每个山头修改后的高度一定是之前N个高度中的一个。$dp(n,k)$ 表示前 n 个山头，

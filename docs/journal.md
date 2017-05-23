@@ -7,6 +7,38 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/21
+* [洛谷 2520] [HAOI2011]向量：显然只须考虑 $(a,b), (a, -b), (b, a), (b,-a)$
+这四个向量。又显然若要有解，则必须有 a 和 b 的最大公约数整除 x 和 y 。
+若 $\gcd(a,b)=u a + v b$, 令 $a'=a/g$, $b'=b/g$, $x'=x/g$, $y'=y/g$ ，
+有等式
+
+$$
+\begin{align*}
+(x_1 + x_2 - u x') a' + (x_3 + x_4 - v x') b' &= 0 \\
+(x_1 - x_2 - v y') b' + (x_3 - x_4 - u y') a' &= 0 \\
+\end{align*}
+$$
+
+$$
+\begin{align*}
+x_1 + x_2 - ux' &= b'k_1 \\
+x_1 - x_2 - vy' &= a'k_2 \\
+x_3 + x_4 - vx' &= a'k_1 \\
+x_3 - x_4 + uy' &= b'k_2 \\
+\end{align*}
+$$  
+
+有
+
+$$
+\begin{align*}
+ux' + vy' + b'k_1 + a'k_2 &\equiv 0 \mod 2 \\
+vx' + uy' + a'k_1 + b'k_2 &\equiv 0 \mod 2 \\
+k_1 \in [0, 1], k_2 \in [0, 1]
+\end{align*}
+$$
+
 ### 05/20
 * [洛谷 2713] 铲雪：树链剖分。
 

@@ -14,6 +14,17 @@ tuple<int64_t, int64_t, int64_t> ext_gcd(int64_t a, int64_t b) {
     return make_tuple(dp, yp, xp - a / b * yp);
 }
 
+bool checkParity(int64_t u1, int64_t v1, int64_t u2, int64_t v2,
+                 int64_t a, int64_t b) {
+    for (int k1 = 0; k1 < 2; k1++) {
+        for (int k2 = 0; k2 < 2; k2++) {
+            if ((u1 + v2 + a * k2 + b * k1) % 2 == 0 &&
+                (u2 + v1 + a * k1 + b * k2) % 2 == 0) return true;
+        }
+    }
+    return false;
+}
+
 bool solve(int a, int b, int x, int y) {
     if (a == 0 && b == 0) {
         return (x == 0 && y == 0);
@@ -34,7 +45,7 @@ bool solve(int a, int b, int x, int y) {
     int64_t a2 = a / g;
     int64_t b2 = b / g;
 
-    return ((u1 + v2 + a2 + b2) % 2 == 0) && ((u2 + v1 + a2 + b2) % 2 == 0);
+    return checkParity(u1, v1, u2, v2, a2, b2);
 }
 
 int main() {
@@ -43,8 +54,7 @@ int main() {
     while (t--) {
         int a, b, x, y;
         scanf("%d%d%d%d", &a, &b, &x, &y);
-        bool ok = solve(a, b, x, y) || solve(a, b, x+a, y+b) ||
-            solve(a, b, x+b, y+a) || solve(a, b, x+a+b, y+a+b);
+        bool ok = solve(a, b, x, y);
         printf(ok ? "Y\n" : "N\n");
     }
     return 0;

@@ -29,13 +29,11 @@ x_3 - x_4 + uy' &= b'k_2 \\
 \end{align*}
 $$  
 
-有
-
 $$
 \begin{align*}
-ux' + vy' + b'k_1 + a'k_2 &\equiv 0 \mod 2 \\
-vx' + uy' + a'k_1 + b'k_2 &\equiv 0 \mod 2 \\
-k_1 \in [0, 1], k_2 \in [0, 1]
+ux' + vy' + b'k_1' + a'k_2' &\equiv 0 \mod 2 \\
+vx' + uy' + a'k_1' + b'k_2' &\equiv 0 \mod 2 \\
+k_1' \in [0, 1], k_2' \in [0, 1]
 \end{align*}
 $$
 

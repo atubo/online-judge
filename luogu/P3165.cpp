@@ -5,20 +5,20 @@
 using namespace std;
 using PII = pair<int, int>;
 
+// index starts from 1 (0 is for NULL)
 class SplayTree {
 public:
     struct Node {
-        Node(int x, Node *f) {
-            pre = f;
-            sz = 1;
-            val = x;
-            tag = 0;
-
-            ch[0] = ch[1] = NULL;
+        Node() {
+            sz = 0;
+            init(0);
         }
 
-        Node* pre;
-        Node* ch[2];
+        void init(int x) {
+            sz = 0;
+            val = x;
+            tag = 0;
+        }
 
         int sz;
         int val;
@@ -26,141 +26,136 @@ public:
     };
 
     SplayTree(int sz) {
-        nodes.resize(sz);
-        root = build(0, sz, NULL);
+        // 1-indexed
+        nodes.resize(sz + 1);
+        f.resize(sz + 1);
+        t.resize(sz + 1);
+        for (int i = 0; i <= sz; i++) {
+            t[i][0] = t[i][1] = 0;
+        }
+        root = build(1, sz, 0);
     }
 
-    // build range [i, j)
-    Node* build(int p, int q, Node *f) {
-        assert(q - p >= 1);
+    // build range [i, j]
+    int build(int p, int q, int fa) {
+        assert(q - p >= 0);
 
         int mid = (p + q) / 2;
-        Node *x = new Node(mid, f);
-        if (mid - p >= 1) x->ch[0] = build(p, mid, x);
-        if (q - mid >= 2) x->ch[1] = build(mid+1, q, x);
+        Node& x = nodes[mid];
+        x.init(mid);
+        f[mid] = fa;
 
-        update(x);
+        if (mid - p >= 1) t[mid][0] = build(p, mid-1, mid);
+        if (q - mid >= 1) t[mid][1] = build(mid+1, q, mid);
 
-        nodes[mid] = x;
-        return x;
+        update(mid);
+
+        return mid;
     }
 
-    void pushDown(Node *x) {
-        if (x->tag) {
-            for (int i = 0; i < 2; i++) {
-                Node *y = x->ch[i];
-                if (y) y->tag ^= x->tag;
+    void reverse(int x) {
+        nodes[x].tag ^= 1;
+        swap(t[x][0], t[x][1]);
+    }
+
+    void pushDown(int x) {
+        if (nodes[x].tag) {
+            if (t[x][0]) reverse(t[x][0]);
+            if (t[x][1]) reverse(t[x][1]);
+            nodes[x].tag = 0;
+        }
+    }
+
+    void update(int x) {
+        assert(x);
+    
+        nodes[x].sz = 1;
+        if (t[x][0]) nodes[x].sz += nodes[t[x][0]].sz;
+        if (t[x][1]) nodes[x].sz += nodes[t[x][1]].sz;
+    }
+
+    bool son(int x) const {
+        return t[f[x]][0] == x ? 0 : 1;
+    }
+
+    void rotate(int x) {
+        int y = f[x], z = son(x);
+
+        t[y][z] = t[x][1-z];
+        if (t[x][1-z]) f[t[x][1-z]] = y;
+
+        f[x] = f[y];
+        if (f[x]) t[f[x]][son(y)] = x;
+
+        f[y] = x; t[x][1-z] = y;
+        update(y); update(x);
+    }
+
+    void propagate(int x, int y) {
+        if (x == y) return;
+        stack<int> d;
+        do {
+            d.push(x);
+            x = f[x];
+        } while (x != y);
+        while (!d.empty()) {
+            x = d.top();
+            d.pop();
+            pushDown(x);
+        }
+    }
+
+    void splay(int x, int y) {
+        propagate(x, y);
+        while (f[x] != y) {
+            if (f[f[x]] != y) {
+                if (son(f[x]) == son(x)) rotate(f[x]);
+                else rotate(x);
             }
-            swap(x->ch[0], x->ch[1]);
-            x->tag = 0;
+            rotate(x);
         }
+        if (!y) root = x;
     }
 
-    void update(Node *x) {
-        int ans = 0;
-        for (int i = 0; i < 2; i++) {
-            Node *y = x->ch[i];
-            if (y) ans += y->sz;
-        }
-        x->sz = ans + 1;
-    }
-
-    void rotate(Node *x, int c) {
-        // c = 0: left rotation, c = 1: right rotation
-        Node *y = x->pre;
-        pushDown(y);
+    void splaySucc(int x) {
         pushDown(x);
-        y->ch[!c] = x->ch[c];
-        if (x->ch[c] != NULL) x->ch[c]->pre = y;
-        x->pre = y->pre;
-        if (y->pre != NULL) {
-            if (y->pre->ch[0] == y) y->pre->ch[0] = x;
-            else y->pre->ch[1] = x;
+        x = t[x][1];
+        while (x) {
+            pushDown(x);
+            if (t[x][0]) x = t[x][0];
+            else break;
         }
-        x->ch[c] = y;
-        y->pre = x;
-        update(y);
-
-        if (y == root) root = x;
+        splay(x, 0);
     }
 
-    void splay(Node *x, Node *f) {
-        for (pushDown(x); x->pre != f;) {
-            if (x->pre->pre == f) {
-                if (x->pre->ch[0] == x) rotate(x, 1);
-                else rotate(x, 0);
-            } else {
-                Node *y = x->pre, *z = y->pre;
-                if (z->ch[0] == y) {
-                    if (y->ch[0] == x) {
-                        // zig-zig
-                        rotate(y, 1);
-                        rotate(x, 1);
-                    } else {
-                        rotate(x, 0);
-                        rotate(x, 1);
-                    }
-                } else {
-                    if (y->ch[1] == x) {
-                        // zig-zig
-                        rotate(y, 0);
-                        rotate(x, 0);
-                    } else {
-                        rotate(x, 1);
-                        rotate(x, 0);
-                    }
-                }
-            }
-            print(root);
-            printf("\n");
+    void del(int x) {
+        // it must be left child of its parent and has no right child
+        f[t[x][0]] = f[x];
+        t[f[x]][0] = t[x][0];
+        update(f[x]);
+    }
+
+    void print() {
+        int sz = nodes.size() - 1;
+        printf("f: ");
+        for (int i = 1; i <= sz; i++) {
+            printf("%d ", f[i]);
         }
-        update(x);
-    }
-
-    Node* pred(Node *x) {
-        if (x->ch[0]) {
-            x = x->ch[0];
-            while (x->ch[1]) x = x->ch[1];
-        } else {
-            while (x->pre->ch[0] == x) x = x->pre;
-            x = x->pre;
+        printf("t: ");
+        for (int i = 1; i <= sz; i++) {
+            printf("(%d %d) ", t[i][0], t[i][1]);
         }
-        return x;
-    }
-
-    Node* succ(Node *x) {
-        if (x->ch[1]) {
-            x = x->ch[1];
-            while (x->ch[0]) x = x->ch[0];
-        } else {
-            while (x->pre->ch[1] == x) x = x->pre;
-            x = x->pre;
+        printf("sz: ");
+        for (int i = 1; i <= sz; i++) {
+            printf("%d ", nodes[i].sz);
         }
-        return x;
+        printf("\n");
     }
 
-    void del(Node *x) {
-        assert(!x->ch[0] && !x->ch[1]);
-        assert(x->pre->ch[0] == x || x->pre->ch[1] == x);
-        if (x->pre->ch[0] == x) x->pre->ch[0] = NULL;
-        else x->pre->ch[1] = NULL;
-        x->pre = NULL;
-    }
-
-    void print(Node *x) {
-        printf("[");
-        if (x) {
-            printf("%d ", x->val);
-            print(x->ch[0]);
-            print(x->ch[1]);
-            assert(x->ch[0] == NULL || x->ch[0]->pre == x);
-            assert(x->ch[1] == NULL || x->ch[1]->pre == x);
-        }
-        printf("]");
-    }
-
-    Node* root;
-    vector<Node*> nodes;
+    int root;
+    vector<Node> nodes;
+    vector<int> f;
+    vector<array<int, 2>> t;
 };
 
 using Node = SplayTree::Node;
@@ -169,47 +164,28 @@ using Node = SplayTree::Node;
 int main() {
     int N;
     scanf("%d", &N);
-    vector<int> v(N+2);
-    v[0] = v[N+1] = INT_MAX;
-    for (int i = 1; i <= N; i++) {
+    vector<int> v(N);
+    for (int i = 0; i < N; i++) {
         scanf("%d", &v[i]);
     }
 
-    vector<PII> b(N+2);
-    for (int i = 0; i <= N+1; i++) {
-        b[i] = make_pair(v[i], i);
+    vector<PII> b(N);
+    for (int i = 0; i < N; i++) {
+        b[i] = make_pair(v[i], i+1);
     }
     sort(b.begin(), b.end());
 
-    SplayTree st(N+2);
-    st.print(st.root);
-    printf("\n");
+    SplayTree st(N+1);
     for (int i = 0; i < N; i++) {
-        Node *x = st.nodes[b[i].second];
-        st.splay(x, NULL);
-        printf("%d\n", st.root->ch[0]->sz);
-        st.print(st.root);
-        printf("\n");
-        Node *pred = st.pred(x);
-        Node *succ = st.succ(x);
-        st.splay(pred, NULL);
-        printf("splay pred\n");
-        st.print(st.root);
-        printf("\n");
+        int x = b[i].second;
+        st.splay(x, 0);
+        printf("%d", st.nodes[st.t[st.root][0]].sz + i + 1);
+        if (i != N-1) printf(" ");
 
-        st.splay(succ, pred);
-        printf("ready to del\n");
-        st.print(st.root);
-        printf("\n");
-        assert(st.root == pred && st.root->ch[1] == succ);
-        assert(succ->pre == pred);
-        assert(succ->ch[0] == x);
-        assert(x->pre == succ);
-        assert(x->ch[0] == NULL && x->ch[1] == NULL);
-        st.del(x);
-        printf("deleted\n");
-        st.print(st.root);
-        printf("\n");
+        st.reverse(st.t[st.root][0]);
+
+        st.splaySucc(st.root);
+        st.del(st.t[st.root][0]);
     }
 
     return 0;

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/25
+* [洛谷 3165] [CQOI2014]排序机械臂：伸展树。
+
 ### 05/21
 * [洛谷 2520] [HAOI2011]向量：显然只须考虑 $(a,b), (a, -b), (b, a), (b,-a)$
 这四个向量。又显然若要有解，则必须有 a 和 b 的最大公约数整除 x 和 y 。

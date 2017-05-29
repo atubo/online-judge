@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/29
+* [HDU 1754] I Hate It：练习一下伸展树处理单点更新和区间极值。
+
 ### 05/28
 * [HDU 3487] Play with Chain：伸展树。
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/28
+* [HDU 3487] Play with Chain：伸展树。
+
 ### 05/25
 * [洛谷 3165] [CQOI2014]排序机械臂：伸展树。
 

@@ -20,7 +20,6 @@ public:
         f.resize(cap);
         t.resize(cap, vector<int>(2));
         sz.resize(cap);
-        tag.resize(cap);
         root = build(1, N, 0);
     }
 
@@ -39,17 +38,8 @@ public:
         return mid;
     }
 
-    void reverse(int x) {
-        tag[x] ^= 1;
-        swap(t[x][0], t[x][1]);
-    }
 
     void pushDown(int x) {
-        if (tag[x]) {
-            if (t[x][0]) reverse(t[x][0]);
-            if (t[x][1]) reverse(t[x][1]);
-            tag[x] = 0;
-        }
     }
 
     void update(int x) {
@@ -154,10 +144,6 @@ public:
         for (int i = 0; i <= N; i++) {
             printf("%d ", sz[i]);
         }
-        printf("tag: ");
-        for (int i = 0; i <= N; i++) {
-            printf("%d ", tag[i]);
-        }
         printf("root: %d", root);
                
         printf("\n");
@@ -174,7 +160,6 @@ public:
     vector<int> f;
     vector<vector<int> > t;
     vector<int> sz;
-    vector<int> tag;
 };
 
 int main() {

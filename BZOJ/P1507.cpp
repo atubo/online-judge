@@ -6,6 +6,7 @@ using namespace std;
 
 const int MAXN = 2100000;
 char A[MAXN];
+int t[MAXN][2];
 
 // index starts from 1 (0 is for NULL)
 class SplayTree {
@@ -18,7 +19,7 @@ public:
         assert(cap >= N + 1);
 
         f.resize(cap);
-        t.resize(cap, vector<int>(2));
+        //t.resize(cap, vector<int>(2));
         sz.resize(cap);
         root = build(1, N, 0);
     }
@@ -158,17 +159,16 @@ public:
     int root;
     int N;  // number of elements, 0 (NULL) excluded
     vector<int> f;
-    vector<vector<int> > t;
     vector<int> sz;
 };
 
 int main() {
-    int t;
-    scanf("%d", &t);
+    int nt;
+    scanf("%d", &nt);
     char cmd[10];
     int n;
     SplayTree st(2, MAXN);
-    while (t--) {
+    while (nt--) {
         scanf("%s", cmd);
         if (cmd[0] == 'I') {
             scanf("%d", &n);
@@ -194,13 +194,13 @@ int main() {
             scanf("%d", &n);
             int y = st.find_by_order(st.order_of_root() + n + 1);
             st.splay(y, st.root);
-            int x = st.t[y][0];
+            int x = t[y][0];
             st.del(x);
         } else if (cmd[0] == 'G') {
             scanf("%d", &n);
             int y = st.find_by_order(st.order_of_root() + n + 1);
             st.splay(y, st.root);
-            int x = st.t[y][0];
+            int x = t[y][0];
             string s;
             st.inorder(x, s);
             printf("%s\n", s.c_str());

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 05/29
 * [HDU 1754] I Hate It：练习一下伸展树处理单点更新和区间极值。
+* [HDU 1507] [NOI2003]Editor：伸展树处理区间插入删除。
 
 ### 05/28
 * [HDU 3487] Play with Chain：伸展树。

@@ -6,6 +6,11 @@ using namespace std;
 
 vector<int> A;
 const int MAXN = 200010;
+const int MININT = -1000000;
+
+int max3(int a, int b, int c) {
+    return max(max(a, b), c);
+}
 
 // index starts from 1 (0 is for NULL)
 class SplayTree {
@@ -22,6 +27,11 @@ public:
         sz.resize(cap);
         tag.resize(cap);
         val.resize(cap);
+        total.resize(cap);
+        maxL.resize(cap);
+        maxR.resize(cap);
+        maxM.resize(cap);
+        maxL[0] = maxR[0] = maxM[0] = MININT;
 
         root = build(1, N, 0);
     }
@@ -33,7 +43,7 @@ public:
 
         int mid = (p + q) / 2;
         f[mid] = fa;
-        val[mid] = A[mid];
+        val[mid] = maxL[mid] = maxR[mid] = maxM[mid] = A[mid];
 
         t[mid][0] = build(p, mid-1, mid);
         t[mid][1] = build(mid+1, q, mid);
@@ -60,6 +70,15 @@ public:
         assert(x);
     
         sz[x] = sz[t[x][0]] + sz[t[x][1]] + 1;
+        total[x] = total[t[x][0]] + val[x] + total[t[x][1]];
+        maxL[x] = max3(maxL[t[x][0]], total[t[x][0]] + val[x],
+                       total[t[x][0]] + val[x] + maxL[t[x][1]]);
+        maxR[x] = max3(maxR[t[x][1]], total[t[x][1]] + val[x],
+                       total[t[x][1]] + val[x] + maxR[t[x][0]]);
+        maxM[x] = max(max3(maxM[t[x][0]], val[x], maxM[t[x][1]]),
+                      max3(maxR[t[x][0]] + val[x],
+                           maxL[t[x][1]] + val[x],
+                           maxR[t[x][0]] + val[x] + maxL[t[x][1]]));
     }
 
     bool son(int x) const {
@@ -180,13 +199,17 @@ public:
     vector<int> sz;
     vector<int> tag;
     vector<int> val;
+    vector<int> total;
+    vector<int> maxL;
+    vector<int> maxR;
+    vector<int> maxM;
 };
 
 int main() {
     int N;
     scanf("%d", &N);
     A.resize(N+3);
-    A[1] = A[N+2] = -1000000;
+    A[1] = A[N+2] = MININT;
     for (int i = 2; i < N+2; i++) {
         scanf("%d", &A[i]);
     }
@@ -231,8 +254,8 @@ int main() {
             int succ = st.find_by_order(y+2);
             st.splay(pred, 0);
             st.splay(succ, pred);
-            st.inorder(st.t[succ][0]);
-            printf("\n");
+            int curr = st.t[succ][0];
+            printf("%d\n", max3(st.maxL[curr], st.maxR[curr], st.maxM[curr]));
         }
     }
     return 0;

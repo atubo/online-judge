@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 05/30
 * [洛谷 2234] [HNOI2002]营业额统计：用 pb_ds tree 轻松搞定之。
+* [SPOJ GSS6] Can you answer these queries VI：伸展树，每个结点记录
+val, total, maxL, maxR, maxM 。
 
 ### 05/29
 * [HDU 1754] I Hate It：练习一下伸展树处理单点更新和区间极值。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/30
+* [洛谷 2234] [HNOI2002]营业额统计：用 pb_ds tree 轻松搞定之。
+
 ### 05/29
 * [HDU 1754] I Hate It：练习一下伸展树处理单点更新和区间极值。
 * [HDU 1507] [NOI2003]Editor：伸展树处理区间插入删除。

@@ -255,7 +255,7 @@ int main() {
             st.splay(pred, 0);
             st.splay(succ, pred);
             int curr = st.t[succ][0];
-            printf("%d\n", max3(st.maxL[curr], st.maxR[curr], st.maxM[curr]));
+            printf("%d\n", st.maxM[curr]);
         }
     }
     return 0;

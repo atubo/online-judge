@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/02
+* [HDU 1512] Monkey King：左偏树模板题。
+
 ### 06/01
 * [HDU 2475] Box：将每个点看作一个区间，则树转化为嵌套区间，MOVE 操作
 则变成了区间的平移。维护一个伸展树的森林，MOVE 操作就是一个子树从一个

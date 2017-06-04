@@ -14,28 +14,44 @@ using namespace __gnu_pbds;
 typedef tree<int, int, less<int>, rb_tree_tag,
         tree_order_statistics_node_update> ordered_map;
 
+struct Taste {
+    int taste;
+    int type;
+    int index;
+
+    bool operator < (const Taste &other) const {
+        if (taste > other.taste) return true;
+        if (taste < other.taste) return false;
+        return (type > other.type);
+    }
+};
+
 int main() {
     int N, M;
     scanf("%d%d", &N, &M);
     vector<PII> cow(N);
     vector<PII> grass(M);
-    vector<TIII> taste(N+M);
+    vector<Taste> taste(N+M);
     for (int i = 0; i < N; i++) {
         scanf("%d%d", &cow[i].first, &cow[i].second);
-        taste[i] = make_tuple(cow[i].second, 0, i);
+        taste[i].taste = cow[i].second;
+        taste[i].type = 0;
+        taste[i].index =i;
     }
     for (int i = 0; i < M; i++) {
         scanf("%d%d", &grass[i].first, &grass[i].second);
-        taste[N+i] = make_tuple(grass[i].second, 1, i);
+        taste[N+i].taste = grass[i].second;
+        taste[N+i].type = 1;
+        taste[N+i].index = i;
     }
 
-    sort(taste.begin(), taste.end(), greater<TIII>());
+    sort(taste.begin(), taste.end());
 
     int64_t ret = 0;
     ordered_map price;
-    for (const TIII &t: taste) {
-        int type, index;
-        tie(ignore, type, index) = t;
+    for (const auto &t: taste) {
+        int type = t.type;
+        int index = t.index;
         if (type == 1) {
             int p = grass[index].first;
             auto it = price.find(p);

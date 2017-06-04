@@ -11,8 +11,8 @@ using TIII = tuple<int, int, int>;
 #include <ext/pb_ds/tree_policy.hpp>
 
 using namespace __gnu_pbds;
-typedef tree<PII, null_type, less<PII>, rb_tree_tag,
-        tree_order_statistics_node_update> ordered_set;
+typedef tree<int, int, less<int>, rb_tree_tag,
+        tree_order_statistics_node_update> ordered_map;
 
 int main() {
     int N, M;
@@ -32,23 +32,27 @@ int main() {
     sort(taste.begin(), taste.end(), greater<TIII>());
 
     int64_t ret = 0;
-    ordered_set price;
-    int counter = 0;
+    ordered_map price;
     for (const TIII &t: taste) {
-        counter++;
         int type, index;
         tie(ignore, type, index) = t;
         if (type == 1) {
-            price.insert(make_pair(grass[index].first, counter));
+            int p = grass[index].first;
+            auto it = price.find(p);
+            if (it == price.end()) {
+                price[p] = 1;
+            } else {
+                it->second++;
+            }
         } else {
-            int order = price.order_of_key(make_pair(cow[index].first, 0));
-            if (order == (int)price.size()) {
+            int p = cow[index].first;
+            auto it = price.lower_bound(p);
+            if (it == price.end()) {
                 printf("-1\n");
                 return 0;
             }
-            auto it = price.find_by_order(order);
             ret += it->first;
-            price.erase(it);
+            if (--it->second == 0) price.erase(it);
         }
     }
 

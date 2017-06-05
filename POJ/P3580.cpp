@@ -13,6 +13,12 @@ const int MAXN   =  200010;
 
 vector<int> A;
 int t[MAXN][2];
+int f[MAXN];
+int sz[MAXN];
+int tag[MAXN];
+int val[MAXN];
+int d[MAXN];
+int minVal[MAXN];
 
 int min3(int a, int b, int c) {
     return min(min(a, b), c);
@@ -28,12 +34,6 @@ public:
         if (cap == 0) cap = N + 1;
         assert(cap >= N + 1);
 
-        f.resize(cap);
-        sz.resize(cap);
-        tag.resize(cap);
-        val.resize(cap);
-        d.resize(cap);
-        minVal.resize(cap);
         minVal[0] = MAXINT;
 
         root = build(1, N, 0);
@@ -210,12 +210,12 @@ public:
 
     int root;
     int N;  // number of elements, 0 (NULL) excluded
-    vector<int> f;
-    vector<int> sz;
-    vector<int> tag;
-    vector<int> val;
-    vector<int> d;
-    vector<int> minVal;
+    //vector<int> f;
+    //vector<int> sz;
+    //vector<int> tag;
+    //vector<int> val;
+    //vector<int> d;
+    //vector<int> minVal;
 };
 
 void reverse(SplayTree &st, int x, int y) {
@@ -275,7 +275,7 @@ int main() {
             int succ = st.find_by_order(y+2);
             st.splay(pred, 0);
             st.splay(succ, pred);
-            printf("%d\n", st.minVal[t[succ][0]] + st.d[t[succ][0]]);
+            printf("%d\n", minVal[t[succ][0]] + d[t[succ][0]]);
         } else if (cmd[3] == 'E') {
             scanf("%d%d", &x, &y);
             reverse(st, x, y);

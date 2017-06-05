@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/05
+* [POJ 3580] SuperMemo：伸展树提高。
+
 ### 06/04
 * [洛谷 2869] [USACO07DEC]美食的食草动物Gourmet Grazers：贪心，将食物
 和牛按好吃度从大到小排序，用平衡树维护价格，对每个食物将其价格加入树中，

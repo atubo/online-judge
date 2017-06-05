@@ -8,7 +8,7 @@
 #include <vector>
 using namespace std;
 
-const int MAXINT = 1000000;
+const int MAXINT = 0x3F3F3F3F;
 const int MAXN   =  200010;
 
 vector<int> A;
@@ -51,42 +51,45 @@ public:
         t[mid][0] = build(p, mid-1, mid);
         t[mid][1] = build(mid+1, q, mid);
 
-        update(mid);
+        pushUp(mid);
 
         return mid;
     }
 
-    void reverse(int x) {
-        tag[x] ^= 1;
-        swap(t[x][0], t[x][1]);
+    void pushUp(int x) {
+        assert(x);
+
+        sz[x] = sz[t[x][0]] + sz[t[x][1]] + 1;
+        minVal[x] = min3(minVal[t[x][0]], val[x], minVal[t[x][1]]);
     }
 
-    void add(int x, int y) {
-        d[x] += y;
+    void updateRev(int x) {
+        if (!x) return;
+
+        swap(t[x][0], t[x][1]);
+        tag[x] ^= 1;
+    }
+
+    void updateAdd(int x, int D) {
+        if (!x) return;
+
+        val[x] += D;
+        minVal[x] += D;
+        d[x] += D;
     }
 
     void pushDown(int x) {
         if (tag[x]) {
-            if (t[x][0]) reverse(t[x][0]);
-            if (t[x][1]) reverse(t[x][1]);
+            updateRev(t[x][0]);
+            updateRev(t[x][1]);
             tag[x] = 0;
         }
 
-        if (t[x][0]) d[t[x][0]] += d[x];
-        if (t[x][1]) d[t[x][1]] += d[x];
-
-        val[x] += d[x];
-        d[x] = 0;
-    }
-
-    void update(int x) {
-        assert(x);
-        assert(!d[x]);
-    
-        sz[x] = sz[t[x][0]] + sz[t[x][1]] + 1;
-        minVal[x] = min3(minVal[t[x][0]] + d[t[x][0]],
-                         val[x] + d[x],
-                         minVal[t[x][1]] + d[t[x][1]]);
+        if (d[x]) {
+            updateAdd(t[x][0], d[x]);
+            updateAdd(t[x][1], d[x]);
+            d[x] = 0;
+        }
     }
 
     bool son(int x) const {
@@ -96,6 +99,9 @@ public:
     void rotate(int x) {
         int y = f[x], z = son(x);
 
+        pushDown(y);
+        pushDown(x);
+
         t[y][z] = t[x][1-z];
         if (t[x][1-z]) f[t[x][1-z]] = y;
 
@@ -103,25 +109,11 @@ public:
         if (f[x]) t[f[x]][son(y)] = x;
 
         f[y] = x; t[x][1-z] = y;
-        update(y); update(x);
-    }
-
-    void propagate(int x, int y) {
-        if (x == y) return;
-        stack<int> s;
-        do {
-            s.push(x);
-            x = f[x];
-        } while (x != y);
-        while (!s.empty()) {
-            x = s.top();
-            s.pop();
-            pushDown(x);
-        }
+        pushUp(y);
     }
 
     void splay(int x, int y) {
-        propagate(x, y);
+        pushDown(x);
         while (f[x] != y) {
             if (f[f[x]] != y) {
                 if (son(f[x]) == son(x)) rotate(f[x]);
@@ -129,6 +121,7 @@ public:
             }
             rotate(x);
         }
+        pushUp(x);
         if (!y) root = x;
     }
 
@@ -165,8 +158,8 @@ public:
     // root's right child
     void del(int x) {
         t[f[x]][0] = 0;
-        update(f[x]);
-        update(f[f[x]]);
+        pushUp(f[x]);
+        pushUp(f[f[x]]);
         f[x] = 0;
     }
 
@@ -174,8 +167,8 @@ public:
         int y = t[root][1];
         t[y][0] = x;
         f[x] = y;
-        update(y);
-        update(root);
+        pushUp(y);
+        pushUp(root);
     }
 
     void print() {
@@ -223,7 +216,10 @@ void reverse(SplayTree &st, int x, int y) {
     int succ = st.find_by_order(y+2);
     st.splay(pred, 0);
     st.splay(succ, pred);
-    st.reverse(t[succ][0]);
+    //st.reverse(t[succ][0]);
+    st.updateRev(t[succ][0]);
+    st.pushUp(succ);
+    st.pushUp(pred);
 }
 
 int main() {
@@ -249,7 +245,9 @@ int main() {
             int succ = st.find_by_order(y+2);
             st.splay(pred, 0);
             st.splay(succ, pred);
-            st.add(t[succ][0], z);
+            st.updateAdd(t[succ][0], z);
+            st.pushUp(succ);
+            st.pushUp(pred);
         } else if (cmd[0] == 'I') {
             scanf("%d%d", &x, &y);
             int pred = st.find_by_order(x+1);
@@ -275,7 +273,7 @@ int main() {
             int succ = st.find_by_order(y+2);
             st.splay(pred, 0);
             st.splay(succ, pred);
-            printf("%d\n", minVal[t[succ][0]] + d[t[succ][0]]);
+            printf("%d\n", minVal[t[succ][0]]);
         } else if (cmd[3] == 'E') {
             scanf("%d%d", &x, &y);
             reverse(st, x, y);

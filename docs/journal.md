@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 06/05
 * [POJ 3580] SuperMemo：伸展树提高。
+* [洛谷 1306] 斐波那契公约数：有 $\gcd(F_n, F_m)=F_{\gcd(n,m)}$ 。
 
 ### 06/04
 * [洛谷 2869] [USACO07DEC]美食的食草动物Gourmet Grazers：贪心，将食物

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/06
+* [HDU 4453] Looploop：伸展树提高。
+
 ### 06/05
 * [POJ 3580] SuperMemo：伸展树提高。
 * [洛谷 1306] 斐波那契公约数：有 $\gcd(F_n, F_m)=F_{\gcd(n,m)}$ 。

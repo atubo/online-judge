@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/07
+* [ZOJ 3765] Lights：伸展树。
+
 ### 06/06
 * [HDU 4453] Looploop：伸展树提高。
 

@@ -18,6 +18,7 @@ class SplayTree {
 public:
     static const int MAXINT = 0x3f3f3f3f;
 
+#if 0
     SplayTree(int size, int *a, bool *b, int cap = 0) {
         // 1-indexed
         N = size;
@@ -31,6 +32,20 @@ public:
         status.resize(cap);
         g.resize(cap);
 
+        root = build(1, N, 0, a, b);
+    }
+#endif
+    SplayTree(int cap) {
+        f.resize(cap);
+        t.resize(cap);
+        sz.resize(cap);
+        val.resize(cap);
+        status.resize(cap);
+        g.resize(cap);
+    }
+
+    void init(int size, int *a, bool *b) {
+        N = size;
         root = build(1, N, 0, a, b);
     }
 
@@ -240,11 +255,13 @@ void modify(SplayTree &st, int x, int y) {
 }
 
 int main() {
+    SplayTree st(300010);
     while (scanf("%d%d", &N, &Q) == 2) {
         for (int i = 2; i < N+2; i++) {
             scanf("%d%d", &A[i], &B[i]);
         }
-        SplayTree st(N+2, A, B, N+Q+2);
+        //SplayTree st(N+2, A, B, N+Q+2);
+        st.init(N+2, A, B);
 
         char cmd[5];
         int x, y, z;

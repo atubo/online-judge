@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/11
+* [HDU 3436] Queue-jumpers：伸展树 + 离散化。
+
 ### 06/07
 * [ZOJ 3765] Lights：伸展树。
 

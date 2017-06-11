@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 06/11
 * [HDU 3436] Queue-jumpers：伸展树 + 离散化。
+* [洛谷 1356] 数列的整数性：DP。
 
 ### 06/07
 * [ZOJ 3765] Lights：伸展树。

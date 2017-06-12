@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [HDU 3436] Queue-jumpers：伸展树 + 离散化。
 * [洛谷 1356] 数列的整数性：DP。
 * [洛谷 1799] 数列_NOI导刊2010提高（06）：DP。
+* [洛谷 1349] 广义斐波那契数列：矩阵快速幂 + 高精。
 
 ### 06/07
 * [ZOJ 3765] Lights：伸展树。

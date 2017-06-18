@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 3718] [AHOI2017初中组]alter：二分查找。先特殊处理不优美度为1的判断。
 判断不优美度为 m 时，依次处理各连续段，长度为 p 的连续段至少需要的开关次数为
 $$ k = \lceil \frac {p-m}{m+1} \rceil $$
+* [洛谷 1774] 最接近神的人_NOI导刊2010提高（02）：归并排序求逆序对数。
 
 ### 06/11
 * [HDU 3436] Queue-jumpers：伸展树 + 离散化。

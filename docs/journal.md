@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/19
+* [Leetcode 39] Combination Sum：DFS。
+
 ### 06/18
 * [洛谷 1133] 教主的花园：DP。
 * [洛谷 1168] 中位数：用两个堆维护中位数。

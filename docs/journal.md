@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 06/19
 * [Leetcode 39] Combination Sum：DFS。
+* [洛谷 1412] 经营与开发：DP，当 $a_i > dp(i+1)\cdot 0.01 K$ 时选择
+开采，维修类似。
 
 ### 06/18
 * [洛谷 1133] 教主的花园：DP。

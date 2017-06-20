@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 * [Leetcode 40] Combination Sum II：DFS。
 * [洛谷 1412] 经营与开发：DP，当 $a_i > dp(i+1)\cdot 0.01 K$ 时选择
 开采，维修类似。
+* [洛谷 2170] 选学霸：并查集 + 背包，注意常数优化：将数组从小到大排序，
+每次从前缀和开始循环。
 
 ### 06/18
 * [洛谷 1133] 教主的花园：DP。

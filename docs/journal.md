@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 06/20
 * [Leetcode 69] Sqrt(x) : 二分。
 * [Leetcode 72] Edit Distance
+* [洛谷 1311] 选择客栈：对每个客栈，找其右边最近的去得起的咖啡馆，再找这个
+咖啡馆右边有多少同颜色的客栈。总复杂度 $O(N \log N)$
 
 ### 06/19
 * [Leetcode 39] Combination Sum：DFS。

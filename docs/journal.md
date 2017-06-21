@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 06/20
 * [Leetcode 69] Sqrt(x) : 二分。
+* [Leetcode 72] Edit Distance
 
 ### 06/19
 * [Leetcode 39] Combination Sum：DFS。

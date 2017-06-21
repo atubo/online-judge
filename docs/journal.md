@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/20
+* [Leetcode 69] Sqrt(x) : 二分。
+
 ### 06/19
 * [Leetcode 39] Combination Sum：DFS。
 * [Leetcode 40] Combination Sum II：DFS。

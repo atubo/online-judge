@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/21
+* [Leetcode 62] Unique Paths：套公式。
+
 ### 06/20
 * [Leetcode 69] Sqrt(x) : 二分。
 * [Leetcode 72] Edit Distance

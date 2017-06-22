@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [Leetcode 62] Unique Paths：套公式。
 * [Leetcode 10] Regular Expression Matching
 * [Leetcode 78] Subsets
+* [洛谷 1353] [USACO08JAN]跑步Running：DP， $dp(n,k,s)$ 表示 第 n 分钟
+疲劳度为 k, 状态为 s （跑或停）的最大距离。
 
 ### 06/20
 * [Leetcode 69] Sqrt(x) : 二分。

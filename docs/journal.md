@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 06/21
 * [Leetcode 62] Unique Paths：套公式。
 * [Leetcode 10] Regular Expression Matching
+* [Leetcode 78] Subsets
 
 ### 06/20
 * [Leetcode 69] Sqrt(x) : 二分。

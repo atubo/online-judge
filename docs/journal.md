@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/22
+* [Leetcode 440] K-th Smallest in Lexicographical Order：顺序查找答案的长度为
+1，2，3... 的前缀。
+
 ### 06/21
 * [Leetcode 62] Unique Paths：套公式。
 * [Leetcode 10] Regular Expression Matching

@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 06/22
 * [Leetcode 440] K-th Smallest in Lexicographical Order：顺序查找答案的长度为
 1，2，3... 的前缀。
+* [洛谷 1487] 失落的成绩单：可转化为矩阵乘法，求出 $a_2$ ,然后须注意有可能
+$m > N$ 所以求 $a_m$ 时要用递推公式，尔不要用矩阵乘法以避免溢出。
 
 ### 06/21
 * [Leetcode 62] Unique Paths：套公式。

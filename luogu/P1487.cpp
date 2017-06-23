@@ -5,12 +5,17 @@
 using namespace std;
 
 struct Matrix {
-    double m[3][3];
+    Matrix() {
+        m.resize(3);
+        for (int i = 0; i < 3; i++) {
+            m[i].resize(3, 0);
+        }
+    }
+    vector<vector<long double>> m;
 };
 
 Matrix operator * (const Matrix& a, const Matrix& b) {
     Matrix ret;
-    memset(ret.m, 0, sizeof(ret.m));
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             for (int k = 0; k < 3; k++) {
@@ -22,7 +27,7 @@ Matrix operator * (const Matrix& a, const Matrix& b) {
 }
 
 Matrix pwr(const Matrix& M, int n) {
-    assert(n >= 1);
+    //assert(n >= 1);
     Matrix ret = M;
     for (int i = 2; i <= n; i++) {
         ret = ret * M;
@@ -30,38 +35,39 @@ Matrix pwr(const Matrix& M, int n) {
     return ret;
 }
 
+const int MAXN = 1005;
+typedef long double ld;
+ld A[MAXN];
+
 int main() {
     int N, m;
-    double d, A1, An;
+    long double d;
     cin >> N >> m;
-    cin >> d >> A1 >> An;
+    cin >> d >> A[1] >> A[N];
 
-    if (m == 1) {
-        printf("%.3lf\n", A1);
+    if (N == 3) {
+        A[2] = (A[1] - A[3]) / 2 + d;
+        printf("%.3lf\n", A[m]);
         return 0;
     }
-    if (m == N) {
-        printf("%.3lf\n", An);
+    if (N <= 2) {
+        printf("%.3lf\n", A[m]);
         return 0;
     }
 
     Matrix M;
-    memset(M.m, 0, sizeof(M.m));
     M.m[0][0] = -2;
     M.m[0][1] = 1;
     M.m[0][2] = 2;
     M.m[1][0] = M.m[2][2] = 1;
 
     Matrix Mn = pwr(M, N-2);
-    double u = Mn.m[0][0], v = Mn.m[0][1], w = Mn.m[0][2];
-    double x, y, z;
-    if (m == 2) {
-        x = 1; y = 0; z = 0;
-    } else {
-        Matrix Mm = pwr(M, m-2);
-        x = Mm.m[0][0]; y = Mm.m[0][1]; z = Mm.m[0][2];
+    long double u = Mn.m[0][0], v = Mn.m[0][1], w = Mn.m[0][2];
+    A[2] = (A[N] - v * A[1] - w * d) / u;
+
+    for (int i = 3; i <= m; i++) {
+        A[i] = A[i-2] - 2 * A[i-1] + 2 * d;
     }
-    double am = x/u * An - (x/u * v - y) * A1 - (x/u * w - z) * d;
-    printf("%.3lf\n", am);
+    printf("%.3llf\n", A[m]);
     return 0;
 }

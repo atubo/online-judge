@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/23
+* [Leetcode 446] Arithmetic Slices II - Subsequence: DP, $dp(n,d)$ 表示
+终止于位置 n , 差为 d 的子序列个数。
+
 ### 06/22
 * [Leetcode 440] K-th Smallest in Lexicographical Order：顺序查找答案的长度为
 1，2，3... 的前缀。

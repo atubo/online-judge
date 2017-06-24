@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/24
+* [洛谷 2431] 正妹吃月饼：从最高位开始，如果都是1，则此位必取1，并递归到低
+(N-1) 位的问题，其余情况类似。
+
 ### 06/23
 * [Leetcode 446] Arithmetic Slices II - Subsequence: DP, $dp(n,d)$ 表示
 终止于位置 n , 差为 d 的子序列个数。

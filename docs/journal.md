@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/25
+* [洛谷 2401] 不等数列：DP，递推式为
+$dp(n,k)=(k+1)dp(n-1,k)+(n-k)dp(n-1,k-1)$ 。
+
 ### 06/24
 * [洛谷 2431] 正妹吃月饼：从最高位开始，如果都是1，则此位必取1，并递归到低
 (N-1) 位的问题，其余情况类似。

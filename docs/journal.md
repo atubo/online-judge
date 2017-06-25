@@ -11,7 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 2431] 正妹吃月饼：从最高位开始，如果都是1，则此位必取1，并递归到低
 (N-1) 位的问题，其余情况类似。
 * [洛谷 3708] koishi的数学题：需要用到除数函数，递推式为
-$f(n)=f(n-1)+n-\sigma(n)$ 
+$f(n)=f(n-1)+n-\sigma(n)$
+* [Leetcode 432] All O`one Data Structure：二维链表+哈希。
 
 ### 06/23
 * [Leetcode 446] Arithmetic Slices II - Subsequence: DP, $dp(n,d)$ 表示

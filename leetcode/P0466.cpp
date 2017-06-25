@@ -30,23 +30,28 @@ public:
         int i = -1, j = 0;
         while (true) {
             i = match(s1, s2, i+1, j, nextMap);
-            if (i >= L1 * n1 || last[j%L2] == (i % L1)) break;
-            last[j%L2] = i % L1;
+            if (i >= L1 * n1 ||
+                ((last[j%L2] >= 0) && last[j%L2]%L1 == (i % L1))) break;
+            last[j%L2] = i;
             j++;
         }
 
+        //printf("i=%d j=%d\n", i, j);
         if (i < L1 * n1) {
             int L = i - last[j%L2];
             int m = (L1*n1 - 1 - last[j%L2]) / L;
             i = last[j%L2] + L * m;
             j = j + L2 * (m-1);
 
+            j++;
             while (i < L1 * n1) {
-                i = match(s1, s2, i, j, nextMap);
+                i = match(s1, s2, i+1, j, nextMap);
+                //printf("%d %d\n", i, j);
+                if (i >= L1 * n1) break;
                 j++;
             }
         }
-        return ((j+1)/L2) / n2;
+        return (j/L2) / n2;
     }
 
     int match(const string& s1, const string& s2, int i, int j,

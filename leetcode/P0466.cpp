@@ -9,8 +9,8 @@
 using namespace std;
 
 class Solution {
-    //typedef map<char, vector<int>> NextMap;
     typedef vector<vector<int>> NextMap;
+    static const int MAXP = 27;
 public:
     int getMaxRepetitions(string s1, int n1, string s2, int n2) {
         for (char c2: s2) {
@@ -26,32 +26,20 @@ public:
 
         NextMap nextMap = calcNext(s1);
 
-        const int L1 = s1.length(), L2 = s2.length();
-        vector<int> last(L2, -1);
-        int i = -1, j = 0;
+        const int L1 = s1.length();
+        vector<vector<int>> dist = calcDist(s1, s2, nextMap);
+
+        int pos = 0, ret = 0;
         while (true) {
-            i = match(s1, s2, i+1, j, nextMap);
-            if (i >= L1 * n1 ||
-                ((last[j%L2] >= 0) && last[j%L2]%L1 == (i % L1))) break;
-            last[j%L2] = i;
-            j++;
-        }
-        //printf("i=%d j=%d\n", i, j);
-
-        if (i < L1 * n1) {
-            int L = i - last[j%L2];
-            int m = (L1*n1 - 1 - last[j%L2]) / L;
-            i = last[j%L2] + L * m;
-            j = j + L2 * (m-1);
-
-            j++;
-            while (i < L1 * n1) {
-                i = match(s1, s2, i+1, j, nextMap);
-                if (i >= L1 * n1) break;
-                j++;
+            int power = 0;
+            while (pos + dist[power][pos%L1] < n1 * L1) {
+                power++;
             }
+            if (power == 0) break;
+            pos = pos + dist[power-1][pos%L1] + 1;
+            ret += (1 << (power-1));
         }
-        return (j/L2) / n2;
+        return ret/n2;
     }
 
     int match(const string& s1, const string& s2, int i, int j,
@@ -61,6 +49,28 @@ public:
         char c = s2[q];
         int p2 = nextMap.at(c-'a')[p];
         return i + (p2 - p);
+    }
+
+    vector<vector<int>> calcDist(const string& s1, const string& s2,
+                                 const NextMap& nextMap) {
+        const int L1 = s1.length(), L2 = s2.length();
+        vector<vector<int>> dist(MAXP+1, vector<int>(L1));
+        for (int start = 0; start < L1; start++) {
+            int i = start-1;
+            for (int j = 0; j < L2; j++) {
+                i = match(s1, s2, i+1, j, nextMap);
+            }
+            dist[0][start] = i - start;
+        }
+
+        for (int d = 1; d <= MAXP; d++) {
+            for (int start = 0; start < L1; start++) {
+                int p = (start + dist[d-1][start] + 1) % L1;
+                dist[d][start] = dist[d-1][start] + dist[d-1][p] + 1;
+            }
+        }
+
+        return dist;
     }
 
     NextMap calcNext(const string& s1) {

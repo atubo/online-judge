@@ -9,7 +9,8 @@
 using namespace std;
 
 class Solution {
-    typedef map<char, vector<int>> NextMap;
+    //typedef map<char, vector<int>> NextMap;
+    typedef vector<vector<int>> NextMap;
 public:
     int getMaxRepetitions(string s1, int n1, string s2, int n2) {
         for (char c2: s2) {
@@ -35,8 +36,8 @@ public:
             last[j%L2] = i;
             j++;
         }
-
         //printf("i=%d j=%d\n", i, j);
+
         if (i < L1 * n1) {
             int L = i - last[j%L2];
             int m = (L1*n1 - 1 - last[j%L2]) / L;
@@ -46,7 +47,6 @@ public:
             j++;
             while (i < L1 * n1) {
                 i = match(s1, s2, i+1, j, nextMap);
-                //printf("%d %d\n", i, j);
                 if (i >= L1 * n1) break;
                 j++;
             }
@@ -59,27 +59,19 @@ public:
         int L1 = s1.length(), L2 = s2.length();
         int p = i % L1, q = j % L2;
         char c = s2[q];
-        int p2 = nextMap.at(c)[p];
+        int p2 = nextMap.at(c-'a')[p];
         return i + (p2 - p);
     }
 
     NextMap calcNext(const string& s1) {
         string s = s1 + s1;
         int N = s.length();
-        NextMap nextMap;
-        for (char c: s) {
-            if (nextMap.count(c) == 0) {
-                nextMap[c] = vector<int>(N+1, INT_MAX);
-            }
-        }
+        NextMap nextMap(26, vector<int>(N+1, INT_MAX));
         for (int i = N-1; i >= 0; i--) {
             char c = s[i];
-            for (auto& p: nextMap) {
-                if (p.first == c) {
-                    p.second[i] = i;
-                } else {
-                    p.second[i] = p.second[i+1];
-                }
+            for (int j = 0; j < 26; j++) {
+                if (c-'a' == j) nextMap[j][i] = i;
+                else nextMap[j][i] = nextMap[j][i+1];
             }
         }
         return nextMap;

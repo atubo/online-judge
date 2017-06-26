@@ -14,6 +14,8 @@ $dp(n,k)=(k+1)dp(n-1,k)+(n-k)dp(n-1,k-1)$ 。
 表示 s2 从 s1[pos] 开始匹配，匹配 $2^d$ 个 s2, 在 s1 的重复序列上走过的距离。
 由此可计算出在 $n_1$ 个 s1 的重复序列上最多可匹配多少个 s2 。
 * [Leetcode 467] Unique Substrings in Wraparound String:DP
+* [Leetcode 472] Concatenated Words: Word Break 加强版。将词按长度排序，
+依次判断，若可分加入结果，不可分加入字典。
 
 ### 06/24
 * [洛谷 2431] 正妹吃月饼：从最高位开始，如果都是1，则此位必取1，并递归到低

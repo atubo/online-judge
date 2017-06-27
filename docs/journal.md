@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/26
+* [Leetcode 483] Smallest Good Base:二分搜索。
+
 ### 06/25
 * [洛谷 2401] 不等数列：DP，递推式为
 $dp(n,k)=(k+1)dp(n-1,k)+(n-k)dp(n-1,k-1)$ 。

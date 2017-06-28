@@ -7,8 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/27
+* [Leetcode 502] IPO：贪心 + 线段树，每次找满足预算的最大收益。
+
 ### 06/26
 * [Leetcode 483] Smallest Good Base:二分搜索。
+* [Leetcode 493] Reverse Pairs:树状数组。
 
 ### 06/25
 * [洛谷 2401] 不等数列：DP，递推式为

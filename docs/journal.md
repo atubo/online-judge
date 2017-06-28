@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 06/27
 * [Leetcode 502] IPO：贪心 + 线段树，每次找满足预算的最大收益。
+* [Leetcode 503] Next Greater Element II:单调队列。
 
 ### 06/26
 * [Leetcode 483] Smallest Good Base:二分搜索。

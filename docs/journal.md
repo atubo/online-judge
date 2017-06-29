@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 06/28
 * [Leetcode 567] Permutation in String
+* [Leetcode 552] Student Attendance Record II: DP
 
 ### 06/27
 * [Leetcode 502] IPO：贪心 + 线段树，每次找满足预算的最大收益。

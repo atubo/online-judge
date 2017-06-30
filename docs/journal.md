@@ -7,9 +7,15 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/29
+* [Leetcode 576] Out of Boundary Paths: DP, 令 $dp(i,j,k)$ 表示
+从初始点到 (i,j) 走 k 步的路径数。
+* [Leetcode 600] Non-negative Integers without Consecutive Ones: 数位DP。
+
 ### 06/28
 * [Leetcode 567] Permutation in String
-* [Leetcode 552] Student Attendance Record II: DP
+* [Leetcode 552] Student Attendance Record II: DP，dp[n][2][8],
+第一维表示当前位置，第二维表示是否已经出现过A，第二维表示最近两次出勤记录。
 
 ### 06/27
 * [Leetcode 502] IPO：贪心 + 线段树，每次找满足预算的最大收益。

@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，
 用一个优先队列维护当前选取的课程的用时。对每一个新的课程，如果无法满足时限，
 则试图从队列中弹出一个用时最大的课程。
+* [Leetcode 629] K Inverse Pairs Array:
+$dp(n,k)=\sum_{j=k-n+1}^k dp(n-1, j)$ .
 
 ### 06/30
 * [Leetcode 631] Design Excel Sum Formula: 用邻接矩阵动态维护DAG，

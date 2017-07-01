@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/30
+* [Leetcode 631] Design Excel Sum Formula: 用邻接矩阵动态维护DAG，
+SUM 时多个块叠加时用类似扫描线的方法处理。
+
 ### 06/29
 * [Leetcode 576] Out of Boundary Paths: DP, 令 $dp(i,j,k)$ 表示
 从初始点到 (i,j) 走 k 步的路径数。

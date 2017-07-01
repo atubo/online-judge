@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/01
+* [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，
+用一个优先队列维护当前选取的课程的用时。对每一个新的课程，如果无法满足时限，
+则试图从队列中弹出一个用时最大的课程。
+
 ### 06/30
 * [Leetcode 631] Design Excel Sum Formula: 用邻接矩阵动态维护DAG，
 SUM 时多个块叠加时用类似扫描线的方法处理。

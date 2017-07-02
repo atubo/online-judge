@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/02
+* [Leetcode 632] Smallest Range: 将每个数组看作不同的颜色，将所有的点散布
+到数轴上，用尺取法求包含所有颜色的最小区间。
+
 ### 07/01
 * [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，
 用一个优先队列维护当前选取的课程的用时。对每一个新的课程，如果无法满足时限，

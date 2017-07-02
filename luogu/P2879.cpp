@@ -150,12 +150,18 @@ int main() {
                           [](int a, int b) {return a + b;},
                           [](int v, int d, int sz) {return v + d*sz;});
 
+    set<pair<int, int>> s;
     for (int i = 0; i < R; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         a--; b--;
         if (a > b) swap(a, b);
-        if (a < b-1) st.update(a+1, b-1, 1);
+        if (a < b-1) {
+            if (s.count(make_pair(a, b)) == 0) {
+                st.update(a+1, b-1, 1);
+                s.insert(make_pair(a, b));
+            }
+        }
     }
 
     for (int i = 0; i < N; i++) {

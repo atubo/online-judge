@@ -16,6 +16,8 @@ $dp(n,k)=\sum_{j=k-n+1}^k dp(n-1, j)$ .
 * [Leetcode 625] Minimum Factorization: 用 9 到 2 依次去试。
 * [Leetcode 623] Add One Row to Tree: BFS
 * [洛谷 1621] 集合：线性筛 + 并查集
+* [洛谷 2879] [USACO07JAN]区间统计Tallest Cow：简单分析可知不可能出现区间
+交叉的情况，对数据 $(a,b)$ , 对区间 $(a+1,b-1)$ 递增1，最后对每个位置进行统计。
 
 ### 06/30
 * [Leetcode 631] Design Excel Sum Formula: 用邻接矩阵动态维护DAG，

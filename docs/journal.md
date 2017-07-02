@@ -15,6 +15,7 @@ Journal of the problems I have worked on
 $dp(n,k)=\sum_{j=k-n+1}^k dp(n-1, j)$ .
 * [Leetcode 625] Minimum Factorization: 用 9 到 2 依次去试。
 * [Leetcode 623] Add One Row to Tree: BFS
+* [洛谷 1621] 集合：线性筛 + 并查集
 
 ### 06/30
 * [Leetcode 631] Design Excel Sum Formula: 用邻接矩阵动态维护DAG，

@@ -14,6 +14,7 @@ Journal of the problems I have worked on
 * [Leetcode 634] Find the Derangement of An Array: 递推式为
 $dp(n)=(n-1)dp(n-2)+(n-1)(n-2)dp(n-3)+...+(n-1)!dp(0)$ ,可简化为
 $dp(n)=(n-1)(dp(n-2)+dp(n-1))$
+* [Leetcode 633] Sum of Square Numbers: 暴力枚举。
 
 ### 07/01
 * [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，

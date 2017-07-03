@@ -11,6 +11,9 @@ Journal of the problems I have worked on
 * [Leetcode 632] Smallest Range: 将每个数组看作不同的颜色，将所有的点散布
 到数轴上，用尺取法求包含所有颜色的最小区间。
 * [Leetcode 635] Design Log Storage System: 对每个粒度维护 id
+* [Leetcode 634] Find the Derangement of An Array: 递推式为
+$dp(n)=(n-1)dp(n-2)+(n-1)(n-2)dp(n-3)+...+(n-1)!dp(0)$ ,可简化为
+$dp(n)=(n-1)(dp(n-2)+dp(n-1))$
 
 ### 07/01
 * [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，

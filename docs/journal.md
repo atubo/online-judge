@@ -17,6 +17,7 @@ $dp(n)=(n-1)(dp(n-2)+dp(n-1))$
 * [Leetcode 633] Sum of Square Numbers: 暴力枚举。
 * [Leetcode 424] Longest Repeating Character Replacement: 枚举 26 个
 字母 + 尺取法。
+* [Leetcode 433] Minimum Genetic Mutation: BFS
 
 ### 07/01
 * [Leetcode 630] Course Schedule III: 贪心。容易知道课程应按结束时间选取，

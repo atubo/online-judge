@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 07/03
 * [Leetcode 457] Circular Array Loop: 快慢指针，并且标记已搜索过的不成环
 的点为0
+* [Leetcode 456] 132 Pattern: 单调队列，队列中依次存放 (hi,lo) 表示遇到
+  hi 前遇到的最小值为 lo
 
 ### 07/02
 * [Leetcode 632] Smallest Range: 将每个数组看作不同的颜色，将所有的点散布

@@ -34,52 +34,32 @@ public:
     }
 };
 
-// Note: be sure it's DAG
-class TopologicalSort {
-public:
-    vector<int> topo;  // topologically sorted result
+vector<int> topoSort(const Graph& g, vector<int>& d) {
+    const int N = g.N;
+    vector<int> topo(N);
+    int cnt = 0;
 
-private:
-    void topologicalSortUtil(const Graph &g, int v, bool visited[],
-                             stack<int> &order) {
-        visited[v] = true;
-
-        for (int i = g.head[v]; i != -1; i = g.E[i].next) {
-            int m = g.E[i].to;
-            if (!visited[m]) {
-                topologicalSortUtil(g, m, visited, order);
-            }
-        }
-
-        order.push(v);
-    }
-
-public:
-    TopologicalSort() {}
-
-    void sort(const Graph &g) {
-        const int N = g.N;
-        topo.resize(N);
-
-        stack<int> order;
-        bool visited[N];
-        for (int i = 0; i < N; i++) {
-            visited[i] = false;
-        }
-
-        for (int i = 0; i < N; i++) {
-            if (!visited[i]) {
-                topologicalSortUtil(g, i, visited, order);
-            }
-        }
-
-        int i = 0;
-        while (!order.empty()) {
-            topo[i++] = order.top();
-            order.pop();
+    queue<int> q;
+    for (int i = 0; i < N; i++) {
+        if (!d[i]) {
+            q.push(i);
+            topo[i] = cnt++;
         }
     }
-};
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
+            int v = g.E[eidx].to;
+            if (!(--d[v])) {
+                q.push(v);
+                topo[v] = cnt++;
+            }
+        }
+    }
+    return topo;
+}
 
 using PII = pair<int, int>;
 
@@ -88,10 +68,12 @@ int main() {
     scanf("%d%d%d", &N, &P1, &P2);
     Graph g(N, P1);
     int a, b;
+    vector<int> d(N);
     for (int i = 0; i < P1; i++) {
         scanf("%d%d", &a, &b);
         a--; b--;
         g.addEdge(a, b);
+        d[b]++;
     }
 
     vector<PII> undirected;
@@ -101,12 +83,11 @@ int main() {
         undirected.push_back(make_pair(a, b));
     }
 
-    TopologicalSort topo;
-    topo.sort(g);
+    vector<int> topo = topoSort(g, d);
 
     for (const auto& e: undirected) {
         tie(a, b) = e;
-        if (topo.topo[a] > topo.topo[b]) swap(a, b);
+        if (topo[a] > topo[b]) swap(a, b);
         printf("%d %d\n", a+1, b+1);
     }
     return 0;

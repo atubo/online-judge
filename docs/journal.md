@@ -13,6 +13,8 @@ Journal of the problems I have worked on
 * [Leetcode 456] 132 Pattern: 单调队列，队列中依次存放 (hi,lo) 表示遇到
 hi 前遇到的最小值为 lo
 * [Leetcode 454] 4Sum II: 哈希表
+* [洛谷 2017] [USACO09DEC]晕牛Dizzy Cows：先对有向边构成的图拓扑排序，
+无向边只要是前向的即可。
 
 ### 07/02
 * [Leetcode 632] Smallest Range: 将每个数组看作不同的颜色，将所有的点散布

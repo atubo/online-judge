@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/04
+* [Leetcode 452] Minimum Number of Arrows to Burst Balloons: 其实就是
+要找最多的 disjoint 的区间个数。 dp(n) 表示到位置 n 结束的区间中 disjoint 的
+区间个数
+
 ### 07/03
 * [Leetcode 457] Circular Array Loop: 快慢指针，并且标记已搜索过的不成环
 的点为0

@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 区间个数
 * [Leetcode 451] Sort Characters By Frequency
 * [Leetcode 450] Delete Node in a BST
+* [Leetcode 449] Serialize and Deserialize BST
 
 ### 07/03
 * [Leetcode 457] Circular Array Loop: 快慢指针，并且标记已搜索过的不成环

@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 扫描。
 * [Leetcode 442] Find All Duplicates in an Array: 从左到右循环，总是试图
 把 A[i] 放到下标 A[i] 上，如不成功则说明 A[i] 出现不止一次。
+* [Leetcode 435] Non-overlapping Intervals: 与 [Leetcode 452] 基本一样。
 
 ### 07/04
 * [Leetcode 452] Minimum Number of Arrows to Burst Balloons: 其实就是

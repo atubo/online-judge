@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 07/06
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或
 最左的方块。
+* [Leetcode 390] Elimination Game: Josephus problem
 
 ### 07/05
 * [Leetcode 436] Find Right Interval: 离散化，记录每点开始的区间，从右到左

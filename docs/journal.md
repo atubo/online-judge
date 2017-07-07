@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 最左的方块。
 * [Leetcode 390] Elimination Game: Josephus problem
 * [Leetcode 327] Count of Range Sum: 离散化 + 树状数组
+* [Leetcode 315] Count of Smaller Numbers After Self: MergeSort
 
 ### 07/05
 * [Leetcode 436] Find Right Interval: 离散化，记录每点开始的区间，从右到左

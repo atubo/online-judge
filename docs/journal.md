@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或
 最左的方块。
 * [Leetcode 390] Elimination Game: Josephus problem
+* [Leetcode 327] Count of Range Sum: 离散化 + 树状数组
 
 ### 07/05
 * [Leetcode 436] Find Right Interval: 离散化，记录每点开始的区间，从右到左

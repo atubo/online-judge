@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。
+* [洛谷 1270] “访问”美术馆：树上DP， dp(n,p) 表示结点 n 还有 p 秒的最大方案数。
 
 ### 07/06
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或

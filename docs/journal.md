@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。
 * [洛谷 1270] “访问”美术馆：树上DP， dp(n,p) 表示结点 n 还有 p 秒的最大方案数。
+* [洛谷 1948] [USACO08JAN]电话线Telephone Lines：二分查找 + Dijkstra,
+试探 lmax 时，若边小于 lmax, 将其设为0， 否则设为1，若 $d_{1,N} \le K$ 则可行。
 
 ### 07/06
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或

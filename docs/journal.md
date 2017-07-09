@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 07/09
 * [Leetcode 639] Decode Ways II: Decode Ways 加强版，带通配符 * 可匹配
 1-9，类似的 DP 思想。
+* [Leetcode 640] Solve the Equation: 分别 parse 左右两边得到系数和常数项
+即可。
 
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。

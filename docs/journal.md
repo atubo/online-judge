@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 1-9，类似的 DP 思想。
 * [Leetcode 640] Solve the Equation: 分别 parse 左右两边得到系数和常数项
 即可。
+* [Leetcode 638] Shopping Offers: DP, 状态就是六元组。
 
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。

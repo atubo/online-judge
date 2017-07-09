@@ -9,46 +9,68 @@
 using namespace std;
 
 class Solution {
+    using PII = pair<int, int>;
 public:
     int shoppingOffers(vector<int>& price, vector<vector<int>>& special,
                        vector<int>& needs) {
+        vector<PII> offer;
+        const int N = price.size();
+        for (int i = 0; i < N; i++) {
+            vector<int> x(N);
+            x[i] = 1;
+            int k = encode(x);
+            offer.push_back(make_pair(k, price[i]));
+        }
+        const int M = special.size();
+        for (int i = 0; i < M; i++) {
+            vector<int> x(N);
+            for (int j = 0; j < N; j++) {
+                x[j] = special[i][j];
+            }
+            int k = encode(x);
+            offer.push_back(make_pair(k, special[i][N]));
+        }
         unordered_map<int, int> dp;
-        return solve(price, special, needs, dp);
+        return solve(offer, encode(needs), dp);
     }
 
     int encode(const vector<int>& k) {
         int ret = 0;
-        for (int i = k.size()-1; i >= 0; i--) {
+        for (int i = 0; i < (int)k.size(); i++) {
             ret = ret * 7 + k[i];
         }
         return ret;
     }
 
-    int solve(const vector<int>& price, const vector<vector<int>>& special,
-              vector<int>& needs, unordered_map<int, int>& dp) {
-        int key = encode(needs);
+    int dec(int key1, int key2) {
+        int ret = 0;
+        int d = 1;
+        for (int i = 0; i < 6; i++) {
+            int x = (key1 % 7) - (key2 % 7);
+            if (x < 0) return -1;
+            ret = ret + x * d;
+            key1 = key1 / 7;
+            key2 = key2 / 7;
+            d *= 7;
+        }
+        return ret;
+    }
+
+    int solve(const vector<PII>& offer, int key, unordered_map<int, int>& dp) {
         if (dp.count(key) > 0) return dp[key];
-        if (*max_element(needs.begin(), needs.end()) == 0) return 0;
+        if (key == 0) return 0;
 
         int& ret = dp[key] = INT_MAX;
 
-        const int N = price.size();
-        for (int i = 0; i < N; i++) {
-            if (needs[i] > 0) {
-                needs[i]--;
-                ret = min(ret, price[i] + solve(price, special, needs, dp));
-                needs[i]++;
-            }
-        }
-
-        const int M = special.size();
-        for (int i = 0; i < M; i++) {
-            vector<int> next(N);
-            for (int j = 0; j < N; j++) {
-                next[j] = needs[j] - special[i][j];
-            }
-            if (*min_element(next.begin(), next.end()) >= 0) {
-                ret = min(ret, special[i][N] + solve(price, special, next, dp));
+        for (const auto& o: offer) {
+            int key2 = o.first;
+            int price = o.second;
+            int kn = dec(key, key2);
+            if (kn >= 0) {
+                int tmp = solve(offer, kn,dp);
+                if (tmp != INT_MAX) {
+                    ret = min(ret, price + tmp);
+                }
             }
         }
         return ret;

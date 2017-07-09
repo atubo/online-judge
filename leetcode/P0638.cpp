@@ -12,16 +12,25 @@ class Solution {
 public:
     int shoppingOffers(vector<int>& price, vector<vector<int>>& special,
                        vector<int>& needs) {
-        map<vector<int>, int> dp;
+        unordered_map<int, int> dp;
         return solve(price, special, needs, dp);
     }
 
+    int encode(const vector<int>& k) {
+        int ret = 0;
+        for (int i = k.size()-1; i >= 0; i--) {
+            ret = ret * 7 + k[i];
+        }
+        return ret;
+    }
+
     int solve(const vector<int>& price, const vector<vector<int>>& special,
-              vector<int>& needs, map<vector<int>, int>& dp) {
-        if (dp.count(needs) > 0) return dp[needs];
+              vector<int>& needs, unordered_map<int, int>& dp) {
+        int key = encode(needs);
+        if (dp.count(key) > 0) return dp[key];
         if (*max_element(needs.begin(), needs.end()) == 0) return 0;
 
-        int& ret = dp[needs] = INT_MAX;
+        int& ret = dp[key] = INT_MAX;
 
         const int N = price.size();
         for (int i = 0; i < N; i++) {
@@ -47,6 +56,18 @@ public:
 };
 
 int main() {
+    auto price = getBracketedIntVector();
+    int n;
+    cin >> n;
+    string s;
+    getline(cin, s);
+    vector<vector<int>> specials(n);
+    for (int i = 0; i < n; i++) {
+        specials[i] = getBracketedIntVector();
+    }
+    auto needs = getBracketedIntVector();
+
     Solution solution;
+    cout << solution.shoppingOffers(price, specials, needs) << endl;
     return 0;
 }

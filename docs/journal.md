@@ -12,6 +12,9 @@ Journal of the problems I have worked on
 * [洛谷 1270] “访问”美术馆：树上DP， dp(n,p) 表示结点 n 还有 p 秒的最大方案数。
 * [洛谷 1948] [USACO08JAN]电话线Telephone Lines：二分查找 + Dijkstra,
 试探 lmax 时，若边小于 lmax, 将其设为0， 否则设为1，若 $d_{1,N} \le K$ 则可行。
+* [Leetcode 621] Task Scheduler: 贪心，用 heap 维护字符频率， 用 deque
+维护长度为 n 的窗口，每次从 heap 弹出频率最大的字符，再将窗口左端移出的字符压
+入 heap
 
 ### 07/06
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或

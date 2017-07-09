@@ -15,6 +15,7 @@ Journal of the problems I have worked on
 * [Leetcode 621] Task Scheduler: 贪心，用 heap 维护字符频率， 用 deque
 维护长度为 n 的窗口，每次从 heap 弹出频率最大的字符，再将窗口左端移出的字符压
 入 heap
+* [Leetcode 611] Valid Triangle Number: 排序后枚举最小的两边。
 
 ### 07/06
 * [Leetcode 419] Battleships in a Board: 扫描棋盘，只计入每艘战舰最上或

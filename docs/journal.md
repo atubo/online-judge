@@ -14,6 +14,8 @@ Journal of the problems I have worked on
 即可。
 * [Leetcode 638] Shopping Offers: DP, 状态就是六元组。
 * [Leetcode 637] Average of Levels in Binary Tree: DFS
+* [Leetcode 565] Array Nesting: 因为 A 中元素均不相同，故必形成若干不相交的
+环，简单 DFS 即可。
 
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。

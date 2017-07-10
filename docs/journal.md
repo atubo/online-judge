@@ -18,6 +18,8 @@ Journal of the problems I have worked on
 环，简单 DFS 即可。
 * [Leetcode 556] Next Greater Element III: next permutation
 * [Leetcode 215] Kth Largest Element in an Array: 3-way partition
+* [Leetcode 324] Wiggle Sort II: find median and then do "virtual"
+3-way partition
 
 ### 07/08
 * [洛谷 1441] 砝码称重：枚举可能性 + 背包。

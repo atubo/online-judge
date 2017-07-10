@@ -86,43 +86,14 @@ def generate_input(size):
         n = size
         f.write("%d\n" % n)
         print_array(f, rand_array(n, -100, 100))
-        m = 2 * n
-        f.write("%d\n" % m)
-        for i in range(m):
-            cmd = randint(1, 6)
-            if cmd == 1:
-                x, y = rand_range(1, n)
-                z = randint(-100, 100)
-                f.write("ADD %d %d %d\n" % (x, y, z))
-            elif cmd == 2:
-                x, y = rand_range(1, n)
-                f.write("REVERSE %d %d\n" % (x, y))
-            elif cmd == 3:
-                x, y = rand_range(1, n)
-                z = randint(1, n)
-                f.write("REVOLVE %d %d %d\n" % (x, y, z))
-            elif cmd == 4:
-                x = randint(1, n)
-                y = randint(-100, 100)
-                f.write("INSERT %d %d\n" % (x, y))
-                n += 1
-            elif cmd == 5:
-                if n < m/3:
-                    x, y = rand_range(1, n)
-                    f.write("MIN %d %d\n" % (x, y))
-                else:
-                    x = randint(1, n)
-                    f.write("DELETE %d\n" % x)
-                    n -= 1
-            else:
-                x, y = rand_range(1, n)
-                f.write("MIN %d %d\n" % (x, y))
+        k = randint(1, n)
+        f.write("%d\n" % k)
 
 def one_test(size):
     generate_input(size)
     #exit(0)
     os.system("bench <input.txt> out1.txt")
-    os.system("P3580 <input.txt > out2.txt")
+    os.system("P0215 <input.txt > out2.txt")
     rt = os.system("diff out1.txt out2.txt")
     return rt == 0
 

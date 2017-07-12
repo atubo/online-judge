@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [Leetcode 208] Implement Trie (Prefix Tree)
 * [Leetcode 210] Course Schedule II: 基于入度的拓扑排序算法。
 * [Leetcode 206] Reverse Linked List
+* [Leetcode 211] Add and Search Word - Data structure design: trie
 
 ### 07/10
 * [Leetcode 229] Majority Element II: Boyer-Moore Majority Vote algorithm

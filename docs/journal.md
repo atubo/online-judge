@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/11
+* [Leetcode 208] Implement Trie (Prefix Tree)
+
 ### 07/10
 * [Leetcode 229] Majority Element II: Boyer-Moore Majority Vote algorithm
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/12
+* [Leetcode 212] Word Search II: DFS + trie 优化
+
 ### 07/11
 * [Leetcode 208] Implement Trie (Prefix Tree)
 * [Leetcode 210] Course Schedule II: 基于入度的拓扑排序算法。

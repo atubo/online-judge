@@ -12,56 +12,64 @@ const static int DX[4] = {1, 0, -1, 0};
 const static int DY[4] = {0, 1, 0, -1};
 class Solution {
 public:
+    struct Node {
+        Node() : children(26) {}
+        vector<Node*> children;
+        string word;
+    };
+
+    Node* buildTrie(const vector<string>& words) {
+        Node* root = new Node;
+        for (const string& word: words) {
+            Node* curr = root;
+            for (char c: word) {
+                if (!curr->children[c-'a']) curr->children[c-'a'] = new Node;
+                curr = curr->children[c-'a'];
+            }
+            curr->word = word;
+        }
+        return root;
+    }
+
     vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
         vector<string> ret;
         if (board.size() == 0 || board[0].size() == 0) return ret;
         sort(words.begin(), words.end());
         words.erase(unique(words.begin(), words.end()), words.end());
 
-        const int M = board.size();
-        const int N = board[0].size();
-        vector<vector<bool>> visited(M, vector<bool>(N));
-        for (const string& word: words) {
-            if (search(board, word, visited)) ret.push_back(word);
-        }
-        return ret;
-    }
+        Node* root = buildTrie(words);
 
-    bool search(const vector<vector<char>>& board, const string& word,
-                vector<vector<bool>>& visited) {
         const int M = board.size();
         const int N = board[0].size();
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                if (dfs(board, i, j, word, 0, visited)) return true;
+                dfs(board, i, j, root, ret);
             }
         }
-        return false;
+        return ret;
     }
 
-    bool dfs(const vector<vector<char>>& board, int row, int col,
-             const string& word, int pos, vector<vector<bool>>& visited) {
+    void dfs(vector<vector<char>>& board, int row, int col,
+             Node* node, vector<string>& ret) {
         const int M = board.size();
         const int N = board[0].size();
-        visited[row][col] = true;
-        bool ret = false;
-        if (board[row][col] == word[pos]) {
-            if (pos == (int)word.size()-1) ret = true;
-            else {
-                for (int d = 0; d < 4; d++) {
-                    int rn = row + DX[d];
-                    int cn = col + DY[d];
-                    if (inRange(rn, cn, M, N) && !visited[rn][cn]) {
-                        if (dfs(board, rn, cn, word, pos+1, visited)) {
-                            ret = true;
-                            break;
-                        }
-                    }
-                }
+        char c = board[row][col];
+        if (c == '#' || !node->children[c-'a']) return;
+
+        node = node->children[c-'a'];
+        if (!node->word.empty()) {
+            ret.push_back(node->word);
+            node->word = "";
+        }
+        board[row][col] = '#';
+        for (int d = 0; d < 4; d++) {
+            int rn = row + DX[d];
+            int cn = col + DY[d];
+            if (inRange(rn, cn, M, N)) {
+                dfs(board, rn, cn, node, ret);
             }
         }
-        visited[row][col] = false;
-        return ret;
+        board[row][col] = c;
     }
 
     bool inRange(int r, int c, int M, int N) {

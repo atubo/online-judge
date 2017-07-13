@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [Leetcode 212] Word Search II: DFS + trie 优化
 * [Leetcode 205] Isomorphic Strings
 * [Leetcode 204] Count Primes: 筛法
+* [Leetcode 203] Remove Linked List ElementsRemove Linked List Elements
 
 ### 07/11
 * [Leetcode 208] Implement Trie (Prefix Tree)

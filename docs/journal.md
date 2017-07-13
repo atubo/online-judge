@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 * [Leetcode 204] Count Primes: 筛法
 * [Leetcode 203] Remove Linked List ElementsRemove Linked List Elements
 * [Leetcode 226] Invert Binary Tree
+* [Leetcode 235] Lowest Common Ancestor of a Binary Search Tree
 
 ### 07/11
 * [Leetcode 208] Implement Trie (Prefix Tree)

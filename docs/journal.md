@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 07/12
 * [Leetcode 212] Word Search II: DFS + trie 优化
+* [Leetcode 205] Isomorphic Strings
 
 ### 07/11
 * [Leetcode 208] Implement Trie (Prefix Tree)

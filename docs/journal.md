@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/16
+* [Leetcode 636] Exclusive Time of Functions: 用栈模拟。
+
 ### 07/12
 * [Leetcode 212] Word Search II: DFS + trie 优化
 * [Leetcode 205] Isomorphic Strings

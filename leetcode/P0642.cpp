@@ -22,10 +22,13 @@ class AutocompleteSystem {
     };
 
     struct Node {
-        Node(Node* f, int i): father(f), idx(i), children(27), freq(0) {}
+        Node(Node* f, int i): father(f), idx(i), /*children(27),*/ freq(0) {
+            memset(children, 0, sizeof(children));
+        }
         Node* father;
         int idx;
-        vector<Node*> children;
+        //vector<Node*> children;
+        Node* children[27];
         int freq;
         vector<Bucket> buckets;
     };

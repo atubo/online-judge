@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 07/16
 * [Leetcode 636] Exclusive Time of Functions: 用栈模拟。
 * [Leetcode 642] Design Search Autocomplete System: Trie
+* [Leetcode 624] Maximum Distance in Arrays: 对每个数列 i ,
+求 $\max_{j\ne i} - \min_i$ .
 
 ### 07/12
 * [Leetcode 212] Word Search II: DFS + trie 优化

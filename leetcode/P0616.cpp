@@ -10,8 +10,8 @@ using namespace std;
 
 class Solution {
     struct Node {
-        Node(): children(128), isWord(false) {}
-        vector<Node*> children;
+        Node(): isWord(false) {}
+        map<char, Node*> children;
         bool isWord;
     };
 public:
@@ -47,7 +47,7 @@ public:
         Node* curr = root;
         while (pos < (int)s.length()) {
             char c = s[pos];
-            if (!curr->children[c]) break;
+            if (curr->children.count(c) == 0) break;
             curr = curr->children[c];
             if (curr->isWord) last = pos;
             pos++;

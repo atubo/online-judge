@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 * [Leetcode 642] Design Search Autocomplete System: Trie
 * [Leetcode 624] Maximum Distance in Arrays: 对每个数列 i ,
 求 $\max_{j\ne i} - \min_i$ .
+* [Leetcode 616] Add Bold Tag in String: Trie
 
 ### 07/12
 * [Leetcode 212] Word Search II: DFS + trie 优化

@@ -14,6 +14,7 @@ Journal of the problems I have worked on
 求 $\max_{j\ne i} - \min_i$ .
 * [Leetcode 616] Add Bold Tag in String: Trie
 * [Leetcode 444] Sequence Reconstruction: 拓扑排序 + 最大路径长度。
+* [Leetcode 439] Ternary Expression Parser: 递归下降
 
 ### 07/12
 * [Leetcode 212] Word Search II: DFS + trie 优化

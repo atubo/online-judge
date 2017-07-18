@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/17
+* [Leetcode 366] Find Leaves of Binary Tree: post-order traversal
+
 ### 07/16
 * [Leetcode 636] Exclusive Time of Functions: 用栈模拟。
 * [Leetcode 642] Design Search Autocomplete System: Trie

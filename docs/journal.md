@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/21
+* [Leetcode 261] Graph Valid Tree: BFS
+
 ### 07/20
 * [Leetcode 254] Factor Combinations: 递归。
 * [Leetcode 253] Meeting Rooms II: 区间的最大重叠数，端点按位置排序后扫描。

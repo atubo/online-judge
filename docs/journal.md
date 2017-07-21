@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 07/20
 * [Leetcode 254] Factor Combinations: 递归。
+* [Leetcode 253] Meeting Rooms II: 区间的最大重叠数，端点按位置排序后扫描。
 
 ### 07/17
 * [Leetcode 366] Find Leaves of Binary Tree: post-order traversal

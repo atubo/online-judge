@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 07/21
 * [Leetcode 261] Graph Valid Tree: BFS
+* [Leetcode 259] 3Sum Smaller: 3-pointers
 
 ### 07/20
 * [Leetcode 254] Factor Combinations: 递归。

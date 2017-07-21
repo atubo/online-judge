@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [Leetcode 261] Graph Valid Tree: BFS
 * [Leetcode 259] 3Sum Smaller: 3-pointers
 * [Leetcode 266] Palindrome Permutation: count frequency
+* [Leetcode 267] Palindrome Permutation II: backtrack
 
 ### 07/20
 * [Leetcode 254] Factor Combinations: 递归。

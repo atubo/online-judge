@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/20
+* [Leetcode 254] Factor Combinations: 递归。
+
 ### 07/17
 * [Leetcode 366] Find Leaves of Binary Tree: post-order traversal
 * [Leetcode 369] Plus One Linked List: 递归

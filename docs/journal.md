@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/22
+* [Leetcode 277] Find the Celebrity: 每相邻两人可根据相识关系排除至少一人，
+扫描一次问题规模减半。最终把唯一剩余的候选人做一次判断。
+
 ### 07/21
 * [Leetcode 261] Graph Valid Tree: BFS
 * [Leetcode 259] 3Sum Smaller: 3-pointers

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/23
+* [Leetcode 285] Inorder Successor in BST：区分结点有或没有右孩子的两种情况。
+
 ### 07/22
 * [Leetcode 277] Find the Celebrity: 每相邻两人可根据相识关系排除至少一人，
 扫描一次问题规模减半。最终把唯一剩余的候选人做一次判断。

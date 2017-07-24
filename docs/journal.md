@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 07/23
 * [Leetcode 285] Inorder Successor in BST：区分结点有或没有右孩子的两种情况。
 * [Leetcode 286] Walls and Gates: BFS
+* [Leetcode 288] Unique Word Abbreviation: hashmap
 
 ### 07/22
 * [Leetcode 277] Find the Celebrity: 每相邻两人可根据相识关系排除至少一人，

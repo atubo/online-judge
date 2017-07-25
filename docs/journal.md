@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/24
+* [Leetcode 251] Flatten 2D Vector
+
 ### 07/23
 * [Leetcode 285] Inorder Successor in BST：区分结点有或没有右孩子的两种情况。
 * [Leetcode 286] Walls and Gates: BFS

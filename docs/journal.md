@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/27
+* [Leetcode 294] Flip Game II: 计算 Grundy 数即可
+
 ### 07/24
 * [Leetcode 251] Flatten 2D Vector
 

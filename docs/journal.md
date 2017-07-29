@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/28
+* [Leetcode 296] Best Meeting Point: 中位数
+
 ### 07/27
 * [Leetcode 294] Flip Game II: 计算 Grundy 数即可
 * [Leetcode 293] Flip Game

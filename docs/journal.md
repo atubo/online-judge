@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/29
+* [Leetcode 298] Binary Tree Longest Consecutive Sequence: 递归
+
 ### 07/28
 * [Leetcode 296] Best Meeting Point: 中位数
 

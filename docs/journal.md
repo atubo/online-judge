@@ -12,6 +12,7 @@ Journal of the problems I have worked on
 * [Leetcode 311] Sparse Matrix Multiplication
 * [Leetcode 305] Number of Islands II: 并查集
 * [Leetcode 302] Smallest Rectangle Enclosing Black Pixels: BFS
+* [Leetcode 314] Binary Tree Vertical Order Traversal: BFS
 
 ### 07/28
 * [Leetcode 296] Best Meeting Point: 中位数

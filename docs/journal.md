@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [Leetcode 298] Binary Tree Longest Consecutive Sequence: 递归
 * [Leetcode 311] Sparse Matrix Multiplication
 * [Leetcode 305] Number of Islands II: 并查集
+* [Leetcode 302] Smallest Rectangle Enclosing Black Pixels: BFS
 
 ### 07/28
 * [Leetcode 296] Best Meeting Point: 中位数

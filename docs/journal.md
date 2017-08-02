@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 08/02
 * [Leetcode 320] Generalized Abbreviation: DP
 * [Leetcode 323] Number of Connected Components in an Undirected Graph: DFS
+* [Leetcode 325] Maximum Size Subarray Sum Equals k: 哈希表存储前缀和对应
+的位置。
 
 ### 08/01
 * [Leetcode 317] Shortest Distance from All Buildings: 对每个 building

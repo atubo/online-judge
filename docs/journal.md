@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/02
+* [Leetcode 320] Generalized Abbreviation: DP
+
 ### 08/01
 * [Leetcode 317] Shortest Distance from All Buildings: 对每个 building
 作 BFS

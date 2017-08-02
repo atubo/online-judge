@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/01
+* [Leetcode 317] Shortest Distance from All Buildings: 对每个 building
+作 BFS
+
 ### 07/29
 * [Leetcode 298] Binary Tree Longest Consecutive Sequence: 递归
 * [Leetcode 311] Sparse Matrix Multiplication

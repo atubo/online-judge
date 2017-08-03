@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 08/03
 * [Leetcode 333] Largest BST Subtree: 递归
+* [Leetcode 339] Nested List Weight Sum: 递归
 
 ### 08/02
 * [Leetcode 320] Generalized Abbreviation: DP

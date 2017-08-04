@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 08/04
 * [Leetcode 356] Line Reflection
+* [Leetcode 360] Sort Transformed Array:注意 $a=0$ 或 $a<0$ 等情况。
 
 ### 08/03
 * [Leetcode 333] Largest BST Subtree: 递归

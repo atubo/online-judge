@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 08/06
 * [Leetcode 364] Nested List Weight Sum II: 先求最大深度
+* [Leetcode 362] Design Hit Counter: 队列
 
 ### 08/04
 * [Leetcode 356] Line Reflection

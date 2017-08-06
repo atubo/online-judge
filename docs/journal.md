@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [Leetcode 364] Nested List Weight Sum II: 先求最大深度
 * [Leetcode 362] Design Hit Counter: 队列
 * [Leetcode 370] Range Addition: 差分转化为前缀和
+* [Leetcode 361] Bomb Enemy: 预处理每个点四个方向上最近的墙的位置和四个方向上
+敌人数量的前缀和
 
 ### 08/04
 * [Leetcode 356] Line Reflection

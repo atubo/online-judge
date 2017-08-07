@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 08/07
 * [Leetcode 353] Design Snake Game: 双端队列维护蛇的身体
+* [Leetcode 359] Logger Rate Limiter: 哈希表
 
 ### 08/06
 * [Leetcode 364] Nested List Weight Sum II: 先求最大深度

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/07
+* [Leetcode 353] Design Snake Game: 双端队列维护蛇的身体
+
 ### 08/06
 * [Leetcode 364] Nested List Weight Sum II: 先求最大深度
 * [Leetcode 362] Design Hit Counter: 队列

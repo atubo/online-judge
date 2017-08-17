@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/17
+* [洛谷 2149] [SDOI2009]Elaxia的路线：易证最长公共路径一定是连续的。
+求出从四个端点出发到所有点的最短距离，然后用 DP 解。
+
 ### 08/16
 * [Leetcode 555] Split Concatenated Strings: 枚举
 

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 08/18
 * [洛谷 1032] 字串变换：BFS
+* [洛谷 1886] 滑动窗口：单调队列
 
 ### 08/17
 * [洛谷 2149] [SDOI2009]Elaxia的路线：易证最长公共路径一定是连续的。

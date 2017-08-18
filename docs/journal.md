@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/18
+* [洛谷 1032] 字串变换：BFS
+
 ### 08/17
 * [洛谷 2149] [SDOI2009]Elaxia的路线：易证最长公共路径一定是连续的。
 求出从四个端点出发到所有点的最短距离，然后用 DP 解。

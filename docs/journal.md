@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/20
+* [洛谷 2816] 宋荣子搭积木：贪心
+
 ### 08/18
 * [洛谷 1032] 字串变换：BFS
 * [洛谷 1886] 滑动窗口：单调队列

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/23
+* [洛谷 2423] 双塔：DP， $dp(i,j)$ 表示第 i 个积木时，高度差为 j 的情况下
+矮塔的最大高度。
+
 ### 08/20
 * [洛谷 2816] 宋荣子搭积木：贪心
 

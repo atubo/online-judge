@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/27
+* [洛谷 1189] SEARCH： BFS
+
 ### 08/26
 * [洛谷 1823] 音乐会的等待：单调队列，注意特判元素相等的情况。
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/26
+* [洛谷 1823] 音乐会的等待：单调队列，注意特判元素相等的情况。
+
 ### 08/23
 * [洛谷 2423] 双塔：DP， $dp(i,j)$ 表示第 i 个积木时，高度差为 j 的情况下
 矮塔的最大高度。

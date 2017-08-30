@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/29
+* [洛谷 1542] 包裹快递：二分搜索
+
 ### 08/27
 * [洛谷 1189] SEARCH： BFS
 * [洛谷 1816] 忠诚：稀疏表求区间极值

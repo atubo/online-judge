@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/10
+* [洛谷 2736] “破锣摇滚”乐队 Raucous Rockers： DP
+
 ### 09/09
 * [洛谷 2733] 家的范围 Home on the Range： DP + 树状数组
 

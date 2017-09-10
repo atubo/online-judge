@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/09
+* [洛谷 2733] 家的范围 Home on the Range： DP + 树状数组
+
 ### 08/29
 * [洛谷 1542] 包裹快递：二分搜索
 

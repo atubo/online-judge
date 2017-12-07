@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/7
 * [洛谷 1516] 青蛙的约会：同余方程
+* [Leetcode 650] 2 Keys Keyboard: DP
 
 ### 12/6
 * [POJ 1659] Frogs' Neighborhood: Havel-Hakimi 定理

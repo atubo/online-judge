@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/7
+* [洛谷 1516] 青蛙的约会：同余方程
+
+### 12/6
+* [POJ 1659] Frogs' Neighborhood: Havel-Hakimi 定理
+
 ### 09/10
 * [洛谷 2736] “破锣摇滚”乐队 Raucous Rockers： DP
 

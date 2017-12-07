@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/8
+* [洛谷 3939] 数颜色：Binary search
+
 ### 12/7
 * [洛谷 1516] 青蛙的约会：同余方程
 * [Leetcode 650] 2 Keys Keyboard: DP

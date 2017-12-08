@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/8
 * [洛谷 3939] 数颜色：Binary search
+* [洛谷 3938] 斐波那契：建前缀和后二分搜索求父结点
 
 ### 12/7
 * [洛谷 1516] 青蛙的约会：同余方程

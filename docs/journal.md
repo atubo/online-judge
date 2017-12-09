@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/9
+* [洛谷 3800] Power收集：单调队列
+
 ### 12/8
 * [洛谷 3939] 数颜色：Binary search
 * [洛谷 3938] 斐波那契：建前缀和后二分搜索求父结点

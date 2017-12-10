@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/10
+* [洛谷 1056] 排座椅：简单排序即可
+
 ### 12/9
 * [洛谷 3800] Power收集：单调队列
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/11
+* [洛谷 1901] 发射站：单调队列
+
 ### 12/10
 * [洛谷 1056] 排座椅：简单排序即可
 * [洛谷 2749] [USACO5.1]夜空繁星Starry Night：BFS + 距离和作为哈希

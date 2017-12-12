@@ -13,7 +13,7 @@ Journal of the problems I have worked on
 * [洛谷 1800] software_NOI导刊2010提高（06）：二分 + DP:令 $dp(i,j)$
 表示前 $i$ 个人软件A完成 $j$ 个模块的情况下软件B最多完成的模块数。有
 $$ dp(i,j) = \max(dp(i-1,j) + \frac {T}{d_2}, dp(i-1,j-1) + \frac{T-d_1}{d2}, ...) $$
-
+* [洛谷 1965] 转圈游戏：递归求 $10^k\mod n$
 
 
 ### 12/11

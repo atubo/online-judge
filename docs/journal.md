@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/13
+* [洛谷 2176] [USACO14FEB]路障Roadblock：依次将最短路径上的每条边乘2后
+再求一次最短路即可
+
 ### 12/12
 * [洛谷 3194] [HNOI2008]水平可见直线：按照斜率排序，按顺序加入一个单调栈，
 如果当前加入的直线与栈顶直线交点在前一个交点的左边，则栈顶元素出栈。

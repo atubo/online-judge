@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/14
+* [洛谷 2596] [ZJOI2006]书架：Splay Tree
+
 ### 12/13
 * [洛谷 2176] [USACO14FEB]路障Roadblock：依次将最短路径上的每条边乘2后
 再求一次最短路即可

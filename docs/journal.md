@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/15
+* [洛谷 2394] yyy loves Chemistry I
+
 ### 12/14
 * [洛谷 2596] [ZJOI2006]书架：Splay Tree
 

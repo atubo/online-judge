@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/15
 * [洛谷 2394] yyy loves Chemistry I
+* [洛谷 2114] 起床困难综合症：数位DP
 
 ### 12/14
 * [洛谷 2596] [ZJOI2006]书架：Splay Tree

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/19
+* [洛谷 1969] 积木大赛：用栈维护递增序列
+
 ### 12/15
 * [洛谷 2394] yyy loves Chemistry I
 * [洛谷 2114] 起床困难综合症：数位DP

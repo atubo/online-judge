@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/20
+* [洛谷 2392] kkksc03考前临时抱佛脚：背包问题
+
 ### 12/19
 * [洛谷 1969] 积木大赛：用栈维护递增序列
 * [洛谷 1889] 士兵站队：y 方向用中位数，x 方向转化为 $x_i-i$ 的中位数问题。

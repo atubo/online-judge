@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/20
 * [洛谷 2392] kkksc03考前临时抱佛脚：背包问题
+* [POJ 2104] K-th Number: 主席树第一弹
 
 ### 12/19
 * [洛谷 1969] 积木大赛：用栈维护递增序列

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/21
+* [洛谷 2370] yyy2015c01的U盘：背包问题
+
 ### 12/20
 * [洛谷 2392] kkksc03考前临时抱佛脚：背包问题
 * [POJ 2104] K-th Number: 主席树第一弹

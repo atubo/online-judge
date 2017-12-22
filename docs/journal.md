@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/22
+* [洛谷 1535] 游荡的奶牛：DP
+
 ### 12/21
 * [洛谷 2370] yyy2015c01的U盘：背包问题
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/23
+* [洛谷 1486] 郁闷的出纳员：Splay tree
+
 ### 12/22
 * [洛谷 1535] 游荡的奶牛：DP
 * [POJ 1465] Multiple: BFS

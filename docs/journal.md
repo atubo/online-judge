@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/24
+* [洛谷 1941] 飞扬的小鸟： DP，$dp(i,j)$ 表示 位置为 $i$ 高度为 $j$ 的
+最小步数。
+
 ### 12/23
 * [洛谷 1486] 郁闷的出纳员：Splay tree
 * [洛谷 2286] [HNOI2004]宠物收养场：用 set 即可， 掉到```lower_bound(s.begin(), s.end(), a)```的坑里去了，应该用 ```s.lower_bound(a)```

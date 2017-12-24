@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 1941] 飞扬的小鸟： DP，$dp(i,j)$ 表示 位置为 $i$ 高度为 $j$ 的
 最小步数。
 * [洛谷 2678] 跳石头：二分查找
+* [洛谷 2661] 信息传递：DFS 求环路长度
 
 ### 12/23
 * [洛谷 1486] 郁闷的出纳员：Splay tree

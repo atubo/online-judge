@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 12/23
 * [洛谷 1486] 郁闷的出纳员：Splay tree
 * [洛谷 2286] [HNOI2004]宠物收养场：用 set 即可， 掉到```lower_bound(s.begin(), s.end(), a)```的坑里去了，应该用 ```s.lower_bound(a)```
+* [洛谷 2296] 寻找道路：DFS 反向图, 再 BFS 正向图
 
 ### 12/22
 * [洛谷 1535] 游荡的奶牛：DP

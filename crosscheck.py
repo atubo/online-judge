@@ -84,18 +84,23 @@ def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        f.write("%d\n" % n)
-        print_array(f, rand_array(n, -100, 100))
         k = randint(1, n)
-        f.write("%d\n" % k)
+        f.write("%d %d\n" % (n, k))
+        print_array(f, rand_array(n, 1, 100))
 
 def one_test(size):
     generate_input(size)
     #exit(0)
-    os.system("bench <input.txt> out1.txt")
-    os.system("P0215 <input.txt > out2.txt")
-    rt = os.system("diff out1.txt out2.txt")
-    return rt == 0
+    ret = os.system("bench <input.txt> out1.txt")
+    if ret != 0:
+        print "Bench error"
+        exit(1)
+    ret = os.system("P1281 <input.txt > out2.txt")
+    if ret != 0:
+        print "Test error"
+        exit(1)
+    ret = os.system("diff out1.txt out2.txt")
+    return ret == 0
 
 def test_suite():
     for size in range(5, 100):

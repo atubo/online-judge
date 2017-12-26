@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/26
+* [洛谷 2801] 教主的魔法：分块
+
 ### 12/24
 * [洛谷 1941] 飞扬的小鸟： DP，$dp(i,j)$ 表示 位置为 $i$ 高度为 $j$ 的
 最小步数。

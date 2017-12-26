@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 12/26
 * [洛谷 2801] 教主的魔法：分块
+* [洛谷 2890] [USACO07OPEN]便宜的回文Cheapest Palindrome：DP，令 $dp(i,j)$
+ 表示把 $s[i,j]$ 变成回文的最小花费
 
 ### 12/24
 * [洛谷 1941] 飞扬的小鸟： DP，$dp(i,j)$ 表示 位置为 $i$ 高度为 $j$ 的

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/27
+* [洛谷 3168] [CQOI2015]任务查询系统：将每个任务分成两个job, 一个添加任务，
+一个删除任务，将job按时间排序，依次加入主席树中。查询时按时间找到相应的根结点
+进行查询即可。曾RE在测试点2，7，10，原因是计算K时 A*Pre 溢出了。
+
 ### 12/26
 * [洛谷 2801] 教主的魔法：分块
 * [洛谷 2890] [USACO07OPEN]便宜的回文Cheapest Palindrome：DP，令 $dp(i,j)$

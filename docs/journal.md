@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 12/29
 * [洛谷 1434] 滑雪：DP
 * [洛谷 2617] Dynamic Ranking：分块，类似 [洛谷 2801] 教主的魔法
+* [洛谷 2758] 编辑距离
 
 ### 12/27
 * [洛谷 3168] [CQOI2015]任务查询系统：将每个任务分成两个job, 一个添加任务，

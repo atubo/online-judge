@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/29
+* [洛谷 1434] 滑雪：DP
+
 ### 12/27
 * [洛谷 3168] [CQOI2015]任务查询系统：将每个任务分成两个job, 一个添加任务，
 一个删除任务，将job按时间排序，依次加入主席树中。查询时按时间找到相应的根结点

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/30
+* [洛谷 3157] [CQOI2011]动态逆序对：树状数组套线段树
+
 ### 12/29
 * [洛谷 1434] 滑雪：DP
 * [洛谷 2617] Dynamic Ranking：分块，类似 [洛谷 2801] 教主的魔法

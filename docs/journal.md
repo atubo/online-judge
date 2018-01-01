@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/1
+* [BZOJ 3110] [ZJOI2013]K大数查询: 树套树-权值线段树套位置线段树
+* [洛谷 3332] [ZJOI2013]K大数查询：同题 - 用整体二分作，树套树做法在此TLE
+
+***
+### Goodbye 2017
+
 ### 12/30
 * [洛谷 3157] [CQOI2011]动态逆序对：树状数组套线段树
 

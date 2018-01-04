@@ -97,11 +97,13 @@ public:
     }
 };
 
+int sorted[21][MAXN];
+
 class MergeTree {
 private:
     int N;
     const vector<int>& A;
-    vector<vector<int> > sorted;
+    //vector<vector<int> > sorted;
 
     void build(int depth, int left, int right) {
         if (left == right) {
@@ -129,9 +131,19 @@ private:
     int query(int depth, int left, int right, int qleft, int qright, int key) {
         if (qright < left || qleft > right) return 0;
         if (qleft <= left && right <= qright) {
-            auto b = sorted[depth].begin() + left;
-            auto e = sorted[depth].begin() + right + 1;
-            return lower_bound(b, e, key) - b;
+            //auto b = sorted[depth].begin() + left;
+            //auto e = sorted[depth].begin() + right + 1;
+            auto b = sorted[depth] + left;
+            auto e = sorted[depth] + right + 1;
+            //return lower_bound(b, e, key) - b;
+            auto b0 = b;
+            if (*b >= key) return 0;
+            while (b < e - 1) {
+                auto mid = b + (e - b) / 2;
+                if (*mid < key) b = mid;
+                else e = mid;
+            }
+            return e - b0;
         }
 
         int mid = (left + right) / 2;
@@ -147,10 +159,12 @@ public:
             depth++;
             len <<= 1;
         }
+#if 0
         sorted.resize(depth);
         for (int i = 0; i < depth; i++) {
             sorted[i].resize(N);
         }
+#endif
 
         build(0, 0, N-1);
     }

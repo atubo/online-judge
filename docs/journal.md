@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/4
+* [洛谷 3567] [POI2014]KUR-Couriers：先试图用划分树作，复杂度
+$O(N \log^2 N)$ , 两个TLE，看题解发现是用主席树
+
 ### 1/2
 * [洛谷 2048] [NOI2010]超级钢琴：堆维护每个结束位置当前最优和弦 + 划分树
 求区间第K小值。

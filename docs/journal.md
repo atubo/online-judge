@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 1/5
 * [洛谷 1433] 吃奶酪：简单DP
 * [洛谷 3931] SAC E#1 - 一道难题 Tree：DFS
+* [洛谷 2852] [USACO06DEC]牛奶模式Milk Patterns：后缀数组 + 单调队列
 
 ### 1/4
 * [洛谷 3567] [POI2014]KUR-Couriers：先试图用划分树作，复杂度

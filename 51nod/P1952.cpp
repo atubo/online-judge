@@ -18,8 +18,8 @@ void print(const deque<PII> &dq) {
 }
 
 int main() {
-    int n, A, B, C, x, a, b, MOD;
-    scanf("%d%d%d%d%d%d%d%d", &n, &A, &B, &C, &x, &a, &b, &MOD);
+    int64_t n, A, B, C, x, a, b, MOD;
+    scanf("%lld%lld%lld%lld%lld%lld%lld%lld", &n, &A, &B, &C, &x, &a, &b, &MOD);
     int m = 0, top = 0, bot = -1;
     deque<PII> dq;
     for (int i = 1; i <= n; i++) {

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/7
+* [洛谷 1383] 高级打字机：主席树，对每个修改操作建一个新树，撤销操作直接
+拷贝k个操作之前的旧树即可。
+
 ### 1/5
 * [洛谷 1433] 吃奶酪：简单DP
 * [洛谷 3931] SAC E#1 - 一道难题 Tree：DFS

@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 1/7
 * [洛谷 1383] 高级打字机：主席树，对每个修改操作建一个新树，撤销操作直接
 拷贝k个操作之前的旧树即可。
+* [洛谷 2897] [USACO08JAN]人工湖Artificial Lake：用栈维护高度递减的池子序列，
+弹出时计算时间。
 
 ### 1/5
 * [洛谷 1433] 吃奶酪：简单DP

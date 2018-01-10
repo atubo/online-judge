@@ -66,36 +66,33 @@ int ChairmanTree::root[MAXN];
 Node ChairmanTree::T[MAXN*19];
 int N, M;
 int64_t S;
-int setwt[MAXN];
 int64_t vsum[MAXN];
 
-pair<int, int64_t> query(const ChairmanTree &ct, int node, int l, int r,
-                         int L, int R) {
-    if (node == 0) return make_pair(0, 0LL);
-    if (l <= L && R <= r) return make_pair(ct.T[node].sz, ct.T[node].sum);
+void query(const ChairmanTree &ct, int node, int l, int r,
+           int L, int R, int &cnt, int64_t &sum) {
+    if (node == 0) return;
+    if (l <= L && R <= r) {
+        cnt += ct.T[node].sz;
+        sum += ct.T[node].sum;
+        return;
+    }
     int mid = (L + R) / 2;
-    int sz = 0;
-    int64_t sum = 0;
     if (l <= mid) {
-        auto p = query(ct, ct.T[node].L, l, r, L, mid);
-        sz += p.first;
-        sum += p.second;
+        query(ct, ct.T[node].L, l, r, L, mid, cnt, sum);
     }
     if (mid+1 <= r) {
-        auto p = query(ct, ct.T[node].R, l, r, mid+1, R);
-        sz += p.first;
-        sum += p.second;
+        query(ct, ct.T[node].R, l, r, mid+1, R, cnt, sum);
     }
-    return make_pair(sz, sum);
 }
 
 int64_t eval(const ChairmanTree &ct, int x) {
     int64_t ans = 0;
     for (int i = 0; i < M; i++) {
         int l = range[i].l, r = range[i].r;
-        auto p = query(ct, ct.root[x], l, r, 1, N);
-        //printf("sz=%d sum=%lld\n", p.first, p.second);
-        ans += (r - l + 1 - p.first) * (vsum[r] - vsum[l-1] - p.second);
+        int cnt = 0;
+        int64_t sum = 0;
+        query(ct, ct.root[x], l, r, 1, N, cnt, sum);
+        ans += (r - l + 1 - cnt) * (vsum[r] - vsum[l-1] - sum);
     }
     //printf("x=%d, ans=%lld\n", x, ans);
     return ans;
@@ -107,10 +104,8 @@ int main() {
         int w, v;
         scanf("%d%d", &w, &v);
         ore[i] = {i, w, v};
-        setwt[i] = w;
         vsum[i] = v + vsum[i-1];
     }
-    sort(setwt+1, setwt+N+1);
     sort(ore+1, ore+N+1);
     vector<int> wt;
     for (int i = 0; i <= N; i++) {

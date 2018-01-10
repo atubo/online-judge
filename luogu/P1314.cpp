@@ -89,9 +89,7 @@ pair<int, int64_t> query(const ChairmanTree &ct, int node, int l, int r,
     return make_pair(sz, sum);
 }
 
-int64_t eval(const ChairmanTree &ct, int w) {
-    int* pos = lower_bound(setwt+1, setwt+N+1, w);
-    int x = pos - setwt - 1;
+int64_t eval(const ChairmanTree &ct, int x) {
     int64_t ans = 0;
     for (int i = 0; i < M; i++) {
         int l = range[i].l, r = range[i].r;
@@ -99,23 +97,25 @@ int64_t eval(const ChairmanTree &ct, int w) {
         //printf("sz=%d sum=%lld\n", p.first, p.second);
         ans += (r - l + 1 - p.first) * (vsum[r] - vsum[l-1] - p.second);
     }
-    //printf("w=%d, ans=%lld\n", w, ans);
+    //printf("x=%d, ans=%lld\n", x, ans);
     return ans;
 }
 
 int main() {
     scanf("%d%d%lld", &N, &M, &S);
-    int maxw = 0;
     for (int i = 1; i <= N; i++) {
         int w, v;
         scanf("%d%d", &w, &v);
         ore[i] = {i, w, v};
         setwt[i] = w;
         vsum[i] = v + vsum[i-1];
-        maxw = max(maxw, w);
     }
     sort(setwt+1, setwt+N+1);
     sort(ore+1, ore+N+1);
+    vector<int> wt;
+    for (int i = 0; i <= N; i++) {
+        if (ore[i].w != ore[i+1].w) wt.push_back(i);
+    }
 
     for (int i = 0; i < M; i++) {
         scanf("%d%d", &range[i].l, &range[i].r);
@@ -133,14 +133,21 @@ int main() {
         return 0;
     }
 
-    int lo = 0, hi = maxw+1;
+    int lastwt = wt.size()-1;
+    diff = S - eval(ct, wt[lastwt]);
+    if (diff < 0) {
+        printf("%lld\n", -diff);
+        return 0;
+    }
+
+    int lo = 0, hi = lastwt;
     while (lo < hi - 1) {
         int mid = (lo + hi) / 2;
-        diff = S - eval(ct, mid);
+        diff = S - eval(ct, wt[mid]);
         if (diff < 0) lo = mid;
         else          hi = mid;
     }
 
-    printf("%lld\n", min(eval(ct, lo)-S, S-eval(ct, hi)));
+    printf("%lld\n", min(eval(ct, wt[lo])-S, S-eval(ct, wt[hi])));
     return 0;
 }

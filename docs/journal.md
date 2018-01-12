@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/12
+* [洛谷 2592] [ZJOI2008]生日聚会：高级DP，[这里](https://chrt.github.io/2017/06/01/bzoj1037-party/)讲的比较清楚。
+
 ### 1/11
 * [洛谷 2577] [ZJOI2005]午餐：高级DP， 令 $dp(i,j)$ 表示到第 i 个人时，
 第一队总*排队时间*为 j 的情况下的最佳总*完成时间*

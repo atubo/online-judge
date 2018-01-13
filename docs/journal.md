@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/13
+* [洛谷 2587] [ZJOI2008]泡泡堂：有意思的贪心题
+
 ### 1/12
 * [洛谷 2592] [ZJOI2008]生日聚会：高级DP，[这里](https://chrt.github.io/2017/06/01/bzoj1037-party/)讲的比较清楚。
 

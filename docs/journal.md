@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/15
+* [洛谷 1443] 马的遍历：简单BFS
+
 ### 1/14
 * [洛谷 2601] [ZJOI2009]对称的正方形：对每行每列用 Manacher 算法进行预处理，
 然后枚举每个可能的中心点，用单调队列求出最大“半径”。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/16
+* [洛谷 1070] 道路游戏：DP + 单调队列优化
+
 ### 1/15
 * [洛谷 1443] 马的遍历：简单BFS
 

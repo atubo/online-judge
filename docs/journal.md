@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/18
+* [洛谷1141] 01迷宫：BFS
+
 ### 1/17
 * [洛谷 2147] P2147 [SDOI2008]Cave 洞穴勘测：动态树第一弹
 

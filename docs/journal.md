@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/19
+* [洛谷 1947] 笨笨当粉刷匠_NOI导刊2011提高（10）：对每一行作DP求这一行刷
+t 次的最大收益，然后是一个背包问题。
+
 ### 1/18
 * [洛谷 1141] 01迷宫：BFS
 * [洛谷 1191] 矩形：DP

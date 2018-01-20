@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/20
+* [洛谷 3181] [HAOI2016]找相同字符：后缀数组 + 单调栈
+
 ### 1/19
 * [洛谷 1947] 笨笨当粉刷匠_NOI导刊2011提高（10）：对每一行作DP求这一行刷
 t 次的最大收益，然后是一个背包问题。

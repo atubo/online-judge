@@ -5,8 +5,7 @@ from random import randint
 import time
 import os
 
-def rand_str(size):
-    chars = string.ascii_lowercase;
+def rand_str(size, chars=string.ascii_lowercase):
     return ''.join(random.choice(chars) for _ in range(size))
 
 def rand_array(size, lo=-10000, hi=10000):

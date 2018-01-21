@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 1/21
 * [洛谷 1949] 聪明的打字员_NOI导刊2011提高（10）：BFS + 状态压缩
+* [洛谷 1126] 机器人搬重物： BFS
 
 ### 1/20
 * [洛谷 3181] [HAOI2016]找相同字符：后缀数组 + 单调栈

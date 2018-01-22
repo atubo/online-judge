@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/22
+* [洛谷 2598] [ZJOI2009]狼和羊的故事：从S到狼连无穷大的边，从羊到T连无穷大的
+边，求S到T的最小割。
+
 ### 1/21
 * [洛谷 1949] 聪明的打字员_NOI导刊2011提高（10）：BFS + 状态压缩
 * [洛谷 1126] 机器人搬重物： BFS

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/26
+* [洛谷 2679] 子串：DP， $dp(i,j,k)$ 表示 $S[1:i]$ 中 k 个子串拼成
+$T[1:j]$ 最终匹配位置为 $(i,j)$ 的方案数。若 $S[i]=T[j]$ 有
+$dp(i,j,k)=dp(i-1,j-1,k)+\sum_{l=1}^{i-1}dp(l,j-1,k-1)$
+否则 $dp(i,j,k)=0$ 答案为 $\sum_{i=1}^{N}dp(i,M,k)$
+
 ### 1/25
 * [洛谷 3153] [CQOI2009]DANCE跳舞：网络流 + 二分，每个男孩建一个meta结点，
 一个喜欢结点，一个不喜欢结点，N个pair 结点，meta结点到喜欢结点容量为N，

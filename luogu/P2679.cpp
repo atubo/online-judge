@@ -7,7 +7,7 @@ using namespace std;
 const int MOD = 1000000007;
 
 int N, M, K;
-int dp1[1010][210][210], dp2[2][1010][210];
+int dp1[1010][210], dp2[2][1010][210];
 char S[1010], T[210];
 
 int main() {
@@ -22,16 +22,18 @@ int main() {
 
     for (int k = 1; k <= K; k++) {
         int curr = k & 1, prev = curr ^ 1;
-        memset(dp2[curr], 0, sizeof(dp2[curr]));
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= M; j++) {
+        memset(dp1, 0, sizeof(dp1));
+        for (int j = 0; j <= M; j++) dp2[curr][0][j] = 0;
+        for (int i = 0; i <= N; i++) dp2[curr][i][0] = 0;
+        for (int i = k; i <= N; i++) {
+            for (int j = k; j <= M; j++) {
                 if (S[i-1] == T[j-1]) {
-                    dp1[i][j][k] = dp1[i-1][j-1][k] + dp2[prev][i-1][j-1];
-                    dp1[i][j][k] %= MOD;
+                    dp1[i][j] = dp1[i-1][j-1] + dp2[prev][i-1][j-1];
+                    dp1[i][j] %= MOD;
                 } else {
-                    dp1[i][j][k] = 0;
+                    dp1[i][j] = 0;
                 }
-                dp2[curr][i][j] = (dp2[curr][i-1][j] + dp1[i][j][k]) % MOD;
+                dp2[curr][i][j] = (dp2[curr][i-1][j] + dp1[i][j]) % MOD;
             }
         }
     }

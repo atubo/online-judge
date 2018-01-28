@@ -4,110 +4,72 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Dinic {
+class FastDijkstra {
 public:
-    static const int inf = 0x3f3f3f3f;
-private:
-    static const int MAXN = 251100;
-    static const int MAXM = 1003000;
-    int head[MAXN], curr[MAXN];
-    struct Edge {
-        int to, next, cap;
-    } ;
-    int e;
-    Edge *E;
+    static const int64_t INF;
 
-public:
-    Dinic() {
-        E = new Edge[MAXM];
-        reset();
+    typedef pair<int64_t,int> PII;  // pair = (dist, vertex)
+
+    FastDijkstra(int N_): N(N_), edges(N), dist(N, INF), dad(N, -1) {}
+
+    void addEdge(int u, int v, int64_t wt) {
+        edges[u].push_back(make_pair(wt, v));
     }
 
-    ~Dinic() {
-        delete[] E;
+    const vector<int64_t>& getDist() const {
+        return dist;
     }
 
-    void reset() {
-        e = 0;
-        memset(head, -1, sizeof(head));
+    const vector<int>& getDad() const {
+        return dad;
     }
 
-    void addEdge(int x, int y, int w, int rw = 0) {
-        E[e] = {y, head[x], w};
-        head[x] = e++;
-        E[e] = {x, head[y], rw};
-        head[y] = e++;
-    }
+    int64_t solve(int s, int t) {
+        // use priority queue in which top element has the "smallest" priority
+        priority_queue<PII, vector<PII>, greater<PII> > Q;
+        Q.push (make_pair (0, s));
+        dist[s] = 0;
+        while (!Q.empty()){
+            PII p = Q.top();
+            if (p.second == t) break;
+            Q.pop();
 
-private:
-    int d[MAXN];
-    int q[MAXN];
-
-    bool bfs(int s, int t) {
-        memset(d, -1, sizeof(d));
-        int front = 0, back = 0;
-        q[back++] = t;
-        d[t] = 0;
-        while (back > front) {
-            int u = q[front];
-            front++;
-            for (int i = head[u]; i != -1; i = E[i].next) {
-                int v = E[i].to;
-                if (d[v] == -1 && E[i^1].cap) {
-                    d[v] = d[u] + 1;
-                    q[back++] = v;
-                    if (v == s) return true;
+            int here = p.second;
+            for (vector<PII>::const_iterator it=edges[here].begin();
+                 it!=edges[here].end(); it++){
+                if (dist[here] + it->first < dist[it->second]){
+                    dist[it->second] = dist[here] + it->first;
+                    dad[it->second] = here;
+                    Q.push (make_pair (dist[it->second], it->second));
                 }
             }
         }
-
-        return false;
+        return dist[t];
     }
 
-    int dfs(int x, int low, int t) {
-        if (x == t || !low) return low;
-        int ret = 0;
-        for (int &i = curr[x]; i != -1; i = E[i].next) {
-            int v = E[i].to;
-            if (d[v] == d[x] - 1) {
-                int k = dfs(v, min(low-ret, E[i].cap), t);
-                if (k > 0) {
-                    E[i].cap -= k;
-                    E[i^1].cap += k;
-                    ret += k;
-                }
-            }
-        }
-        return ret;
-    }
-
-public:
-    int dinic(int s, int t) {
-        int ans = 0;
-        while (bfs(s, t)) {
-            for (int i = 0; i < MAXN; i++) {
-                curr[i] = head[i];
-            }
-            int k = dfs(s, inf, t);
-            if (k > 0) ans += k;
-        }
-        return ans;
-    }
+private:
+    const int N;
+    vector<vector<PII>> edges;
+    vector<int64_t> dist;
+    vector<int> dad;
 };
 
+const int64_t FastDijkstra::INF = 0x7FFFFFFFFFFFFFFF;
+
+
 const int MAXN = 510;
-int N;
+int N, S, T;
 int west[MAXN][MAXN], east[MAXN][MAXN];
 int south[MAXN][MAXN], north[MAXN][MAXN];
 
 int id(int i, int j) {
-    return i * (N+1) + j;
+    if (i < 0 || j >= N) return S;
+    if (i >= N || j < 0) return T;
+    return i * N + j;
 }
 
 int main() {
     scanf("%d", &N);
-    Dinic dinic;
     for (int i = 0; i < N+1; i++) {
         for (int j = 0; j < N; j++) {
             scanf("%d", &east[i][j]);
@@ -129,21 +91,29 @@ int main() {
         }
     }
 
-    const int S = (N+1) * (N+1), T = S + 1;
-    dinic.addEdge(S, id(0, 0), Dinic::inf);
-    dinic.addEdge(id(N, N), T, Dinic::inf);
+    S = N*N;
+    T = S + 1;
 
+    FastDijkstra dij(T+1);
+    // west-east
     for (int i = 0; i < N+1; i++) {
         for (int j = 0; j < N; j++) {
-            dinic.addEdge(id(i, j), id(i, j+1), east[i][j], west[i][j]);
+            int up = id(i-1, j);
+            int down = id(i, j);
+            dij.addEdge(up, down, east[i][j]);
+            dij.addEdge(down, up, west[i][j]);
         }
     }
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N+1; j++) {
-            dinic.addEdge(id(i, j), id(i+1, j), south[i][j], north[i][j]);
+            int left = id(i, j-1);
+            int right = id(i, j);
+            dij.addEdge(left, right, north[i][j]);
+            dij.addEdge(right, left, south[i][j]);
         }
     }
 
-    printf("%d", dinic.dinic(S, T));
+    printf("%lld", dij.solve(S, T));
+
     return 0;
 }

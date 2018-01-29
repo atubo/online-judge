@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/28
+* [洛谷 1646] [国家集训队]happiness：网络流。记文科为W，理科为B，对每个点i，
+从S到i连边，容量为 $W_i + \sum_{j\in \text{neighnors}} W_{ij}/2$,
+从i到T连边，容量为 $B_i + \sum_{j\in \text{neighnors}} B_{ij}/2$,
+从i到所有的邻居j连边，容量为 $W_{ij}/2+B_{ij}/2$
+求最小割容量，从总和中减掉即可。
+
+
 ### 1/27
 * [洛谷 2046] [NOI2010]海拔：分析可知每点海拔必为0或1，且所有海拔为1的点
 均与右下角相通，所有海拔为0的点均与左上角相通，问题转化为左上角到右下角的

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 1/29
+* [洛谷 2057] 善意的投票：网络流，类似上题的建图方法。
+
 ### 1/28
 * [洛谷 1646] [国家集训队]happiness：网络流。记文科为W，理科为B，对每个点i，
 从S到i连边，容量为 $W_i + \sum_{j\in \text{neighnors}} W_{ij}/2$,

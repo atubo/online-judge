@@ -14,6 +14,12 @@ def rand_array(size, lo=-10000, hi=10000):
         ret.append(random.randint(lo, hi))
     return ret
 
+def rand_matrix(row, col, lo=-10000, hi=10000):
+    ret = []
+    for i in range(row):
+        ret.append(rand_array(col, lo, hi))
+    return ret
+
 def rand_unique_array(size, lo=1, hi=100000):
     ret = []
     seen = set()
@@ -72,6 +78,10 @@ def print_array(f, a):
         f.write("%d " % x)
     f.write("\n")
 
+def print_matrix(f, m):
+    for a in m:
+        print_array(f, a)
+
 def rand_range(low, hi):
     x = randint(low, hi)
     y = randint(low, hi)
@@ -83,9 +93,15 @@ def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        k = randint(1, n)
-        f.write("%d %d\n" % (n, k))
-        print_array(f, rand_array(n, 1, 100))
+        #m = randint(n/2, 2*n)
+        m = n
+        f.write("%d %d\n" % (n, m))
+        print_matrix(f, rand_matrix(n, m, 0, 10))
+        print_matrix(f, rand_matrix(n, m, 0, 10))
+        print_matrix(f, rand_matrix(n-1, m, 0, 10))
+        print_matrix(f, rand_matrix(n-1, m, 0, 10))
+        print_matrix(f, rand_matrix(n, m-1, 0, 10))
+        print_matrix(f, rand_matrix(n, m-1, 0, 10))
 
 def one_test(size):
     generate_input(size)
@@ -94,7 +110,7 @@ def one_test(size):
     if ret != 0:
         print "Bench error"
         exit(1)
-    ret = os.system("P1281 <input.txt > out2.txt")
+    ret = os.system("P1646 <input.txt > out2.txt")
     if ret != 0:
         print "Test error"
         exit(1)

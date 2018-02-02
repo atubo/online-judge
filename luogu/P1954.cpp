@@ -43,9 +43,9 @@ int ans[MAXN], in[MAXN], topo[MAXN], in2[MAXN];
 Graph g(MAXN);
 
 class Pq {
+public:
     int *q;
     int len;
-public:
     Pq(int n) {
         q = new int[4*n];
         len = 0;
@@ -85,10 +85,11 @@ public:
     }
 };
 
+Pq pq(MAXN);
 
 void toposort() {
+    pq.len = 0;
     memcpy(in2, in, sizeof(in));
-    Pq pq(N);
     for (int i = 1; i <= N; i++) {
         if (!in2[i]) pq.push(i);
     }
@@ -105,10 +106,9 @@ void toposort() {
 }
 
 int solve(int x) {
-    memcpy(in2, in, sizeof(in));
-    Pq pq(N);
+    pq.len = 0;
     for (int i = 1; i <= N; i++) {
-        if (i != x && !in2[i]) pq.push(i);
+        if (i != x && !(in2[i]=in[i])) pq.push(i);
     }
     for (int i = N; i >= 1; i--) {
         if (pq.empty()) return i;

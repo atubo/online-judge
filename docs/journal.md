@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/2
+* [洛谷 1954] [NOI2010]航空管制：贪心 + 拓扑排序
+
 ### 1/29
 * [洛谷 2057] 善意的投票：网络流，类似上题的建图方法。
 

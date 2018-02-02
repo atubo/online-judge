@@ -41,53 +41,86 @@ int N, M;
 int K[MAXN];
 int ans[MAXN], in[MAXN], topo[MAXN], in2[MAXN];
 Graph g(MAXN);
-struct Pii {
-    int first, second;
-    bool operator < (const Pii &other) const {
-        if (first < other.first) return true;
-        if (first > other.first) return false;
-        return second < other.second;
+
+class Pq {
+    int *q;
+    int len;
+public:
+    Pq(int n) {
+        q = new int[4*n];
+        len = 0;
+    }
+    ~Pq() {
+        delete[] q;
+    }
+
+    void push(int i) {
+        q[++len] = i;
+        int x = len;
+        while (x >> 1) {
+            if (K[q[x>>1]] >= K[q[x]]) break;
+            swap(q[x>>1], q[x]);
+            x >>= 1;
+        }
+    }
+
+    int top() const {
+        return q[1];
+    }
+
+    bool empty() const {
+        return len == 0;
+    }
+
+    void pop() {
+        q[1] = q[len--];
+        int x = 1, v;
+        while ((x<<1) <= len) {
+            v = x << 1;
+            if ((v|1)<= len && K[q[v|1]] > K[q[v]]) v |= 1;
+            if (K[q[x]] >= K[q[v]]) break;
+            swap(q[x], q[v]);
+            x = v;
+        }
     }
 };
 
+
 void toposort() {
     memcpy(in2, in, sizeof(in));
-    priority_queue<Pii> pq;
+    Pq pq(N);
     for (int i = 1; i <= N; i++) {
-        if (!in2[i]) pq.push(Pii{K[i], i});
+        if (!in2[i]) pq.push(i);
     }
     for (int i = N; i >= 1; i--) {
-        auto p = pq.top();
+        auto u = pq.top();
         pq.pop();
-        int u = p.second;
         topo[i] = u;
         for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
             int v = g.E[eidx].to;
             in2[v]--;
-            if (!in2[v]) pq.push(Pii{K[v], v});
+            if (!in2[v]) pq.push(v);
         }
     }
 }
 
 int solve(int x) {
     memcpy(in2, in, sizeof(in));
-    priority_queue<Pii> pq;
+    Pq pq(N);
     for (int i = 1; i <= N; i++) {
-        if (i != x && !in2[i]) pq.push(Pii{K[i], i});
+        if (i != x && !in2[i]) pq.push(i);
     }
     for (int i = N; i >= 1; i--) {
         if (pq.empty()) return i;
-        auto p = pq.top();
+        auto u = pq.top();
         pq.pop();
-        if (p.first < i) return i;
-        int u = p.second;
+        if (K[u] < i) return i;
         for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
             int v = g.E[eidx].to;
             in2[v]--;
-            if (v != x && !in2[v]) pq.push(Pii{K[v], v});
+            if (v != x && !in2[v]) pq.push(v);
         }
     }
-    //assert(0);
     return -1;
 }
 

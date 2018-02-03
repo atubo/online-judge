@@ -4,6 +4,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int P, C, N, S, T;
+
 class Dinic {
 public:
     static const int inf = 0x3f3f3f3f;
@@ -38,7 +40,8 @@ private:
     int q[MAXN];
 
     bool bfs(int s, int t) {
-        memset(d, -1, sizeof(d));
+        //memset(d, -1, sizeof(d));
+        memset(d, -1, (T+1) * sizeof(int));
         int front = 0, back = 0;
         q[back++] = t;
 
@@ -79,7 +82,7 @@ public:
     int dinic(int s, int t) {
         int ans = 0;
         while (bfs(s, t)) {
-            for (int i = 0; i < MAXN; i++) {
+            for (int i = 0; i <= T; i++) {
                 curr[i] = head[i];
             }
             int k = dfs(s, inf, t);
@@ -92,7 +95,6 @@ public:
 const int MAXN = 3010;
 bool conn[MAXN][MAXN];
 bool report[MAXN];
-int P, C, N;
 
 int outId(int i) {
     return 2*i - 1;
@@ -104,7 +106,7 @@ int inId(int i) {
 
 int main() {
     scanf("%d%d%d", &P, &C, &N);
-    const int S = 0, T = 2*P + 1;
+    S = 0, T = 2*P + 1;
     Dinic dinic;
     for (int i = 0; i < C; i++) {
         int a, b;

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/3
+* [洛谷 2944] [USACO09MAR]地震损失2Earthquake Damage 2：网络流求顶点
+连通度。
+
 ### 2/2
 * [洛谷 1954] [NOI2010]航空管制：贪心 + 拓扑排序
 

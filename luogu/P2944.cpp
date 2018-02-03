@@ -35,20 +35,22 @@ public:
 
 private:
     int d[MAXN];
+    int q[MAXN];
 
     bool bfs(int s, int t) {
         memset(d, -1, sizeof(d));
-        queue<int> q;
-        q.push(t);
+        int front = 0, back = 0;
+        q[back++] = t;
+
         d[t] = 0;
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
+        while (front != back) {
+            int u = q[front];
+            front++;
             for (int i = head[u]; i != -1; i = E[i].next) {
                 int v = E[i].to;
                 if (d[v] == -1 && E[i^1].cap) {
                     d[v] = d[u] + 1;
-                    q.push(v);
+                    q[back++] = v;
                     if (v == s) return true;
                 }
             }

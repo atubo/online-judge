@@ -8,6 +8,8 @@ Journal of the problems I have worked on
 </p>
 
 ### 2/3
+* [洛谷 1018] 乘积最大：DP， $dp(n,k)$ 表示最前面的n个数字，分成k个部分所能
+产生的最大整数。有 $dp(n,k)=\max_{p\in[k-1,n-1]}dp(p,k-1)\cdot S[p,n-1]$
 * [洛谷 2891] [USACO07OPEN]吃饭Dining：网络流，建图方法：
 S到每个F结点连容量为1的边，每个D结点到T连容量为1的边，每头牛分成两个
 结点C1和C2，从C1到C2连容量为1的边，若它喜欢Fi,则从Fi到C1连容量为1的边，

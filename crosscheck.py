@@ -89,19 +89,21 @@ def rand_range(low, hi):
         x, y = y, x
     return x, y
 
+def swap(s, i, j):
+    lst = list(s)
+    lst[i], lst[j] = lst[j], lst[i]
+    return ''.join(lst)
+
 def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
-        n = size
-        #m = randint(n/2, 2*n)
-        m = n
-        f.write("%d %d\n" % (n, m))
-        print_matrix(f, rand_matrix(n, m, 0, 10))
-        print_matrix(f, rand_matrix(n, m, 0, 10))
-        print_matrix(f, rand_matrix(n-1, m, 0, 10))
-        print_matrix(f, rand_matrix(n-1, m, 0, 10))
-        print_matrix(f, rand_matrix(n, m-1, 0, 10))
-        print_matrix(f, rand_matrix(n, m-1, 0, 10))
+        s = 'BBBBBBBWWWWWWWOO'
+        for i in range(32):
+            x = randint(0, 15)
+            y = randint(0, 15)
+            s = swap(s, x, y)
+        for i in range(4):
+            f.write("%s\n" % s[i*4:(i+1)*4])
 
 def one_test(size):
     generate_input(size)
@@ -110,7 +112,7 @@ def one_test(size):
     if ret != 0:
         print "Bench error"
         exit(1)
-    ret = os.system("P1646 <input.txt > out2.txt")
+    ret = os.system("P2346 <input.txt > out2.txt")
     if ret != 0:
         print "Test error"
         exit(1)

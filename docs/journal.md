@@ -8,6 +8,7 @@ Journal of the problems I have worked on
 </p>
 
 ### 2/3
+* [洛谷 2346] 四子连棋：BFS
 * [洛谷 1018] 乘积最大：DP， $dp(n,k)$ 表示最前面的n个数字，分成k个部分所能
 产生的最大整数。有 $dp(n,k)=\max_{p\in[k-1,n-1]}dp(p,k-1)\cdot S[p,n-1]$
 * [洛谷 2891] [USACO07OPEN]吃饭Dining：网络流，建图方法：

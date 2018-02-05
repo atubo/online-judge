@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 2/4
 * [洛谷 2285] [HNOI2004]打鼹鼠：DP， $O(m^2)$ 复杂度居然也可以AC。
+* [Vijos 1512] SuperBrother打鼹鼠：树套树(线段树套线段树)
 
 ### 2/3
 * [洛谷 2346] 四子连棋：BFS

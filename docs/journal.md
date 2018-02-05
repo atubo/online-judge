@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/4
+* [洛谷 2285] [HNOI2004]打鼹鼠：DP， $O(m^2)$ 复杂度居然也可以AC。
+
 ### 2/3
 * [洛谷 2346] 四子连棋：BFS
 * [洛谷 1018] 乘积最大：DP， $dp(n,k)$ 表示最前面的n个数字，分成k个部分所能

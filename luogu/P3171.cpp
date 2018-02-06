@@ -6,13 +6,14 @@ using namespace std;
 
 class Dinic {
 public:
-    static const int inf = 0x3f3f3f3f;
+    static const int64_t inf = 1e18;
 private:
     static const int MAXM = 202000;
     const int N;
     int *head, *curr;
     struct Edge {
-        int to, next, cap;
+        int to, next;
+        int64_t cap;
     };
     Edge *E;
     int e;
@@ -32,7 +33,7 @@ public:
         memset(head, -1, N * sizeof(int));
     }
 
-    void addEdge(int x, int y, int w, int rw = 0) {
+    void addEdge(int x, int y, int64_t w, int64_t rw = 0) {
         E[e] = {y, head[x], w};
         head[x] = e++;
         E[e] = {x, head[y], rw};
@@ -80,13 +81,13 @@ private:
         return false;
     }
 
-    int dfs(int x, int low, int t) {
+    int64_t dfs(int x, int64_t low, int t) {
         if (x == t || !low) return low;
-        int ret = 0;
+        int64_t ret = 0;
         for (int &i = curr[x]; i != -1; i = E[i].next) {
             int v = E[i].to;
             if (d[v] == d[x] - 1) {
-                int k = dfs(v, min(low-ret, E[i].cap), t);
+                int64_t k = dfs(v, min(low-ret, E[i].cap), t);
                 if (k > 0) {
                     E[i].cap -= k;
                     E[i^1].cap += k;
@@ -98,13 +99,13 @@ private:
     }
 
 public:
-    int dinic(int s, int t) {
-        int ans = 0;
+    int64_t dinic(int s, int t) {
+        int64_t ans = 0;
         while (bfs(s, t)) {
             for (int i = 0; i < N; i++) {
                 curr[i] = head[i];
             }
-            int k = dfs(s, inf, t);
+            int64_t k = dfs(s, inf, t);
             if (k > 0) ans += k;
         }
         return ans;
@@ -247,7 +248,7 @@ int main() {
         }
     }
 
-    printf("%d", dinic.dinic(innode(0), outnode(N-1)));
+    printf("%lld", dinic.dinic(innode(0), outnode(N-1)));
 
     return 0;
 }

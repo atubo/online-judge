@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/5
+* [洛谷 P3171] [CQOI2015]网络吞吐量：先求出所有可能在最短路上的边和顶点，
+再在这个子图上用类似求点连通度的方法分点求最大流。
+
 ### 2/4
 * [洛谷 2285] [HNOI2004]打鼹鼠：DP， $O(m^2)$ 复杂度居然也可以AC。
 * [Vijos 1512] SuperBrother打鼹鼠：树套树(线段树套线段树)

@@ -7,8 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
-### 2/8
+### 2/7
 * [洛谷 P3381] 【模板】最小费用最大流：模板题
+* [洛谷 P1709] [USACO5.5]隐藏口令Hidden Password：5M 的数据规模后缀数组
+时间和空间都会爆，看题解才发现有一个字符串的最小表示法的 NB 算法
+([这里](http://blog.csdn.net/zy691357966/article/details/39854359))
+能在 $O(N)$
+时间内得到结果 。
 
 ### 2/6
 * [洛谷 P1291] [SHOI2002]百事世界杯之旅：令 $e(m)$ 表示集齐指定的 m 个

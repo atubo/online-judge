@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/8
+* [洛谷 P3381] 【模板】最小费用最大流：模板题
+
 ### 2/6
 * [洛谷 P1291] [SHOI2002]百事世界杯之旅：令 $e(m)$ 表示集齐指定的 m 个
 球星的期望值，有 $e(m)=\frac {m}{n}(1 + e(m-1)) + \frac{n-m}{n}(1+e(m))$

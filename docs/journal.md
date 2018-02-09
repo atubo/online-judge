@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/9
+* [洛谷 P1970] 花匠：用了线段树 + DP，看题解发现有更巧妙的DP方法，代码量极短
+且为线性时间。
+
 ### 2/7
 * [洛谷 P3381] 【模板】最小费用最大流：模板题
 * [洛谷 P1709] [USACO5.5]隐藏口令Hidden Password：5M 的数据规模后缀数组

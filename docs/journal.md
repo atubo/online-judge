@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/10
+* [洛谷 P2750] [USACO5.5]贰五语言Two Five：原以为要用到勾长公式啥的，看
+题解发现是记忆化搜索 DFS + DP
+
 ### 2/9
 * [洛谷 P1970] 花匠：用了线段树 + DP，看题解发现有更巧妙的DP方法，代码量极短
 且为线性时间。

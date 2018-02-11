@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/11
+* [洛谷 P1856] [USACO5.5]矩形周长Picture：想了半天也想不出怎么用一维线段树
+解之。看题解发现暴力即可，且题解之线段树的复杂度似乎有问题
+（非 $\log(N)$ 复杂度）
+
 ### 2/10
 * [洛谷 P2750] [USACO5.5]贰五语言Two Five：原以为要用到勾长公式啥的，看
 题解发现是记忆化搜索 DFS + DP

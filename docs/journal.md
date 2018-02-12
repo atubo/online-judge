@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/12
+* [洛谷 P2153] [SDOI2009]晨跑：用求点连通度的方法建图，求最小费用最大流。
+
 ### 2/11
 * [洛谷 P1856] [USACO5.5]矩形周长Picture：想了半天也想不出怎么用一维线段树
 解之。看题解发现暴力即可，且题解之线段树的复杂度似乎有问题

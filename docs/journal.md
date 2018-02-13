@@ -10,6 +10,9 @@ Journal of the problems I have worked on
 ### 2/13
 * [洛谷 P2747] [USACO5.4]周游加拿大Canada Tour：双路DP思想，令
 $dp(i,j)$ 表示从原点出发，一路到i, 一路到j 的最大城市数
+* [洛谷 P3354] 河流：(不会作，抄的) 多叉树转二叉树(避免显式背包) + 树上DP + 考虑祖先结点。
+见[详细题解](http://blog.csdn.net/qq_37816449/article/details/69631995)。
+天才的想法，深深的膜拜。
 
 ### 2/12
 * [洛谷 P2153] [SDOI2009]晨跑：用求点连通度的方法建图，求最小费用最大流。

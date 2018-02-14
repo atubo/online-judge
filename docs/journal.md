@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/14
+* [洛谷 P2344] 奶牛抗议：(看题解了) 令 $dp[i]$ 表示到i 结束的分组数，
+$s[i]$ 表示前缀和，有 $dp[i]=\sum_{j<i,s[j]\le s[i]}dp[j]$
+对s 离散化并用树状数组维护之。
+
 ### 2/13
 * [洛谷 P2747] [USACO5.4]周游加拿大Canada Tour：双路DP思想，令
 $dp(i,j)$ 表示从原点出发，一路到i, 一路到j 的最大城市数

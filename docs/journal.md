@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/15
+* [洛谷 P2915] [USACO08NOV]奶牛混合起来Mixed Up Cows：状压DP，
+令 $dp(S,i)$ 表示已选奶牛集合为S，其中最后奶牛为i的选法数。
+
 ### 2/14
 * [洛谷 P2344] 奶牛抗议：(看题解了) 令 $dp[i]$ 表示到i 结束的分组数，
 $s[i]$ 表示前缀和，有 $dp[i]=\sum_{j<i,s[j]\le s[i]}dp[j]$

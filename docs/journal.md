@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/16
+* [洛谷 P1549] 棋盘问题（2）：数据较水，深搜可过。
+
 ### 2/15
 * [洛谷 P2915] [USACO08NOV]奶牛混合起来Mixed Up Cows：状压DP，
 令 $dp(S,i)$ 表示已选奶牛集合为S，其中最后奶牛为i的选法数。

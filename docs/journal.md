@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/17
+* [洛谷 P3052] [USACO12MAR]摩天大楼里的奶牛Cows in a Skyscraper：
+(不会作，基本是抄的)，用到了所谓 Mobius 函数和 Mobius DP，见
+[题解](http://www.usaco.org/current/data/sol_skyscraper.htmlhttp://www.usaco.org/current/data/sol_skyscraper.html)
+
 ### 2/16
 * [洛谷 P1549] 棋盘问题（2）：数据较水，深搜可过。
 

@@ -3,32 +3,54 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-using Pii = pair<int, int>;
+
+#define MAX(a, b) (a>b ? a: b)
 
 const int MAXN = 20;
 int N, W;
 int C[MAXN];
-int dp[1<<18];
+int sm[1<<18], dp[1<<18], g[1<<18], gp[1<<18];
+int fpk[MAXN][1<<18];
 
-int solve(int mask) {
-    if (mask == 0) return 0;
-    if (dp[mask] > 0) return dp[mask];
-    int &ret = dp[mask];
-    int wt = 0;
-    for (int i = 0; i < N; i++) {
-        if ((mask >> i) & 1) wt += C[i];
-    }
-    if (wt <= W) return (ret = 1);
-    ret = INT_MAX;
-    for (int s = mask; s; s = (s-1) & mask) {
-        if (s == mask) continue;
-        int t = (mask ^ s) & mask;
-        int c = solve(s) + solve(t);
-        if (c < ret) {
-            ret = c;
+void init() {
+    for (int s = 1; s < (1<<N); s++) {
+        for (int i = 0; i < N; i++) {
+            if ((s>>i) & 1) {
+                sm[s] += C[i];
+            }
         }
     }
-    return ret;
+}
+
+void mobius(int *f, int *fp) {
+    for (int s = 0; s < (1<<N); s++) {
+        fpk[0][s] = f[s];
+        for (int k = 1; k <= N; k++) {
+            fpk[k][s] = fpk[k-1][s];
+            if ((s>>(k-1)) & 1) {
+                fpk[k][s] = MAX(fpk[k][s], fpk[k-1][s&(~(1<<(k-1)))]);
+            }
+        }
+        fp[s] = fpk[N][s];
+    }
+}
+
+int solve() {
+    // k = 1
+    for (int s = 0; s < (1<<N); s++) {
+        g[s] = (sm[s] <= W ? sm[s] : 0);
+    }
+    if (g[(1<<N)-1] > 0) return 1;
+    mobius(g, gp);
+    for (int k = 2; k <= N; k++) {
+        for (int s = 0; s < (1<<N); s++) {
+            g[s] = (sm[s] - gp[s] <= W ? sm[s] : 0);
+        }
+        if (g[(1<<N)-1] > 0) return k;
+        mobius(g, gp);
+    }
+    assert(0);
+    return -1;
 }
 
 int main() {
@@ -36,7 +58,8 @@ int main() {
     for (int i = 0; i < N; i++) {
         scanf("%d", &C[i]);
     }
-    int ret = solve((1<<N)-1);
+    init();
+    int ret = solve();
     printf("%d", ret);
     return 0;
 }

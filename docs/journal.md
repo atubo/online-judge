@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/18
+* [洛谷 P1456] Monkey King：左偏树模板题
+
 ### 2/17
 * [洛谷 P3052] [USACO12MAR]摩天大楼里的奶牛Cows in a Skyscraper：
 (不会作，基本是抄的)，用到了所谓 Mobius 函数和 Mobius DP，见

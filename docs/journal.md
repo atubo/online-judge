@@ -11,6 +11,9 @@ Journal of the problems I have worked on
 * [洛谷 P3052] [USACO12MAR]摩天大楼里的奶牛Cows in a Skyscraper：
 (不会作，基本是抄的)，用到了所谓 Mobius 函数和 Mobius DP，见
 [题解](http://www.usaco.org/current/data/sol_skyscraper.htmlhttp://www.usaco.org/current/data/sol_skyscraper.html)
+* [洛谷 P3200] [HNOI2009]有趣的数列：其实就是 $2\times n$ 杨氏表，所以
+答案为Catalan 数 $C_n$ 。难度主要在于 P 不一定是质数，所以要将P分解质因数后
+用中国剩余定理解之。
 
 ### 2/16
 * [洛谷 P1549] 棋盘问题（2）：数据较水，深搜可过。

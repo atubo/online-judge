@@ -6,21 +6,24 @@ using namespace std;
 using Pii = pair<int, int>;
 
 // (g, x, y) that a*x + b*y = g
-tuple<int64_t, int64_t, int64_t> ext_gcd(int64_t a, int64_t b) {
+void ext_gcd(int a, int b, int &g, int &x, int &y) {
     if (b == 0) {
-        return make_tuple(a, 1, 0);
+        g = a; x = 1; y = 0;
+        return;
     }
-    int64_t dp, xp, yp;
-    tie(dp, xp, yp) = ext_gcd(b, a % b);
-    return make_tuple(dp, yp, xp - a / b * yp);
+    int dp, xp, yp;
+    ext_gcd(b, a % b, dp, xp, yp);
+    g = dp;
+    x = yp;
+    y = xp - a / b * yp;
 }
 
 // find x that a*x = b mod n
-int64_t mod_solve(int64_t a, int64_t b, int n) {
-    int64_t d, xp, yp;
-    tie(d, xp, yp) = ext_gcd(a, n);
+int mod_solve(int a, int b, int n) {
+    int d, xp, yp;
+    ext_gcd(a, n, d, xp, yp);
     if (b % d == 0) {
-        int64_t x0 = (xp * (b / d) % n + n) % n;
+        int x0 = (xp * (b / d) % n + n) % n;
         return x0;
     } else {
         abort();
@@ -28,7 +31,9 @@ int64_t mod_solve(int64_t a, int64_t b, int n) {
 }
 
 
+const int MAXN = 1000010;
 int N, P;
+int64_t inv_cache[MAXN];
 
 vector<Pii> factor(int p) {
     vector<Pii> ret;
@@ -51,7 +56,8 @@ vector<Pii> factor(int p) {
 }
 
 int64_t inv(int x, int q) {
-    return mod_solve(x, 1, q);
+    if (inv_cache[x]) return inv_cache[x];
+    return inv_cache[x] = mod_solve(x, 1, q);
 }
 
 int64_t mul(int64_t a, int64_t b, int64_t m) {
@@ -59,6 +65,7 @@ int64_t mul(int64_t a, int64_t b, int64_t m) {
 }
 
 int modpk(int p, int k) {
+    memset(inv_cache, 0, sizeof(inv_cache));
     int cnt = 0;
     for (int i = 1; i <= N; i++) {
         int x = i;
@@ -111,7 +118,7 @@ int64_t chinese_remainder(const vector<Pii> &fa,
             mi *= p;
         }
         int Mi = P/mi;
-        int64_t ti = inv(Mi, mi);
+        int64_t ti = mod_solve(Mi, 1, mi);
         ans += r * ti * Mi;
     }
     return ans % P;

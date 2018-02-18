@@ -8,6 +8,7 @@ Journal of the problems I have worked on
 </p>
 
 ### 2/18
+* [洛谷 P3377] 【模板】左偏树（可并堆）：纯模板
 * [洛谷 P1456] Monkey King：左偏树模板题
 
 ### 2/17

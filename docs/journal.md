@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/22
+* [洛谷 P2476] [SCOI2008]着色方案：状压DP，令 $dp(x,c_5,c_4,c_3,c_2,c_1)$
+表示当前所选颜色剩余数为 $x$, 所剩数为5的颜色种类有 $c_5$ ,
+所剩数为4的颜色种类有 $c_4$ ... 的状态的解。可以用23位整数表示状态。
+样例比较给力。
+
 ### 2/21
 * [洛谷 P3084] [USACO13OPEN]照片Photo：(两天才搞定，还基本是抄的) 开始以为
 是差分约束，提交后发现SPFA超时，看[题解](http://www.usaco.org/current/data/sol_photo_open13_gold.html)发现正解是天才的DP，再次膜拜。

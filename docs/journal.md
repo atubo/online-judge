@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/21
+* [洛谷 P3084] [USACO13OPEN]照片Photo：(两天才搞定，还基本是抄的) 开始以为
+是差分约束，提交后发现SPFA超时，看[题解](http://www.usaco.org/current/data/sol_photo_open13_gold.html)发现正解是天才的DP，再次膜拜。
+
 ### 2/19
 * [洛谷 P1121] 环状最大两段子段和：(看题解了)线性问题比较好解，但可以巧妙的
 将绕回情况下的最大两段子段和问题转化为线性情况下的最小两段子段和问题。

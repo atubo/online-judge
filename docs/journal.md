@@ -14,6 +14,7 @@ Journal of the problems I have worked on
 样例比较给力。
 * [洛谷 P1961] 最轻的天平_NOI导刊2009普及（6）：递归求解。
 * [洛谷 P2447] [SDOI2010]外星千足虫：高斯消元 + bit mask
+* [洛谷 P1219] 八皇后：DFS
 
 ### 2/21
 * [洛谷 P3084] [USACO13OPEN]照片Photo：(两天才搞定，还基本是抄的) 开始以为

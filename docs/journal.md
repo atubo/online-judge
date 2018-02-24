@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/24
+* [洛谷 P1726] 上白泽慧音：强连通分量
+
 ### 2/23
 * [洛谷 P3810] 【模板】三维偏序（陌上花开）：将元素按 $(z,y,x)$ 排序后
 依次处理，用二维线段树维护 $\{x,y|x\in [x_1, x_2], y\in [y_1, y_2]\}$

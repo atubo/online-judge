@@ -94,25 +94,48 @@ def swap(s, i, j):
     lst[i], lst[j] = lst[j], lst[i]
     return ''.join(lst)
 
+def build_directed_tree(lo, hi):
+    """ build a directed tree that ensures hi is reachable from lo"""
+    ret = set()
+    for lo in range(1, hi):
+        u = randint(lo+1, hi)
+        ret.add((lo, u))
+    return ret
+
+def build_graph(n, m):
+    """ build a directed graph that ensures hi is reachable from lo"""
+    ret = build_directed_tree(1, n)
+    for i in range(m-n+1):
+        u = randint(1, n)
+        v = randint(1, n)
+        while v == u or (u, v) in ret:
+            u = randint(1, n)
+            v = randint(1, n)
+        ret.add((u, v))
+    return ret
+
 def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
-        s = 'BBBBBBBWWWWWWWOO'
-        for i in range(32):
-            x = randint(0, 15)
-            y = randint(0, 15)
-            s = swap(s, x, y)
-        for i in range(4):
-            f.write("%s\n" % s[i*4:(i+1)*4])
+        f.write("1\n")
+        n = size
+        m = 2 * n
+        k = randint(0, 5)
+        p = 100000
+        f.write("%d %d %d %d\n" % (n, m, k, p))
+        ret = build_graph(n, m)
+        for e in ret:
+            w = randint(0, 5)
+            f.write("%d %d %d\n" % (e[0], e[1], w))
 
 def one_test(size):
     generate_input(size)
-    #exit(0)
+    exit(0)
     ret = os.system("bench <input.txt> out1.txt")
     if ret != 0:
         print "Bench error"
         exit(1)
-    ret = os.system("P2346 <input.txt > out2.txt")
+    ret = os.system("P3953 <input.txt > out2.txt")
     if ret != 0:
         print "Test error"
         exit(1)
@@ -122,7 +145,7 @@ def one_test(size):
 def test_suite():
     for size in range(5, 100):
         print "size = "  + str(size)
-        for t in range(1, 100):
+        for t in range(100):
             ok = one_test(size)
             if not ok:
                 print("diff!")

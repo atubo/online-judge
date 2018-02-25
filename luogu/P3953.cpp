@@ -203,7 +203,6 @@ struct Edge {
 } edge[MAXM];
 
 int cnt[MAXN][51];
-bool vis[MAXN][51];
 int topoorder[MAXN], in[MAXN];
 
 struct Item {
@@ -224,7 +223,6 @@ int add(int a, int b) {
 
 void init() {
     memset(cnt, 0, sizeof(cnt));
-    memset(vis, 0, sizeof(vis));
     memset(topoorder, -1, sizeof(topoorder));
     memset(in, 0, sizeof(in));
 }
@@ -272,7 +270,8 @@ void solve(const Graph &g, const FastDijkstra &dij) {
     for (int k = 0; k <= K; k++) {
         for (int i = 0; i < g.N; i++) {
             int u = topoorder[i];
-            int d = dij.getDist()[u];
+            int64_t d = dij.getDist()[u];
+            if (d == FastDijkstra::INF) continue;
             for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
                 int v = g.E[eidx].to;
                 int w = g.E[eidx].wt;

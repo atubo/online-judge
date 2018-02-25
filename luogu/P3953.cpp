@@ -229,7 +229,15 @@ void init() {
     memset(in, 0, sizeof(in));
 }
 
-void toposort(const Graph &g) {
+struct DistComp {
+    DistComp(const vector<int64_t> &d_):d(d_) {}
+    bool operator()(int i, int j) const {
+        return d[i] < d[j];
+    }
+    const vector<int64_t> &d;
+};
+
+void toposort(const Graph &g, const FastDijkstra &dij) {
     for (int u = 0; u < g.N; u++) {
         for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
             int v = g.E[eidx].to;
@@ -245,7 +253,7 @@ void toposort(const Graph &g) {
     while (!q.empty()) {
         int u = q.front();
         q.pop();
-        topoorder[u] = curr++;
+        topoorder[curr++] = u;
         for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
             int v = g.E[eidx].to;
             int w = g.E[eidx].wt;
@@ -255,34 +263,27 @@ void toposort(const Graph &g) {
             }
         }
     }
+    DistComp comp(dij.getDist());
+    stable_sort(topoorder, topoorder+N, comp);
 }
 
 void solve(const Graph &g, const FastDijkstra &dij) {
-    priority_queue<Item, vector<Item>, greater<Item>> pq;
     if (cnt[S][0] != -1) cnt[S][0] = 1;
-    pq.push({0, 0, S});
-    while (!pq.empty()) {
-        Item item = pq.top();
-        pq.pop();
-        int d = item.d, k = item.k, u = item.id;
-        for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
-            int v = g.E[eidx].to;
-            int w = g.E[eidx].wt;
-            int dv = d + w;
-            int kv = dv - dij.getDist()[v];
-            if (kv > K) continue;
-            if (cnt[u][k] >= 0 && cnt[v][kv] >= 0) {
-                cnt[v][kv] = add(cnt[v][kv], cnt[u][k]);
-            } else {
-                cnt[v][kv] = -1;
-            }
-#if 0
-            printf("u=%d d=%d k=%d dv=%lld w=%d cntu=%d v=%d kv=%d cntv=%d\n",
-                   u, d, k, dij.getDist()[v], w, cnt[u][k], v, kv, cnt[v][kv]);
-#endif
-            if (!vis[v][kv]) {
-                pq.push({dv, kv, v});
-                vis[v][kv] = true;
+    for (int k = 0; k <= K; k++) {
+        for (int i = 0; i < g.N; i++) {
+            int u = topoorder[i];
+            int d = dij.getDist()[u];
+            for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
+                int v = g.E[eidx].to;
+                int w = g.E[eidx].wt;
+                int dv = d + k + w;
+                int kv = dv - dij.getDist()[v];
+                if (kv > K) continue;
+                if (cnt[u][k] >= 0 && cnt[v][kv] >= 0) {
+                    cnt[v][kv] = add(cnt[v][kv], cnt[u][k]);
+                } else {
+                    cnt[v][kv] = -1;
+                }
             }
         }
     }
@@ -339,7 +340,7 @@ int main() {
         S = tarjan.belong[0], T = tarjan.belong[N-1];
         dij.solve(S, T);
 
-        toposort(g);
+        toposort(g, dij);
         solve(g, dij);
     }
     return 0;

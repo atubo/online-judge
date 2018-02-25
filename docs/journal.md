@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/25
+* [洛谷 P2341] [HAOI2006]受欢迎的牛：强连通分量
+
 ### 2/24
 * [洛谷 P1726] 上白泽慧音：强连通分量
 * [洛谷 P3953] 逛公园：先用Tarjan缩点将0环缩点，然后用Dijkstra求最短路，

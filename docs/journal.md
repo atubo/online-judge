@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/26
+* [洛谷 P2746] [USACO5.3]校园网Network of Schools：强连通分量
+
 ### 2/25
 * [洛谷 P2341] [HAOI2006]受欢迎的牛：强连通分量
 * [洛谷 P2014] 选课：由于先修课最多为1，先修关系为一个森林。题目转化为一个

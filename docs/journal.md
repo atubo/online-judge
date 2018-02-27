@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/27
+* [洛谷 P3174] [HAOI2009]毛毛虫，令 $dp(r)$ 表示以 $r$ 为链的根且不包含
+$r$ 的父结点的最优解，令 $C_r$ 表示 $r$ 的子结点集合，有
+$dp(r)=\max(dp_i|i\in C_r) + |C_r|$ 有了 $dp(r)$ 后，再分别考虑链以
+$r$ 为起点和经过 $r$ 的两种情况即可。
+
 ### 2/26
 * [洛谷 P2746] [USACO5.3]校园网Network of Schools：强连通分量
 

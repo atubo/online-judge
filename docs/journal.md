@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 $r$ 的父结点的最优解，令 $C_r$ 表示 $r$ 的子结点集合，有
 $dp(r)=\max(dp_i|i\in C_r) + |C_r|$ 有了 $dp(r)$ 后，再分别考虑链以
 $r$ 为起点和经过 $r$ 的两种情况即可。
+* [洛谷 P4051] [JSOI2007]字符加密：后缀数组，只要将字符串比较的部分稍作
+改动即可。
 
 ### 2/26
 * [洛谷 P2746] [USACO5.3]校园网Network of Schools：强连通分量

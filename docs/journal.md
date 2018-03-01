@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 2/28
+* [洛谷 P2900] [USACO08MAR]土地征用Land Acquisition：DP + 斜率优化，
+将土地按 $w$ 从大到小排序，$l$ 应该是递增的(若不然则删除之)，令
+$a_i=w_{i+1}$ , $dp(i)$ 表示到第 $i$ 块土地的最优解，若有
+$j>k$ 且 $j$ 优于 $k$ 则有
+$\frac{dp(j)-dp(k)}{-a_j+a_k} < L_i$
+
 ### 2/27
 * [洛谷 P3174] [HAOI2009]毛毛虫，令 $dp(r)$ 表示以 $r$ 为链的根且不包含
 $r$ 的父结点的最优解，令 $C_r$ 表示 $r$ 的子结点集合，有

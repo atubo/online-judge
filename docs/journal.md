@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/1
+* [洛谷 P3254] 圆桌问题：网络流
+
 ### 2/28
 * [洛谷 P2900] [USACO08MAR]土地征用Land Acquisition：DP + 斜率优化，
 将土地按 $w$ 从大到小排序，$l$ 应该是递增的(若不然则删除之)，令

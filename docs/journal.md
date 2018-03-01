@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 3/1
 * [洛谷 P3254] 圆桌问题：网络流
+* [洛谷 P2002] 消息扩散：校园网简化版
 
 ### 2/28
 * [洛谷 P2900] [USACO08MAR]土地征用Land Acquisition：DP + 斜率优化，

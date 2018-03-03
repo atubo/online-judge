@@ -59,6 +59,16 @@ def print_tree_edges(f, adj):
             if u < v:
                 f.write("%d %d\n" % (u+1, v+1))
 
+def print_tree_dfs(f, adj, root):
+    # 1-indexed, print all father-son edges
+
+    def dfs(f, adj, u, fa):
+        for v in adj[u]:
+            if v != fa:
+                f.write("%d %d\n" % (u+1, v+1))
+                dfs(f, adj, v, u)
+
+    dfs(f, adj, 0, -1)
 
 def print_weighted_tree_edges(f, adj, lo, hi):
     """Given adj, this function adds random weight and print the tree"""
@@ -117,16 +127,12 @@ def build_graph(n, m):
 def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
-        f.write("1\n")
         n = size
-        m = 2 * n
-        k = randint(0, 5)
-        p = 100000
-        f.write("%d %d %d %d\n" % (n, m, k, p))
-        ret = build_graph(n, m)
-        for e in ret:
-            w = randint(0, 5)
-            f.write("%d %d %d\n" % (e[0], e[1], w))
+        f.write("%d\n" % (n))
+        print_array(f, rand_array(n, 1, 100000000))
+        adj = rand_tree(n)
+        print_tree_dfs(f, adj, 0)
+
 
 def one_test(size):
     generate_input(size)
@@ -135,7 +141,7 @@ def one_test(size):
     if ret != 0:
         print "Bench error"
         exit(1)
-    ret = os.system("P3953 <input.txt > out2.txt")
+    ret = os.system("P3237 <input.txt > out2.txt")
     if ret != 0:
         print "Test error"
         exit(1)

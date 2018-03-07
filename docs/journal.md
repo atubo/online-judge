@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/6
+* [洛谷 P3329] [ZJOI2011]最小割：最小割树 (Gomory-Hu Tree)
+
 ### 3/3
 * [洛谷 P2403] [SDOI2010]所驼门王的宝藏：Tarjan缩点 + 拓扑排序 + DP。
 代码用了并查集来处理同一行(列)内多个横天门(纵寰门)的情况。看题解发现有更简单的方法。

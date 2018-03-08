@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/8
+* [洛谷 P1326] 足球:贪心，代码虽短，但逻辑不太好写。
+
 ### 3/6
 * [洛谷 P3329] [ZJOI2011]最小割：最小割树 (Gomory-Hu Tree)
 

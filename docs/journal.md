@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 3/9
 * [洛谷 P1217] [USACO1.5]回文质数 Prime Palindromes：水题
+* [洛谷 P1218] [USACO1.5]特殊的质数肋骨 Superprime Rib：水题，
+循环肋骨长度即可
 
 ### 3/8
 * [洛谷 P1326] 足球:贪心，代码虽短，但逻辑不太好写。

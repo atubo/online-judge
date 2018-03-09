@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/9
+* [洛谷 P1217] [USACO1.5]回文质数 Prime Palindromes：水题
+
 ### 3/8
 * [洛谷 P1326] 足球:贪心，代码虽短，但逻辑不太好写。
 * [洛谷 P4276] [CQOI2016]不同的最小割：Gomory-Hu Tree 的简单应用。

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 3/8
 * [洛谷 P1326] 足球:贪心，代码虽短，但逻辑不太好写。
+* [洛谷 P4276] [CQOI2016]不同的最小割：Gomory-Hu Tree 的简单应用。
 
 ### 3/6
 * [洛谷 P3329] [ZJOI2011]最小割：最小割树 (Gomory-Hu Tree)

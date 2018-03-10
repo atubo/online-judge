@@ -9,6 +9,8 @@ Journal of the problems I have worked on
 
 ### 3/10
 * [洛谷 P1984] [SDOI2008]烧水问题：公式虽简单，但楞是没推出来(看题解了)
+* [洛谷 P1436] 棋盘分割：DP，令 $dp(k,x_1,y_1,x_2,y_2)$ 表示以
+$(x_1,y_1)$ 为左上角， $(x_2,y_2)$ 为右下角，共分为 $k$ 块的最优解。
 
 ### 3/9
 * [洛谷 P1217] [USACO1.5]回文质数 Prime Palindromes：水题

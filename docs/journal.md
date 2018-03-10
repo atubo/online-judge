@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/10
+* [洛谷 P1984] [SDOI2008]烧水问题：公式虽简单，但楞是没推出来(看题解了)
+
 ### 3/9
 * [洛谷 P1217] [USACO1.5]回文质数 Prime Palindromes：水题
 * [洛谷 P1218] [USACO1.5]特殊的质数肋骨 Superprime Rib：水题，

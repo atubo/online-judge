@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/11
+* [洛谷 P3389] 【模板】高斯消元法：模板题
+
 ### 3/10
 * [洛谷 P1984] [SDOI2008]烧水问题：公式虽简单，但楞是没推出来(看题解了)
 * [洛谷 P1436] 棋盘分割：DP，令 $dp(k,x_1,y_1,x_2,y_2)$ 表示以

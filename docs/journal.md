@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/13
+* [Nowcoder PAT5-4088] Counting Ones:数位DP
+
 ### 3/11
 * [洛谷 P3389] 【模板】高斯消元法：模板题
 * [洛谷 P1129] [ZJOI2007]矩阵游戏：开始以为是高斯消元求行列式，后发现

@@ -10,6 +10,9 @@ Journal of the problems I have worked on
 ### 3/14
 * [洛谷 P1943] LocalMaxima_NOI导刊2009提高（1）：仔细观察不难发现结果为
 调和级数，$n$ 较大时用对数函数和欧拉-马斯刻若尼常数近似。
+* [洛谷 P3002] [USACO10DEC]恐吓信Threatening Letter：后缀树 + 贪心，
+将报纸的字符串建立一颗后缀树，对恐吓信的内容每次从根往下遍历直到走不动为止，
+走了几次即是答案。
 
 ### 3/13
 * [Nowcoder PAT5-4088] Counting Ones:数位DP

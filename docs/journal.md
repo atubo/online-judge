@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/14
+* [洛谷 P1943] LocalMaxima_NOI导刊2009提高（1）：仔细观察不难发现结果为
+调和级数，$n$ 较大时用对数函数和欧拉-马斯刻若尼常数近似。
+
 ### 3/13
 * [Nowcoder PAT5-4088] Counting Ones:数位DP
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/15
+* [洛谷 P3804] 【模板】后缀自动机：学习了后缀自动机这个高大上东东。
+
 ### 3/14
 * [洛谷 P1943] LocalMaxima_NOI导刊2009提高（1）：仔细观察不难发现结果为
 调和级数，$n$ 较大时用对数函数和欧拉-马斯刻若尼常数近似。

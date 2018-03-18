@@ -6,11 +6,12 @@ using namespace std;
 
 const int MAXN = 50010, MAXM = 100010;
 int roster[MAXM], student[MAXN];
-int vis[MAXM];
+bool vis[MAXM];
+bool visnode[MAXM];
 
 class AhoCorasick {
 public:
-    const static int MAXN = 1e6 + 42;
+    const static int MAXN = 1e5 + 42;
 
     vector<map<int, int> > to;
     vector<set<int> > out;
@@ -62,17 +63,21 @@ public:
 
     void collect(int q, int sid, int mark) {
         if (mark == 1) {
+            if (visnode[q]) return;
             for (int x: out[q]) {
                 if (!vis[x]) {
                     roster[x]++;
                     student[sid]++;
+                    vis[x] = true;
                 }
-                vis[x]++;
             }
+            visnode[q] = true;
         } else {
+            if (!visnode[q]) return;
             for (int x: out[q]) {
-                vis[x]--;
+                if (vis[x]) vis[x] = false;
             }
+            visnode[q] = false;
         }
     }
 

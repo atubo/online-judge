@@ -16,17 +16,19 @@ public:
     vector<map<int, int> > to;
     vector<set<int> > out;
     int sz = 1;
-    int *link, *que;
+    int *link, *que, *next;
     int keywordIndex;
 
     AhoCorasick(): to(MAXN), out(MAXN), keywordIndex(0) {
         link = new int[MAXN]{};
         que  = new int[MAXN]{};
+        next = new int[MAXN]{};
     }
 
     ~AhoCorasick() {
         delete[] link;
         delete[] que;
+        delete[] next;
     }
 
     void add_str(const vector<int> &s)
@@ -55,7 +57,12 @@ public:
                 int j = link[v];
                 while(j != -1 && !to[j][c]) j = link[j];
                 if(j != -1) link[u] = to[j][c];
-                out[u].insert(out[link[u]].begin(), out[link[u]].end());
+                //out[u].insert(out[link[u]].begin(), out[link[u]].end());
+                if (out[link[u]].empty()) {
+                    next[u] = next[link[u]];
+                } else {
+                    next[u] = link[u];
+                }
                 que[fi++] = u;
             }
         }
@@ -63,6 +70,17 @@ public:
 
     void collect(int q, int sid, int mark) {
         if (mark == 1) {
+            while (q != 0 && !visnode[q]) {
+                if (!visnode[q]) {
+                    for (int x: out[q]) {
+                        roster[x]++;
+                        student[sid]++;
+                    }
+                    visnode[q] = true;
+                }
+                q = next[q];
+            }
+#if 0
             if (visnode[q]) return;
             for (int x: out[q]) {
                 if (!vis[x]) {
@@ -72,12 +90,19 @@ public:
                 }
             }
             visnode[q] = true;
+#endif
         } else {
+            while (q != 0 && visnode[q]) {
+                visnode[q] = false;
+                q = next[q];
+            }
+#if 0
             if (!visnode[q]) return;
             for (int x: out[q]) {
                 if (vis[x]) vis[x] = false;
             }
             visnode[q] = false;
+#endif
         }
     }
 

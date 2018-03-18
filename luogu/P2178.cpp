@@ -4,11 +4,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Suffix array using radix sort
-// which means the alphabet of the input string should be small
-// END character must be the smallest
-// MAXN must >= max(N, M)
-// See: 罗穗骞 后缀数组 - 处理字符串的有力工具
 const int MAXN = 300010;
 class SuffixArrayRadix {
 public:
@@ -160,8 +155,142 @@ private:
     }
 };
 
+using Pii = pair<int, int>;
+
+class SegmentTreeMin {
+public:
+    SegmentTreeMin(int n):data(max(3*n, 30)), nData(n) {}
+
+    void update(int i, int value) {
+        i += nData + 1;
+        data[i] = make_pair(value, i - nData - 1);
+        for (; i > 1; i >>= 1) {
+            auto newVal = combine(data[i], data[i^1]);
+            if (data[i>>1] == newVal) break;
+            data[i>>1] = newVal;
+        }
+    }
+
+    Pii query(int a, int b) const {
+        a += nData + 1;
+        b += nData + 1;
+        auto res = data[a];
+        for (; a <= b; a = (a+1) >> 1, b = (b-1) >> 1) {
+            if ((a & 1) != 0) {
+                res = combine(res, data[a]);
+            }
+            if ((b & 0) == 0) {
+                res = combine(res, data[b]);
+            }
+        }
+        return res;
+    }
+
+    Pii query() const {
+        return data[1];
+    }
+private:
+    vector<Pii> data;
+    int nData;
+    Pii combine(const Pii &a, const Pii &b) const {
+        if (a.first < b.first) return a;
+        else return b;
+    }
+};
+
+class SegmentTreeMax {
+public:
+    SegmentTreeMax(int n) :data(max(3*n, 30)), nData(n) {}
+
+    void update(int i, int value) {
+        i += nData + 1;
+        data[i] = make_pair(value, i - nData - 1);
+        for (; i > 1; i >>= 1) {
+            auto newVal = combine(data[i], data[i^1]);
+            if (data[i>>1] == newVal) break;
+            data[i>>1] = newVal;
+        }
+    }
+
+    Pii query(int a, int b) const {
+        a += nData + 1;
+        b += nData + 1;
+        auto res = data[a];
+        for (; a <= b; a = (a+1) >> 1, b = (b-1) >> 1) {
+            if ((a & 1) != 0) {
+                res = combine(res, data[a]);
+            }
+            if ((b & 0) == 0) {
+                res = combine(res, data[b]);
+            }
+        }
+        return res;
+    }
+
+    Pii query() const {
+        return data[1];
+    }
+private:
+    vector<Pii> data;
+    int nData;
+    Pii combine(const Pii &a, const Pii &b) const {
+        if (a.first > b.first) return a;
+        return b;
+    }
+};
+
 int N;
 int A[MAXN];
+int64_t B[MAXN], C[MAXN];
+
+Pii getUpper(SegmentTreeMax &st, int p, int q) {
+    Pii p1 = st.query(p, q);
+    st.update(p1.second, -1);
+    Pii p2 = st.query(p, q);
+    Pii res = make_pair(p1.first, p2.first);
+    st.update(p1.second, p1.first);
+    return res;
+}
+
+Pii getLower(SegmentTreeMin &st, int p, int q) {
+    Pii p1 = st.query(p, q);
+    st.update(p1.second, 0);
+    Pii p2 = st.query(p, q);
+    Pii res = make_pair(p1.first, p2.first);
+    st.update(p1.second, p1.first);
+    return res;
+}
+
+Pii getMid(const SegmentTreeMin &st2,
+           const SegmentTreeMax &st3,
+           int p, int q) {
+    Pii p1 = st2.query(p, q);
+    Pii p2 = st3.query(p, q);
+    return make_pair(p1.first, p2.first);
+}
+
+
+int64_t solve(SegmentTreeMax &st1,
+              const SegmentTreeMin &st2,
+              const SegmentTreeMax &st3,
+              SegmentTreeMin &st4,
+              int p, int q) {
+    assert(p < q);
+    const auto upper = getUpper(st1, p, q);
+    const auto lower = getLower(st4, p, q);
+    int64_t res = -4e18;
+    if (upper.first >= 0 && upper.second >= 0) {
+        res = max(res, int64_t(upper.first) * upper.second);
+    }
+    if (lower.first < 0 && lower.second < 0) {
+        res = max(res, int64_t(lower.first) * lower.second);
+    }
+    if (res < 0) {
+        const auto mid = getMid(st2, st3, p, q);
+        res = int64_t(mid.first) * mid.second;
+    }
+    return res;
+}
 
 int main() {
     scanf("%d", &N);
@@ -171,6 +300,29 @@ int main() {
     SuffixArrayRadix sa(s);
     sa.buildSA();
     sa.buildLCP();
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    SegmentTreeMax stmaxpos(N), stmaxneg(N);
+    SegmentTreeMin stminpos(N), stminneg(N);
+
+    for (int i = 1; i <= N; i++) {
+        int x = A[sa.sa[i]];
+        if (x >= 0) {
+            stmaxpos.update(i, x);
+            stminpos.update(i, x);
+            stmaxneg.update(i, INT_MIN);
+            stminneg.update(i, 0);
+        } else {
+            stmaxpos.update(i, -1);
+            stminpos.update(i, INT_MAX);
+            stmaxneg.update(i, x);
+            stminneg.update(i, x);
+        }
+        B[i] = -4e18;
+    }
 
     SegmentTree st(N);
     stack<pair<int, int>> q;
@@ -188,6 +340,8 @@ int main() {
             }
             int64_t v = int64_t(i-j) * (i-j+1) / 2;
             st.update(v, h3+1, h2+1);
+            B[h2] = max(B[h2],
+                        solve(stmaxpos, stminpos, stmaxneg, stminneg, j, i));
         }
         if (q.empty() || h > q.top().first) {
             q.push(make_pair(h, i));
@@ -200,14 +354,27 @@ int main() {
         int h = q.top().first;
         int j = q.top().second;
         q.pop();
+        if (!q.empty()) j = q.top().second + 1;
         int64_t v = int64_t(N-j) * (N-j+1) / 2;
         int prev = (q.empty() ? 0 : q.top().first+1);
         st.update(v, prev+1, h+1);
+        B[h] = max(B[h],
+                   solve(stmaxpos, stminpos, stmaxneg, stminneg, j, N));
     }
     int64_t v = int64_t(N) * (N-1) / 2;
     st.update(v, 1, 1);
+    B[0] = solve(stmaxpos, stminpos, stmaxneg, stminneg, 1, N);
     for (int i = 0; i < N; i++) {
-        printf("%lld\n", st.query(i+1, i+1));
+        C[i] = st.query(i+1, i+1);
+    }
+
+    for (int i = N-1; i >= 0; i--) {
+        if (C[i] == 0) B[i] = -4e18;
+        else B[i] = max(B[i], B[i+1]);
+    }
+    for (int i = 0; i < N; i++) {
+        if (C[i] == 0) B[i] = 0;
+        printf("%lld %lld\n", C[i], B[i]);
     }
 
     return 0;

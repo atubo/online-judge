@@ -5,9 +5,8 @@
 using namespace std;
 
 const int MAXN = 50010, MAXM = 100010;
-int roster[MAXM], student[MAXN];
+int roster[MAXM], student[MAXN], nodecnt[MAXM];
 bool vis[MAXM];
-bool visnode[MAXM];
 
 class AhoCorasick {
 public:
@@ -69,17 +68,15 @@ public:
 
     void collect(int q, int sid, int mark) {
         if (mark == 1) {
-            while (q != 0 && !visnode[q]) {
-                for (int x: out[q]) {
-                    roster[x]++;
-                    student[sid]++;
-                }
-                visnode[q] = true;
+            while (q != 0 && !vis[q]) {
+                student[sid] += out[q].size();
+                nodecnt[q]++;
+                vis[q] = true;
                 q = next[q];
             }
         } else {
-            while (q != 0 && visnode[q]) {
-                visnode[q] = false;
+            while (q != 0 && vis[q]) {
+                vis[q] = false;
                 q = next[q];
             }
         }
@@ -143,6 +140,11 @@ int main() {
         ac.traverseStudent(firstNames[i], lastNames[i], i);
     }
     
+    for (int i = 0; i < MAXM; i++) {
+        for (int x: ac.out[i]) {
+            roster[x] = nodecnt[i];
+        }
+    }
     for (int i = 0; i < M; i++) {
         printf("%d\n", roster[i]);
     }

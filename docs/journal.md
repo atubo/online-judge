@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P1117] [NOI2016]优秀的拆分：不会作，
 [题解在此](http://www.acyume.com/archives/1624)，
 巧妙的利用两点的最长前缀和最长后缀求出通过这两点的AA形式的可能位置。
+* [洛谷 P3809] 【模板】后缀排序：模板题
 
 ### 3/18
 * [洛谷 P2336] [SCOI2012]喵星球上的点名：将点名的串建立AC自动机，

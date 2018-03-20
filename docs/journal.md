@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/19
+* [洛谷 P1117] [NOI2016]优秀的拆分：不会作，
+[题解在此](http://www.acyume.com/archives/1624)，
+巧妙的利用两点的最长前缀和最长后缀求出通过这两点的AA形式的可能位置。
+
 ### 3/18
 * [洛谷 P2336] [SCOI2012]喵星球上的点名：将点名的串建立AC自动机，
 用喵星人的姓名去遍历，遍历到一个结点时将结点计数加1，最后再归总统计所有

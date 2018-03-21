@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/20
+* [洛谷 P2396] yyy loves Maths VII：状压DP + 无耻O2
+
 ### 3/19
 * [洛谷 P1117] [NOI2016]优秀的拆分：不会作，
 [题解在此](http://www.acyume.com/archives/1624)，

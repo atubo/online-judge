@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/21
+* [洛谷 P2444] [POI2000]病毒：对所有病毒建立AC自动机，标记所有病毒结点和后缀是病毒的
+结点，若结点的某个子结点为空，则将其指向后缀结点的相应子结点。如此建图后再判断图中是否
+存在不通过标记结点的回路即可。
+
 ### 3/20
 * [洛谷 P2396] yyy loves Maths VII：状压DP + 无耻O2
 

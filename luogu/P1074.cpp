@@ -81,32 +81,37 @@ void pick(int &row, int &col) {
     }
 }
 
-void update_choices(int row, int col, int x) {
+struct ChoiceSave {
+    int x[27], y[27], c[27];
+    int pos = 0;
+    void save(int row, int col) {
+        x[pos] = row;
+        y[pos] = col;
+        c[pos] = choices[row][col];
+        ++pos;
+    }
+
+    void restore() {
+        for (int i = pos-1; i >= 0; i--) {
+            choices[x[i]][y[i]] = c[i];
+        }
+    }
+};
+
+
+void update_choices(int row, int col, int x, ChoiceSave &cs) {
     for (int i = 0; i < 9; i++) {
+        cs.save(i, col);
         choices[i][col] &= ~(1 << x);
     }
     for (int j = 0; j < 9; j++) {
+        cs.save(row, j);
         choices[row][j] &= ~(1 << x);
     }
     for (int i = (row/3)*3; i < (row/3)*3+3; i++) {
         for (int j = (col/3)*3; j < (col/3)*3+3; j++) {
+            cs.save(i, j);
             choices[i][j] &= ~(1 << x);
-        }
-    }
-}
-
-void save_choices(int copy[9][9]) {
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            copy[i][j] = choices[i][j];
-        }
-    }
-}
-
-void restore_choices(int copy[9][9]) {
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            choices[i][j] = copy[i][j];
         }
     }
 }
@@ -124,11 +129,10 @@ void dfs(int depth, int curr_score) {
     for (int x = 9; x > 0; x--) {
         if ((choices[row][col] >> x) & 1) {
             curr[row][col] = x;
-            int ch_cpy[9][9];
-            save_choices(ch_cpy);
-            update_choices(row, col, x);
+            ChoiceSave cs;
+            update_choices(row, col, x, cs);
             dfs(depth-1, curr_score + x * score[row][col]);
-            restore_choices(ch_cpy);
+            cs.restore();
             curr[row][col] = 0;
         }
     }

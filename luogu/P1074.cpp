@@ -56,49 +56,10 @@ void read() {
     }
 }
 
-void update() {
-    int tot = 0;
+bool prune() {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
-            tot += curr[i][j] * score[i][j];
-        }
-    }
-    ans = max(ans, tot);
-}
-
-bool prune() {
-    for (int row = 0; row < 9; row++) {
-        int mask = 0;
-        for (int j = 0; j < 9; j++) {
-            int x = curr[row][j];
-            if (x > 0) {
-                if ((mask >> x) & 1) return true;
-                mask |= (1 << x);
-            }
-        }
-    }
-    for (int col = 0; col < 9; col++) {
-        int mask = 0;
-        for (int i = 0; i < 9; i++) {
-            int x = curr[i][col];
-            if (x > 0) {
-                if ((mask >> x) & 1) return true;
-                mask |= (1 << x);
-            }
-        }
-    }
-    for (int cellx = 0; cellx < 3; cellx++) {
-        for (int celly = 0; celly < 3; celly++) {
-            int mask = 0;
-            for (int i = cellx*3; i < cellx*3 + 3; i++) {
-                for (int j = celly*3; j < celly*3 + 3; j++) {
-                    int x = curr[i][j];
-                    if (x > 0) {
-                        if ((mask >> x) & 1) return true;
-                        mask |= (1 << x);
-                    }
-                }
-            }
+            if (curr[i][j] == 0 && choices[i][j] == 0) return true;
         }
     }
 

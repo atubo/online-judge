@@ -18,12 +18,12 @@ void read(int *x) {
     }
 }
 
-void take(int letter, int x) {
+inline void take(int letter, int x) {
     curr[letter] = x;
     taken[x] = true;
 }
 
-void release(int letter, int x) {
+inline void release(int letter, int x) {
     curr[letter] = -1;
     taken[x] = false;
 }
@@ -31,14 +31,37 @@ void release(int letter, int x) {
 bool dfs(int pos, int carry);
 
 bool search(int pos, int carry, int letter) {
-    for (int i = 0; i < N; i++) {
-        if (!taken[i]) {
-            take(letter, i);
+    for (int x = N-1; x >= 0; x--) {
+        if (!taken[x]) {
+            take(letter, x);
             if (dfs(pos, carry)) return true;
-            release(letter, i);
+            release(letter, x);
         }
     }
     return false;
+}
+
+inline bool prune(int pos) {
+    for (int i = pos; i < N; i++) {
+        int a = A[i], b = B[i], c = C[i];
+        if (curr[a] >= 0 && curr[b] >= 0 && curr[c] >= 0 &&
+            (curr[a] + curr[b]) % N != curr[c] &&
+            (curr[a] + curr[b] + 1) % N != curr[c]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int solvec(int a, int b, int carry, int &nextcarry) {
+    nextcarry = 0;
+    int c = a + b + carry;
+    if (c >= N) {
+        c -= N;
+        nextcarry = 1;
+    }
+    if (taken[c]) return -1;
+    return c;
 }
 
 bool dfs(int pos, int carry) {
@@ -53,38 +76,27 @@ bool dfs(int pos, int carry) {
         }
     }
 
+    if (prune(pos)) return false;
+
     int a = A[pos], b = B[pos], c = C[pos];
     if (curr[a] == -1) {
         return search(pos, carry, a);
     } else if (curr[b] == -1) {
         return search(pos, carry, b);
     } else if (curr[c] == -1) {
-        int x = curr[a] + curr[b] + carry;
-        if (x >= N) {
-            x -= N;
-            if (!taken[x]) {
-                take(c, x);
-                if (dfs(pos+1, 1)) return true;
-                release(c, x);
-            } else {
-                return false;
-            }
-        } else {
-            if (!taken[x]) {
-                take(c, x);
-                if (dfs(pos+1, 0)) return true;
-                release(c, x);
-            } else {
-                return false;
-            }
-        }
+        int nextcarry;
+        int xc = solvec(curr[a], curr[b], carry, nextcarry);
+        if (xc < 0) return false;
+        take(c, xc);
+        if (dfs(pos+1, nextcarry)) return true;
+        release(c, xc);
+        return false;
     } else {
         int sumab = curr[a] + curr[b] + carry;
         if (sumab == curr[c]) return dfs(pos+1, 0);
         if (sumab == curr[c]+N) return dfs(pos+1, 1);
         return false;
     }
-    return false;
 }
 
 

@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 3/24
 * [洛谷 P1074] 靶形数独: DFS + 剪枝
+* [洛谷 P1781] 宇宙总统：试炼场水题
 
 ### 3/23
 * [洛谷 P1092] 虫食算：DFS + 剪枝

@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/27
+* [洛谷 P1514] 引水入城：可证从若有解则任一蓄水厂可达的干旱区为连续区间。设若不然，
+从蓄水厂 $i$ 可达的干旱区 $x$ 和 $y$ 之间不可达，则对 $x$ 和 $y$ 之间的任意点 $z$
+存在 蓄水厂 $j$ 可达, 则路径 $j\rightarrow z$ 必与 $i\rightarrow x$ 或
+$i\rightarrow y$ 相交，由此 $i$ 可达 $z$ , 矛盾。求出每个蓄水厂的可达区间后
+用DP求出最小区间覆盖即可。
+
 ### 3/26
 * [洛谷 P1583] 魔法照片：试炼场水题
 

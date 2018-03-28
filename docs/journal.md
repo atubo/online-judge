@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/28
+* [洛谷 P1131] [ZJOI2007]时态同步：DFS
+
 ### 3/27
 * [洛谷 P1514] 引水入城：可证从若有解则任一蓄水厂可达的干旱区为连续区间。设若不然，
 从蓄水厂 $i$ 可达的干旱区 $x$ 和 $y$ 之间不可达，则对 $x$ 和 $y$ 之间的任意点 $z$

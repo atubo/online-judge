@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 3/31
+* [洛谷 P2468] [SDOI2010]粟粟的书架：一维用主席树， 二维用前缀和，再加二分搜索即可。
+（用了无耻O2）。
+
 ### 3/28
 * [洛谷 P1131] [ZJOI2007]时态同步：DFS
 

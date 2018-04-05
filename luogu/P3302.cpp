@@ -146,13 +146,9 @@ public:
     const int N;
     Graph g;
     PersistentSegmentTree pst;
-    vector<int> size;
     vector<int> dep;
-    vector<int> rev;    // node to father-edge
-    vector<int> heavy;
     vector<int> stIdx;    // edge to segment tree index
     vector<int> fa;
-    vector<int> top;
     vector<array<int, 17>> st;
     vector<int> son;
     vector<bool> vis;
@@ -160,13 +156,9 @@ public:
     int Seg_size;
 
     Forest(int N_): N(N_), g(N_), pst(N_, N_) {
-        size.resize(N);
         dep.resize(N);
-        rev.resize(N);
-        heavy.resize(N);
         stIdx.resize(N, -1);
         fa.resize(N);
-        top.resize(N);
         st.resize(N);
         son.resize(N);
         vis.resize(N);

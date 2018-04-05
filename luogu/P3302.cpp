@@ -56,7 +56,7 @@ int Hash(int x) {
     return lower_bound(B.begin(), B.end(), x) - B.begin();
 }
 
-class HeavyLightDecomposition {
+class Forest {
 private:
     class PersistentSegmentTree {
     public:
@@ -159,7 +159,7 @@ public:
     int root;
     int Seg_size;
 
-    HeavyLightDecomposition(int N_): N(N_), g(N_), pst(N_, N_) {
+    Forest(int N_): N(N_), g(N_), pst(N_, N_) {
         size.resize(N);
         dep.resize(N);
         rev.resize(N);
@@ -180,27 +180,7 @@ public:
         g.addEdge(v, u);
     }
 
-    void decompose() {
-        dfs1(root, root);
-        top[root] = root;
-        dfs2(root, root);
-    }
-
-    void dfs3(int u, int f, const vector<int> &val) {
-        if (u == root) {
-            pst.insert(stIdx[u], 0, val[u], 1);
-        } else {
-            pst.insert(stIdx[u], stIdx[f], val[u], 1);
-        }
-
-        for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
-            int v = g.E[eidx].to;
-            if (v == f) continue;
-            dfs3(v, u, val);
-        }
-    }
-
-    void dfs4(int x, int father, int rt) {
+    void dfs(int x, int father, int rt) {
         st[x][0] = father;
         for (int k = 1; k <= 16; k++) {
             st[x][k] = st[st[x][k-1]][k-1];
@@ -213,7 +193,7 @@ public:
         for (int eidx = g.head[x]; ~eidx; eidx = g.E[eidx].next) {
             int u = g.E[eidx].to;
             if (u == father) continue;
-            dfs4(u, x, rt);
+            dfs(u, x, rt);
         }
     }
 
@@ -224,48 +204,6 @@ public:
     }
 
 private:
-    void dfs1(int u, int f) {
-        int mx = -1, e = -1;
-        size[u] = 1;
-
-        for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
-            int v = g.E[eidx].to;
-            if (v == f) continue;
-            dep[v] = dep[u] + 1;
-            rev[v] = eidx ^ 1;
-            dfs1(v, u);
-            size[u] += size[v];
-            if (size[v] > mx) {
-                mx = size[v];
-                e = eidx;
-            }
-        }
-        heavy[u] = e;
-        if (e != -1) fa[g.E[e].to] = u;
-    }
-
-    void dfs2(int u, int f) {
-        if (u == root) {
-            stIdx[u] = Seg_size++;
-        }
-
-        if (heavy[u] != -1) {
-            int t = heavy[u];
-            int v = g.E[t].to;
-            stIdx[v] = Seg_size++;
-            top[v] = top[u];
-            dfs2(v, u);
-        }
-
-        for (int eidx = g.head[u]; eidx != -1; eidx = g.E[eidx].next) {
-            int v = g.E[eidx].to;
-            if (v == f || eidx == heavy[u]) continue;
-            stIdx[v] = Seg_size++;
-            top[v] = v;
-            dfs2(v, u);
-        }
-    }
-
     int lca(int x, int y) {
         if (x == y) return x;
         if (dep[x] > dep[y]) swap(x, y);
@@ -289,14 +227,6 @@ private:
     }
 };
 
-void dfs(const Graph &g, int u, vector<bool> &vis) {
-    vis[u] = true;
-    for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
-        int v = g.E[eidx].to;
-        if (!vis[v]) dfs(g, v, vis);
-    }
-}
-
 int main() {
     int ts;
     scanf("%d", &ts);
@@ -311,14 +241,12 @@ int main() {
     sort(B.begin(), B.end());
     B.erase(unique(B.begin(), B.end()), B.end());
 
-    Graph g(N);
+    Forest forest(N);
     for (int i = 0; i < M; i++) {
         int u, v;
         scanf("%d%d", &u, &v);
-        printf("u=%d v=%d\n", u, v);
         u--; v--;
-        g.addEdge(u, v);
-        g.addEdge(v, u);
+        forest.addEdge(u, v);
     }
 
     for (int i = 0; i < T; i++) {
@@ -328,28 +256,12 @@ int main() {
         printf("type=%s\n", tp);
         if (tp[0] == 'Q') {
             scanf("%d%d%d", &x, &y, &k);
-            queries[i] = {x-1, y-1, k};
         } else {
             scanf("%d%d", &x, &y);
             x--; y--;
-            g.addEdge(x, y);
-            g.addEdge(y, x);
+            forest.addEdge(x, y);
         }
     }
-
-    vector<int> roots;
-    vector<bool> vis(N, false);
-    for (int i = 0; i < N; i++) {
-        if (!vis[i]) {
-            roots.push_back(i);
-            dfs(g, i, vis);
-        }
-    }
-
-    for (int u: roots) {
-        printf("%d ", u);
-    }
-    printf("\n");
 
     return 0;
 }

@@ -78,7 +78,7 @@ private:
 
         PersistentSegmentTree(int N_, int M_): N(N_), M(M_) {
             root = new int[N+1]{};
-            T = new Node[(N+1) * int(log2(M)+2)]{};
+            T = new Node[(N+1) * 600];
         }
 
         ~PersistentSegmentTree() {
@@ -147,24 +147,17 @@ public:
     Graph g;
     PersistentSegmentTree pst;
     vector<int> dep;
-    vector<int> stIdx;    // edge to segment tree index
     vector<int> fa;
     vector<array<int, 17>> st;
     vector<int> son;
     vector<bool> vis;
-    int root;
-    int Seg_size;
 
-    Forest(int N_): N(N_), g(N_), pst(N_, N_) {
+    Forest(int N_): N(N_+1), g(N_+1), pst(N_+1, N_) {
         dep.resize(N);
-        stIdx.resize(N, -1);
         fa.resize(N);
         st.resize(N);
         son.resize(N);
         vis.resize(N);
-
-        root = 0;
-        Seg_size = 1;   // segment tree is 1-indexed
     }
 
     void addEdge(int u, int v) {
@@ -191,8 +184,8 @@ public:
 
     int query(int u, int v, int k) {
         int p = lca(u, v);
-        int pfa = (p == root ? 0 : stIdx[fa[p]]);
-        return pst.queryKth(stIdx[u], stIdx[v], stIdx[p], pfa, k);
+        int pfa = st[p][0];
+        return pst.queryKth(u, v, p, pfa, k);
     }
 
 private:

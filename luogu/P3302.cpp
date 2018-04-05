@@ -266,13 +266,26 @@ private:
         }
     }
 
-    int lca(int u, int v) {
-        while (true) {
-            int a = top[u], b = top[v];
-            if (a == b) return dep[u] < dep[v] ? u : v;
-            else if (dep[a] >= dep[b]) u = g.E[rev[a]].to;
-            else v = g.E[rev[b]].to;
+    int lca(int x, int y) {
+        if (x == y) return x;
+        if (dep[x] > dep[y]) swap(x, y);
+        for (int k = 16; k >= 0; k--) {
+            if (dep[st[y][k]] >= dep[x]) {
+                y = st[y][k];
+            }
         }
+        if (x == y) return x;
+        for (int k = 16; k >= 0; k--) {
+            if (st[x][k] != st[y][k]) {
+                x = st[x][k];
+                y = st[y][k];
+            }
+        }
+        return st[x][0];
+    }
+
+    int find(int x) {
+        return fa[x] == x ? x : fa[x] = find(fa[x]);
     }
 };
 

@@ -223,37 +223,6 @@ public:
         return pst.queryKth(stIdx[u], stIdx[v], stIdx[p], pfa, k);
     }
 
-#if 0
-    void updateNode(int u, int v, int d) {
-        updateEdge(u, v, d);
-        int p = lca(u, v);
-        int r = stIdx[p];
-        st.update(d, r, r);
-    }
-
-    int queryNode(int u, int v) {
-        int ret = queryEdge(u, v);
-        int p = lca(u, v);
-        int r = stIdx[p];
-        ret += st.query(r, r);
-        return ret;
-    }
-
-    void updateEdge(int u, int v, int d) {
-        int p = lca(u, v);;
-        updateEdgeChain(u, p, d);
-        updateEdgeChain(v, p, d);
-    }
-
-    int queryEdge(int u, int v) {
-        int ret = 0;
-        int p = lca(u, v);
-        ret += queryEdgeChain(p, u);
-        ret += queryEdgeChain(p, v);
-        return ret;
-    }
-#endif
-
 private:
     void dfs1(int u, int f) {
         int mx = -1, e = -1;
@@ -297,47 +266,6 @@ private:
         }
     }
 
-#if 0
-    void updateEdgeChain(int u, int anc, int val) {
-        while (u != anc) {
-            int fe = rev[u];
-            if (top[u] != u) {
-                int p = top[u];
-                if (dep[p] < dep[anc]) p = anc;
-                int l = stIdx[heavyChild(p)];
-                int r = stIdx[u];
-                st.update(val, l, r);
-                u = p;
-            } else {
-                int r = stIdx[u];
-                st.update(val, r, r);
-                u = g.E[fe].to;
-            }
-        }
-    }
-
-    int queryEdgeChain(int anc, int u) {
-        int ret = 0;
-        while (u != anc) {
-            int fe = rev[u];
-            if (top[u] != u) {
-                int p = top[u];
-                if (dep[p] < dep[anc]) p = anc;
-                int l = stIdx[heavyChild(p)];
-                int r = stIdx[u];
-                ret += st.query(l, r);
-                u = p;
-            } else {
-                int r = stIdx[u];
-                ret += st.query(r, r);
-                u = g.E[fe].to;
-            }
-        }
-        return ret;
-    }
-#endif
-
-
     int lca(int u, int v) {
         while (true) {
             int a = top[u], b = top[v];
@@ -345,15 +273,6 @@ private:
             else if (dep[a] >= dep[b]) u = g.E[rev[a]].to;
             else v = g.E[rev[b]].to;
         }
-    }
-
-    int heavyChild(int u) const {
-        int e = heavy[u];
-        int ret = 0;
-        if (e != -1) {
-            ret = g.E[e].to;
-        }
-        return ret;
     }
 };
 
@@ -372,6 +291,12 @@ int main() {
     for (int i = 0; i < N; i++) {
         scanf("%d", &A[i]);
     }
+    B.resize(N);
+    for (int i = 0; i < N; i++) {
+        B[i] = A[i];
+    }
+    sort(B.begin(), B.end());
+    B.erase(unique(B.begin(), B.end()), B.end());
 
     Graph g(N);
     for (int i = 0; i < M; i++) {

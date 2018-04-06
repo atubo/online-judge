@@ -78,7 +78,7 @@ private:
 
         PersistentSegmentTree(int N_, int M_): N(N_), M(M_) {
             root = new int[N+1]{};
-            T = new Node[(N+1) * 600];
+            T = new Node[(N+1) * 200];
         }
 
         ~PersistentSegmentTree() {
@@ -92,13 +92,8 @@ private:
             insert(root[currRootIndex], x, t, 0, M-1);
         }
 
-        // query in range [start, end]
-        int query(int rootIndex, int start, int end) {
-            return query(root[rootIndex], start, end, 0, M-1);
-        }
-
         int queryKth(int u, int v, int p, int pfa, int k) {
-            return queryKth(u, v, p, pfa, k, 0, M-1);
+            return queryKth(root[u], root[v], root[p], root[pfa], k, 0, M-1);
         }
 
 
@@ -113,16 +108,6 @@ private:
             int mid = (l + r) / 2;
             if (x <= mid) insert(T[now].L, x, t, l, mid);
             else          insert(T[now].R, x, t, mid+1, r);
-        }
-
-        int query(int node, int start, int end, int l, int r) {
-            if (l > r) return 0;
-            if (start <= l && r <= end) return T[node].sum;
-            int mid = (l + r) / 2;
-            int ret = 0;
-            if (start <= mid) ret += query(T[node].L, start, end, l, mid);
-            if (mid+1 <= end) ret += query(T[node].R, start, end, mid+1, r);
-            return ret;
         }
 
         int lft(int u) const {return T[u].L;}
@@ -188,6 +173,10 @@ public:
         return pst.queryKth(u, v, p, pfa, k);
     }
 
+    int find(int x) {
+        return fa[x] == x ? x : fa[x] = find(fa[x]);
+    }
+
 private:
     int lca(int x, int y) {
         if (x == y) return x;
@@ -206,22 +195,18 @@ private:
         }
         return st[x][0];
     }
-
-    int find(int x) {
-        return fa[x] == x ? x : fa[x] = find(fa[x]);
-    }
 };
 
 int main() {
     int ts;
     scanf("%d", &ts);
     scanf("%d%d%d", &N, &M, &T);
-    for (int i = 0; i < N; i++) {
+    for (int i = 1; i <= N; i++) {
         scanf("%d", &A[i]);
     }
     B.resize(N);
     for (int i = 0; i < N; i++) {
-        B[i] = A[i];
+        B[i] = A[i+1];
     }
     sort(B.begin(), B.end());
     B.erase(unique(B.begin(), B.end()), B.end());
@@ -230,21 +215,39 @@ int main() {
     for (int i = 0; i < M; i++) {
         int u, v;
         scanf("%d%d", &u, &v);
-        u--; v--;
         forest.addEdge(u, v);
     }
 
+    for (int i = 1; i <= N; i++) {
+        if (!forest.vis[i]) {
+            forest.dfs(i, 0, i);
+            forest.fa[i] = i;
+        }
+    }
+
+    int lastans = 0;
     for (int i = 0; i < T; i++) {
         char tp[10];
         int x, y, k;
         scanf("%s", tp);
-        printf("type=%s\n", tp);
+        scanf("%d%d", &x, &y);
+        x ^= lastans;
+        y ^= lastans;
         if (tp[0] == 'Q') {
-            scanf("%d%d%d", &x, &y, &k);
+            scanf("%d", &k);
+            k ^= lastans;
+            int idx = forest.query(x, y, k);
+            lastans = B[idx];
+            printf("%d\n", lastans);
         } else {
-            scanf("%d%d", &x, &y);
-            x--; y--;
             forest.addEdge(x, y);
+            int u = forest.find(x);
+            int v = forest.find(y);
+            if (forest.son[u] < forest.son[v]) {
+                swap(u, v);
+                swap(x, y);
+            }
+            forest.dfs(y, x, u);
         }
     }
 

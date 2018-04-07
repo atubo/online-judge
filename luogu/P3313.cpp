@@ -125,7 +125,7 @@ public:
     int root;
     int Seg_size;
 
-    HeavyLightDecomposition(int N_): N(N_), g(N_), sf(N_, N_, N_) {
+    HeavyLightDecomposition(int N_): N(N_), g(N_), sf(N_, MAXN, MAXN) {
         size.resize(N);
         dep.resize(N);
         rev.resize(N);
@@ -134,7 +134,7 @@ public:
         fa.resize(N);
         top.resize(N);
 
-        root = 0;
+        root = 1;
         Seg_size = 1;   // segment tree is 1-indexed
     }
 
@@ -147,16 +147,11 @@ public:
         dfs1(root, root);
         top[root] = root;
         dfs2(root, root);
+        for (int i = 1; i < N; i++) {
+            sf.insert(C[i], stIdx[i], W[i]);
+        }
     }
 
-#if 0
-    void updateNode(int u, int v, int d) {
-        updateEdge(u, v, d);
-        int p = lca(u, v);
-        int r = stIdx[p];
-        st.update(d, r, r);
-    }
-#endif
     void updateReligion(int x, int c) {
         int u = stIdx[x];
         int oldc = C[x];
@@ -181,14 +176,6 @@ public:
         ret += sf.query(c, r, r);
         return ret;
     }
-
-#if 0
-    void updateEdge(int u, int v, int d) {
-        int p = lca(u, v);;
-        updateEdgeChain(u, p, d);
-        updateEdgeChain(v, p, d);
-    }
-#endif
 
     int queryEdge(int c, int u, int v) {
         int ret = 0;
@@ -241,26 +228,6 @@ private:
         }
     }
 
-#if 0
-    void updateEdgeChain(int u, int anc, int val) {
-        while (u != anc) {
-            int fe = rev[u];
-            if (top[u] != u) {
-                int p = top[u];
-                if (dep[p] < dep[anc]) p = anc;
-                int l = stIdx[heavyChild(p)];
-                int r = stIdx[u];
-                st.update(val, l, r);
-                u = p;
-            } else {
-                int r = stIdx[u];
-                st.update(val, r, r);
-                u = g.E[fe].to;
-            }
-        }
-    }
-#endif
-
     int queryEdgeChain(int c, int anc, int u) {
         int ret = 0;
         while (u != anc) {
@@ -280,7 +247,6 @@ private:
         }
         return ret;
     }
-
 
     int lca(int u, int v) {
         while (true) {
@@ -303,8 +269,36 @@ private:
 
 int main() {
     scanf("%d%d", &N, &Q);
-    for (int i = 0; i < N; i++) {
+    for (int i = 1; i <= N; i++) {
         scanf("%d%d", &W[i], &C[i]);
     }
+
+    HeavyLightDecomposition hld(N+1);
+    for (int i = 0; i < N-1; i++) {
+        int x, y;
+        scanf("%d%d", &x, &y);
+        hld.addEdge(x, y);
+    }
+    hld.decompose();
+
+    char cmd[10];
+    int x, y;
+    for (int i = 0; i < Q; i++) {
+        scanf("%s%d%d", cmd, &x, &y);
+        if (cmd[0] == 'C') {
+            if (cmd[1] == 'C') {
+                hld.updateReligion(x, y);
+            } else {
+                hld.updateScore(x, y);
+            }
+        } else {
+            if (cmd[1] == 'S') {
+                printf("%d\n", hld.queryNode(x, y));
+            } else {
+                printf("not done yet\n");
+            }
+        }
+    }
+
     return 0;
 }

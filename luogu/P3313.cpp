@@ -53,7 +53,7 @@ private:
             // L and R are indices of its children
             // real left and right boundaries are not kept in the node itself
             int L = 0, R = 0;
-            int sum = 0;
+            int sum = 0, maxval = 0;
         };
 
         int N;  // number of trees, 0-indexed
@@ -87,16 +87,25 @@ private:
             return query(root[rootIndex], start, end, 0, M-1);
         }
 
+        int queryMax(int rootIndex, int start, int end) const {
+            return queryMax(root[rootIndex], start, end, 0, M-1);
+        }
+
     private:
         // insert a new node x with value t
         // curret range is [l, r]
         void insert(int &now, int x, int t, int l, int r) {
             if (!now) now = T_cnt++;
             T[now].sum += t;
-            if (l == r) return;
+            if (l == r) {
+                T[now].maxval += t;
+                return;
+            }
             int mid = (l + r) / 2;
             if (x <= mid) insert(T[now].L, x, t, l, mid);
             else          insert(T[now].R, x, t, mid+1, r);
+            T[now].maxval = max(T[T[now].L].maxval,
+                                T[T[now].R].maxval);
         }
 
         int query(int node, int start, int end, int l, int r) const {
@@ -107,6 +116,21 @@ private:
             int ret = 0;
             if (start <= mid) ret += query(T[node].L, start, end, l, mid);
             if (mid+1 <= end) ret += query(T[node].R, start, end, mid+1, r);
+            return ret;
+        }
+
+        int queryMax(int node, int start, int end, int l, int r) const {
+            if (node == 0) return 0;
+            if (l > r) return 0;
+            if (start <= l && r <= end) return T[node].maxval;
+            int mid = (l + r) / 2;
+            int ret = 0;
+            if (start <= mid) {
+                ret = max(ret, queryMax(T[node].L, start, end, l, mid));
+            }
+            if (mid+1 <= end) {
+                ret = max(ret, queryMax(T[node].R, start, end, mid+1, r));
+            }
             return ret;
         }
     };
@@ -177,11 +201,29 @@ public:
         return ret;
     }
 
+    int queryNodeMax(int u, int v) {
+        assert(C[u] == C[v]);
+        int c = C[u];
+        int ret = queryEdgeMax(c, u, v);
+        int p = lca(u, v);
+        int r = stIdx[p];
+        ret = max(ret, sf.queryMax(c, r, r));
+        return ret;
+    }
+
     int queryEdge(int c, int u, int v) {
         int ret = 0;
         int p = lca(u, v);
         ret += queryEdgeChain(c, p, u);
         ret += queryEdgeChain(c, p, v);
+        return ret;
+    }
+
+    int queryEdgeMax(int c, int u, int v) {
+        int ret = 0;
+        int p = lca(u, v);
+        ret = max(ret, queryEdgeChainMax(c, p, u));
+        ret = max(ret, queryEdgeChainMax(c, p, v));
         return ret;
     }
 
@@ -248,6 +290,26 @@ private:
         return ret;
     }
 
+    int queryEdgeChainMax(int c, int anc, int u) {
+        int ret = 0;
+        while (u != anc) {
+            int fe = rev[u];
+            if (top[u] != u) {
+                int p = top[u];
+                if (dep[p] < dep[anc]) p = anc;
+                int l = stIdx[heavyChild(p)];
+                int r = stIdx[u];
+                ret = max(ret, sf.queryMax(c, l, r));
+                u = p;
+            } else {
+                int r = stIdx[u];
+                ret = max(ret, sf.query(c, r, r));
+                u = g.E[fe].to;
+            }
+        }
+        return ret;
+    }
+
     int lca(int u, int v) {
         while (true) {
             int a = top[u], b = top[v];
@@ -295,7 +357,7 @@ int main() {
             if (cmd[1] == 'S') {
                 printf("%d\n", hld.queryNode(x, y));
             } else {
-                printf("not done yet\n");
+                printf("%d\n", hld.queryNodeMax(x, y));
             }
         }
     }

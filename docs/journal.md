@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/8
+* [洛谷 P2590] [ZJOI2008]树的统计：树链剖分模板题
+
 ### 4/7
 * [洛谷 P3313] [SDOI2014]旅行：看题解发现可用线段森林 + 树链剖分
 * [洛谷 P1903] [国家集训队]数颜色：带修改莫队

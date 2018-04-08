@@ -46,52 +46,75 @@ private:
 
     // segment tree with single point update and range query
     class SegmentTree {
-        static const int NULL_VALUE = 0;
+        static const int NULL_SUM = 0;
+        static const int NULL_MAX = INT_MIN;
     public:
         SegmentTree(int n) {
             nData_ = 1;
             while (nData_ < n) nData_ = nData_ << 1;
             int sz = 2 * nData_ + 1;
-            data = new int[sz]{NULL_VALUE};
+            dataSum = new int[sz]{NULL_SUM};
+            dataMax = new int[sz]{NULL_MAX};
         }
 
         ~SegmentTree() {
-            delete[] data;
+            delete[] dataSum;
+            delete[] dataMax;
         }
 
         void update(int i, int value) {
             i += nData_;
-            data[i] = value;
+            dataSum[i] = value;
+            dataMax[i] = value;
             for (; i > 1; i >>= 1) {
-                int newVal = combine(data[i], data[i^1]);
-                if (data[i>>1] == newVal) break;
-                data[i>>1] = newVal;
+                int newVal = combineSum(dataSum[i], dataSum[i^1]);
+                dataSum[i>>1] = newVal;
+
+                newVal = combineMax(dataMax[i], dataMax[i^1]);
+                dataMax[i>>1] = newVal;
             }
         }
 
-        int query(int a, int b) const {
+        int querySum(int a, int b) const {
             a += nData_;
             b += nData_;
-            int res = NULL_VALUE;
+            int res = NULL_SUM;
             for (; a <= b; a = (a+1) >> 1, b = (b-1) >> 1) {
                 if ((a & 1) != 0) {
-                    res = combine(res, data[a]);
+                    res = combineSum(res, dataSum[a]);
                 }
                 if ((b & 1) == 0) {
-                    res = combine(res, data[b]);
+                    res = combineSum(res, dataSum[b]);
                 }
             }
             return res;
         }
 
-        int query() const {
-            return data[1];
+        int queryMax(int a, int b) const {
+            a += nData_;
+            b += nData_;
+            int res = NULL_MAX;
+            for (; a <= b; a = (a+1) >> 1, b = (b-1) >> 1) {
+                if ((a & 1) != 0) {
+                    res = combineMax(res, dataMax[a]);
+                }
+                if ((b & 1) == 0) {
+                    res = combineMax(res, dataMax[b]);
+                }
+            }
+            return res;
         }
+
     private:
-        int *data;
+        int *dataSum;
+        int *dataMax;
         int nData_;
-        int combine(int a, int b) const {
+        int combineSum(int a, int b) const {
             return a + b;
+        }
+
+        int combineMax(int a, int b) const {
+            return max(a, b);
         }
     };
 
@@ -138,19 +161,35 @@ public:
         st.update(id, d);
     }
 
-    int queryNode(int u, int v) {
-        int ret = queryEdge(u, v);
+    int queryNodeSum(int u, int v) {
+        int ret = queryEdgeSum(u, v);
         int p = lca(u, v);
         int r = stIdx[p];
-        ret += st.query(r, r);
+        ret += st.querySum(r, r);
         return ret;
     }
 
-    int queryEdge(int u, int v) {
+    int queryNodeMax(int u, int v) {
+        int ret = queryEdgeMax(u, v);
+        int p = lca(u, v);
+        int r = stIdx[p];
+        ret = max(ret, st.queryMax(r, r));
+        return ret;
+    }
+
+    int queryEdgeSum(int u, int v) {
         int ret = 0;
         int p = lca(u, v);
-        ret += queryEdgeChain(p, u);
-        ret += queryEdgeChain(p, v);
+        ret += queryEdgeChainSum(p, u);
+        ret += queryEdgeChainSum(p, v);
+        return ret;
+    }
+
+    int queryEdgeMax(int u, int v) {
+        int ret = INT_MIN;
+        int p = lca(u, v);
+        ret = max(ret, queryEdgeChainMax(p, u));
+        ret = max(ret, queryEdgeChainMax(p, v));
         return ret;
     }
 
@@ -197,7 +236,7 @@ private:
         }
     }
 
-    int queryEdgeChain(int anc, int u) {
+    int queryEdgeChainSum(int anc, int u) {
         int ret = 0;
         while (u != anc) {
             int fe = rev[u];
@@ -206,17 +245,36 @@ private:
                 if (dep[p] < dep[anc]) p = anc;
                 int l = stIdx[heavyChild(p)];
                 int r = stIdx[u];
-                ret += st.query(l, r);
+                ret += st.querySum(l, r);
                 u = p;
             } else {
                 int r = stIdx[u];
-                ret += st.query(r, r);
+                ret += st.querySum(r, r);
                 u = g.E[fe].to;
             }
         }
         return ret;
     }
 
+    int queryEdgeChainMax(int anc, int u) {
+        int ret = INT_MIN;
+        while (u != anc) {
+            int fe = rev[u];
+            if (top[u] != u) {
+                int p = top[u];
+                if (dep[p] < dep[anc]) p = anc;
+                int l = stIdx[heavyChild(p)];
+                int r = stIdx[u];
+                ret = max(ret, st.queryMax(l, r));
+                u = p;
+            } else {
+                int r = stIdx[u];
+                ret = max(ret, st.queryMax(r, r));
+                u = g.E[fe].to;
+            }
+        }
+        return ret;
+    }
 
     int lca(int u, int v) {
         while (true) {
@@ -254,7 +312,6 @@ int main() {
     for (int i = 0; i < N; i++) {
         int w;
         scanf("%d", &w);
-        printf("%d ", w);
         hld.updateNode(i, w);
     }
 
@@ -266,9 +323,10 @@ int main() {
         if (cmd[0] == 'C') {
             hld.updateNode(x-1, y);
         } else if (cmd[1] == 'M') {
-            printf("not implemented yet\n");
+            int ans = hld.queryNodeMax(x-1, y-1);
+            printf("%d\n", ans);
         } else {
-            int ans = hld.queryNode(x-1, y-1);
+            int ans = hld.queryNodeSum(x-1, y-1);
             printf("%d\n", ans);
         }
     }

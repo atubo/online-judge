@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/9
+* [洛谷 P2880] [USACO07JAN]平衡的阵容Balanced Lineup：ST 表
+
 ### 4/8
 * [洛谷 P2590] [ZJOI2008]树的统计：树链剖分模板题
 * [洛谷 P4114] Qtree1：树链剖分

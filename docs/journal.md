@@ -9,6 +9,10 @@ Journal of the problems I have worked on
 
 ### 4/13
 * [洛谷 P3227] [HNOI2013]切糕：网络流，基本是照着题解写的。
+* [洛谷 P2472] [SCOI2007]蜥蜴：网络流，将每个点拆成 $v$ 和 $v'$ 若点上有蜥蜴，
+连边 $S\rightarrow v$ 容量为1， 若点可以逃出边界， 连边 $v'\rightarrow T$
+容量为无穷，若点高度不为0，连边 $v \rightarrow v'$ 容量为高度值，若
+$d_{uv}\le D$ 连边 $v' \rightarrow u$ 容量为无穷，求最大流即可。
 
 ### 4/12
 * [洛谷 P3191] [HNOI2007]紧急疏散EVACUATE：网络流 + 二分。将门拆成 $mid$ 个点，

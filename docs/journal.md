@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/13
+* [洛谷 P3227] [HNOI2013]切糕：网络流，基本是照着题解写的。
+
 ### 4/12
 * [洛谷 P3191] [HNOI2007]紧急疏散EVACUATE：网络流 + 二分。将门拆成 $mid$ 个点，
 技巧：从每个门的第 $t$ 个点连向第 $t+1$ 个点，容量为无穷大，可以有效减少边数。

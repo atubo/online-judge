@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/15
+* [洛谷 P2016] 战略游戏：树的最小点覆盖。
+
 ### 4/14
 * [洛谷 P2604] [ZJOI2010]网络扩容：第一问直接套模板，第二问在残余网络上跑一遍
 最小费用最大流即可。

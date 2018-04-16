@@ -64,24 +64,29 @@ public:
     }
 
     void solve() {
-        using Pii = pair<int, int>;
-        priority_queue<Pii> pq;
+        vector<list<int>> lists(N);
+        vector<list<int>::iterator> iters(N);
+
         for (int i = 0; i < N; i++) {
-            pq.push(Pii(0, i));
+            lists[0].push_front(i);
+            iters[i] = lists[0].begin();
         }
 
+        int maxd = 0;
         for (int k = N-1; k >= 0; k--) {
-            while (vis[pq.top().second]) pq.pop();
-            Pii p = pq.top();
-            pq.pop();
-            int x = p.second;
+            while (lists[maxd].empty()) maxd--;
+            int x = lists[maxd].front();
+            lists[maxd].pop_front();
             peo[k] = x;
             vis[x] = true;
             for (int eidx = g.head[x]; ~eidx; eidx = g.E[eidx].next) {
                 int u = g.E[eidx].to;
                 if (vis[u]) continue;
-                deg[u]++;
-                pq.push(Pii(deg[u], u));
+                int d = ++deg[u];
+                lists[d-1].erase(iters[u]);
+                lists[d].push_front(u);
+                iters[u] = lists[d].begin();
+                maxd = max(maxd, d);
             }
         }
     }

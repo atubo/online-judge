@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/16
+* [洛谷 P3128] [USACO15DEC]最大流Max Flow：树链剖分。看题解发现也可以用树上差分作。
+
 ### 4/15
 * [洛谷 P2016] 战略游戏：树的最小点覆盖。
 * [洛谷 P3196] [HNOI2008]神奇的国度：弦图的染色，MCS没作链表优化，导致TLE第二个点，

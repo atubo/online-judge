@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/17
+* [洛谷 P1446] [HNOI2008]Cards：Burnside 引理，用背包求每个置换的等价方案数。
+
 ### 4/16
 * [洛谷 P3128] [USACO15DEC]最大流Max Flow：树链剖分。看题解发现也可以用树上差分作。
 

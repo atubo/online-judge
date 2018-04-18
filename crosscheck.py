@@ -124,14 +124,21 @@ def build_graph(n, m):
         ret.add((u, v))
     return ret
 
+def generate_father_array(adj):
+    def dfs(adj, u, fa, ret):
+        ret[u] = fa
+        for v in adj[u]:
+            if v != fa:
+                dfs(adj, v, u, ret)
+    ret = [0 for i in range(len(adj))]
+    dfs(adj, 0, -1, ret)
+    return ret
+
 def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        f.write("%d\n" % (n))
-        print_array(f, rand_array(n, 1, 100000000))
-        adj = rand_tree(n)
-        print_tree_dfs(f, adj, 0)
+        f.write("%d\n" % n)
 
 
 def one_test(size):
@@ -141,7 +148,7 @@ def one_test(size):
     if ret != 0:
         print "Bench error"
         exit(1)
-    ret = os.system("P3237 <input.txt > out2.txt")
+    ret = os.system("P2146 <input.txt > out2.txt")
     if ret != 0:
         print "Test error"
         exit(1)

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/19
+* [洛谷 P1352] 没有上司的舞会：树上DP
+
 ### 4/18
 * [洛谷 P3384] 【模板】树链剖分：树剖模板
 

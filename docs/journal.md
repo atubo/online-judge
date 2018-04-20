@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/20
+* [洛谷 P1667] 数列：实现很简单，思路不简单，看了题解才会作。
+
 ### 4/19
 * [洛谷 P1352] 没有上司的舞会：树上DP
 * [洛谷 P3942] 将军令：类似 [洛谷 P2016] 的解法

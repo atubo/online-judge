@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/27
+* [洛谷 P1081] 开车旅行：倍增，预处理从每个点出发走 $2^k$ 天的旅行情况。
+
 ### 4/25
 * [洛谷 P1501] [国家集训队]Tree II：LCT，需要注意的是加标记或下传标记时须更新子树和，
 所以需要维护子树大小。

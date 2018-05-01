@@ -8,9 +8,10 @@ class PalindromicTree {
 public:
     const static int ALPHASIZE = 26;
     const int L_;
-    int** next;
+    //int** next;
+    vector<map<int,int>> next;
     int *fail;
-    int *cnt;
+    int64_t *cnt;
     int *num;
     int *len;
     int *S;
@@ -27,22 +28,15 @@ private:
     }
 
     void alloc() {
-        next = new int*[L_+2];
-        for (int i = 0; i < L_+2; i++) {
-            next[i] = new int[ALPHASIZE]{};
-        }
+        next.resize(L_+2);
         fail = new int[L_+2]{};
-        cnt = new int[L_+2]{};
+        cnt = new int64_t[L_+2]{};
         num = new int[L_+2]{};
         len = new int[L_+2]{};
         S = new int[L_+2]{};
     }
 
     void dealloc() {
-        for (int i = 0; i < L_+2; i++) {
-            delete[] next[i];
-        }
-        delete[] next;
         delete[] fail;
         delete[] cnt;
         delete[] num;
@@ -69,7 +63,7 @@ private:
         c -= 'a';
         S[++n_] = c;
         int cur = get_fail(last);
-        if (!next[cur][c]) {
+        if (next[cur].count(c) == 0) {
             int now = newnode(len[cur] + 2);
             fail[now] = next[get_fail(fail[cur])][c];
             next[cur][c] = now;
@@ -118,10 +112,12 @@ int64_t power(int64_t x, int n) {
 }
 
 
-int N, K;
+int N;
+int64_t K;
 
 struct Node {
-    int len, cnt;
+    int len;
+    int64_t cnt;
     bool operator < (const Node &other) const {
         if (len > other.len) return true;
         if (len < other.len) return false;
@@ -130,7 +126,7 @@ struct Node {
 };
 
 int main() {
-    scanf("%d%d", &N, &K);
+    scanf("%d%lld", &N, &K);
     string s;
     cin >> s;
     PalindromicTree pt(s);

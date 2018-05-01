@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 4/30
+* [洛谷 P3649] [APIO2014]回文串：学习了名为回文自动机（PAM）的高级东东。
+
 ### 4/29
 * [洛谷 P2507] [SCOI2008]配对：（比较无聊）关键在于排序后A和B的匹配距离不
 超过2，但严格证明似乎没有找到。

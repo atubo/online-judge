@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/2
+* [洛谷 P1935] [国家集训队]圈地计划：看题解发现是P1646 [国家集训队]happiness 的变形。
+
 ### 5/1
 * [洛谷 P1872] 回文串计数：用回文自动机求出以每个位置开始/结束的回文串的数量，
 再用前缀和处理一下。

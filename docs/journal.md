@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/5
+* [CF 17E] Palisection: Manacher 求出以每个位置开始/结束的回文串的数量,
+回文自动机会MLE。
+
 ### 5/4
 * [SPOJ OPTM] OPTM - Optimal Marks:转化为最小割问题。
 

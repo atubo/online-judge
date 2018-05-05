@@ -4,90 +4,67 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class PalindromicTree {
 
-public:
-    const int L_;
-    vector<map<int, int>> next;
-    int *fail;
-    int *num;
-    int *len;
-    char *S;
-    int *node;  // position i -> node index (i is 1-indexed)
-    int last;
-    int n_;
-    int p_;
+struct Manacher {
+    const int length_;
+    // p[i] stores maximum radius from position i (including i)
+    // in the *modified* string (including spaces between letters)
+    // note place before the first char is 1, first char is 2
+    // second char is 4, etc.
+    int *p;
+    char *s;
+    int *maxlen;
 
-private:
-    int newnode(int l) {
-        num[p_] = 0;
-        len[p_] = l;
-        return p_++;
+    Manacher(const string &sin):length_(sin.length()) {
+        alloc();
+
+        // put special charaters at the begining and between letters
+        s[0] = '$';
+        s[1] = '#';
+        for (int i = 0; i < (int)sin.length(); i++) {
+            s[i*2+2] = sin[i];
+            s[i*2+3] = '#';
+        }
+
+        int mx = 0, id = 0;
+        for (int i = 1; s[i] != '\0'; i++) {
+            p[i] = mx > i ? min(p[2*id-i], mx-i) : 1;
+            while (s[i+p[i]] == s[i-p[i]]) p[i]++;
+            if (i + p[i] > mx) {
+                mx = i + p[i];
+                id = i;
+            }
+        }
     }
 
+    ~Manacher() {
+        dealloc();
+    }
+
+    // some utility functions
+    // find for each position the maximum length of the palindrom start there
+    // note the index starts from 0
+    void calcMaxlen() {
+        for (int i = 1; s[i] != '\0'; i++) {
+            int pos = (i - p[i]) / 2;
+            maxlen[pos] = max(maxlen[pos], p[i]-1);
+        }
+        for (int i = 1; s[i] != '\0'; i++) {
+            maxlen[i] = max(maxlen[i-1]-2, maxlen[i]);
+        }
+    }
+
+private:
     void alloc() {
-        next.resize(L_+2);
-        fail = new int[L_+2]{};
-        num = new int[L_+2]{};
-        len = new int[L_+2]{};
-        S = new char[L_+2]{};
-        node = new int[L_+1]{};
+        p = new int[2*length_+10]{};
+        s = new char[2*length_+10]{};
+        maxlen = new int[length_+10]{};
     }
 
     void dealloc() {
-        delete[] fail;
-        delete[] num;
-        delete[] len;
-        delete[] S;
-        delete[] node;
-    }
-
-    void init() {
-        p_ = 0;
-        newnode(0);
-        newnode(-1);
-        last = 0;
-        n_ = 0;
-        S[n_] = -1;
-        fail[0] = 1;
-    }
-
-    int get_fail(int x) {
-        while (S[n_-len[x]-1] != S[n_]) x = fail[x];
-        return x;
-    }
-
-    void add(int c) {
-        c -= 'a';
-        S[++n_] = c;
-        int cur = get_fail(last);
-        if (next[cur].count(c) == 0) {
-            int now = newnode(len[cur] + 2);
-            fail[now] = next[get_fail(fail[cur])][c];
-            next[cur][c] = now;
-            num[now] = num[fail[now]] + 1;
-        }
-        last = next[cur][c];
-        node[n_] = last;
-    }
-
-    void count() {
-    }
-
-
-public:
-    PalindromicTree(const string &s): L_(s.length()) {
-        alloc();
-        init();
-        for (char c: s) {
-            add(c);
-        }
-
-        count();
-    }
-
-    ~PalindromicTree() {
-        dealloc();
+        delete[] p;
+        delete[] s;
+        delete[] maxlen;
     }
 };
 
@@ -105,28 +82,46 @@ int mul(int64_t a, int64_t b) {
     return (a * b) % MOD;
 }
 
+int nodeLeft(int i) {
+    return i/2;
+}
+
+int nodeRight(int i) {
+    return (i+1)/2;
+}
+
 int main() {
     int n;
     cin >> n;
     string s;
     cin >> s;
-    PalindromicTree pt1(s);
-    reverse(s.begin(), s.end());
-    PalindromicTree pt2(s);
-
-    int64_t ans = 0;
-    int open = 0;
-    for (int i = 1; i <= n; i++) {
-        int x1 = pt1.node[i];
-        int c1 = pt1.num[x1];
-        int x2 = pt2.node[n+1-i];
-        int c2 = pt2.num[x2];
-        open = add(open, c2);
-        ans = add(ans, mul(sub(open, c1), c1));
-        ans = add(ans, (int64_t(c1)*(c1-1)/2) % MOD);
-        //printf("i=%d open=%d close=%d\n", i, open, c1);
-        open = sub(open, c1);
+    Manacher manacher(s);
+    vector<int> openMark(n+2, 0), closeMark(n+2, 0);
+    for (int i = 2; i <= 2*n; i++) {
+        int left = nodeRight(i - manacher.p[i] + 1);
+        int p = nodeLeft(i);
+        int q = nodeRight(i);
+        int right = nodeLeft(i + manacher.p[i] - 1);
+        openMark[left]++;
+        openMark[p+1]--;
+        closeMark[q]++;
+        closeMark[right+1]--;
     }
+
+    vector<int> open(n+1, 0), close(n+1, 0);
+    for (int i = 1; i <= n; i++) {
+        open[i] = add(open[i-1], openMark[i]);
+        close[i] = add(close[i-1], closeMark[i]);
+    }
+
+    int64_t currOpen = 0, ans = 0;
+    for (int i = 1; i <= n; i++) {
+        currOpen = add(currOpen, open[i]);
+        ans = add(ans, mul(sub(currOpen, close[i]), close[i]));
+        ans = add(ans, (int64_t(close[i])*(close[i]-1)/2) % MOD);
+        currOpen = sub(currOpen, close[i]);
+    }
+
     cout << ans;
 
     return 0;

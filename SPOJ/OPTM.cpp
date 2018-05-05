@@ -44,150 +44,110 @@ public:
     }
 };
 
-class MincostMaxflow {
-    // NOTE
-    // 1. set up the following values
-    // 2. nodes are 0-indexed
-    // 3. MAXM must be twice the number of edges you added
-    // 4. call init() before you use it again
+class Dinic {
 public:
-    const static int INF = 1000000;
-
-    MincostMaxflow(int N_, int M):N(N_), Q(N_) {
-        V = new Edge*[N]{};
-        ES = new Edge[2*M]{};
-        sp = new int[N]{};
-        prev = new int[N]{};
-        path = new Edge*[N]{};
-        init();
-    }
-
-    ~MincostMaxflow() {
-        delete[] V;
-        delete[] ES;
-        delete[] sp;
-        delete[] prev;
-        delete[] path;
-    }
-
-    void addEdge(int a, int b, int cost, int capacity) {
-        Edge e1 = {V[a], 0, b, capacity, cost, true}, e2 = {V[b], 0, a, 0, -cost, false};
-        ES[++EC] = e1; V[a] = &ES[EC];
-        ES[++EC] = e2; V[b] = &ES[EC];
-        V[a]->op = V[b]; V[b]->op = V[a];
-    }
-
-    struct FlowCost {
-        int flow, cost;
-        FlowCost& operator += (const FlowCost &other) {
-            flow += other.flow;
-            cost += other.cost;
-            return *this;
-        }
-    };
-
-    // returns maxflow, mincost
-    pair<int, int> mincostFlow(int s, int t) {
-        FlowCost fc{};
-        while (SPFA(s, t)) {
-            fc += augment(t);
-        }
-        return make_pair(fc.flow, fc.cost);
-    }
-
-//private:
-    int N;
+    static const int inf = 0x3f3f3f3f;
     struct Edge {
-        Edge *next, *op;
-        int t, c, v;    // node, residual, cost
-        bool orig;
+        int to, next, cap;
     };
-    Edge *ES;
-    Edge **V;
-    int EC = -1;
 
-    void init() {
-        EC = -1;
-        memset(V, 0, N * sizeof(Edge*));
+    const int N, MAXM;
+    int *head;
+    Edge *E;
+    int e;
+private:
+    int *curr;
+
+public:
+    Dinic(int N_, int M_): N(N_), MAXM(2*M_) {
+        alloc();
+        reset();
     }
 
-    struct Queue {
-        Queue(int N_): N(N_) {
-            Q = new int[N]{};
-            inq = new bool[N]{};
+    ~Dinic() {
+        dealloc();
+    }
+
+    void reset() {
+        e = 0;
+        memset(head, -1, N * sizeof(int));
+    }
+
+    void addEdge(int x, int y, int w, int rw = 0) {
+        E[e] = {y, head[x], w};
+        head[x] = e++;
+        E[e] = {x, head[y], rw};
+        head[y] = e++;
+    }
+
+    int dinic(int s, int t) {
+        int ans = 0;
+        while (bfs(s, t)) {
+            for (int i = 0; i < N; i++) {
+                curr[i] = head[i];
+            }
+            int k = dfs(s, inf, t);
+            if (k > 0) ans += k;
         }
+        return ans;
+    }
 
-        ~Queue() {
-            delete[] Q;
-            delete[] inq;
-        }
+private:
+    void alloc() {
+        head = new int[N]{};
+        curr = new int[N]{};
+        E    = new Edge[MAXM]{};
+        d    = new int[N]{};
+        q    = new int[N]{};
+    }
 
-        int N;
-        int *Q;
-        int QH, QL, Size;
-        bool *inq;
+    void dealloc() {
+        delete[] head;
+        delete[] curr;
+        delete[] E;
+        delete[] d;
+        delete[] q;
+    }
 
-        void ins(int v) {
-            if (++QL >= N) QL = 0;
-            Q[QL] = v;
-            inq[v] = true;
-            Size++;
-        }
+    int *d;
+    int *q;
 
-        int pop() {
-            int r = Q[QH];
-            inq[r] = false;
-            Size--;
-            if (++QH >= N) QH = 0;
-            return r;
-        }
+    bool bfs(int s, int t) {
+        memset(d, -1, N * sizeof(int));
+        int front = 0, back = 0;
+        q[back++] = t;
 
-        void reset() {
-            memset(Q, 0, N* sizeof(int));
-            QH = Size = 0;
-            QL = -1;
-        }
-    };
-    Queue Q;
-
-
-    int *sp, *prev;
-    Edge **path;
-
-    bool SPFA(int s, int t) {
-        int u, v;
-        for (u = 0; u < N; u++) sp[u] = INF;
-        Q.reset();
-        Q.ins(s);
-        sp[s] = 0; prev[s] = -1;
-        while (Q.Size) {
-            u = Q.pop();
-            for (Edge *k = V[u]; k; k = k->next) {
-                v = k->t;
-                if (k->c > 0 && sp[u] + k->v < sp[v]) {
-                    sp[v] = sp[u] + k->v;
-                    prev[v] = u;
-                    path[v] = k;
-                    if (!Q.inq[v]) Q.ins(v);
+        d[t] = 0;
+        while (front != back) {
+            int u = q[front];
+            front++;
+            for (int i = head[u]; i != -1; i = E[i].next) {
+                int v = E[i].to;
+                if (d[v] == -1 && E[i^1].cap) {
+                    d[v] = d[u] + 1;
+                    q[back++] = v;
+                    if (v == s) return true;
                 }
             }
         }
-        return sp[t] != INF;
+        return false;
     }
 
-    FlowCost augment(int t) {
-        int i, low = INF, cost = 0;
-        Edge *e;
-        for (i = t; prev[i] != -1; i = prev[i]) {
-            e = path[i];
-            if (e->c < low) low = e->c;
+    int dfs(int x, int low, int t) {
+        if (x == t || !low) return low;
+        int ret = 0;
+        for (int &i = curr[x]; i != -1; i = E[i].next) {
+            int v = E[i].to;
+            if (d[v] == d[x] - 1) {
+                int k = dfs(v, min(low-ret, E[i].cap), t);
+                if (k > 0) {
+                    E[i].cap -= k;
+                    E[i^1].cap += k;
+                    ret += k;
+                }
+            }
         }
-        for (i = t; prev[i] != -1; i = prev[i]) {
-            e = path[i];
-            e->c -= low; e->op->c += low;
-            cost += e->v * low;
-        }
-        return FlowCost{low, cost};
+        return ret;
     }
 };
 
@@ -201,15 +161,14 @@ int id(int u) {
     return u+1;
 }
 
-void dfs(const MincostMaxflow &mcf, vector<bool> &visited, int u, int d) {
+void dfs(const Dinic &dinic, vector<bool> &visited, int u, int d) {
     visited[u] = true;
     mark[u-1] |= (1 << d);
-    for (MincostMaxflow::Edge *e = mcf.V[u]; e; e = e->next) {
-        if (e->c > 0 && e->orig) {
-            int v = e->t;
-            if (!visited[v]) {
-                dfs(mcf, visited, v, d);
-            }
+    for (int eidx = dinic.head[u]; ~eidx; eidx = dinic.E[eidx].next) {
+        int cap = dinic.E[eidx].cap;
+        int v = dinic.E[eidx].to;
+        if (cap > 0 && !visited[v]) {
+            dfs(dinic, visited, v, d);
         }
     }
 }
@@ -229,29 +188,29 @@ void solve(const Graph &g) {
     for (int d = 0; d < 31; d++) {
         bool doit = false;
         const int s = 0, t = N+1;
-        MincostMaxflow mcf(t+1, 2*(N+M));
+        Dinic dinic(t+1, 2*N+M);
         for (int u = 0; u < N; u++) {
             if (!isFixed[u]) {
-                mcf.addEdge(s, id(u), 0, 1);
-                mcf.addEdge(id(u), t, 1, 1);
+                dinic.addEdge(s, id(u), 1);
+                dinic.addEdge(id(u), t, 1);
             } else {
                 if ((mark[u]>>d) & 1) {
                     doit = true;
-                    mcf.addEdge(s, id(u), 0, MincostMaxflow::INF);
+                    dinic.addEdge(s, id(u), Dinic::inf);
                 } else {
-                    mcf.addEdge(id(u), t, 0, MincostMaxflow::INF);
+                    dinic.addEdge(id(u), t, Dinic::inf);
                 }
             }
 
             for (int eidx = g.head[u]; ~eidx; eidx = g.E[eidx].next) {
                 int v = g.E[eidx].to;
-                mcf.addEdge(id(u), id(v), 0, 1);
+                if (u < v) dinic.addEdge(id(u), id(v), 1, 1);
             }
         }
         if (!doit) continue;
-        mcf.mincostFlow(s, t);
+        dinic.dinic(s, t);
         vector<bool> visited(N, false);
-        dfs(mcf, visited, s, d);
+        dfs(dinic, visited, s, d);
     }
 
     for (int i = 0; i < N; i++) {

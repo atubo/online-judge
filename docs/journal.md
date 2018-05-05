@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/4
+* [SPOJ OPTM] OPTM - Optimal Marks:转化为最小割问题。
+
 ### 5/2
 * [洛谷 P1935] [国家集训队]圈地计划：看题解发现是P1646 [国家集训队]happiness 的变形。
 

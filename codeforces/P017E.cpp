@@ -7,14 +7,12 @@ using namespace std;
 class PalindromicTree {
 
 public:
-    const static int ALPHASIZE = 26;
     const int L_;
-    int** next;
+    vector<map<int, int>> next;
     int *fail;
-    int *cnt;
     int *num;
     int *len;
-    int *S;
+    char *S;
     int *node;  // position i -> node index (i is 1-indexed)
     int last;
     int n_;
@@ -22,32 +20,22 @@ public:
 
 private:
     int newnode(int l) {
-        cnt[p_] = 0;
         num[p_] = 0;
         len[p_] = l;
         return p_++;
     }
 
     void alloc() {
-        next = new int*[L_+2];
-        for (int i = 0; i < L_+2; i++) {
-            next[i] = new int[ALPHASIZE]{};
-        }
+        next.resize(L_+2);
         fail = new int[L_+2]{};
-        cnt = new int[L_+2]{};
         num = new int[L_+2]{};
         len = new int[L_+2]{};
-        S = new int[L_+2]{};
+        S = new char[L_+2]{};
         node = new int[L_+1]{};
     }
 
     void dealloc() {
-        for (int i = 0; i < L_+2; i++) {
-            delete[] next[i];
-        }
-        delete[] next;
         delete[] fail;
-        delete[] cnt;
         delete[] num;
         delete[] len;
         delete[] S;
@@ -73,7 +61,7 @@ private:
         c -= 'a';
         S[++n_] = c;
         int cur = get_fail(last);
-        if (!next[cur][c]) {
+        if (next[cur].count(c) == 0) {
             int now = newnode(len[cur] + 2);
             fail[now] = next[get_fail(fail[cur])][c];
             next[cur][c] = now;
@@ -81,13 +69,9 @@ private:
         }
         last = next[cur][c];
         node[n_] = last;
-        cnt[last]++;
     }
 
     void count() {
-        for (int i = p_-1; i >= 0; --i) {
-            cnt[fail[i]] += cnt[i];
-        }
     }
 
 
@@ -143,7 +127,7 @@ int main() {
         //printf("i=%d open=%d close=%d\n", i, open, c1);
         open = sub(open, c1);
     }
-    printf("%lld", ans);
+    cout << ans;
 
     return 0;
 }

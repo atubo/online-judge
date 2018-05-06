@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P2486] [SDOI2011]染色：树链剖分，我的解法比较罗嗦，用了两个线段树，一个维护值，
 一个维护颜色跃变数。看题解发现一个线段树即可，同时维护区间颜色数和左右端点颜色值。
 * [洛谷 P3178] [HAOI2015]树上操作：树链剖分，不小心在线段树的update里爆了int
+* [SPOJ CLONE] CLONE - Find the Clones: 水题
 
 ### 5/5
 * [CF 17E] Palisection: Manacher 求出以每个位置开始/结束的回文串的数量,

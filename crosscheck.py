@@ -45,6 +45,24 @@ def rand_tree(size):
         adj[v].append(u)
     return adj
 
+def rand_binary_tree(size):
+    """each node has either 0 or 2 children"""
+    adj = [[] for i in range(size)]
+    sz = 1
+    leaves = set()
+    leaves.add(0)
+    while sz < size:
+        u = random.sample(leaves, 1)[0]
+        leaves.remove(u)
+        adj[u].append(sz)
+        adj[sz].append(u)
+        adj[u].append(sz+1)
+        adj[sz+1].append(u)
+        leaves.add(sz)
+        leaves.add(sz+1)
+        sz += 2
+    return adj
+
 def rand_bigint(size):
     ret = chr(ord('0') + randint(1, 9))
     for i in range(size-1):
@@ -77,10 +95,11 @@ def print_weighted_tree_edges(f, adj, lo, hi):
     for u in range(N):
         for v in adj[u]:
             if u < v:
-                if randint(1, 2) == 1:
-                    u, v = v, u
                 w = randint(lo, hi)
-                f.write("%d %d %d\n" % (u+1, v+1, w))
+                if randint(1, 2) == 1:
+                    f.write("%d %d %d\n" % (v+1, u+1, w))
+                else:
+                    f.write("%d %d %d\n" % (u+1, v+1, w))
 
 
 def print_array(f, a):
@@ -138,7 +157,10 @@ def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        f.write("%d\n" % n)
+        q = randint(1, n)
+        f.write("%d %d\n" % (n, q))
+        print_weighted_tree_edges(f, rand_binary_tree(n), 1, 10)
+
 
 
 def one_test(size):

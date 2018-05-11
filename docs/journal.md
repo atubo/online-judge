@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/11
+* [洛谷 P2015] 二叉苹果树：DP
+
 ### 5/10
 * [洛谷 P1379] 八数码难题：BFS，encode 比较简单粗暴。看题解发现康托展开更加高效。
 

@@ -69,7 +69,7 @@ def rand_bigint(size):
         ret += chr(ord('0') + randint(0, 9))
     return ret
 
-def print_tree_edges(f, adj):
+def print_graph_edges(f, adj):
     # Note here index is from 1
     N = len(adj)
     for u in range(N):
@@ -143,6 +143,19 @@ def build_graph(n, m):
         ret.add((u, v))
     return ret
 
+def build_undirected_graph(n, m):
+    """ build a undirected graph that ensures hi is reachable from lo"""
+    ret = rand_tree(n)
+    for i in range(m-n+1):
+        u = randint(0, n-1)
+        v = randint(0, n-1)
+        while u == v or ret[u].count(v) > 0:
+            u = randint(0, n-1)
+            v = randint(0, n-1)
+        ret[u].append(v)
+        ret[v].append(u)
+    return ret
+
 def generate_father_array(adj):
     def dfs(adj, u, fa, ret):
         ret[u] = fa
@@ -157,9 +170,10 @@ def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        q = randint(1, n)
-        f.write("%d %d\n" % (n, q))
-        print_weighted_tree_edges(f, rand_binary_tree(n), 1, 10)
+        m = randint(n, 2*n)
+        f.write("%d %d\n" % (n, m))
+        adj = build_undirected_graph(n, m)
+        print_graph_edges(f, adj)
 
 
 

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/12
+* [洛谷 P3232] [HNOI2013]游走：先求出每个点的经过次数的期望值，
+再求出每条边的经过次数的期望值，排序后从大到小赋值即可。
+
 ### 5/11
 * [洛谷 P2015] 二叉苹果树：DP
 

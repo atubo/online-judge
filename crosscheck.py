@@ -88,8 +88,8 @@ def print_tree_dfs(f, adj, root):
 
     dfs(f, adj, 0, -1)
 
-def print_weighted_tree_edges(f, adj, lo, hi):
-    """Given adj, this function adds random weight and print the tree"""
+def print_weighted_graph_edges(f, adj, lo, hi):
+    """Given adj, this function adds random weight and print the graph"""
     # Note here index is from 1
     N = len(adj)
     for u in range(N):
@@ -143,8 +143,8 @@ def build_graph(n, m):
         ret.add((u, v))
     return ret
 
-def build_undirected_graph(n, m):
-    """ build a undirected graph that ensures hi is reachable from lo"""
+def build_undirected_simple_graph(n, m):
+    """ build a connected undirected simple graph """
     ret = rand_tree(n)
     for i in range(m-n+1):
         u = randint(0, n-1)
@@ -155,6 +155,25 @@ def build_undirected_graph(n, m):
         ret[u].append(v)
         ret[v].append(u)
     return ret
+
+def build_undirected_graph(n, m):
+    """ build a connected undirected graph """
+    adj = rand_tree(n)
+    edges = []
+    for i in range(n):
+        for j in adj[i]:
+            if i < j:
+                edges.append((i, j))
+    for i in range(m-n+1):
+        u = randint(0, n-1)
+        v = randint(0, n-1)
+        edges.append((u, v))
+    return edges
+
+def print_weighted_undirected_graph(f, edges, lo, hi):
+    for e in edges:
+        w = randint(lo, hi)
+        f.write("%d %d %d\n" % (e[0]+1, e[1]+1, w))
 
 def generate_father_array(adj):
     def dfs(adj, u, fa, ret):
@@ -173,7 +192,7 @@ def generate_input(size):
         m = randint(n, 2*n)
         f.write("%d %d\n" % (n, m))
         adj = build_undirected_graph(n, m)
-        print_graph_edges(f, adj)
+        print_weighted_undirected_graph(f, adj, 0, 1000000000)
 
 
 

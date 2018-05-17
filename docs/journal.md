@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/17
+* [洛谷 P3066] [USACO12DEC]逃跑的BarnRunning Away From…：DFS序将问题转化为求区间
+$[L,R]$ 内不大于 $x$ 的元素的个数，用归并树即可解决。
+
 ### 5/16
 * [洛谷 P3261] [JLOI2015]城池攻占：倍增思想，显然若骑士的初始战斗力为 $s$
 则移动过程中的战斗力始终为 $f\cdot s + t$ 的形式，令 $f[x][k]$ 和

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/19
+* [洛谷 P2473] [SCOI2008]奖励关：DP， 令 $dp(k,mask)$ 表示从第k步开始，已得宝物组合
+为mask的最大期望收益，按k从大到小递推即可。
+
 ### 5/18
 * [洛谷 P1552] [APIO2012]派遣：DFS序将问题转化为求区间$[x,y]$ 内和不大于 $L$
 的元素的个数，用主席树解决。看题解发现用可并堆也可解决。

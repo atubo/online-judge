@@ -189,11 +189,13 @@ def generate_input(size):
     os.system("rm -f input.txt")
     with open("input.txt", "w") as f:
         n = size
-        m = randint(n, 2*n)
-        f.write("%d %d\n" % (n, m))
-        adj = build_undirected_graph(n, m)
-        print_weighted_undirected_graph(f, adj, 0, 1000000000)
 
+def compare_double():
+    with open('out1.txt') as f:
+        x1 = float(f.read())
+    with open('out2.txt') as f:
+        x2 = float(f.read())
+    return 0 if abs(x1 - x2) < 0.0001 else 1
 
 
 def one_test(size):

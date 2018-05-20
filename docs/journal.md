@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/20
+* [洛谷 P2622] 关灯问题II：结点数(状态数)最多为 $2^{10}=1024$ 边数最多为
+$1024\times m$ BFS求最短路即可。
+
 ### 5/19
 * [洛谷 P2473] [SCOI2008]奖励关：DP， 令 $dp(k,mask)$ 表示从第k步开始，已得宝物组合
 为mask的最大期望收益，按k从大到小递推即可。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/21
+* [洛谷 P2824] [HEOI2016/TJOI2016]排序：(看了题解)二分 + 线段树处理01数组。
+
 ### 5/20
 * [洛谷 P2622] 关灯问题II：结点数(状态数)最多为 $2^{10}=1024$ 边数最多为
 $1024\times m$ BFS求最短路即可。

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/22
+* [洛谷 P1272] 重建道路：树形DP，将多叉树转化为二叉树后处理。
+$dp1(u,k)$ 为u的子树中保留k个结点最少割边数，$dp2(u,k)$
+为u和u的兄弟的子树中保留k个结点最少割边数，mutual recursive 求解。
+
 ### 5/21
 * [洛谷 P2824] [HEOI2016/TJOI2016]排序：(看了题解)二分 + 线段树处理01数组。
 

@@ -6,6 +6,20 @@ using namespace std;
 
 using PII = pair<int, int>;
 
+const int MOD = 1000000007;
+
+int add(int64_t a, int64_t b) {
+    return (a + b) % MOD;
+}
+
+int sub(int64_t a, int64_t b) {
+    return (a + MOD - b) % MOD;
+}
+
+int mul(int64_t a, int64_t b) {
+    return (a * b) % MOD;
+}
+
 struct ChairmanInFenwick {
     int N;  // number of positions, index is 1-based
     int M;  // number of weights, index is 0-based
@@ -46,7 +60,7 @@ struct ChairmanInFenwick {
         int c = 0;
         for (int j = k; j; j -= lowbit(j)) {
             auto p = querySingleTree(root[j], 0, M-1, l, r);
-            sum += p.first;
+            sum = ::add(sum, p.first);
             c += p.second;
         }
         return make_pair(sum, c);
@@ -57,8 +71,13 @@ private:
 
     void update(int16_t &now, int w, int t, int16_t l, int16_t r) {
         if (!now) now = T_cnt++;
-        val[now] += t;
-        cnt[now] += (t > 0 ? 1 : -1);
+        if (t > 0) {
+            val[now] = ::add(val[now], t);
+            cnt[now]++;
+        } else {
+            val[now] = sub(val[now], -t);
+            cnt[now]--;
+        }
         if (l == r) return;
         int mid = (l + r) / 2;
         if (w <= mid) update(lc[now], w, t, l, mid);
@@ -72,12 +91,12 @@ private:
         int mid = (L + R) / 2;
         if (l <= mid) {
             auto p = querySingleTree(lc[node], L, mid, l, r);
-            sum += p.first;
+            sum = ::add(sum, p.first);
             c += p.second;
         }
         if (mid < r) {
             auto p = querySingleTree(rc[node], mid+1, R, l, r);
-            sum += p.first;
+            sum = ::add(sum, p.first);
             c += p.second;
         }
         return make_pair(sum, c);
@@ -95,10 +114,14 @@ void update(ChairmanInFenwick &cf, int x, int y, int lo, int hi,
             int b, int f) {
    auto p = cf.query(y, lo, hi);
    auto q = cf.query(x, lo, hi);
-   int d = p.first - q.first;
+   int d = sub(p.first, q.first);
    int c = p.second - q.second;
-   int up = d + c * b;
-   res += f * up;
+   int up = add(d, mul(c, b));
+   if (f == 1) {
+       res = add(res, up);
+   } else {
+       res = sub(res, up);
+   }
 }
 
 
@@ -116,12 +139,15 @@ void solve(ChairmanInFenwick &cf, int x, int y) {
     update(cf, x-1, y-1, bx+1, N, vx, 1);
     update(cf, x, y-1, by+1, N, vy, -1);
     update(cf, x, y-1, 1, by-1, vy, 1);
-    if (bx < by) res += V[bx] + V[by];
-    else res -= V[bx] + V[by];
-    cf.add(x, bx, -V[bx]);
-    cf.add(y, by, -V[by]);
-    cf.add(x, by, V[by]);
-    cf.add(y, bx, V[bx]);
+    if (bx < by) {
+        res = add(res, vx + vy);
+    } else {
+        res = sub(res, vx + vy);
+    }
+    cf.add(x, bx, -vx);
+    cf.add(y, by, -vy);
+    cf.add(x, by, vy);
+    cf.add(y, bx, vx);
     swap(pos[bx], pos[by]);
     swap(book[x], book[y]);
     printf("%lld\n", res);

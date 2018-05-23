@@ -24,17 +24,18 @@ struct ChairmanInFenwick {
     int N;  // number of positions, index is 1-based
     int M;  // number of weights, index is 0-based
     int T_cnt;
-    int16_t *root;
+    int *root;
     int *val;
-    int16_t *lc, *rc, *cnt;
+    int *lc, *rc;
+    int16_t *cnt;
 
     // cap is the number of elements to be added
     ChairmanInFenwick(int N_, int M_, int cap): N(N_), M(M_), T_cnt(1) {
-        root = new int16_t[N+1]{};
+        root = new int[N+1]{};
         const int numOfNodes = cap * int(log2(N)+2) * int(log2(M)+2);
         val = new int[numOfNodes]{};
-        lc = new int16_t[numOfNodes]{};
-        rc = new int16_t[numOfNodes]{};
+        lc = new int[numOfNodes]{};
+        rc = new int[numOfNodes]{};
         cnt = new int16_t[numOfNodes]{};
     }
 
@@ -69,7 +70,7 @@ struct ChairmanInFenwick {
 private:
     int lowbit(int x) {return x & -x;}
 
-    void update(int16_t &now, int w, int t, int16_t l, int16_t r) {
+    void update(int &now, int w, int t, int l, int r) {
         if (!now) now = T_cnt++;
         if (t > 0) {
             val[now] = ::add(val[now], t);

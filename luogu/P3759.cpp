@@ -103,13 +103,19 @@ void update(ChairmanInFenwick &cf, int x, int y, int lo, int hi,
 
 
 void solve(ChairmanInFenwick &cf, int x, int y) {
+    if (x == y) {
+        printf("%lld\n", res);
+        return;
+    }
     int bx = book[x];
     int by = book[y];
+    int vx = V[bx];
+    int vy = V[by];
 
-    update(cf, x-1, y-1, 1, bx-1, bx, -1);
-    update(cf, x-1, y-1, bx+1, N, bx, 1);
-    update(cf, x, y-1, by+1, N, by, -1);
-    update(cf, x, y-1, 1, by-1, by, 1);
+    update(cf, x-1, y-1, 1, bx-1, vx, -1);
+    update(cf, x-1, y-1, bx+1, N, vx, 1);
+    update(cf, x, y-1, by+1, N, vy, -1);
+    update(cf, x, y-1, 1, by-1, vy, 1);
     if (bx < by) res += V[bx] + V[by];
     else res -= V[bx] + V[by];
     cf.add(x, bx, -V[bx]);
@@ -119,6 +125,12 @@ void solve(ChairmanInFenwick &cf, int x, int y) {
     swap(pos[bx], pos[by]);
     swap(book[x], book[y]);
     printf("%lld\n", res);
+}
+
+void tally(ChairmanInFenwick &cf, int x) {
+    int bx = book[x];
+    auto p = cf.query(x-1, bx+1, N);
+    res += p.first + p.second * V[bx];
 }
 
 int main() {
@@ -133,6 +145,9 @@ int main() {
     ChairmanInFenwick cf(N, N+1, N+M);
     for (int i = 1; i <= N; i++) {
         cf.add(pos[i], i, V[i]);
+    }
+    for (int i = 1; i <= N; i++) {
+        tally(cf, i);
     }
     for (int i = 0; i < M; i++) {
         int x, y;

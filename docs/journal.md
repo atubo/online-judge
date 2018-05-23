@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/23
+* [洛谷 P3759] [TJOI2017]不勤劳的图书管理员：BIT套线段树，用了无耻O2，
+内存分配也比较hacky
+
 ### 5/22
 * [洛谷 P1272] 重建道路：树形DP，将多叉树转化为二叉树后处理。
 $dp1(u,k)$ 为u的子树中保留k个结点最少割边数，$dp2(u,k)$

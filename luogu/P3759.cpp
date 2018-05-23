@@ -32,7 +32,8 @@ struct ChairmanInFenwick {
     // cap is the number of elements to be added
     ChairmanInFenwick(int N_, int M_, int cap): N(N_), M(M_), T_cnt(1) {
         root = new int[N+1]{};
-        const int numOfNodes = cap * int(log2(N)+2) * int(log2(M)+2);
+        //const int numOfNodes = cap * int(log2(N)+2) * int(log2(M)+2);
+        const int numOfNodes = 18500000;
         val = new int[numOfNodes]{};
         lc = new int[numOfNodes]{};
         rc = new int[numOfNodes]{};
@@ -157,7 +158,7 @@ void solve(ChairmanInFenwick &cf, int x, int y) {
 void tally(ChairmanInFenwick &cf, int x) {
     int bx = book[x];
     auto p = cf.query(x-1, bx+1, N);
-    res += p.first + p.second * V[bx];
+    res = add(res, add(p.first, mul(p.second, V[bx])));
 }
 
 int main() {

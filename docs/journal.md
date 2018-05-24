@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/24
+* [洛谷 P1894] [USACO4.2]完美的牛栏The Perfect Stall：二分图最大匹配模板题
+
 ### 5/23
 * [洛谷 P3759] [TJOI2017]不勤劳的图书管理员：BIT套线段树，用了无耻O2，
 内存分配也比较hacky

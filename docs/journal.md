@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/25
+* [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点
+炸弹到达次数的期望值，有
+$E_u=\sum_{v\in \text{neighbor}(u)}(1-\frac{P}{Q})\frac{E_v}{d_v}+\delta_{u1}$
+在每个点爆炸的概率为 $P_u=E_u\cdot\frac{P}{Q}$
+
 ### 5/24
 * [洛谷 P1894] [USACO4.2]完美的牛栏The Perfect Stall：二分图最大匹配模板题
 * [洛谷 P2515] [HAOI2010]软件安装：树上DP，注意有循环依赖，需要缩点。

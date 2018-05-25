@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 5/24
 * [洛谷 P1894] [USACO4.2]完美的牛栏The Perfect Stall：二分图最大匹配模板题
+* [洛谷 P2515] [HAOI2010]软件安装：树上DP，注意有循环依赖，需要缩点。
 
 ### 5/23
 * [洛谷 P3759] [TJOI2017]不勤劳的图书管理员：BIT套线段树，用了无耻O2，

@@ -78,25 +78,96 @@ int solve(Node *nodes, int u, int m) {
     return ret;
 }
 
-int main() {
-    memset(dp, -1, sizeof(dp));
-    scanf("%d%d", &N, &M);
-    for (int i = 1; i <= N; i++) {
-        scanf("%d", &W[i]);
+
+void collapse(int n) {
+    vector<int> w(n+1), v(n+1), d(n+1);
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &w[i]);
     }
-    for (int i = 1; i <= N; i++) {
-        scanf("%d", &V[i]);
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &v[i]);
     }
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &d[i]);
+    }
+
+    vector<bool> vis(n+1, false), instack(n+1, false);
+    vector<int> root(n+1);
+    stack<int> st;
+    for (int i = 1; i <= n; i++) {
+        if (!vis[i]) {
+            int u = i;
+            while (u != 0 && !vis[u]) {
+                vis[u] = true;
+                st.push(u);
+                instack[u] = true;
+                u = d[u];
+            }
+            if (u == 0 || !instack[u]) {
+                while (!st.empty()) {
+                    int up = st.top();
+                    st.pop();
+                    instack[up] = false;
+                    root[up] = up;
+                    d[up] = root[u];
+                    u = up;
+                }
+            } else {
+                int r = u;
+                d[r] = 0;
+                int tw = 0, tv = 0;
+                while (!st.empty()) {
+                    u = st.top();
+                    st.pop();
+                    instack[u] = false;
+                    root[u] = r;
+                    tw += w[u];
+                    tv += v[u];
+                    if (u == r) break;
+                }
+                w[r] = tw;
+                v[r] = tv;
+                while (!st.empty()) {
+                    int up = st.top();
+                    st.pop();
+                    instack[up] = false;
+                    root[up] = up;
+                    d[up] = root[u];
+                    u = up;
+                }
+            }
+        }
+    }
+
+    int cnt = 1;
+    vector<int> id(n+1, -1);
+    for (int i = 1; i <= n; i++) {
+        if (root[i] == i) {
+            if (id[i] == -1) id[i] = cnt++;
+            int x = id[i];
+            W[x] = w[i];
+            V[x] = v[i];
+        }
+    }
+    N = cnt - 1;
     vector<vector<int>> children(N+1);
-    for (int i = 1; i <= N; i++) {
-        int d;
-        scanf("%d", &d);
-        children[d].push_back(i);
+    for (int i = 1; i <= n; i++) {
+        if (root[i] == i) {
+            int fa = (d[i] == 0 ? 0 : id[d[i]]);
+            children[fa].push_back(id[i]);
+        }
     }
 
     MultiTreeToBinaryTree bt(children, 0);
     int ans = solve(bt.nodes, 0, M);
     printf("%d", ans);
+}
+
+int main() {
+    memset(dp, -1, sizeof(dp));
+    int n;
+    scanf("%d%d", &n, &M);
+    collapse(n);
 
     return 0;
 }

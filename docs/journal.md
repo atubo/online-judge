@@ -14,6 +14,8 @@ $E_u=\sum_{v\in \text{neighbor}(u)}(1-\frac{P}{Q})\frac{E_v}{d_v}+\delta_{u1}$
 在每个点爆炸的概率为 $P_u=E_u\cdot\frac{P}{Q}$
 * [洛谷 P3760] [TJOI2017]异或和：(看了题解) 按位求解，线段树维护，
 竖式减法思想，[题解在此](http://www.cnblogs.com/xiejiadong/p/6815269.html)
+* [洛谷 P2018] 消息传递：DFS+DP 求出每条边对应的子树的最短完成时间，再枚举每个点
+出发的最短完成时间。
 
 ### 5/24
 * [洛谷 P1894] [USACO4.2]完美的牛栏The Perfect Stall：二分图最大匹配模板题

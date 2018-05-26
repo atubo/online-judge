@@ -13,6 +13,8 @@ Journal of the problems I have worked on
 * [Leetcode 837] New 21 Game: (看了题解) 用了倒推的方法，需要掌握！
 * [Leetcode 836] Rectangle Overlap:水题，但要注意不能用顶点在矩形内的判断
 方法，否则无法处理顶点都在边界的情况。
+* [Leetcode 835] Image Overlap:数据范围较小，暴力搞搞即可。
+要更快可用FFT (不会)。
 
 ### 5/25
 * [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点

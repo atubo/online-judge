@@ -14,7 +14,7 @@ public:
         while (nData_ < n) nData_ = nData_ << 1;
         int sz = 2 * nData_ + 1;
         data = new int[sz];
-        for (int i = 0; i < sz; i++) data[i] = NULL_VALUE;
+        memset(data, 0, sz * sizeof(int));
     }
 
     ~SegmentTreeSPU() {
@@ -25,7 +25,7 @@ public:
         i += nData_;
         data[i] = value;
         for (; i > 1; i >>= 1) {
-            int newVal = combine(data[i], data[i^1]);
+            int newVal = data[i] + data[i^1];
             if (data[i>>1] == newVal) break;
             data[i>>1] = newVal;
         }
@@ -37,10 +37,10 @@ public:
         int res = NULL_VALUE;
         for (; a <= b; a = (a+1) >> 1, b = (b-1) >> 1) {
             if ((a & 1) != 0) {
-                res = combine(res, data[a]);
+                res = res + data[a];
             }
             if ((b & 1) == 0) {
-                res = combine(res, data[b]);
+                res = res + data[b];
             }
         }
         return res;
@@ -52,9 +52,6 @@ public:
 private:
     int *data;
     int nData_;
-    int combine(int a, int b) const {
-        return a + b;
-    }
 };
 
 const int MAXN = 100010;
@@ -70,7 +67,6 @@ void solve(int k) {
     for (int i = 1; i <= N; i++) {
         int d = (S[i] >> k) & 1;
         int r = S[i] & ((1<<k) - 1);
-        //printf("i=%d d=%d r=%d\n", i, d, r);
         if (d) {
             cnt += st0.query(0, r) + st1.query(r+1, MAXS-1);
             int now = st1.query(r, r);
@@ -82,7 +78,6 @@ void solve(int k) {
         }
     }
     if (cnt & 1) ans |= (1<<k);
-    //printf("k=%d cnt=%d\n", k, cnt);
 }
 
 int main() {

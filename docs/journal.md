@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/26
+* [Leetcode 839] Similar String Groups: O(W)时间内判断两个字符串是否相似，再暴力枚举。
+
 ### 5/25
 * [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点
 炸弹到达次数的期望值，有

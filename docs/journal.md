@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [Leetcode 839] Similar String Groups: O(W)时间内判断两个字符串是否相似，再暴力枚举。
 * [Leetcode 838] Push Dominoes
 * [Leetcode 837] New 21 Game: (看了题解) 用了倒推的方法，需要掌握！
+* [Leetcode 836] Rectangle Overlap:水题，但要注意不能用顶点在矩形内的判断
+方法，否则无法处理顶点都在边界的情况。
 
 ### 5/25
 * [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点

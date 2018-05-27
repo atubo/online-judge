@@ -16,6 +16,8 @@ Journal of the problems I have worked on
 * [Leetcode 835] Image Overlap:数据范围较小，暴力搞搞即可。
 要更快可用FFT (不会)。
 * [洛谷 P2312] 解方程：Horner's method + 枚举 + 无耻O2
+* [Leetcode 834] Sum of Distances in Tree:上下两遍DFS，第一遍DFS求出每个
+结点到其子树的结点的总距离，第二遍DFS从根结点开始将结果向下转移。
 
 ### 5/25
 * [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点

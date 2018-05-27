@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 minmax 的 heuristics
 * [Leetcode 842] Split Array into Fibonacci Sequence: 枚举前两个数所在的
 位置进行判断即可。
+* [Leetcode 841] Keys and Rooms: 简单BFS即可
 
 ### 5/26
 * [Leetcode 839] Similar String Groups: O(W)时间内判断两个字符串是否相似，再暴力枚举。

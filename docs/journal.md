@@ -15,6 +15,7 @@ Journal of the problems I have worked on
 方法，否则无法处理顶点都在边界的情况。
 * [Leetcode 835] Image Overlap:数据范围较小，暴力搞搞即可。
 要更快可用FFT (不会)。
+* [洛谷 P2312] 解方程：Horner's method + 枚举 + 无耻O2
 
 ### 5/25
 * [洛谷 P2973] [USACO10HOL]赶小猪Driving Out the Piggi…：先求出每个点

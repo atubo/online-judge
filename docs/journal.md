@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/28
+* [洛谷 P3758] [TJOI2017]可乐:将每个结点时刻t的状态分为已爆和未爆，很容易
+推出时刻t到t+1的转移方程，但直接DP复杂度为 $O(T\cdot M)$ 注意到转移方程为线性，
+用矩阵快速幂可高效得出结果。
+
 ### 5/27
 * [Leetcode 843] Guess the Word: 建图，结点为单词，边为匹配数，每次guess后
 把所有匹配数不符合的邻居标记，小小的调了一下随机数后DFS可裸过。看题解发现可以用

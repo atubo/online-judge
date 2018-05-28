@@ -16,6 +16,7 @@ minmax 的 heuristics
 * [Leetcode 841] Keys and Rooms: 简单BFS即可
 * [洛谷 P2825] [HEOI2016/TJOI2016]游戏：分别标出行和列的可达区域后构建二分图，
 求最大匹配。
+* [洛谷 P2680] 运输计划：(看了题解)二分 + 树上差分
 
 ### 5/26
 * [Leetcode 839] Similar String Groups: O(W)时间内判断两个字符串是否相似，再暴力枚举。

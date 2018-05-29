@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 5/29
+* [洛谷 P3317] [SDOI2014]重建：(看了题解) 矩阵树定理的应用
+
 ### 5/28
 * [洛谷 P3758] [TJOI2017]可乐:将每个结点时刻t的状态分为已爆和未爆，很容易
 推出时刻t到t+1的转移方程，但直接DP复杂度为 $O(T\cdot M)$ 注意到转移方程为线性，

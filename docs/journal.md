@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/2
+* [洛谷 P3233] [HNOI2014]世界树：虚树 + 树形DP，卡常甚严，搞了好久恶心的优化，
+再加上无耻O2才过。
+
 ### 5/29
 * [洛谷 P3317] [SDOI2014]重建：(看了题解) 矩阵树定理的应用
 

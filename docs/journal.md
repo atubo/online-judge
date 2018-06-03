@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/3
+* [洛谷 P3320] [SDOI2015]寻宝游戏：对每一个新加结点 $u$ 找出其在已加结点中dfs
+序的前驱和后继，令其中与 $u$ 的LCA较低的为 $v$ 并令 $LCA(u,v)=p$
+加入边 $u\rightarrow p$ 找出路径 $v\rightarrow p$ 上最高的关键点 $v'$
+(用树链剖分维护) 更新$v'$ 的父亲。删除类似。看题解发现找出dfs
+序的前驱和后继可直接用 $d(prev,u)+d(u,next)-d(prev,next)$ 来更新答案，
+似乎更为清晰。
+
 ### 6/2
 * [洛谷 P3233] [HNOI2014]世界树：虚树 + 树形DP，卡常甚严，搞了好久恶心的优化，
 再加上无耻O2才过。

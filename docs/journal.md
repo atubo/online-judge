@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/5
+* [洛谷 P4103] [HEOI2014]大工程: 虚树 + DP，但评测机比较诡异，若每次把虚树
+的eidx归零则会RE最后两个点，debug两天未果。
+
 ### 6/3
 * [洛谷 P3320] [SDOI2015]寻宝游戏：对每一个新加结点 $u$ 找出其在已加结点中dfs
 序的前驱和后继，令其中与 $u$ 的LCA较低的为 $v$ 并令 $LCA(u,v)=p$

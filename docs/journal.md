@@ -7,8 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/7
+* [SPOJ HIGH] HIGH - Highways: 矩阵树定理裸题。
+
 ### 6/6
-* [POJ 2406] Power Strings: 用 z 函数解之
+* [POJ 2406] Power Strings: 用 z 函数解之, 题解直接用KMP，复杂度更低。
 
 ### 6/5
 * [洛谷 P4103] [HEOI2014]大工程: 虚树 + DP，但评测机比较诡异，若每次把虚树

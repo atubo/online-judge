@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/6
+* [POJ 2406] Power Strings: 用 z 函数解之
+
 ### 6/5
 * [洛谷 P4103] [HEOI2014]大工程: 虚树 + DP，但评测机比较诡异，若每次把虚树
 的eidx归零则会RE最后两个点，debug两天未果。

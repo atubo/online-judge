@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 6/8
 * [洛谷 P4178] Tree：点分治第一弹
+* [洛谷 P2634] [国家集训队]聪聪可可：点分治
 
 ### 6/7
 * [SPOJ HIGH] HIGH - Highways: 矩阵树定理裸题。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/8
+* [洛谷 P4178] Tree：点分治第一弹
+
 ### 6/7
 * [SPOJ HIGH] HIGH - Highways: 矩阵树定理裸题。
 

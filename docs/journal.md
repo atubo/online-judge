@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 6/9
 * [洛谷 P3338] [ZJOI2014]力：FFT 第一弹
+* [洛谷 P1919] 【模板】A*B Problem升级版（FFT快速傅里叶）
 
 ### 6/8
 * [洛谷 P4178] Tree：点分治第一弹

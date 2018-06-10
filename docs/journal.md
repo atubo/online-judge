@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/9
+* [洛谷 P3338] [ZJOI2014]力：FFT 第一弹
+
 ### 6/8
 * [洛谷 P4178] Tree：点分治第一弹
 * [洛谷 P2634] [国家集训队]聪聪可可：点分治

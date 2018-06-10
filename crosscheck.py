@@ -191,11 +191,13 @@ def generate_input(size):
         n = size
 
 def compare_double():
-    with open('out1.txt') as f:
-        x1 = float(f.read())
-    with open('out2.txt') as f:
-        x2 = float(f.read())
-    return 0 if abs(x1 - x2) < 0.0001 else 1
+    with open('out1.txt') as f1:
+        with open('out2.txt') as f2:
+            x1 = float(f1.readline())
+            x2 = float(f2.readline())
+            if abs(x1 - x2) > 0.01:
+                return 1
+    return 0
 
 
 def one_test(size):

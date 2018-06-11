@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 枚举上下两个整数值。将 $y$ 加上求得的增量，有
 $f_i=\sum x^2 + \sum y^2 + \sum_j x_j \cdot y_{i+j}$
 其中前两项与 $i$ 无关，第三项可用 FFT 求出。注意精度即可。
+* [洛谷 P3803] 【模板】多项式乘法（FFT）
 
 ### 6/9
 * [洛谷 P3338] [ZJOI2014]力：FFT 第一弹

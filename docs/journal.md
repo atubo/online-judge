@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/10
+* [洛谷 P3723] [AH2017/HNOI2017]礼物：令两个数列分别为 $x$ 和 $y$
+不难求得当 $y$ 的增量为 $(\sum x - \sum y)/n$ 时取得极值，当不能整除时
+枚举上下两个整数值。将 $y$ 加上求得的增量，有
+$f_i=\sum x^2 + \sum y^2 + \sum_j x_j \cdot y_{i+j}$
+其中前两项与 $i$ 无关，第三项可用 FFT 求出。注意精度即可。
+
 ### 6/9
 * [洛谷 P3338] [ZJOI2014]力：FFT 第一弹
 * [洛谷 P1919] 【模板】A*B Problem升级版（FFT快速傅里叶）

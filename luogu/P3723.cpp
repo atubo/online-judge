@@ -64,7 +64,7 @@ public:
     }
 };
 
-vector<int> rotateProduct(const vector<int>& x, const vector<int> &y) {
+vector<int64_t> rotateProduct(const vector<int>& x, const vector<int> &y) {
     const int n = x.size();
     int nn = log2(n) + 3;
     nn = (1 << nn);
@@ -77,26 +77,26 @@ vector<int> rotateProduct(const vector<int>& x, const vector<int> &y) {
     Fft::four1(b, 1);
     vector<double> c = Fft::innerProduct(a, b);
     Fft::four1(c, -1);
-    vector<int> ret(n);
+    vector<int64_t> ret(n);
     for (int i = 0; i < n; i++) {
-        ret[i] = (c[2*(i+n-1)] + 0.1)/nn;
+        ret[i] = c[2*(i+n-1)]/nn  + 0.1;
     }
     return ret;
 }
 
-int ans = INT_MAX;
+int64_t ans = 1e12;
 int N, M;
 
 void solve(int c, const vector<int> &x, vector<int> y) {
-    int totsq = 0;
+    int64_t totsq = 0;
     for (int i = 0; i < N; i++) {
         y[i] += c;
         totsq += y[i]*y[i] + x[i]*x[i];
     }
 
-    vector<int> z = rotateProduct(x, y);
+    vector<int64_t> z = rotateProduct(x, y);
 
-    int maxp = *max_element(z.begin(), z.end());
+    int64_t maxp = *max_element(z.begin(), z.end());
     ans = min(ans, totsq - 2*maxp);
 }
 
@@ -125,6 +125,6 @@ int main() {
     for (int c: cz) {
         solve(c, x, y);
     }
-    printf("%d\n", ans);
+    printf("%lld\n", ans);
     return 0;
 }

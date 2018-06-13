@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/13
+* [洛谷 P4149] [IOI2011]Race：（看了题解）点分治。
+
 ### 6/12
 * [洛谷 P3321] [SDOI2015]序列统计：（题解都看了半天）转化为素数原根表示后
 转移方程是卷积的形式，用 NTT + 快速幂 解决。

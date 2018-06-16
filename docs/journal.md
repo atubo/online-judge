@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/16
+* [洛谷 P3676] 小清新数据结构题：（照题解写的）
+
 ### 6/13
 * [洛谷 P4149] [IOI2011]Race：（看了题解）点分治。
 * [洛谷 P3806] 【模板】点分治1

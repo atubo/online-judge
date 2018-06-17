@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/17
+* [洛谷 P3674] 小清新人渣的本愿：（照题解写的）莫队 + bitset
+
 ### 6/16
 * [洛谷 P3676] 小清新数据结构题：（照题解写的）
 

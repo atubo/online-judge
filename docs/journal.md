@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/23
+* [洛谷 P1494] [国家集训队]小Z的袜子：莫队，维护每种颜色出现的次数。
+
 ### 6/22
 * [洛谷 P2519] [HAOI2011]problem a：注意到每一个陈述对应一个 $[b+1,N-a]$
 的区间，令区间的权值等于区间长度和区间人数的最小值，则问题可转化为求不相交区间

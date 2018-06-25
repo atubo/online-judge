@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/25
+* [洛谷 P4592] [TJOI2018]异或：分别按父子关系和dfn序建立可持久化trie树，
+按位贪心即可。
+
 ### 6/24
 * [洛谷 P4462] [CQOI2018]异或序列：先转化为前缀和，问题等价于求
 $(x,y)$ 对满足 $S_{x-1}\oplus S_y = K$ 用莫队算法解决。

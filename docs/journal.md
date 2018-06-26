@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/26
+* [洛谷 P3750] [六省联考2017]分手是祝愿：照题解写的。
+
 ### 6/25
 * [洛谷 P4592] [TJOI2018]异或：分别按父子关系和dfn序建立可持久化trie树，
 按位贪心即可。

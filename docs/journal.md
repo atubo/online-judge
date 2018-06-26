@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 6/25
 * [洛谷 P4592] [TJOI2018]异或：分别按父子关系和dfn序建立可持久化trie树，
 按位贪心即可。
+* [洛谷 P3038] [USACO11DEC]牧草种植Grass Planting：树上差分 + BIT维护
+dfn序的区间和。
 
 ### 6/24
 * [洛谷 P4462] [CQOI2018]异或序列：先转化为前缀和，问题等价于求

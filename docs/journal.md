@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/27
+* [洛谷 P1768] 天路：（看了题解）二分 + SPFA判负环。注意结点号和数量似乎
+与给定不符，须自行离散化，否则会RE第七个点。
+
 ### 6/26
 * [洛谷 P3750] [六省联考2017]分手是祝愿：照题解写的。学到了求
 $v_i=i^{-1} \mod p, i\in [1, p-1]$ 的方法，

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/28
+* [洛谷 P3558] [POI2013]BAJ-Bytecomputer：不难发现最终序列一定由
+-1， 0， 1 组成。用DP解决，令 $dp(i,j)$ 表示位置为 $i$, 其值为 $j$
+的最优解。
+
 ### 6/27
 * [洛谷 P1768] 天路：（看了题解）二分 + SPFA判负环。注意结点号和数量似乎
 与给定不符，须自行离散化，否则会RE第七个点。

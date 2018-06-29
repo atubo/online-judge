@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/29
+* [洛谷 P4151] [WC2011]最大XOR和路径：线性基第一弹（看题解作的）
+
 ### 6/28
 * [洛谷 P3558] [POI2013]BAJ-Bytecomputer：不难发现最终序列一定由
 -1， 0， 1 组成。用DP解决，令 $dp(i,j)$ 表示位置为 $i$, 其值为 $j$

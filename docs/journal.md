@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 6/30
+* [洛谷 P3292] [SCOI2016]幸运数字：（照题解写的）树链剖分 + 线性基
+
 ### 6/29
 * [洛谷 P4151] [WC2011]最大XOR和路径：线性基第一弹（看题解作的）
 

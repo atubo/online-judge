@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/2
+* [洛谷 P1450] [HAOI2008]硬币购物：（看了题解）DP + 容斥原理
+
 ### 7/1
 * [洛谷 P4172] [WC2006]水管局长: LCT，将询问反向处理转化为依次加边。
 

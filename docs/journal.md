@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/1
+* [洛谷 P4172] [WC2006]水管局长: LCT，将询问反向处理转化为依次加边。
+
 ### 6/30
 * [洛谷 P3292] [SCOI2016]幸运数字：（照题解写的）树链剖分 + 线性基
 * [洛谷 P4211] [LNOI2014]LCA：（照题解写的）树链剖分 + 离线处理

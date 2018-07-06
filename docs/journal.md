@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/5
+* [洛谷 P3943] 星空：（题解都看了半天）先差分，$k$ 个点最多变为 $2k$ 个点，
+用BFS求这 $2k$ 个点两两的最短距离，最后用状压DP求解。
+
 ### 7/4
 * [洛谷 P4219] [BJOI2014]大融合：LCT维护子树大小，
 见[题解](https://blog.csdn.net/wu_tongtong/article/details/78648537),需要注意：结点在多次access操作时会处于Splay树的不同位置，

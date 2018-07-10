@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/9
+* [洛谷 P2050] [NOI2012]美食节：（看题解才会作）最小费用最大流 + 动态加边。
+
 ### 7/8
 * [洛谷 P2605] [ZJOI2010]基站选址：DP + 线段树优化，题解都看了半天。
 

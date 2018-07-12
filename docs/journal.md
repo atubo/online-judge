@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/11
+* [洛谷 P3980] [NOI2008]志愿者招募：还是得看题解。
+
 ### 7/10
 * [洛谷 P3159] [CQOI2012]交换棋子: 拆点 + 费用流。看题解才发现拆两个点的
 建图方法。

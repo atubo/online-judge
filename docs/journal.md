@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/14
+* [洛谷 P2764] 最小路径覆盖问题：模板题，转化为二分图最大匹配。
+
 ### 7/13
 * [洛谷 P2488] SDOI2011]工作安排：费用流，用类似P2050的方法加速：每次增广后
 动态调整边的费用和容量。

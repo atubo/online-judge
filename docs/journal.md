@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/15
+* [洛谷 P2805] [NOI2009]植物大战僵尸：建立起保护关系的图后不难发现是要求
+最大点权闭合图。
+
 ### 7/14
 * [洛谷 P2764] 最小路径覆盖问题：模板题，转化为二分图最大匹配。
 

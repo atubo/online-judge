@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/18
+* [洛谷 P3231] [HNOI2013]消毒：参考题解，枚举z方向上消毒的可能性，将剩余的
+投影到x-y平面上转化为二分图最小点覆盖问题。
+
 ### 7/16
 * [洛谷 P3228] [HNOI2013]数列：生成函数 $x+x^2+x^3+...+x^M$  , $K-1$ 天后为
 $f=[\sum_{i=1}^M x^i]^{K-1}$ 对于 $x\in[0, (N-1)-M(K-1)]$ 方案数为 $f$

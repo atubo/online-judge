@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/21
+* [洛谷 P1829] [国家集训队]Crash的数字表格 / JZPTAB：还是不太会推莫比乌斯反演，
+照[题解](https://blog.csdn.net/litble/article/details/79518721)写的。
+
 ### 7/20
 * [洛谷 P4237]：先用最短路求出各个雇佣兵到各个宝物的最小费用，再跑一遍最小费用
 最大流就可以了，用了无耻O2。

@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 7/21
 * [洛谷 P1829] [国家集训队]Crash的数字表格 / JZPTAB：还是不太会推莫比乌斯反演，
 照[题解](https://blog.csdn.net/litble/article/details/79518721)写的。
+* [洛谷 P3177] [HAOI2015]树上染色：参考题解，树上DP。
 
 ### 7/20
 * [洛谷 P4237]：先用最短路求出各个雇佣兵到各个宝物的最小费用，再跑一遍最小费用

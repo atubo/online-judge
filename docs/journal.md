@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/22
+* [洛谷 P2607] [ZJOI2008]骑士：不难发现生成的图的性质 - 每个连通块是一个基环树，
+根是一个环。对环上每个点为根的树作树上DP，然后对环作一个环形DP即可。
+
 ### 7/21
 * [洛谷 P1829] [国家集训队]Crash的数字表格 / JZPTAB：还是不太会推莫比乌斯反演，
 照[题解](https://blog.csdn.net/litble/article/details/79518721)写的。

@@ -14,6 +14,8 @@ int curr_k;
 
 namespace ConvextHullTrick {
 
+    int buf[MAXN];
+
     int64_t Y(int i) {
         int64_t res = ps[i]*ps[i] - dp[i][curr_k-1];
         return res;
@@ -43,8 +45,8 @@ namespace ConvextHullTrick {
     void runDp() {
         // initialize N and S
 
-        deque<int> q;
-        q.push_back(curr_k-1);
+        int p = 0, q = 0;
+        buf[q++] = curr_k-1;
         for (int i = curr_k; i <= N; i++) {
             // it may make sense to skip 0 elements
             // if that's the case, un-comment the following
@@ -54,15 +56,16 @@ namespace ConvextHullTrick {
                 continue;
             }
             */
-            while (q.size() > 1 && numer(q[0], q[1]) <= denom(q[0], q[1]) * ps[i]) {
-                q.pop_front();
+            while (q-p > 1 &&
+                   numer(buf[p], buf[p+1]) <= denom(buf[p], buf[p+1]) * ps[i]) {
+                p++;
             }
-            dp[i][curr_k] = getDp(i, q.front());
-            split[i][curr_k] = q.front();
-            while (q.size() > 1 && !isConvex(q[q.size()-2], q[q.size()-1], i)) {
-                q.pop_back();
+            dp[i][curr_k] = getDp(i, buf[p]);
+            split[i][curr_k] = buf[p];
+            while (q-p > 1 && !isConvex(buf[q-2], buf[q-1], i)) {
+                q--;
             }
-            q.push_back(i);
+            buf[q++] = i;
         }
     }
 }

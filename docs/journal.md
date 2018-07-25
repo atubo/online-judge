@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/24
+* [洛谷 P3648] [APIO2014]序列分割：DP + 斜率优化
+
 ### 7/22
 * [洛谷 P2607] [ZJOI2008]骑士：不难发现生成的图的性质 - 每个连通块是一个基环树，
 根是一个环。对环上每个点为根的树作树上DP，然后对环作一个环形DP即可。

@@ -26,11 +26,14 @@ namespace ConvextHullTrick {
     }
 
     int64_t numer(int k, int j) {
-        return Y(j) - Y(k);
+        int64_t res1 = ps[j]*ps[j] - dp[j][curr_k-1];
+        int64_t res2 = ps[k]*ps[k] - dp[k][curr_k-1];
+        return res1 - res2;
+        //return Y(j) - Y(k);
     }
 
     int64_t denom(int k, int j) {
-        return X(j) - X(k);
+        return ps[j] - ps[k];
     }
 
     bool isConvex(int a, int b, int c) {

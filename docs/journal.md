@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/26
+* [洛谷 P3975] [TJOI2015]弦论：用后缀树和后缀数组分别处理t为0和1的情况。
+看题解发现用后缀自动机也可以作。
+
 ### 7/24
 * [洛谷 P3648] [APIO2014]序列分割：DP + 斜率优化
 

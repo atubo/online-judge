@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/28
+* [洛谷 P3778] [APIO2017]商旅：先求出每两点之间的最短距离和最大收益，
+再二分 + SPFA 判负环。
+
 ### 7/26
 * [洛谷 P3975] [TJOI2015]弦论：用后缀树和后缀数组分别处理t为0和1的情况。
 看题解发现用后缀自动机也可以作。

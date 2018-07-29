@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 7/29
+* [洛谷 P2615] 神奇的幻方：水题练手
+
 ### 7/28
 * [洛谷 P3778] [APIO2017]商旅：先求出每两点之间的最短距离和最大收益，
 再二分 + SPFA 判负环。

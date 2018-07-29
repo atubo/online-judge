@@ -13,6 +13,7 @@ Journal of the problems I have worked on
 * [洛谷 P2654] 原核生物培养：堆 + DP
 * [洛谷 P2651] 添加括号III：（入门难度？）颇想了一会才发现最佳解必为
 $a_1/(a_2/a_3/a_4/...)$ 的形式
+* [洛谷 P2871] [USACO07DEC]手链Charm Bracelet：背包裸题
 
 ### 7/26
 * [洛谷 P3975] [TJOI2015]弦论：用后缀树和后缀数组分别处理t为0和1的情况。

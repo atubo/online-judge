@@ -11,7 +11,7 @@ using namespace std;
 
 class Solution {
 public:
-    char nextGreaterLetter(string &letters, char target) {
+    char nextGreatestLetter(string &letters, char target) {
         const int n = letters.length();
         if (letters[n-1] <= target) return letters[0];
         int lo = -1, hi = n-1;

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/5
+* [洛谷 P3295] [SCOI2016]萌萌哒：照题解写的，第一次了解了倍增+并查集的解法。
+
 ### 8/2
 * [洛谷 P2151] [SDOI2009]HH去散步：搞了好几天，一开始的思路是倍增，
 $dp[fe][le][k]$ 表示起始边为fe,终止边为le,长度 $2^k$ 的路径数。

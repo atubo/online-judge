@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/7
+* [洛谷 P3343] [ZJOI2015]地震后的幻想乡：太难了，题解都看了半天，
+不过实现并不难。
+
 ### 8/6
 * [洛谷 P3239] [HNOI2015]亚瑟王：照题解写的
 

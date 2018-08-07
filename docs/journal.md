@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/6
+* [洛谷 P3239] [HNOI2015]亚瑟王：照题解写的
+
 ### 8/5
 * [洛谷 P3295] [SCOI2016]萌萌哒：照题解写的，第一次了解了倍增+并查集的解法。
 

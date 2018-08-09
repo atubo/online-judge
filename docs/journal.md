@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/8
+* [洛谷 P2221] [HAOI2012]高速公路: 令 $a_i$ 表示点i 到 点i+1的费用，对于询问 $(l,r)$ ， 费用的期望值为
+$\sum_{i=0}^{m-2}a_i\cdot(i+1)\cdot(m-1-i)$ 用线段树维护
+$a_i$ , $i\cdot a_i$ , $i^2 \cdot a_i$ 的区间和即可求出结果。
+
 ### 8/7
 * [洛谷 P3343] [ZJOI2015]地震后的幻想乡：太难了，题解都看了半天，
 不过实现并不难。

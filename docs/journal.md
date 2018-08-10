@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/9
+* [洛谷 P3214] [HNOI2011]卡农：没想出来，看题解写的。
+
 ### 8/8
 * [洛谷 P2221] [HAOI2012]高速公路: 令 $a_i$ 表示点i 到 点i+1的费用，对于询问 $(l,r)$ ， 费用的期望值为
 $\sum_{i=0}^{m-2}a_i\cdot(i+1)\cdot(m-1-i)$ 用线段树维护

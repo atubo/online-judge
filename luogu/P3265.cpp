@@ -4,14 +4,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int64_t gcd(int64_t a, int64_t b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
-}
-
+const double EPS = 1e-9;
 const int MAXN = 510;
 int N, M;
-int A[MAXN][MAXN];
+double A[MAXN][MAXN];
 
 struct Expense {
     int cost, id;
@@ -22,16 +18,24 @@ struct Expense {
 } expenses[MAXN];
 
 bool isZero(int i) {
+    bool ret = true;
     for (int j = 0; j < M; j++) {
-        if (A[i][j] != 0) return false;
+        if (fabs(A[i][j]) > EPS) ret = false;
+        else A[i][j] = 0;
     }
-    return true;
+    return ret;
 }
 
 void swapCol(int i, int col) {
     int p = col;
-    while (p < M && A[i][p] == 0) p++;
-    assert(p < M);
+    double maxv = fabs(A[i][col]);
+    for (int j = col+1; j < M; j++) {
+        if (maxv < fabs(A[i][j])) {
+            maxv = fabs(A[i][j]);
+            p = j;
+        }
+    }
+
     for (int k = 0; k < N; k++) {
         swap(A[k][col], A[k][p]);
     }
@@ -40,17 +44,19 @@ void swapCol(int i, int col) {
 void combine(const vector<int> &picked, int row) {
     for (int idx = 0; idx < (int)picked.size(); idx++) {
         int i = picked[idx];
-        int64_t g = gcd(A[row][idx], A[i][idx]);
-        int64_t c1 = A[i][idx] / g;
-        int64_t c2 = A[row][idx] / g;
+        double c = - A[row][idx]/A[i][idx];
         for (int j = 0; j < M; j++) {
-            A[row][j] = A[row][j] * c1 - A[i][j] * c2;
+            A[row][j] += A[i][j] * c;
         }
     }
-    if (A[row][row] < 0) {
-        for (int j = row; j < M; j++) {
-            A[row][j] = -A[row][j];
+}
+
+void print() {
+    for (int k1 = 0; k1 < N; k1++) {
+        for (int k2 = 0; k2 < M; k2++) {
+            printf("%lf ", A[k1][k2]);
         }
+        printf("\n");
     }
 }
 
@@ -59,15 +65,6 @@ pair<int, int> purchase() {
     vector<int> picked;
     for (int idx = 0; idx < N; idx++) {
         int i = expenses[idx].id;
-#if 1
-        printf("idx=%d i=%d\n", idx, i);
-        for (int k1 = 0; k1 < N; k1++) {
-            for (int k2 = 0; k2 < M; k2++) {
-                printf("%d ", A[k1][k2]);
-            }
-            printf("\n");
-        }
-#endif
         combine(picked, i);
         if (isZero(i)) continue;
         swapCol(i, picked.size());
@@ -81,7 +78,7 @@ int main() {
     scanf("%d%d", &N, &M);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            scanf("%d", &A[i][j]);
+            scanf("%lf", &A[i][j]);
         }
     }
     for (int i = 0; i < N; i++) {

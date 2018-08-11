@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/10
+* [洛谷 P3265] [JLOI2015]装备购买：将装备按价格从小到大排序，
+依次判断是否与已选的装备集合线性无关即可。
+
 ### 8/9
 * [洛谷 P3214] [HNOI2011]卡农：没想出来，看题解写的。
 

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/11
+* [洛谷 P2485] [SDOI2011]计算器：K=1:快速幂，K=2：求逆元，
+K=3：离散对数，可用bady-step giant-step 算法求。
+
 ### 8/10
 * [洛谷 P3265] [JLOI2015]装备购买：将装备按价格从小到大排序，
 依次判断是否与已选的装备集合线性无关即可。

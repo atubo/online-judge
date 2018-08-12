@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/12
+* [洛谷 P2480] [SDOI2010]古代猪文：易知所求为
+$G^{\sum_{k|n}{n \choose n/k}}\mod 999911659$
+先要求 $\sum_{k|n}{n \choose n/k} \mod 999911658$
+将999911658分解质因数，用卢卡斯定理求出 $\sum_{k|n}{n \choose n/k}$ 对所以这些质因数的模，用中国剩余定理可求
+$\sum_{k|n}{n \choose n/k} \mod 999911658$
+再用快速幂即可得到结果。
+
 ### 8/11
 * [洛谷 P2485] [SDOI2011]计算器：K=1:快速幂，K=2：求逆元，
 K=3：离散对数，可用bady-step giant-step 算法求。

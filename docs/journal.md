@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/14
+* [洛谷 P3833] [SHOI2012]魔法树：树链剖分模板题
+
 ### 8/13
 * [洛谷 P3217] [HNOI2011]数矩形：看了题解写的，对每个点对，求
 中心和距离，任意两个点对若中心和距离都相同，则必可组成矩形，枚举

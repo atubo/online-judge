@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/13
+* [洛谷 P3217] [HNOI2011]数矩形：看了题解写的，对每个点对，求
+中心和距离，任意两个点对若中心和距离都相同，则必可组成矩形，枚举
+这些矩形即可。
+
 ### 8/12
 * [洛谷 P2480] [SDOI2010]古代猪文：易知所求为
 $G^{\sum_{k|n}{n \choose n/k}}\mod 999911659$

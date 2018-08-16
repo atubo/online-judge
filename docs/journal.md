@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/15
+* [洛谷 P4298] [CTSC2008]祭祀：看了题解才了解了最长反链这个东东。 先求传递闭包，建立二分图后求最大独立集。
+
 ### 8/14
 * [洛谷 P3833] [SHOI2012]魔法树：树链剖分模板题
 

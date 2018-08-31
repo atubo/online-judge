@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 8/31
+* [洛谷 P1338] 末日的传说：每次找出最前面要放的数字，再递归求解
+剩余的子串即可。
+
 ### 8/30
 * [洛谷 P1066] 2^k进制数：高精 + DP
 

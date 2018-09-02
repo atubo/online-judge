@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 9/1
 * [洛谷 P1073] 最优贸易：Tarjan缩点 + 拓扑排序。一开始没注意
 判断是否可达终点，WA了八个点。
+* [洛谷 P2522] [HAOI2011]Problem b：莫比乌斯反演
 
 ### 8/31
 * [洛谷 P1338] 末日的传说：每次找出最前面要放的数字，再递归求解

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/2
+* [洛谷 P1582] 倒水：水题，位运算。
+
 ### 9/1
 * [洛谷 P1073] 最优贸易：Tarjan缩点 + 拓扑排序。一开始没注意
 判断是否可达终点，WA了八个点。

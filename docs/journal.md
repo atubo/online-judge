@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/3
+* [洛谷 P2155] [SDOI2008]沙拉公主的困惑：照题解写的，注意
+$M=1$ 的情况。
+
 ### 9/2
 * [洛谷 P1582] 倒水：水题，位运算。
 

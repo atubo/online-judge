@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 9/6
 * [洛谷 P4570] [BJWC2011]元素：与P4301相似，贪心+线性基。
+* [洛谷 P4070] [SDOI2016]生成魔咒：SAM
 
 ### 9/5
 * [洛谷 P4301] [CQOI2013]新Nim游戏：其实就是要找出和最大的线性

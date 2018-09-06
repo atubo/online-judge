@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/6
+* [洛谷 P4570] [BJWC2011]元素：与P4301相似，贪心+线性基。
+
 ### 9/5
 * [洛谷 P4301] [CQOI2013]新Nim游戏：其实就是要找出和最大的线性
 无关的集合。从大到小排序，依次判断/加入线性基即可。

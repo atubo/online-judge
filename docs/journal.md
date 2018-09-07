@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/7
+* [洛谷 P4248] [AHOI2013]差异：和的前两项很简单。为求第三项，
+建立后缀数组，令 $A[i]$ 表示rank为 $i$ 的后缀和所有rank大于
+$i$ 的后缀的lcp的和， 有 $A[i]=lcp[i]\cdot(j-i)+A[j]$
+其中 $j=\min(k|k>i, lcp[j]\le lcp[i])$ DP + 单调队列可在
+$O(N)$ 时间内求得所有 $A[i]$
+
 ### 9/6
 * [洛谷 P4570] [BJWC2011]元素：与P4301相似，贪心+线性基。
 * [洛谷 P4070] [SDOI2016]生成魔咒：SAM

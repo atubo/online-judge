@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/8
+* [洛谷 P4236] 扑克：没想出来，看的题解。
+
 ### 9/7
 * [洛谷 P4248] [AHOI2013]差异：和的前两项很简单。为求第三项，
 建立后缀数组，令 $A[i]$ 表示rank为 $i$ 的后缀和所有rank大于

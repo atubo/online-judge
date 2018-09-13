@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/12
+* [洛谷 P2523] [HAOI2011]Problem c：照题解写的。
+
 ### 9/11
 * [洛谷 P4230] 连环病原体：LCT处理加/删边 + 双指针找加强区间。
 找到加强区间后对每个点（影响） $i$ 求出起点大于等于 $i$ 的区间

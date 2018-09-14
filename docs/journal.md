@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/13
+* [洛谷 P3199] [HNOI2009]最小圈：分数规划, SPFA判负环。
+
 ### 9/12
 * [洛谷 P2523] [HAOI2011]Problem c：照题解写的。
 

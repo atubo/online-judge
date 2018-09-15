@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/15
+* [洛谷 P3225] [HNOI2012]矿场搭建：看出了割点，但没看出来
+点双连通分量。
+
 ### 9/14
 * [洛谷 P3226] [HNOI2012]集合选数：看了题解，确实比较巧妙。
 

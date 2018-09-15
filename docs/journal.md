@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/14
+* [洛谷 P3226] [HNOI2012]集合选数：看了题解，确实比较巧妙。
+
 ### 9/13
 * [洛谷 P3199] [HNOI2009]最小圈：分数规划, SPFA判负环。
 

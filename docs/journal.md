@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/16
+* [洛谷 P1463] [POI2002][HAOI2007]反素数：对任意正整数
+$x=\prod p_i^{m_i}$ 有 $g(x)=\prod (m_i+1)$
+考虑到 $N$ 的范围，只须考虑前9个素数，令 $dp(g,i)$
+表示从第i个以后的素数组合出的约数的个数为g的最小的正整数，
+有 $dp(g,i)=\min_{f|g}p_i^{f-1}\cdot dp(g/f, i+1)$
+求出 $dp(g,0), \forall g\in [1, 2100]$ 并维护单调队列即可。
+
 ### 9/15
 * [洛谷 P3225] [HNOI2012]矿场搭建：看出了割点，但没看出来
 点双连通分量。

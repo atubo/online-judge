@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/18
+* [洛谷 P3346] [ZJOI2015]诸神眷顾的幻想乡：广义后缀自动机第一弹。
+
 ### 9/16
 * [洛谷 P1463] [POI2002][HAOI2007]反素数：对任意正整数
 $x=\prod p_i^{m_i}$ 有 $g(x)=\prod (m_i+1)$

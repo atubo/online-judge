@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/20
+* [洛谷 P3413] SAC#1 - 萌数：数位DP找出“不萌”的数的个数。
+
 ### 9/18
 * [洛谷 P3346] [ZJOI2015]诸神眷顾的幻想乡：广义后缀自动机第一弹。
 

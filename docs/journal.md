@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/22
+* [洛谷 P4124] [CQOI2016]手机号码：正难则反，数位DP + 容斥
+求不满足条件的号码数。
+
 ### 9/21
 * [洛谷 P4317] 花神的数论题：若 $n$ 为输入值中1的最高位，
 先考虑 $[1,2^n-1]$ 其中

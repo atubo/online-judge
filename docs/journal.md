@@ -7,6 +7,16 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/21
+* [洛谷 P4317] 花神的数论题：若 $n$ 为输入值中1的最高位，
+先考虑 $[1,2^n-1]$ 其中
+$\textrm{SUM}=k$ 的数有 ${n \choose k}$ 个，故乘积为
+$\prod k^{n\choose k}$ 再考虑范围 $[2^n+1, 2^n+2^m-1]$
+其中 $m$ 是1的次高位， 类似有此范围内的乘积为
+$\prod (k+1) ^ {m\choose k}$   以次递推所有1的位即可。
+注意要用到欧拉定理 $a^{p-1} = 1\mod p$ 和中国剩余定理 （因为
+10000007不是质数）
+
 ### 9/20
 * [洛谷 P3413] SAC#1 - 萌数：数位DP找出“不萌”的数的个数。
 

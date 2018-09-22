@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 9/22
 * [洛谷 P4124] [CQOI2016]手机号码：正难则反，数位DP + 容斥
 求不满足条件的号码数。
+* [洛谷 P2202] [USACO13JAN]方块重叠Square Overlap：将
+所以正方形的左上顶点按y坐标排序，从上到下扫描即可。
 
 ### 9/21
 * [洛谷 P4317] 花神的数论题：若 $n$ 为输入值中1的最高位，

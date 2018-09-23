@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P4022] [CTSC2012]熟悉的文章：广义后缀自动机求出每个位置
 作为结束节点所能匹配的最大子串长度， 注意当沿着next link 作转移
 时，最后达到的节点的maxlen 就是当前所能匹配的最大长度（想想为什么）。再用二分 + DP + 单调队列优化。
+* [洛谷 P3469] [POI2008]BLO-Blockade：Trajan算法求割点。
 
 ### 9/22
 * [洛谷 P4124] [CQOI2016]手机号码：正难则反，数位DP + 容斥

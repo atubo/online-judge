@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/25
+* [洛谷 P4246] [SHOI2008]堵塞的交通：线段树维护区间连通性第一弹。
+
 ### 9/23
 * [洛谷 P4022] [CTSC2012]熟悉的文章：广义后缀自动机求出每个位置
 作为结束节点所能匹配的最大子串长度， 注意当沿着next link 作转移

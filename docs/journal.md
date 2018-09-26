@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/26
+* [洛谷 P4285] [SHOI2008]汉诺塔：有意思的DP，没想出来，
+[这篇题解](https://oi.men.ci/shoi2008-hannoi/)讲的比较清楚。
+
 ### 9/25
 * [洛谷 P4246] [SHOI2008]堵塞的交通：线段树维护区间连通性第一弹。
 

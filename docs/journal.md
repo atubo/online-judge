@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/29
+* [洛谷 P3298] [SDOI2013]泉: 对于所有63种可能的组合，求出匹配
+包括此组合的年份对数，然后对于给定的K，最多有 ${6\choose 3}=20$
+种不同的组合，用最多20位整数表示状态，用容斥原理可得出结果。
+坑点在于要手写哈希表。
+
 ### 9/26
 * [洛谷 P4285] [SHOI2008]汉诺塔：有意思的DP，没想出来，
 [这篇题解](https://oi.men.ci/shoi2008-hannoi/)讲的比较清楚。

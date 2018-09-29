@@ -16,6 +16,8 @@ Journal of the problems I have worked on
 [这个](https://ksmeow.moe/tree_shoi12_sol/)，注意
 $i$ 个叶子的树中左右子树叶子各为 $k$ 和 $i-k$ 的几率为
 $1/(i-1)$ 的结论并不显然，但可用数归证明。
+* [洛谷 P1776] 宝物筛选_NOI导刊2010提高（02）：学习了二进制拆分
+求解多重背包。
 
 ### 9/26
 * [洛谷 P4285] [SHOI2008]汉诺塔：有意思的DP，没想出来，

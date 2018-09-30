@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 9/30
+* [洛谷 P2323] [HNOI2006]公路修建问题：二分查找 + Kruskal
+求最小生成树。
+
 ### 9/29
 * [洛谷 P3298] [SDOI2013]泉: 对于所有63种可能的组合，求出匹配
 包括此组合的年份对数，然后对于给定的K，最多有 ${6\choose 3}=20$

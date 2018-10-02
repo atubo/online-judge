@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/1
+* [洛谷 P1782] 旅行商的背包：一般货用单调队列优化多重背包，
+奇货用斜率优化，卡常比较无聊，无耻O2之。
+
 ### 9/30
 * [洛谷 P2323] [HNOI2006]公路修建问题：二分查找 + Kruskal
 求最小生成树。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/2
+* [洛谷 P4552] [Poetize6] IncDec Sequence：单调队列。
+
 ### 10/1
 * [洛谷 P1782] 旅行商的背包：一般货用单调队列优化多重背包，
 奇货用斜率优化，卡常比较无聊，无耻O2之。

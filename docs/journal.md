@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 10/2
 * [洛谷 P4552] [Poetize6] IncDec Sequence：单调队列。
 * [洛谷 P1754] 球迷购票问题：裸的Catalan数。
+* [洛谷 P1757] 通天之分组背包：分组背包。
 
 ### 10/1
 * [洛谷 P1782] 旅行商的背包：一般货用单调队列优化多重背包，

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/3
+* [洛谷 P1877] [HAOI2012]音量调节：简单DP。
+
 ### 10/2
 * [洛谷 P4552] [Poetize6] IncDec Sequence：单调队列。
 * [洛谷 P1754] 球迷购票问题：裸的Catalan数。

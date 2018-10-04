@@ -9,6 +9,9 @@ Journal of the problems I have worked on
 
 ### 10/3
 * [洛谷 P1877] [HAOI2012]音量调节：简单DP。
+* [洛谷 P3275] [SCOI2011]糖果：先用并查集处理相等关系，
+再对大于等于关系建图缩点，再加上大于关系，若有环则无解，
+若无环拓扑排序后DP求解。
 
 ### 10/2
 * [洛谷 P4552] [Poetize6] IncDec Sequence：单调队列。

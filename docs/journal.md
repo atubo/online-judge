@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+* [洛谷 P3412] 仓鼠找sugar II：没想出来，看的题解。求节点到
+父节点步数的期望值的方法比较巧妙。
+
 ### 10/4
 * [洛谷 P4170] [CQOI2007]涂色：DP， 但作的比标准题解复杂了点，
 设左端点颜色为 $x$ 枚举右端点 $x$ 的位置，再枚举它们所组成的区间

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/9
+* [洛谷 P3047] [USACO12FEB]附近的牛Nearby Cows：上下两遍DFS。
+
 ### 10/8
 * [洛谷 P3043] [USACO12JAN]牛联盟Bovine Alliance：先求出
 各连通分量，对每个连通分量， 若 $|E|>|V|$ 则无解，

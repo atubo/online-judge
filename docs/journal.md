@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/10
+* [洛谷 P2567] [SCOI2010]幸运数字：看题解作的。找出所有的纯
+幸运数字，深搜所有幸运数字间的最小公倍数，再应用容斥原理。
+
 ### 10/9
 * [洛谷 P3047] [USACO12FEB]附近的牛Nearby Cows：上下两遍DFS。
 

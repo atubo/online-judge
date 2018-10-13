@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/13
+* [洛谷 P2564] [SCOI2009]生日礼物：双指针。
+
 ### 10/12
 * [洛谷 P3264] [JLOI2015]管道连接：看题解作的。先求出斯坦纳树，
 再走一遍子集DP。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/14
+* [洛谷 P4054] [JSOI2009]计数问题：离线，对每种颜色单独处理，
+用二维树状数组进行统计。
+
 ### 10/13
 * [洛谷 P2564] [SCOI2009]生日礼物：双指针。
 * [洛谷 P2219] [HAOI2007]修筑绿化带：枚举所有可能的AB块的位置，

@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P2564] [SCOI2009]生日礼物：双指针。
 * [洛谷 P2219] [HAOI2007]修筑绿化带：枚举所有可能的AB块的位置，
 再二维最值查询CD块最小的肥沃度，用了二维的优先队列。
+* [洛谷 P2508] [HAOI2008]圆上的整点：分解高斯素数，[很好的video](https://www.youtube.com/watch?v=NaL_Cb42WyY)
 
 ### 10/12
 * [洛谷 P3264] [JLOI2015]管道连接：看题解作的。先求出斯坦纳树，

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/16
+* [洛谷 P3311] [SDOI2014]数数：AC自动机 + 数位DP。
+
 ### 10/15
 * [洛谷 P1315] 观光公交：贪心，每次选取一段使得它所影响的区间内
 节省的时间最大。时间复杂度 $O(K\cdot N)$ 数据规模不大，可水过。

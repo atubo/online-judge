@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/17
+* [洛谷 P4094] [HEOI2016/TJOI2016]字符串：看题解作的，对每个
+查询 $[c,d]$ 二分查找 $l$ 找到在后缀数组中与 $S[c..N]$
+公共前缀长度大于等于 $l$ 的范围 $[L, R]$ 再查找 $[a,b-l+1]$
+范围内有没有任何位置的rank落在 $[L, R]$ 内。
+
 ### 10/16
 * [洛谷 P3311] [SDOI2014]数数：AC自动机 + 数位DP。
 

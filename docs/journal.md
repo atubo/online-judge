@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/18
+* [洛谷 P1772] [ZJOI2006]物流运输：先求经过点集为 $m$ 的最短路
+$d(m)$ 令 $dp(m,i)$ 第 $i$ 天经过点集为 $m$ 的最优解，有
+$dp(m,i)=\min(dp(m,i-1), \min_{m'}dp(m', i-1) + K)+d(m)$
+
 ### 10/17
 * [洛谷 P4094] [HEOI2016/TJOI2016]字符串：看题解作的，对每个
 查询 $[c,d]$ 二分查找 $l$ 找到在后缀数组中与 $S[c..N]$

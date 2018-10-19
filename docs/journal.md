@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/19
+* [洛谷 P4093] [HEOI2016/TJOI2016]序列：cdq分治第一弹，照
+[题解](https://algocode.net/2018/04/04/20180404-TJOI-HEOI-2016-Sequence/)写的。
+
 ### 10/18
 * [洛谷 P1772] [ZJOI2006]物流运输：先求经过点集为 $m$ 的最短路
 $d(m)$ 令 $dp(m,i)$ 第 $i$ 天经过点集为 $m$ 的最优解，有

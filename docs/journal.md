@@ -14,6 +14,8 @@ Journal of the problems I have worked on
 * [洛谷 P3293] [SCOI2016]美味：从高位到低位处理，处理到每一
 位时，找到使结果的此位为1的 $a$ 的范围，找 $[l,r]$ 范围内有没有
 元素落到此范围。用主席树解决。
+* [洛谷 P2899] [USACO08JAN]手机网络Cell Phone Network：
+树上点支配问题，贪心解决。
 
 ### 10/19
 * [洛谷 P4093] [HEOI2016/TJOI2016]序列：cdq分治第一弹，照

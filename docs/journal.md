@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/20
+* [洛谷 P3031] [USACO11NOV]高于中位数Above the Median：
+将数组每个元素变为1（若大于等于中位数）或-1（若不然），
+问题转化为求区间和大于等于0的区间个数。树状数组维护前缀和即可。
+
 ### 10/19
 * [洛谷 P4093] [HEOI2016/TJOI2016]序列：cdq分治第一弹，照
 [题解](https://algocode.net/2018/04/04/20180404-TJOI-HEOI-2016-Sequence/)写的。

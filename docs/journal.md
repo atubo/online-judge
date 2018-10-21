@@ -7,6 +7,16 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/21
+* [洛谷 P3163] [CQOI2014]危桥：没想到交换 $B1$ $B2$ 的做法。
+简单证明：设交换前 $A_1\to A_2=a_n-x$ , $B_1\to B_2=b_n-x$
+$B_1 \to A_2 = x$ , $A_1\to B_2 = x$
+交换后由于是无向图，我们必可施加
+$b_n-x$ 的流量到 $B_2\to B_1$ ,
+$a_n-x$ 的流量到 $A_1\to A_2$
+若流量不变则任何 $A_1\to B_1$ 的流均可转化为
+$A_1\to B_1 \to A_2$ 的流。$B_2\to A_2$ 同理。
+
 ### 10/20
 * [洛谷 P3031] [USACO11NOV]高于中位数Above the Median：
 将数组每个元素变为1（若大于等于中位数）或-1（若不然），

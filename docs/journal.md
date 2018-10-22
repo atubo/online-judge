@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/22
+* [洛谷 P3872] [TJOI2010]电影迷：网络流，用类似最大点权闭合图
+的方法建图。
+
 ### 10/21
 * [洛谷 P3163] [CQOI2014]危桥：没想到交换 $B1$ $B2$ 的做法。
 简单证明：设交换前 $A_1\to A_2=a_n-x$ , $B_1\to B_2=b_n-x$

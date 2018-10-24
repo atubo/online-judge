@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/24
+* [洛谷 P3705] [SDOI2017]新生舞会：分数规划 + 二分图最佳匹配。
+
 ### 10/23
 * [洛谷 P2542] [AHOI2005]航线规划：树链剖分，倒序处理，
 先建立生成树，边权都为1，每连接两点时，将两点之间的路径上的

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/25
+* [洛谷 P1127] 词链：欧拉路，节点为26个字母，单词为边，注意检查
+连通性。
+
 ### 10/24
 * [洛谷 P3705] [SDOI2017]新生舞会：分数规划 + 二分图最佳匹配。
 

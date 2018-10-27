@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/26
+* [洛谷 P1137] 旅行计划：水题，拓扑排序。
+
 ### 10/25
 * [洛谷 P1127] 词链：欧拉路，节点为26个字母，单词为边，注意检查
 连通性。

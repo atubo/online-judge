@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/27
+* [洛谷 P2123] 皇后游戏：看了题解，离最终公式
+$\min(a_i,b_j)\le \min(a_j, b_i)$ 差了一步。对 $a_i, b_i$
+大小分组讨论保证传递性非常巧妙。
+
 ### 10/26
 * [洛谷 P1137] 旅行计划：水题，拓扑排序。
 * [洛谷 P3948] 数据结构：准暴力。

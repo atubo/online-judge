@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/28
+* [洛谷 P2504] [HAOI2006]聪明的猴子：最小生成树裸题。
+
 ### 10/27
 * [洛谷 P2123] 皇后游戏：看了题解，离最终公式
 $\min(a_i,b_j)\le \min(a_j, b_i)$ 差了一步。对 $a_i, b_i$

@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 10/29
 * [洛谷 P1120] 小木棍 ［数据加强版］：搜索，但看了题解才知道
 最关键的那个剪枝。
+* [洛谷 P1879] [USACO06NOV]玉米田Corn Fields：状压DP。
 
 ### 10/28
 * [洛谷 P2504] [HAOI2006]聪明的猴子：最小生成树裸题。

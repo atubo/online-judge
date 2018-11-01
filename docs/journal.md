@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/01
+* [洛谷 P3126] [USACO15OPEN]回文的路径Palindromic Paths：
+类似双路DP的思想，但从对角线出发向两边走，滚动数组优化可将空间
+降到 $O(N^2)$
+
 ### 10/31
 * [洛谷 P2501] [HAOI2006]数字序列：照题解写的。
 

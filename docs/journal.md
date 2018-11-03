@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/02
+* [洛谷 P3071] [USACO13JAN]座位Seating：线段树，每个区间维护
+左端最大空位长度，右端最大空位长度，和中间最大空位长度。
+
 ### 11/01
 * [洛谷 P3126] [USACO15OPEN]回文的路径Palindromic Paths：
 类似双路DP的思想，但从对角线出发向两边走，滚动数组优化可将空间

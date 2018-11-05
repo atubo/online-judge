@@ -16,6 +16,7 @@ Journal of the problems I have worked on
 开始，长度小于等于 $k$ 的区间的最低得分， $minr(r,k)$ 类似。
 有 $dp(l,k)=tot(l,k)-min(minl(l,k-1), minr(r,k-1))$
 滚动优化掉 $k$ 的一维。
+* [洛谷 P1378] 油滴扩展：试炼场水题。
 
 ### 11/03
 * [洛谷 P2765] 魔术球问题：最小路径覆盖问题。注意此题规定了放置

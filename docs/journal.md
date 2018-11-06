@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/06
+* [洛谷 P1401] 城市：二分+网络流，帮着找到了自己Dinic代码中的一个
+性能bug。
+
 ### 11/04
 * [洛谷 P2511] [HAOI2008]木棍分割：求长度最小值用二分+贪心，
 求方案数用DP+滚动数组+前缀和优化。

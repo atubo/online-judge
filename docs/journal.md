@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/07
+* [洛谷 P2763] 试题库问题：网络流模板题。
+
 ### 11/06
 * [洛谷 P1401] 城市：二分+网络流，帮着找到了自己Dinic代码中的一个
 性能bug。

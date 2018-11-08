@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/08
+* [洛谷 P4052] [JSOI2007]文本生成器: DP + AC自动机。令
+$dp(i,j)$ 表示长度为i，状态为j的不可读文章数。
+
 ### 11/07
 * [洛谷 P2763] 试题库问题：网络流模板题。
 * [洛谷 P1242] 新汉诺塔：贪心+递归（非正解），无耻打表。

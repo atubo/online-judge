@@ -14,23 +14,28 @@ private:
     vector<int> splits;
 
     static BigInt mul(const BigInt& a, const BigInt& b) {
-        // should be called with b <= a (for efficiency)
-        vector<BigInt> dblOfOne, dblOfA;
-        dblOfOne.push_back(BigInt("1"));
-        dblOfA.push_back(a);
-        while (dblOfOne.back() < b) {
-            dblOfOne.push_back(dblOfOne.back() + dblOfOne.back());
-            dblOfA.push_back(dblOfA.back() + dblOfA.back());
+        const int n = a.splits.size();
+        const int m = b.splits.size();
+        vector<int64_t> h(n+m+10);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                h[i+j] += 1LL * a.splits[i] * b.splits[j];
+                h[i+j+1] +=  h[i+j] / SPLIT_OVERFLOW;
+                h[i+j] %= SPLIT_OVERFLOW;
+            }
+        }
+        for (int i = 0; i < n+m+9; i++) {
+            h[i+1] += h[i]/SPLIT_OVERFLOW;
+            h[i] %= SPLIT_OVERFLOW;
         }
 
-        BigInt ret;
-        BigInt remain = b;
-        for (int i = (int)dblOfOne.size()-1; i >= 0; i--) {
-            if (remain < dblOfOne[i]) continue;
-            remain = remain - dblOfOne[i];
-            ret += dblOfA[i];
+        BigInt c;
+        c.splits.resize(n+m+10);
+        for (int i = 0; i < n+m+10; i++) {
+            c.splits[i] = h[i];
         }
-        return ret;
+        c.canonicalize();
+        return c;
     }
 
     void canonicalize() {
@@ -64,10 +69,6 @@ public:
             }
         }
         canonicalize();
-    }
-
-    void reset() {
-        splits.assign(splits.size(), 0);
     }
 
     void swap(BigInt& other) {

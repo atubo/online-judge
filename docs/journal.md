@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/10
+* [洛谷 P2768] 珍珠项链：令 $dp(i,j)$ 表示长度小于等于 $i$
+种类数为 $j$ 的方案数，有
+$dp(i,j)=dp(i-1,j)+(dp(i-1,j)-dp(i-2,j))\times j +
+(dp(i-1,j-1)-dp(i-2,j-1))\times (K-j+1)$
+将此递推式用 $(2K+2)\times(2K+2)$ 的矩阵表示，用矩阵快速幂求解。
+
 ### 11/09
 * [洛谷 P3358] 最长k可重区间集问题：最小费用最大流。
 * [洛谷 P2045] 方格取数加强版：同上。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/09
+* [洛谷 P3358] 最长k可重区间集问题：最小费用最大流。
+
 ### 11/08
 * [洛谷 P4052] [JSOI2007]文本生成器: DP + AC自动机。令
 $dp(i,j)$ 表示长度为i，状态为j的不可读文章数。

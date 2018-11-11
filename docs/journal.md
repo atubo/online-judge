@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 P1266] 速度限制：类似分层图的思想，将每个点拆成501个点，
 $d(u,s)$ 表示到 $u$ 时抵达速度为 $s$ 的最短时间。在此图上求
 最短路。MLE调了半天。
+* [洛谷 P1312] Mayan游戏：考码力的搜索题，看[题解](https://www.cnblogs.com/ZAGER/p/9535526.html)
+作的。
 
 ### 11/10
 * [洛谷 P2768] 珍珠项链：令 $dp(i,j)$ 表示长度小于等于 $i$

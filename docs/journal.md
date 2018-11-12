@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/12
+* [洛谷 P4001] [BJOI2006]狼抓兔子：平面ST割转化为最短路问题。
+
 ### 11/11
 * [洛谷 P1266] 速度限制：类似分层图的思想，将每个点拆成501个点，
 $d(u,s)$ 表示到 $u$ 时抵达速度为 $s$ 的最短时间。在此图上求

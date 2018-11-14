@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/13
+* [洛谷 P1979] 华容道：看了题解，BFS找出空白格从目标格的一个邻接
+位置转移到另一个邻接位置的步数，外层套一个SPFA求最短路。
+
 ### 11/12
 * [洛谷 P4001] [BJOI2006]狼抓兔子：平面ST割转化为最短路问题。
 

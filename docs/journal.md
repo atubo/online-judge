@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/15
+* [洛谷 P2264] 情书：试炼场水题。
+
 ### 11/14
 * [洛谷 P1083] 借教室：线段树，卡常搞了半天。看题解发现也可以用
 差分+前缀和+二分作。

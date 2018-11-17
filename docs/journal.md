@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/17
+* [洛谷 P2534] [AHOI2012]铁盘整理：IDA* 算法第一弹。
+
 ### 11/16
 * [洛谷 P2324] [SCOI2005]骑士精神：BFS + 估值函数剪枝。看题解
 多用高大上的IDA*算法，回头学习一下。

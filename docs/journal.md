@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/18
+* [洛谷 P2701] [USACO5.3]巨大的牛棚Big Barn：试炼场水题，
+DP求最大正方形。
+
 ### 11/17
 * [洛谷 P2534] [AHOI2012]铁盘整理：IDA* 算法第一弹。
 

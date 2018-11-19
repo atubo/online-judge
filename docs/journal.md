@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P2743] [USACO5.1]乐曲主题Musical Themes：为处理转调，
 将数组差分，然后二分 +后缀数组。对于每一个二分长度L，找到LCP值大于等于L的区间，找到此区间内后缀起始的最左和最右位置，
 若距离大于等于L+1，则可行。
+* [洛谷 P1560] [USACO5.2]蜗牛的旅行Snail Trails：DFS。
 
 ### 11/18
 * [洛谷 P2701] [USACO5.3]巨大的牛棚Big Barn：试炼场水题，

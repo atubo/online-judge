@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/20
+* [洛谷 P1251] 餐巾计划问题：看了题解才明白建图方法。需要巩固加强。
+
 ### 11/19
 * [洛谷 P2743] [USACO5.1]乐曲主题Musical Themes：为处理转调，
 将数组差分，然后二分 +后缀数组。对于每一个二分长度L，找到LCP值大于等于L的区间，找到此区间内后缀起始的最左和最右位置，

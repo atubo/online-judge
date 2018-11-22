@@ -10,6 +10,7 @@ Journal of the problems I have worked on
 ### 11/22
 * [洛谷 P1214] [USACO1.4]等差数列 Arithmetic Progressions：
 难点在于剪枝优化常数。枚举前两项，从后向前检查。
+* [洛谷 P2766] 最长不下降子序列问题：拆点+网络流。
 
 ### 11/21
 * [洛谷 P2761] 软件补丁问题：状态压缩 + SPFA求最短路。不知为什么

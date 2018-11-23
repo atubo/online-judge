@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/23
+* [洛谷 P2738] [USACO4.1]篱笆回路Fence Loops：建图后二分+DFS
+找最小环。看题解发现可以用Floyd求最小环。
+
 ### 11/22
 * [洛谷 P1214] [USACO1.4]等差数列 Arithmetic Progressions：
 难点在于剪枝优化常数。枚举前两项，从后向前检查。

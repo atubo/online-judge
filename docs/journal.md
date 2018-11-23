@@ -10,6 +10,10 @@ Journal of the problems I have worked on
 ### 11/23
 * [洛谷 P2738] [USACO4.1]篱笆回路Fence Loops：建图后二分+DFS
 找最小环。看题解发现可以用Floyd求最小环。
+* [洛谷 P2727] 01串 Stringsobits：DP，令 $dp(i,j)$ 表示长度
+为 $i$ 的二进制数中1的数目等于 $j$ 的数量，
+有 $dp(i,j)=dp(i-1,j)+dp(i-1,j-1)$ DP完成后从高位到低位搜索
+即可。
 
 ### 11/22
 * [洛谷 P1214] [USACO1.4]等差数列 Arithmetic Progressions：

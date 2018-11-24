@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/24
+* [洛谷 P3730] 曼哈顿交易：莫队算法。
+
 ### 11/23
 * [洛谷 P2738] [USACO4.1]篱笆回路Fence Loops：建图后二分+DFS
 找最小环。看题解发现可以用Floyd求最小环。

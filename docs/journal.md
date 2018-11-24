@@ -18,6 +18,8 @@ Journal of the problems I have worked on
 的对应节点连边，容量为无穷大。若第i天有航线从u到v,则从第i层的u
 节点连向第i+1层的v节点，容量为h。二分查找使得流量为K的时间。
 * [洛谷 P2756] 飞行员配对方案问题：二分图最大匹配。
+* [洛谷 P2741] [USACO4.4]重叠的图像Frame Up：对于每个字母沿
+边界走一圈找出覆盖关系。生成邻接矩阵后DFS找出所有可能的解。
 
 ### 11/22
 * [洛谷 P1214] [USACO1.4]等差数列 Arithmetic Progressions：

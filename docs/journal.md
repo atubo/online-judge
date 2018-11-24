@@ -14,6 +14,9 @@ Journal of the problems I have worked on
 为 $i$ 的二进制数中1的数目等于 $j$ 的数量，
 有 $dp(i,j)=dp(i-1,j)+dp(i-1,j-1)$ DP完成后从高位到低位搜索
 即可。
+* [洛谷 2754] [CTSC1999]家园：每一天为一层，从每个节点向下一层
+的对应节点连边，容量为无穷大。若第i天有航线从u到v,则从第i层的u
+节点连向第i+1层的v节点，容量为h。二分查找使得流量为K的时间。
 
 ### 11/22
 * [洛谷 P1214] [USACO1.4]等差数列 Arithmetic Progressions：

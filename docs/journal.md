@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/27
+* [洛谷 P2762] 太空飞行计划问题：用类似最大点权闭合图的方法建图。
+
 ### 11/24
 * [洛谷 P3730] 曼哈顿交易：莫队算法。
 

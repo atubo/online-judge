@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/04
+* [洛谷 P4287] [SHOI2011]双倍回文:先跑一遍Manacher，
+枚举每个字母间隙位置 $x_0$ 如果半径为 $r_0$ 检查范围
+$[x_0, x0+\lfloor r/2 \rfloor]$ 内是否有 $x$ 满足
+$r\ge x-x_0$ 最大的 $x-x_0$ 乘4即是答案。
+
 ### 12/03
 * [洛谷 P4157] [SCOI2006]整数划分:对小整数枚举发现对于
 $n>7$ 最佳划分一定是 $n=r+(3+3)+(3+3)+..+(3+3)$ 其中

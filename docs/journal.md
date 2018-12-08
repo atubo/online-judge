@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/08
+* [洛谷 P3054] [USACO12OPEN]跑圈Running Laps:
+将各选手最后一个未完成圈长度离散化后建立两个
+线段树分别维护总圈数和总选手数。将选手按速度
+排序后依次处理，对每个选手找出它的超越次数。
+
 ### 12/05
 * [洛谷 P2217] [HAOI2007]分割矩阵: DP，简单推导可知
 目标是最小化 $\sum {A_i}^2$ $A_i$ 是第 $i$ 个子矩阵

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/09
+* [洛谷 P2901] [USACO08MAR]牛慢跑Cow Jogging:
+K短路问题，这题图是DAG，故可拓扑排序后依次归并。
+更复杂的图须用 A\* 算法。
+
 ### 12/08
 * [洛谷 P3054] [USACO12OPEN]跑圈Running Laps:
 将各选手最后一个未完成圈长度离散化后建立两个

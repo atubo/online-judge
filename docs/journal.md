@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/10
+* [洛谷 P3308] [SDOI2014]LIS:第一问拆点建网络流，
+但要求字典序最小的割没想出来。看了题解才知道有
+网络退流这种高级技术。
+
 ### 12/09
 * [洛谷 P2901] [USACO08MAR]牛慢跑Cow Jogging:
 K短路问题，这题图是DAG，故可拓扑排序后依次归并。

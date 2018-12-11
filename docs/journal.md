@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/11
+* [洛谷 P4040] [AHOI2014/JSOI2014]宅男计划:
+看了题解才知道三分+贪心的解法，可单峰的严格
+证明没找到。
+
 ### 12/10
 * [洛谷 P3308] [SDOI2014]LIS:第一问拆点建网络流，
 但要求字典序最小的割没想出来。看了题解才知道有

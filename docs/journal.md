@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/12
+* [洛谷 P2167] [SDOI2009]Bill的挑战:
+快速莫比乌斯变换（FMT）第一弹。$dp(i,mask)$
+表示前缀 $i$ 匹配的状态为 $mask$ 的方案数。
+计算出位置 $i+1$ 不同匹配状态的方案数，
+进行一次集合并的卷积即可转移到 $i+1$
+
 ### 12/11
 * [洛谷 P4040] [AHOI2014/JSOI2014]宅男计划:
 看了题解才知道三分+贪心的解法，可单峰的严格

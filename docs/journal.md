@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/13
+* [洛谷 P2294] [HNOI2005]狡猾的商人: DFS判断
+一下是否所有的回路长度都是0即可。
+
 ### 12/12
 * [洛谷 P2167] [SDOI2009]Bill的挑战:
 快速莫比乌斯变换（FMT）第一弹。$dp(i,mask)$

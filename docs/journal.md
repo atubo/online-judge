@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/14
+* [洛谷 P2223] [HNOI2001]软件开发: 与P1251基本相同。
+
 ### 12/13
 * [洛谷 P2294] [HNOI2005]狡猾的商人: DFS判断
 一下是否所有的回路长度都是0即可。

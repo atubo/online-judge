@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/14
 * [洛谷 P2223] [HNOI2001]软件开发: 与P1251基本相同。
+* [洛谷 P2517] [HAOI2010]订货: 最小费用最大流。
 
 ### 12/13
 * [洛谷 P2294] [HNOI2005]狡猾的商人: DFS判断

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/15
+* [洛谷 P2487] [SDOI2011]拦截导弹: 动态开点二维
+线段树。正反各跑一遍LIS可确定每个点是否在最长链上。
+
 ### 12/14
 * [洛谷 P2223] [HNOI2001]软件开发: 与P1251基本相同。
 * [洛谷 P2517] [HAOI2010]订货: 最小费用最大流。

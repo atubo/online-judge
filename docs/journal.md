@@ -10,6 +10,12 @@ Journal of the problems I have worked on
 ### 12/15
 * [洛谷 P2487] [SDOI2011]拦截导弹: 动态开点二维
 线段树。正反各跑一遍LIS可确定每个点是否在最长链上。
+* [洛谷 P2120] [ZJOI2007]仓库建设: 斜率优化DP。
+令 $dp(i)$ 表示前 $i$ 个位置最后一个仓库设在 $i$
+的最优解。$Q_i=\sum_{j=0}^{i}P_j$
+$R_i=\sum_{j=0}^{i}P_j\cdot X_j$ 有
+$dp(i)=\min_j(dp(j)-Q_j X_i + R_j) + Q_i X_i -R_i$
+
 
 ### 12/14
 * [洛谷 P2223] [HNOI2001]软件开发: 与P1251基本相同。

@@ -15,6 +15,9 @@ Journal of the problems I have worked on
 的最优解。$Q_i=\sum_{j=0}^{i}P_j$
 $R_i=\sum_{j=0}^{i}P_j\cdot X_j$ 有
 $dp(i)=\min_j(dp(j)-Q_j X_i + R_j) + Q_i X_i -R_i$
+* [洛谷 P4026] [SHOI2008]循环的债务:不会作，看的
+[题解](https://blog.csdn.net/jijijix/article/details/72571152)
+奇妙的DP。
 
 
 ### 12/14

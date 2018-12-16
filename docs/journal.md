@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/16
+* [洛谷 P4279] [SHOI2008]小约翰的游戏: 反Nim游戏模板。
+
 ### 12/15
 * [洛谷 P2487] [SDOI2011]拦截导弹: 动态开点二维
 线段树。正反各跑一遍LIS可确定每个点是否在最长链上。
@@ -18,7 +21,6 @@ $dp(i)=\min_j(dp(j)-Q_j X_i + R_j) + Q_i X_i -R_i$
 * [洛谷 P4026] [SHOI2008]循环的债务:不会作，看的
 [题解](https://blog.csdn.net/jijijix/article/details/72571152)
 奇妙的DP。
-
 
 ### 12/14
 * [洛谷 P2223] [HNOI2001]软件开发: 与P1251基本相同。

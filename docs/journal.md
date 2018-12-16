@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 12/16
 * [洛谷 P4279] [SHOI2008]小约翰的游戏: 反Nim游戏模板。
+* [洛谷 P3230] [HNOI2013]比赛: 看题解才会作，搜索+哈希。
 
 ### 12/15
 * [洛谷 P2487] [SDOI2011]拦截导弹: 动态开点二维

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/17
+* [洛谷 P3220] [HNOI2012]与非:看题解才会作，
+找出关联的位后作数位DP。
+
 ### 12/16
 * [洛谷 P4279] [SHOI2008]小约翰的游戏: 反Nim游戏模板。
 * [洛谷 P3230] [HNOI2013]比赛: 看题解才会作，搜索+哈希。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/20
+* [洛谷 P4322] [JSOI2016]最佳团体:分数规划 +
+树上背包，DFS序优化。
+
 ### 12/19
 * [洛谷 P4174] [NOI2006]最大获利: 网络流，
 拆点，从源点向 $u$ 连边，容量为与该点有关的

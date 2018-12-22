@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/22
+* [洛谷 P3188] [HNOI2007]梦幻岛宝珠:
+看题解才会，01背包 + 分组背包。
+
 ### 12/21
 * [洛谷 P3622] [APIO2007]动物园:状压DP，令
 $dp(i,mask)$ 表示进行到位置 $i$ $[i,i+4]$

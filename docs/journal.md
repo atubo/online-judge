@@ -11,6 +11,9 @@ Journal of the problems I have worked on
 * [洛谷 P2502] [HAOI2006]旅行:一开始用
 分层图+SPFA，可复杂度太高。后用了
 DFS+双指针+二分上下界的作法。
+* [洛谷 P3625] [APIO2009]采油区域:
+看[题解](https://www.zybuluo.com/WangYixu/note/1184584)
+了解到枚举3个正方形6种相对位置的作法。
 
 ### 12/22
 * [洛谷 P3188] [HNOI2007]梦幻岛宝珠:

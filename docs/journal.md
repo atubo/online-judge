@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/23
+* [洛谷 P2502] [HAOI2006]旅行:一开始用
+分层图+SPFA，可复杂度太高。后用了
+DFS+双指针+二分上下界的作法。
+
 ### 12/22
 * [洛谷 P3188] [HNOI2007]梦幻岛宝珠:
 看题解才会，01背包 + 分组背包。

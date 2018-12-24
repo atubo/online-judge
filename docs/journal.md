@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/24
+* [洛谷 P2474] [SCOI2008]天平:看题解才
+了解到差分约束的做法。
+
 ### 12/23
 * [洛谷 P2502] [HAOI2006]旅行:一开始用
 分层图+SPFA，可复杂度太高。后用了

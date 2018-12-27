@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/27
+* [洛谷 P3160] [CQOI2012]局部极小值:
+看[题解](https://blog.sengxian.com/solutions/bzoj-2669)
+才会作。状压DP + 容斥。
+
 ### 12/25
 * [洛谷 P2489] [SDOI2011]迷宫探险:记忆化搜索，
 令 $dp(x,y,h,s)$ 表示从 $(x,y)$ 出发，剩余

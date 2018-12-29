@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/29
+* [洛谷 P3739] [HAOI2014]走出金字塔:将房间
+分为上三角和下三角两类，同一类房间之间的距离
+是正六边形格点距离。不同类房间之间的距离只须
+先一步走到相邻房间后转化为同类房间的距离。
+
 ### 12/27
 * [洛谷 P3160] [CQOI2012]局部极小值:
 看[题解](https://blog.sengxian.com/solutions/bzoj-2669)

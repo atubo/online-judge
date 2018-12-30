@@ -7,6 +7,19 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/30
+* [洛谷 P3218] [HNOI2011]赛车游戏:可证明在
+忽略下坡和 $VMAX$ 影响的情况下，各路段速度
+相同是最优的 - 设有路段1和2，长度都为 $L$
+速度分别为 $v_1$ 和 $v_2$ 对于速度改变量
+$\Delta v$ 有耗油量改变
+$\Delta g$ 和耗时改变 $\Delta t$
+$\Delta g_1=\Delta g_2=A L \Delta v$
+$\Delta t_1=\frac{L}{v_1^2}\Delta v$
+$\Delta t_2=\frac{L}{v_2^2}\Delta v$
+由此可知若 $v_1\ne v_2$ 则必可调节两者使
+耗油量不变但总耗时缩短。剩下的就是二分查找了。
+
 ### 12/29
 * [洛谷 P3739] [HAOI2014]走出金字塔:将房间
 分为上三角和下三角两类，同一类房间之间的距离

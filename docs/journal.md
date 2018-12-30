@@ -12,6 +12,9 @@ Journal of the problems I have worked on
 分为上三角和下三角两类，同一类房间之间的距离
 是正六边形格点距离。不同类房间之间的距离只须
 先一步走到相邻房间后转化为同类房间的距离。
+* [洛谷 P2160] [SHOI2007]书柜的尺寸:看
+[题解](https://www.bbsmax.com/A/obzbYQx3dE/)
+才会作的DP题。
 
 ### 12/27
 * [洛谷 P3160] [CQOI2012]局部极小值:

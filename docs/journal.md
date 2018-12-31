@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/31
+* [洛谷 P1707] 刷题比赛:矩阵乘法，用列矩阵
+$(a_{k+1}, b_{k+1}, c_{k+1}, a_k, b_k, c_k, 1, k, k^2, w^k, z^k)^T$
+可将递推式转化为矩阵乘法。
+
 ### 12/30
 * [洛谷 P3218] [HNOI2011]赛车游戏:可证明在
 忽略下坡和 $VMAX$ 影响的情况下，各路段速度

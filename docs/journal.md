@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/01
+* [洛谷 P3240] [HNOI2015]实验比较]:想到树型
+DP，但看[题解](https://blog.sengxian.com/solutions/bzoj-4013)
+才搞定细节。
+
+***
+### Goodbye 2018
+
 ### 12/31
 * [洛谷 P1707] 刷题比赛:矩阵乘法，用列矩阵
 $(a_{k+1}, b_{k+1}, c_{k+1}, a_k, b_k, c_k, 1, k, k^2, w^k, z^k)^T$

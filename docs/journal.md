@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/02
+* [洛谷 P3243] [HNOI2015]菜肴制作:看题解才
+明白要求反向图上字典序最大的序列。
+
 ### 01/01
 * [洛谷 P3240] [HNOI2015]实验比较]:想到树型
 DP，但看[题解](https://blog.sengxian.com/solutions/bzoj-4013)

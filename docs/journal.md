@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/04
+* [洛谷 P2698] [USACO12MAR]花盆Flowerpot:
+二分 + 单调队列。
+
 ### 01/03
 * [洛谷 P3813] [FJOI2017]矩阵填数:离散化后
 将矩阵分为若干子块，每块按最大值要求赋值，

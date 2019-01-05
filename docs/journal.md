@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 P4363] [九省联考2018]一双木棋chess:
 杨氏矩阵，状压DP。$dp(s)$ 表示已选和未选区域
 边界为 $s$ 的最优解。
+* [洛谷 P3166] [CQOI2014]数三角形:看题解才
+了解到了求整数格点上三点共线的点对数的方法。
 
 ### 01/04
 * [洛谷 P2698] [USACO12MAR]花盆Flowerpot:

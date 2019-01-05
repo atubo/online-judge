@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/05
+* [洛谷 P4363] [九省联考2018]一双木棋chess:
+杨氏矩阵，状压DP。$dp(s)$ 表示已选和未选区域
+边界为 $s$ 的最优解。
+
 ### 01/04
 * [洛谷 P2698] [USACO12MAR]花盆Flowerpot:
 二分 + 单调队列。

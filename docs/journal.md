@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/07
+* [洛谷 P4011] 孤岛营救问题: 分层图+BFS。
+
 ### 01/06
 * [洛谷 P1773] 符文之语\_NOI导刊2010提高（02）:
 一开始用 $dp(i,k)$ 表示前缀 $i$ 分 $k$ 次 可能

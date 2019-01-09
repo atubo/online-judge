@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/09
+* [洛谷 P2047] [NOI2007]社交网络:
+Floyd 求所有点对之间最短路径长度和条数。
+
 ### 01/08
 * [洛谷 P2566] [SCOI2009]围豆豆:
 看[题解](https://blog.csdn.net/just_sort/article/details/70331886)

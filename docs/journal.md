@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/08
+* [洛谷 P2566] [SCOI2009]围豆豆:
+看[题解](https://blog.csdn.net/just_sort/article/details/70331886)
+才会作，枚举+SPFA，注意点在回路里的判断。
+
 ### 01/07
 * [洛谷 P4011] 孤岛营救问题: 分层图+BFS。
 

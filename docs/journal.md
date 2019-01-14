@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/14
+* [洛谷 P3204] [HNOI2010]公交线路:
+看题解才会作，状压DP。令 $dp(i,s)$
+表示 $i$ 之前已全部填完， $[i,i+P-1]$
+这一段 $K$ 辆车的填充状态为 $s$ 的方案数，
+用矩阵快速幂解决。
+
 ### 01/09
 * [洛谷 P2047] [NOI2007]社交网络:
 Floyd 求所有点对之间最短路径长度和条数。

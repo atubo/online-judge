@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/15
+* [洛谷 P4460] [CQOI2018]解锁屏幕:
+状压DP， 令 $dp(s,p)$ 表示已选点集为
+$s$ 当前点为 $p$ 的方案数，转移状态时
+枚举中间点并判断是否已选。复杂度 $O(N^2 2^N)$
+用了无耻O2。
+
 ### 01/14
 * [洛谷 P3204] [HNOI2010]公交线路:
 看题解才会作，状压DP。令 $dp(i,s)$

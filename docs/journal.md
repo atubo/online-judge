@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/16
+* [洛谷 P4446] [AHOI2018初中组]根式化简:
+令 $m=n^{\frac 1 4}$ 易知 $x$ 要么有小于
+$m$ 的质因子 $p$ 使得 $p^3|x$ 要么有余项
+$b$ 小于 $m$ 枚举即可。
+
 ### 01/15
 * [洛谷 P4460] [CQOI2018]解锁屏幕:
 状压DP， 令 $dp(s,p)$ 表示已选点集为

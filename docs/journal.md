@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/18
+* [洛谷 P2220] [HAOI2012]容易题:将没有
+限制条件的项用快速幂求出，剩余的枚举即可。
+
 ### 01/17
 * [洛谷 P2579] [ZJOI2005]沼泽鳄鱼:转化为
 矩阵乘法。因为 $\lcm(2,3,4)=12$ 所以从

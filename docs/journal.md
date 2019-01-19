@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/19
+* [洛谷 P2405] non天平:高精 + 贪心。
+求出N进制表示后按位贪心。
+
 ### 01/18
 * [洛谷 P2220] [HAOI2012]容易题:将没有
 限制条件的项用快速幂求出，剩余的枚举即可。

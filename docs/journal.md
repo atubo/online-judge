@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/23
+* [洛谷 P2962] [USACO09NOV]灯Lights:
+看题解才会，DFS + meet in the middle
+
 ### 01/19
 * [洛谷 P2405] non天平:高精 + 贪心。
 求出N进制表示后按位贪心。

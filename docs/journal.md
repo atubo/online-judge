@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/25
+* [洛谷 P3206] [HNOI2010]城市建设:
+照[题解](http://blog.miskcoo.com/2015/04/bzoj-2001)
+写的，MST + 分治。第一次了解这种算法。
+
 ### 01/23
 * [洛谷 P2962] [USACO09NOV]灯Lights:
 看题解才会，DFS + meet in the middle

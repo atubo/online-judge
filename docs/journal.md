@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/26
+* [洛谷 P3164] [CQOI2014]和谐矩阵:
+异或高斯消元第一弹。
+
 ### 01/25
 * [洛谷 P3206] [HNOI2010]城市建设:
 照[题解](http://blog.miskcoo.com/2015/04/bzoj-2001)

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/30
+* [洛谷 P3185] [HNOI2007]分裂游戏:看题解才会作。
+求每个点的 $SG$ 函数，但注意不需要检查
+$SG(i)$ 是否大于 $SG(i)^g$ 因为 $SG(i)$ 必然可以
+转移到 $SG(j)^SG(k)$
+
 ### 01/28
 * [洛谷 P3626] [APIO2009]会议中心:看题解才会作。
 贪心+倍增，将区间按左端点排序后作预处理， $F(i,k)$

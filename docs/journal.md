@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/03
+* [洛谷 P3210] [HNOI2010]取石头游戏: 看题解
+才知道双端取石子游戏的贪心解法，可没有找到
+严格的证明。
+
 ### 02/02
 * [洛谷 P3222] [HNOI2012]射箭: 设抛物线为
 $a x^2 + bx$ 则每一关可表示为在 $a, b$ 平面上

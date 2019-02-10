@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/10
+* [洛谷 P2599] [ZJOI2009]取石子游戏:看题解
+才发现自己不可能想出来。博弈 + 玄学DP。
+
 ### 02/05
 * [洛谷 P3208] [HNOI2010]矩阵:看题解才确定
 是搜索+剪枝。枚举第一行元素 $a_j$ 第一列元素

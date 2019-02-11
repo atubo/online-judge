@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/11
+* [洛谷 P1139] 单向双轨道:迭代加深DFS + 剪枝。
+
 ### 02/10
 * [洛谷 P2599] [ZJOI2009]取石子游戏:看题解
 才发现自己不可能想出来。博弈 + 玄学DP。

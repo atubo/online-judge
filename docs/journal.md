@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/12
+* [洛谷 P3324] [SDOI2015]星际战争:
+二分 + 网络流
+
 ### 02/11
 * [洛谷 P1139] 单向双轨道:迭代加深DFS + 剪枝。
 

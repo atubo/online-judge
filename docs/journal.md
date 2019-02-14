@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/13
+* [洛谷 P3702] [SDOI2017]序列计数:
+矩阵快速幂 + 容斥。可预处理出素数频率的
+前缀和。
+
 ### 02/12
 * [洛谷 P3324] [SDOI2015]星际战争:
 二分 + 网络流

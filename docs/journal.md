@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/14
+* [洛谷 P1300] 城市街道交通费系统:
+数据范围较小，将方向作为状态的一部分，
+SPFA求最短路即可。
+
 ### 02/13
 * [洛谷 P3702] [SDOI2017]序列计数:
 矩阵快速幂 + 容斥。可预处理出素数频率的

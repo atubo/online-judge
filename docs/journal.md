@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/15
+* [洛谷 P1342] 请柬:对正图和反图各跑
+一遍单源最短路即可。
+
 ### 02/14
 * [洛谷 P1300] 城市街道交通费系统:
 数据范围较小，将方向作为状态的一部分，

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/16
+* [洛谷 P2044] [NOI2012]随机数生成器:
+向量为 $(x_{n+1}, x_n, 1)^T$ 将递推关系
+转化为矩阵乘法，用矩阵快速幂解决。
+
 ### 02/15
 * [洛谷 P1342] 请柬:对正图和反图各跑
 一遍单源最短路即可。

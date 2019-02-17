@@ -11,6 +11,13 @@ Journal of the problems I have worked on
 * [洛谷 P4409] [ZJOI2006]皇帝的烦恼:
 想了半天也想不出来，看题解才发现是
 玄学递推 + 二分。
+* [洛谷 P4884] 多少个1？: 先简化为
+$10^N \equiv (9\cdot K + 1)\mod P$
+求出素数原根 $r$ 离散对数求出
+$r^{m_1} \equiv (9\cdot K + 1)\mod P$ 和
+$r^(m_2} \equiv 10 \mod P$ 再解同余方程
+$m2\cdot x \equiv m1 \mod (P-1)$ 求出
+最小的 $x$
 
 ### 02/16
 * [洛谷 P2044] [NOI2012]随机数生成器:

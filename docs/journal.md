@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/17
+* [洛谷 P4409] [ZJOI2006]皇帝的烦恼:
+想了半天也想不出来，看题解才发现是
+玄学递推 + 二分。
+
 ### 02/16
 * [洛谷 P2044] [NOI2012]随机数生成器:
 向量为 $(x_{n+1}, x_n, 1)^T$ 将递推关系

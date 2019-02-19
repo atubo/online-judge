@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/19
+* [洛谷 P1875] 佳佳的魔法药水:
+最短路，对于每一种配方 $a+b=c$
+建两条边，$a\to c$ 和 $b\to c$
+SPFA求最短路，求出最短路后按距离排序
+求方案数。
+
 ### 02/18
 * [洛谷 P3201] [HNOI2009]梦幻布丁:
 图论 + 启发式合并。先建图，若颜色段

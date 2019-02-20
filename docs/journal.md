@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/20
+* [洛谷 P2186] 小Z的栈函数: 模拟即可。
+
 ### 02/19
 * [洛谷 P1875] 佳佳的魔法药水:
 最短路，对于每一种配方 $a+b=c$

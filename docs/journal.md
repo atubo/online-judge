@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/22
+* [洛谷 P1762] P1762 偶数:将前n行打印出来观察
+可发现奇数的位置构成一个自相似的图案，递归求解即可。
+
 ### 02/21
 * [洛谷 P1822] 魔法指纹: 照题解思路，从目标
 出发进行DFS。

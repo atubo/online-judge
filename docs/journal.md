@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/21
+* [洛谷 P1822] 魔法指纹: 照题解思路，从目标
+出发进行DFS。
+
 ### 02/20
 * [洛谷 P2186] 小Z的栈函数: 模拟即可。
 

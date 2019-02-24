@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/24
+* [洛谷 P1382] 楼房:将每个楼房分成左右
+两边，按横坐标排序依次加入，用一个数组
+维护高度计数，并用一个堆维护当前最大高
+度。
+
 ### 02/23
 * [洛谷 P2516] [HAOI2010]最长公共子序列:
 我的做法：DP求出LCS，令 $f_l(i,j)$ 表示

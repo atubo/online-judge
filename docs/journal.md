@@ -14,6 +14,9 @@ Journal of the problems I have worked on
 的方案数， 有 $f_l(i,j)=\sum_{i'<i,j'<j}f_{l-1}(i',j')$
 对每个 $l$ 用树状数组维护频率的前缀和。
 看题解发现用容斥原理可以更简单有效的处理。
+* [洛谷 P3933] Chtholly Nota Seniorious:
+看了题解，没想出来比较遗憾，想到了二分，
+但没想到二分时用最大最小值来分区。
 
 ### 02/22
 * [洛谷 P1762] P1762 偶数:将前n行打印出来观察

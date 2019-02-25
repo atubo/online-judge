@@ -12,6 +12,10 @@ Journal of the problems I have worked on
 两边，按横坐标排序依次加入，用一个数组
 维护高度计数，并用一个堆维护当前最大高
 度。
+* [洛谷 P2860] [USACO06JAN]冗余路径Redundant Paths:
+Tarjan算法求出边双连通分量后缩点，形成一颗树，若此树
+叶子数为 $x$  则答案为  $\lceil x/2 \rceil$
+
 
 ### 02/23
 * [洛谷 P2516] [HAOI2010]最长公共子序列:

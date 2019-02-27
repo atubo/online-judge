@@ -13,6 +13,8 @@ Journal of the problems I have worked on
 有伤害  $p-a^2\cdot i^2 - 2 a j\cdot i + a j^2$
 对 $i$  的0，1，2  次项分别维护前缀和，可在 $O(N)$
 时间内判断 $p$ 的可行性，二分查找即可。
+* [洛谷 P1446] [HNOI2008]Cards: 上次提交被hack了，修了
+一个bug 重新AC。
 
 ### 02/25
 * [洛谷 P3745] [六省联考2017]期末考试: 显然总的不愉快度

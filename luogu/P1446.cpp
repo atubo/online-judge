@@ -41,7 +41,7 @@ int add(int a, int b) {
 }
 
 int solve(int pos, int r, int b, int g, const vector<int> &partition) {
-    if (pos == N) return 1;
+    if (pos == (int)partition.size()) return 1;
     if (dp[r][b][g] != -1) return dp[r][b][g];
     int &ret = dp[r][b][g] = 0;
     if (r >= partition[pos]) {

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/28
+* [洛谷 P2500] [SDOI2012]集合: 数据似乎较水，按照暴力
+题解AC了，不知将来会不会被hack掉。
+
 ### 02/27
 * [洛谷 P3105] [USACO14OPEN]公平的摄影Fair Photography:
 斑点牛记为+1，白牛记为-1，对于奇数和偶数分别维护前缀和

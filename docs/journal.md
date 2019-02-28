@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/27
+* [洛谷 P3105] [USACO14OPEN]公平的摄影Fair Photography:
+斑点牛记为+1，白牛记为-1，对于奇数和偶数分别维护前缀和
+的单调下降队列，对于每个位置，若当前前缀和为 $x$  则在
+相应队列中找出最左边的位置使得前缀和小于等于 $x$
+
 ### 02/26
 * [洛谷 P1485] 火枪打怪: 可先将数据倒排以便处理，
 注意到若位置 $j$ 开了 $a$  枪，则对于  $i\in [j+1, j+d]$

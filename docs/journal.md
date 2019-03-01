@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/01
+* [洛谷 P2292] [HNOI2004]L语言: DP + trie
+
 ### 02/28
 * [洛谷 P2500] [SDOI2012]集合: 数据似乎较水，按照暴力
 题解AC了，不知将来会不会被hack掉。

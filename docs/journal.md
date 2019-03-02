@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/02
+* [洛谷 P3360] 偷天换日: （二叉）树上背包问题，
+边DFS边处理即可，注意off-by-1 错误。
+
 ### 03/01
 * [洛谷 P2292] [HNOI2004]L语言: DP + trie
 * [洛谷 P2446] [SDOI2010]大陆争霸: SFPA + 线段树。

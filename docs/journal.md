@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 03/02
 * [洛谷 P3360] 偷天换日: （二叉）树上背包问题，
 边DFS边处理即可，注意off-by-1 错误。
+* [洛谷 P2894] [USACO08FEB]酒店Hotel: 线段树维护每个
+区间的连续空位状态，查询时二分递归即可。
 
 ### 03/01
 * [洛谷 P2292] [HNOI2004]L语言: DP + trie

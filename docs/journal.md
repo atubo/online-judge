@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/03
+* [洛谷 P2633] Count on a tree: 用了树剖 + 主席树 + O2。
+看题解发现直接在树上建主席树就可以了，应该有 $\log N$
+的加速。
+
 ### 03/02
 * [洛谷 P3360] 偷天换日: （二叉）树上背包问题，
 边DFS边处理即可，注意off-by-1 错误。

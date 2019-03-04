@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 P2633] Count on a tree: 用了树剖 + 主席树 + O2。
 看题解发现直接在树上建主席树就可以了，应该有 $\log N$
 的加速。
+* [洛谷 P3627] [APIO2009]抢掠计划: 强连通分量缩点 +
+拓扑排序 + DP。
 
 ### 03/02
 * [洛谷 P3360] 偷天换日: （二叉）树上背包问题，

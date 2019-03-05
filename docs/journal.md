@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/04
+* [洛谷 P3121] [USACO15FEB]审查（黄金）Censoring (Gold):
+AC自动机，用一数组维护走过的状态，每次匹配到敏感词时根据
+敏感词的长度退回到之前的状态。注意须记忆化状态转移，否则
+会TLE。
+
 ### 03/03
 * [洛谷 P2633] Count on a tree: 用了树剖 + 主席树 + O2。
 看题解发现直接在树上建主席树就可以了，应该有 $\log N$

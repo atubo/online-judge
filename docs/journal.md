@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/05
+* [洛谷 P2329] [SCOI2005]栅栏: 看题解才会，搜索 + 剪枝。
+注意 $B[k]=B[k+1]$ 的那个剪枝比较难想。
+
 ### 03/04
 * [洛谷 P3121] [USACO15FEB]审查（黄金）Censoring (Gold):
 AC自动机，用一数组维护走过的状态，每次匹配到敏感词时根据

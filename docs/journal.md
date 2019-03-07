@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/07
+* [洛谷 P2526] [SHOI2001]小狗散步: 二分图最大匹配，
+匹配的两边分别是小狗的景点和主人的每段路径。
+
 ### 03/06
 * [洛谷 2943] [USACO09MAR]清理Cleaning Up: DP，
 $dp(i) = \min_j(dp[i-j] + j^2)$ $j$ 只须从1搜索到

@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/06
+* [洛谷 2943] [USACO09MAR]清理Cleaning Up: DP，
+$dp(i) = \min_j(dp[i-j] + j^2)$ $j$ 只须从1搜索到
+$\sqrt{N} 即可。每个位置维护两个数列，分别保存不同
+颜色数为 $i$ 时向左最大延伸距离和新增颜色，可快速
+从一个位置转移到下一个位置。
+
 ### 03/05
 * [洛谷 P2329] [SCOI2005]栅栏: 看题解才会，搜索 + 剪枝。
 注意 $B[k]=B[k+1]$ 的那个剪枝比较难想。

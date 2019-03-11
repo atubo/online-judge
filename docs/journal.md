@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/10
+* [洛谷 P1803] 凌乱的yyy / 线段覆盖: 试炼场水题。
+
 ### 03/09
 * [洛谷 P2322] [HNOI2006]最短母串问题: 仔细考虑可
 发现问题可转化为最短哈密尔顿路径问题， 可用状压DP

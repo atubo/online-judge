@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/12
+* [洛谷 P1094] 纪念品分组: 试炼场水题。
+
 ### 03/11
 * [洛谷 P3417] [POI2005]BANK-Cash Dispenser:
 看了题解。对于每个运动序列，预处理出每个数字在每个

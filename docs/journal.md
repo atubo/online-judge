@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/13
+* [洛谷 CF888E] Maximum Subsequence: 类似
+meet-in-the-middle 的思想，将所有的数均分为两组，
+对每组求出所有可能的余数并排序。枚举第一组的元素
+并在第二组中二分查找使余数和最大的元素。
+
 ### 03/12
 * [洛谷 P1094] 纪念品分组: 试炼场水题。
 

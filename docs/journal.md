@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/14
+* [洛谷 P3607] [USACO17JAN]Subsequence Reversal序列反转:
+想出了DP的状态，但没想清楚状态转移如何作，看题解发现用
+递归进行状态转移比较简洁。令 $dp(i,j,k,m)$ 表示范围
+$[i,j]$ 内最小元素大于等于 $k$ 最大元素小于等于 $m$ 的
+递增序列最大长度，转移到状态 $(i+1,j-1)$ $(i+1,j)$ 和
+$(i,j-1)$
+
 ### 03/13
 * [洛谷 CF888E] Maximum Subsequence: 类似
 meet-in-the-middle 的思想，将所有的数均分为两组，

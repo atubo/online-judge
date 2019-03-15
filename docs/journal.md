@@ -14,6 +14,7 @@ Journal of the problems I have worked on
 $[i,j]$ 内最小元素大于等于 $k$ 最大元素小于等于 $m$ 的
 递增序列最大长度，转移到状态 $(i+1,j-1)$ $(i+1,j)$ 和
 $(i,j-1)$
+* [洛谷 P1140] 相似基因: DP水题。
 
 ### 03/13
 * [洛谷 CF888E] Maximum Subsequence: 类似

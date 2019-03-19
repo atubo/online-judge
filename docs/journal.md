@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/18
+* [洛谷 P2934] [USACO09JAN]安全出行Safe Travel:
+蛮好的题，先求出最短路径树，枚举每条非树边 $e$
+若它的两端点为 $u$ 和 $v$ 则此边对于树上 $u$ $v$
+之间的路径上非LCA的每个点均有贡献，若每个点加上
+偏移值 $-d_i$ 后贡献值为常数，可用树链剖分维护之。
+用了无耻O2。
+
 ### 03/14
 * [洛谷 P3607] [USACO17JAN]Subsequence Reversal序列反转:
 想出了DP的状态，但没想清楚状态转移如何作，看题解发现用

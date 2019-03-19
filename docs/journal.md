@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/19
+* [洛谷 P4281] [AHOI2008]紧急集合 / 聚会:
+倍增求LCA，每次集合的位置应是三个点两两LCA中深度
+最大的那个。
+
 ### 03/18
 * [洛谷 P2934] [USACO09JAN]安全出行Safe Travel:
 蛮好的题，先求出最短路径树，枚举每条非树边 $e$

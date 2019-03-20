@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/20
+* [洛谷 P2887] [USACO07NOV]防晒霜Sunscreen: 贪心。
+将防晒霜按SPF值从小到大排序，每次优先抹maxSPF最低
+的牛。
+
 ### 03/19
 * [洛谷 P4281] [AHOI2008]紧急集合 / 聚会:
 倍增求LCA，每次集合的位置应是三个点两两LCA中深度

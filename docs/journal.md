@@ -11,6 +11,9 @@ Journal of the problems I have worked on
 * [洛谷 P4281] [AHOI2008]紧急集合 / 聚会:
 倍增求LCA，每次集合的位置应是三个点两两LCA中深度
 最大的那个。
+* [洛谷 P2845] [USACO15DEC]Switching on the Lights 开关灯:
+BFS，以三种颜色标记房间，0表示灯未开，1表示灯已开但不可达，
+2表示灯已开并可达。
 
 ### 03/18
 * [洛谷 P2934] [USACO09JAN]安全出行Safe Travel:

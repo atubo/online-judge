@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/21
+* [洛谷 P3116] [USACO15JAN]约会时间Meeting Time:
+对每个点维护两个bit vector表示到此点可能的距离，
+对每个点依次松弛即可。
+
 ### 03/20
 * [洛谷 P2887] [USACO07NOV]防晒霜Sunscreen: 贪心。
 将防晒霜按SPF值从小到大排序，每次优先抹maxSPF最低

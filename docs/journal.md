@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/22
+* [洛谷 P4591] [TJOI2018]碱基序列: KMP + DP,
+令 dp(i,j)$ 表示氨基酸从 $i$ 开始，碱基串从
+位置 $j$ 开始可匹配的方案数。对每个碱基序列
+用KMP在碱基串上跑一遍找到匹配位置。
+
 ### 03/21
 * [洛谷 P3116] [USACO15JAN]约会时间Meeting Time:
 对每个点维护两个bit vector表示到此点可能的距离，

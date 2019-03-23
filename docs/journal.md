@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/23
+* [洛谷 P2606] [ZJOI2010]排列计数: 其实就是求
+不同的heap的个数，将最小的元素放在根，其余分别
+放在左右子树，递归求解即可。
+
 ### 03/22
 * [洛谷 P4591] [TJOI2018]碱基序列: KMP + DP,
 令 dp(i,j)$ 表示氨基酸从 $i$ 开始，碱基串从

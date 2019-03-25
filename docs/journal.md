@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/24
+* [洛谷 CF817F] MEX Queries: 离散化 + 线段树。
+几点注意：离散化时将每个点的后继也加入，两个
+懒标记下放时的合并。
+
 ### 03/23
 * [洛谷 P2606] [ZJOI2010]排列计数: 其实就是求
 不同的heap的个数，将最小的元素放在根，其余分别

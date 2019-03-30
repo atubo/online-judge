@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/29
+* [洛谷 P2656] 采蘑菇: Tarjan缩点 + 拓扑排序 + DP。
+
 ### 03/28
 * [洛谷 P3707] [SDOI2017]相关分析: 线段树。两种更新
 对应两种懒标记，记录四个统计量：

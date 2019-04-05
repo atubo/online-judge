@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/04
+* [洛谷 P4461] [CQOI2018]九连环: 仔细找规律可发现
+递推式 $f(n)=f(n-2)+2^{n-1}$ 考虑到此题要求高精度，
+暴力递推必然超时。继续找规律可发现下标为奇数的子
+序列满足 $x_{n+1}=4 x_n + 1$ 令 $x_n+\frac{1}{3}=z_n$
+有 $z_n=4 z_{n-1}$ 则有通项公式 $z_n=\frac{4^n}{3}$
+高精 + 快速幂即可。
+
 ### 04/03
 * [洛谷 P4456] [CQOI2018]交错序列: 本来天真的以为
 用公式 $\sum_{x=\lfloor\frac{n}{2}\rfloor}^{n}{x+1\choose n-x} x^a y^b$

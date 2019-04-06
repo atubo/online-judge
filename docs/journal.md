@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/06
+* [洛谷 P1457] 城堡 The Castle: DFS搜索连通块。
+
 ### 04/05
 * [洛谷 P3401] 洛谷树: 树链剖分。将每一个二进制位
 单独处理。线段树每个区间维护以下统计量： $x$ 终点

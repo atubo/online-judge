@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 04/06
 * [洛谷 P1457] 城堡 The Castle: DFS搜索连通块。
+* [洛谷 P1461] 海明码 Hamming Codes: 试炼场水题。
 
 ### 04/05
 * [洛谷 P3401] 洛谷树: 树链剖分。将每一个二进制位

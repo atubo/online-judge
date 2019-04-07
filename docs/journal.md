@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/07
+* [洛谷 P4145] 上帝造题的七分钟2 / 花神游历各国:
+线段树。注意到任意正整数开方若干次后都会变为1 ，
+对每个区间维护一个标记表示此区间所有数是否都已为1，
+若是则下次更新可略过此区间。
+
 ### 04/06
 * [洛谷 P1457] 城堡 The Castle: DFS搜索连通块。
 * [洛谷 P1461] 海明码 Hamming Codes: 试炼场水题。

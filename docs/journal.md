@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/17
+* [洛谷 P3229] [HNOI2013]旅行: 神题，[题解](http://www.cnblogs.com/lazycal/p/3221342.html)
+都看了半天。
+
 ### 04/12
 * [洛谷 P4168] [Violet]蒲公英: 看题解才会作的分块题。
 离散化后预处理出 $S(i,j)$ 表示前 $i$ 块第 $j$ 个数

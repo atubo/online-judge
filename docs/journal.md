@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/18
+* [洛谷 P2481] [SDOI2010]代码拍卖会: 又是一道神题，
+照着题解作的。
+
 ### 04/17
 * [洛谷 P3229] [HNOI2013]旅行: 神题，[题解](http://www.cnblogs.com/lazycal/p/3221342.html)
 都看了半天。

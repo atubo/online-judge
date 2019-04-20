@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/20
+* [洛谷 P3638] [APIO2013]机器人: 斯坦纳树，令 $dp(l,r,i)$
+表示以 $i$ 为根合并机器人为 $(l,r)$ 的最小步数。变态卡常，
+不得已O2之。
+
 ### 04/18
 * [洛谷 P2481] [SDOI2010]代码拍卖会: 又是一道神题，
 照着题解作的。

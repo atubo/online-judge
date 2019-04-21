@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/21
+* [洛谷 P2205] [USACO13JAN]画栅栏Painting the Fence:
+离散化 + 线段树。其实不用线段树，用区间排序 + 扫描亦可。
+
 ### 04/20
 * [洛谷 P3638] [APIO2013]机器人: 斯坦纳树，令 $dp(l,r,i)$
 表示以 $i$ 为根合并机器人为 $(l,r)$ 的最小步数。变态卡常，

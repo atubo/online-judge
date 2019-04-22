@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/22
+* [洛谷 P1395] 会议: 先作一遍DFS求出以1为根的总距离，
+再作一遍DFS求出以各个点为根的总距离。
+
 ### 04/21
 * [洛谷 P2205] [USACO13JAN]画栅栏Painting the Fence:
 离散化 + 线段树。其实不用线段树，用区间排序 + 扫描亦可。

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/23
+* [洛谷 P3068] [USACO13JAN]派对邀请函Party Invitations:
+模拟。用一个队列维护待处理的牛，初始时牛1入队。每头牛出队
+时将自己从自己所在的所有组中删除，若有任何组大小变为1，将
+剩余元素入队。
+
 ### 04/22
 * [洛谷 P1395] 会议: 先作一遍DFS求出以1为根的总距离，
 再作一遍DFS求出以各个点为根的总距离。

@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 04/22
 * [洛谷 P1395] 会议: 先作一遍DFS求出以1为根的总距离，
 再作一遍DFS求出以各个点为根的总距离。
+* [洛谷 P3749] [六省联考2017]寿司餐厅: 不看题解确实想
+不出来将它转化为最大点权闭合图的做法。
 
 ### 04/21
 * [洛谷 P2205] [USACO13JAN]画栅栏Painting the Fence:

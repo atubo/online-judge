@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/25
+* [洛谷 P3825] [NOI2017]游戏: 看题解才会作的神题。转化为
+2-SAT 问题。
+
 ### 04/24
 * [洛谷 P2700] 逐个击破: 树形DP。令 $dp(i,0/1)$ 表示以
 $i$ 为根，父节点方向无/有敌据点的最小代价。注意当 $i$

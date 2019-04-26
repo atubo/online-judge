@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/26
+* [洛谷 P3978] [TJOI2015]概率论: 神题，看题解才明白，代码
+只有一行。知道了一个结论：大小为 $n$ 的不同二叉树的叶子节点
+的个数和为 $nC_{n-1}$ $C$ 为Catalan数。
+
 ### 04/25
 * [洛谷 P3825] [NOI2017]游戏: 看题解才会作的神题。转化为
 2-SAT 问题。

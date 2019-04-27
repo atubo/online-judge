@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/27
+* [洛谷 P3048] [USACO12FEB]牛的IDCow IDs: 枚举找出最高位
+的1在哪里，然后递归求解 $(n', k-1)$ 的问题。
+
 ### 04/26
 * [洛谷 P3978] [TJOI2015]概率论: 神题，看题解才明白，代码
 只有一行。知道了一个结论：大小为 $n$ 的不同二叉树的叶子节点

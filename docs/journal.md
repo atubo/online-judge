@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/30
+* [洛谷 P4254] [JSOI2008]Blue Mary开公司: 李超线段树第一弹。
+用凸包应该也可以作。
+
 ### 04/28
 * [洛谷 P4756] Added Sequence: 有意思的题，可惜没想出来。
 其实问题就是求最大前缀和与最小前缀和的差。每次将原数组加

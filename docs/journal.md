@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/03
+* [洛谷 P2917] [USACO08NOV]玩具Toys: 看题解才会。
+基于凸单调性（证明看不太懂），可用三分 + 模拟 来解决。
+
 ### 05/01
 * [洛谷 P2218] [HAOI2007]覆盖问题: 三个正方形的相对位置
 只有6种可能性，考虑到左右对称性只有3种可能：从左到右高度

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/04
+* [洛谷 P2986] [USACO10MAR]伟大的奶牛聚集Great Cow Gat…:
+是P1395的加强版，用相同的解法即可。
+
 ### 05/03
 * [洛谷 P2917] [USACO08NOV]玩具Toys: 看[题解](https://blog.csdn.net/wmdcstdio/article/details/46685953)才会。
 基于凸单调性（证明看不太懂），可用三分 + 模拟 来解决。

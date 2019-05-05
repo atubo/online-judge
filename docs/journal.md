@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/05
+* [洛谷 P1606] [USACO07FEB]白银莲花池Lilypad Pond:
+第一问基本上是裸的最短路问题，第二问是最短路计数，
+需要去掉莲花对应的节点。利用并查集将与同一莲花可达
+集合相邻的水节点两两连边建图即可。
+
 ### 05/04
 * [洛谷 P2986] [USACO10MAR]伟大的奶牛聚集Great Cow Gat…:
 是P1395的加强版，用相同的解法即可。

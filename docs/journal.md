@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/06
+* [洛谷 P3952] 时间复杂度：parse出一颗语法树后递归
+求解复杂度即可。
+
 ### 05/05
 * [洛谷 P1606] [USACO07FEB]白银莲花池Lilypad Pond:
 第一问基本上是裸的最短路问题，第二问是最短路计数，

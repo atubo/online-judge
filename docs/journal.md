@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/07
+* [洛谷 P2070] 刷墙: 类似P2205，离散化 + 线段树。
+看题解发现用区间合并亦可。
+
 ### 05/06
 * [洛谷 P3952] 时间复杂度：parse出一颗语法树后递归
 求解复杂度即可。

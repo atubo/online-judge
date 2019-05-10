@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/09
+* [洛谷 P3534] [POI2012]STU-Well : 又是一道看
+[题解](https://www.cnblogs.com/Miracevin/p/9676637.html)
+才会作的题。
+
 ### 05/08
 * [洛谷 P2503] [HAOI2006]均分数据: 模拟退火第一弹。
 模拟退火调整数组元素相对位置，DP求解连续区间分组最优解。

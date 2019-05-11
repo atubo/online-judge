@@ -4,41 +4,74 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Note graph node is 0-indexed
+class Graph {
+public:
+    struct Edge {
+        int next, to;
+    };
+
+    vector<int> head;
+    int eidx;
+    int N, M;
+
+    Edge *E;
+
+    Graph(int N_, int M_):N(N_), M(M_) {
+        head.resize(N);
+        eidx = 0;
+
+        for (int i = 0; i < N; i++) {
+            head[i] = -1;
+        }
+
+        E = new Edge[M]{};
+    }
+
+    ~Graph() {
+        delete[] E;
+    }
+
+    // assume 0-indexed and no duplication
+    void addEdge(int u, int v) {
+        E[eidx].to = v;
+        E[eidx].next = head[u];
+        head[u] = eidx++;
+    }
+};
+
 // Hungarian method to find maximal match in bipartite graph
 // using DFS, time complexity O(N^3)
 class Hungarian {
 private:
     int nx_, ny_;
-    bool** g_;
+    Graph g_;
+    int len_;
 
     int *cx_, *cy_;
     bool *mk_;
+    int *restore_;
 
     void alloc() {
-        g_ = new bool*[nx_];
-        for (int i = 0; i < nx_; i++) {
-            g_[i] = new bool[ny_];
-        }
         cx_ = new int[nx_];
         cy_ = new int[ny_];
-        mk_ = new bool[ny_];
+        mk_ = new bool[ny_]{};
+        restore_ = new int[ny_];
     }
 
     void dealloc() {
-        for (int i = 0; i < nx_; i++) {
-            delete[] g_[i];
-        }
-        delete[] g_;
-
         delete[] cx_;
         delete[] cy_;
         delete[] mk_;
+        delete[] restore_;
     }
 
     int path(int u) {
-        for (int v = 0; v < ny_; v++) {
-            if (g_[u][v] && !mk_[v]) {
+        for (int eidx = g_.head[u]; ~eidx; eidx = g_.E[eidx].next) {
+            int v = g_.E[eidx].to - nx_;
+            if (!mk_[v]) {
                 mk_[v] = true;
+                restore_[len_++] = v;
                 if (cy_[v] == -1 || path(cy_[v])) {
                     cx_[u] = v;
                     cy_[v] = u;
@@ -50,23 +83,16 @@ private:
     }
 
 public:
-    Hungarian(int nx, int ny): nx_(nx), ny_(ny) {
+    Hungarian(int nx, int ny): nx_(nx), ny_(ny), g_(nx+ny, 200*200) {
         alloc();
-        reset();
     }
 
     ~Hungarian() {
         dealloc();
     }
 
-    void reset() {
-        for (int i = 0; i < nx_; i++) {
-            memset(g_[i], 0, ny_ * sizeof(bool));
-        }
-    }
-
     void addEdge(int x, int y) {
-        g_[x][y] = true;
+        g_.addEdge(x, nx_+y);
     }
 
     int maxMatch() {
@@ -75,8 +101,11 @@ public:
         memset(cy_, -1, ny_ * sizeof(int));
         for (int i = 0; i < nx_; i++) {
             if (cx_[i] == -1) {
-                memset(mk_, 0, ny_ * sizeof(bool));
+                len_ = 0;
                 res += path(i);
+                for (int j = 0; j < len_; j++) {
+                    mk_[restore_[j]] = 0;
+                }
             }
         }
         return res;
@@ -85,11 +114,10 @@ public:
     struct Match {
         int nx, ny;
         const int *cx, *cy;
-        bool const * const *g;
     };
 
     Match getMatch() const {
-        return {nx_, ny_, cx_, cy_, g_};
+        return {nx_, ny_, cx_, cy_};
     }
 };
 

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/10
+* [洛谷 P1263] 宫廷守卫: 转化二分图最大匹配。用了无耻O2 。
+
 ### 05/09
 * [洛谷 P3534] [POI2012]STU-Well : 又是一道看
 [题解](https://www.cnblogs.com/Miracevin/p/9676637.html)

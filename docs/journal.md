@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/12
+* [洛谷 P4268] [USACO18FEB]Directory Traversal:
+类似P2986和P1395 注意正反向路径长度不同。
+
 ### 05/11
 * [洛谷 P1471] 方差: 基本上是线段树模板题，
 只要同时维护区间和与区间平方和即可。

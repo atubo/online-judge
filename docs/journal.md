@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/13
+* [洛谷 P1458] 顺序的分数 Ordered Fractions:
+试炼场水题。
+
 ### 05/12
 * [洛谷 P4268] [USACO18FEB]Directory Traversal:
 类似P2986和P1395 注意正反向路径长度不同。

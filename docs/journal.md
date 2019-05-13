@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 05/13
 * [洛谷 P1458] 顺序的分数 Ordered Fractions:
 试炼场水题。
+* [洛谷 P1466] 集合 Subset Sums: 试炼场水题，
+背包。
 
 ### 05/12
 * [洛谷 P4268] [USACO18FEB]Directory Traversal:

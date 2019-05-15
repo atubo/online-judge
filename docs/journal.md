@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/15
+* [洛谷 P4077] [SDOI2016]硬币游戏: 看题解才会作。
+
 ### 05/14
 * [洛谷 P1963] [NOI2009]变换序列: 本质上是一个
 2-SAT 问题。但直接建图有可能边数过多。考虑到本题

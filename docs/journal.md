@@ -9,14 +9,14 @@ Journal of the problems I have worked on
 
 ### 05/18
 * [洛谷 P3281] [SCOI2013]数数: 基本是道数学题。
-显然答案是 $solve(R)-solve(L-1)$ $solve(x)$ 给
+显然答案是 $solve(R)-solve(L-1)$ 其中$solve(x)$ 给
 出0到x 区间的结果。若x有n位，先考虑1到n-1位的
 所有数，考虑第0位（最低位）每个数的贡献：
 $1+(B-1)\cdot 2 + (B^2-B)\cdot 3)...$
 化简后的结果为 $(n-1)B^{n-2}-1-\frac{B^{n-2}-B}{B-1}$
 类似第i位每个数的贡献：
 $((n-i-1)B^{n-i-2}-1-\frac{B^{n-i-2}-B}{B-1})\cdot C_i$
-其中 $C_i=B^i\cdot(1+B+...+B^i}$
+其中 $C_i=B^i\cdot(1+B+...+B^i)$
 再考虑n位的所有数，令 $A_i'=A_{n-1}-1 A_{n-2} ... A_i$
 令 $A_i''=A_i A_{i-1} ... A_0$
 考虑第i位每个数的贡献：对于 $[1, A_i-1]$ 内的每个数，

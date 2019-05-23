@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/22
+* [洛谷 P2402] 奶牛隐藏: 二分查找 + 网络流。
+
 ### 05/21
 * [洛谷 P3241] [HNOI2015]开店: 动态点分治第一弹。
 基本是照题解抄的，用了无耻O2 。

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/24
+* [洛谷 P2174] 小Z的神奇数列: 正向作由于317847191
+不是质数，须用中国剩余定理，会TLE。可离线反向依次
+加入。
+
 ### 05/22
 * [洛谷 P2402] 奶牛隐藏: 二分查找 + 网络流。
 

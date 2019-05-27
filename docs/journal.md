@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/27
+* [洛谷 P3345] [ZJOI2015]幻想乡战略游戏:
+动态点分治，还是基本照题解抄的。
+
 ### 05/25
 * [洛谷 P3257] [JLOI2014]天天酷跑: 令 $dp(i,j,k)$
 表示从位置 $(i,j)$ 出发，剩余连跳数为 $k$ 的最大收益，

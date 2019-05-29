@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/28
+* [洛谷 P1224] [NOI2013]向量内积: 不会，基本
+照[题解](https://blog.sengxian.com/solutions/bzoj-3243)
+抄的。只用了全1向量，不知将来会不会被hack掉。
+
 ### 05/27
 * [洛谷 P3345] [ZJOI2015]幻想乡战略游戏:
 动态点分治，还是基本照题解抄的。

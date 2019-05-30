@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/29
+* [洛谷 P2664] 树上游戏: 点分治，可还是基本照
+[题解](https://www.luogu.org/blog/user24559/solution-p2664)
+抄的。
+
 ### 05/28
 * [洛谷 P1224] [NOI2013]向量内积: 不会，基本
 照[题解](https://blog.sengxian.com/solutions/bzoj-3243)

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/31
+* [洛谷 P3950] 部落冲突: Link-cut 树裸题。
+卡常很紧，用了无耻O2 。
+
 ### 05/30
 * [洛谷 P4098] [HEOI2013]ALO: 先用单调队列求出
 离每个位置最近的比它大的数的位置，再用二分+RMQ

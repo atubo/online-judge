@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/30
+* [洛谷 P4098] [HEOI2013]ALO: 先用单调队列求出
+离每个位置最近的比它大的数的位置，再用二分+RMQ
+求出离每个位置次近的比它大的数的位置。由此可得出
+每个位置作为次大数的最大范围（可能有两个）。用
+可持久化trie树求出每个位置可能的最大解。
+
 ### 05/29
 * [洛谷 P2664] 树上游戏: 点分治，可还是基本照
 [题解](https://www.luogu.org/blog/user24559/solution-p2664)

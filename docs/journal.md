@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/03
+* [洛谷 P4013] 数字梯形问题: 最小费用流，
+各个子问题之间只是某些边的容量不同。
+
 ### 06/02
 * [洛谷 P4041] [AHOI2014/JSOI2014]奇怪的计算器:
 仔细考虑可发现最终结果随 $x$ 的函数 $f(x)$ 由若干

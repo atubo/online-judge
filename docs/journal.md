@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/05
+* [洛谷 P2122] 还教室: 线段树同时维护区间和与
+区间平方和。
+
 ### 06/04
 * [洛谷 P4878] [USACO05DEC] 布局: 线性约束转化
 为最短路问题。对于第一类约束，连一条A到B，权值为

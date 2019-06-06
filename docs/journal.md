@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/06
+* [洛谷 P3878] [TJOI2010]分金币: 模拟退火。
+看题解似乎折半状压是正解？
+
 ### 06/05
 * [洛谷 P2122] 还教室: 线段树同时维护区间和与
 区间平方和。

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/08
+* [洛谷 P3888] [GDOI2014]拯救莫莉斯: 考虑数据
+范围可知 $m\le 7$ 使用状压DP， 令 $dp(i, m1, m2)$
+表示到第 $i$ 行时最后两行的状态为 $m_1$ 和 $m_2$
+的最小代价。
+
 ### 06/06
 * [洛谷 P3878] [TJOI2010]分金币: 模拟退火。
 看题解似乎折半状压是正解？

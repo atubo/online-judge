@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/09
+* [洛谷 P3512] [POI2010]PIL-Pilots: 同时维护
+递增和递减的单调队列，并对每个元素维护其最左
+边的管辖范围。
+
 ### 06/08
 * [洛谷 P3888] [GDOI2014]拯救莫莉斯: 考虑数据
 范围可知 $m\le 7$ 使用状压DP， 令 $dp(i, m1, m2)$

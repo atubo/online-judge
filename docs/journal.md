@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/10
+* [洛谷 P3118] [USACO15JAN]电影移动Moovie Mooving:
+先对时间进行离散化后，对每个电影预处理出时间
+$t$ 时进入电影 $i$ 能停留到的最晚时间。令 $dp(s)$
+代表观看状态 $s$ 的电影所能停留到的最晚时间，用
+状压DP进行转移。
+
 ### 06/09
 * [洛谷 P3512] [POI2010]PIL-Pilots: 同时维护
 递增和递减的单调队列，并对每个元素维护其最左

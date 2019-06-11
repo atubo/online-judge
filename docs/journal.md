@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/12
+* [洛谷 P3988] [SHOI2013]发牌: 用了treap, 卡常
+较严，用了无耻O2。
+
 ### 06/10
 * [洛谷 P3118] [USACO15JAN]电影移动Moovie Mooving:
 先对时间进行离散化后，对每个电影预处理出时间

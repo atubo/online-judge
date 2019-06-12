@@ -10,6 +10,10 @@ Journal of the problems I have worked on
 ### 06/12
 * [洛谷 P3988] [SHOI2013]发牌: 用了treap, 卡常
 较严，用了无耻O2。
+* [洛谷 P3522] [POI2011]TEM-Temperature: 一开始
+的想法是离散化后用线段树做。正确性没问题，可复杂度
+有点高。再仔细考虑后发现可用单调队列在 $O(N)$ 时间内
+解决。
 
 ### 06/10
 * [洛谷 P3118] [USACO15JAN]电影移动Moovie Mooving:

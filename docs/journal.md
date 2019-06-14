@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/13
+* [洛谷 P1398] [NOI2013]书法家: DP神题，基本
+照[题解](https://blog.csdn.net/dyp_simongreenall/article/details/77073274)
+抄的。
+
 ### 06/12
 * [洛谷 P3988] [SHOI2013]发牌: 用了treap, 卡常
 较严，用了无耻O2。

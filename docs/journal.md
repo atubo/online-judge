@@ -11,6 +11,8 @@ Journal of the problems I have worked on
 * [洛谷 P3681] [CERC2016]舞动的盘子 Dancing Disks:
 递归神题，对每个柱子，将其左上方的柱子递归进行排序，
 然后归并。
+* [洛谷 P3527] [POI2011]MET-Meteors: 整体二分第一弹，
+用了无耻O2。
 
 ### 06/13
 * [洛谷 P1398] [NOI2013]书法家: DP神题，基本

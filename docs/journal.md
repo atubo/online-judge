@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/15
+* [洛谷 P3681] [CERC2016]舞动的盘子 Dancing Disks:
+递归神题，对每个柱子，将其左上方的柱子递归进行排序，
+然后归并。
+
 ### 06/13
 * [洛谷 P1398] [NOI2013]书法家: DP神题，基本
 照[题解](https://blog.csdn.net/dyp_simongreenall/article/details/77073274)

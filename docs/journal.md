@@ -11,6 +11,7 @@ Journal of the problems I have worked on
 * [洛谷 P4206] [NOI2005]聪聪与可可: 考虑到边数不大，
 可对每个点作一次BFS，求出所有点对之间的最短距离和前驱点，
 然后用DP求期望值。
+* [洛谷 P4015] 运输问题: 最小费用流裸题。
 
 ### 06/15
 * [洛谷 P3681] [CERC2016]舞动的盘子 Dancing Disks:

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/23
+* [Leetcode 358] Rearrange String k Distance Apart:
+将位置按k同余分为k个strip, 将字母按频率从小到达排序，
+依次插入到strip k-1到strip 0 。正向处理strip 绕回时
+会有问题，比如k=4时从10绕回到7会认为无解。
+
 ### 06/16
 * [洛谷 P4206] [NOI2005]聪聪与可可: 考虑到边数不大，
 可对每个点作一次BFS，求出所有点对之间的最短距离和前驱点，

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/26
+* [洛谷 P4269] [USACO18FEB]Snow Boots G: 离线处理，
+将靴子和雪堆都按高度排序，用线段树维护区间内1的最大连续长度。
+将靴子从高到低处理，每次比它高的雪堆的位置在线段树上标记为1，
+再查询1的最大长度是否大于步长。
+
 ### 06/23
 * [Leetcode 358] Rearrange String k Distance Apart:
 将位置按k同余分为k个strip, 将字母按频率从小到达排序，

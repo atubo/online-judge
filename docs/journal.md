@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/27
+* [洛谷 P4140] 奇数国: 对每个素数维护一个线段树，
+对每个询问求出每个素数的区间指数和，利用 $\phi$
+函数的积性性质即可求解。
+
 ### 06/26
 * [洛谷 P4269] [USACO18FEB]Snow Boots G: 离线处理，
 将靴子和雪堆都按高度排序，用线段树维护区间内1的最大连续长度。

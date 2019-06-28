@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/28
+* [洛谷 P4307] [JSOI2009]球队收益 / 球队预算:
+看题解才会，拆点网络流。
+
 ### 06/27
 * [洛谷 P4140] 奇数国: 对每个素数维护一个线段树，
 对每个询问求出每个素数的区间指数和，利用 $\phi$

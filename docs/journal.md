@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/02
+* [洛谷 P3419] [POI2005]SAM-Toy Cars: 其实就是
+已知序列求cache最佳evict policy的问题，贪心即可。
+
 ### 07/01
 * [洛谷 P4885] 灭顶之灾: 对每组 $(a_i, b_i)$ 可求出
 1在第一行的位置的可能范围，要求所有范围的交。取反后求

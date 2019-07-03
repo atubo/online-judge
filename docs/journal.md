@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/03
+* [洛谷 P3768] 简单的数学题: 杜教筛第一弹，
+基本照[题解](https://oi-wiki.org/math/du-sieves/)抄的。
+
 ### 07/02
 * [洛谷 P3419] [POI2005]SAM-Toy Cars: 其实就是
 已知序列求cache最佳evict policy的问题，贪心即可。

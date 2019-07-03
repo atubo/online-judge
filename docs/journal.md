@@ -10,6 +10,8 @@ Journal of the problems I have worked on
 ### 07/03
 * [洛谷 P3768] 简单的数学题: 杜教筛第一弹，
 基本照[题解](https://oi-wiki.org/math/du-sieves/)抄的。
+* [洛谷 P2821] 变幻数: 分解因子2，3，5，7，然后贪心即可,
+需要高精。
 
 ### 07/02
 * [洛谷 P3419] [POI2005]SAM-Toy Cars: 其实就是

@@ -12,6 +12,9 @@ Journal of the problems I have worked on
 基本照[题解](https://oi-wiki.org/math/du-sieves/)抄的。
 * [洛谷 P2821] 变幻数: 分解因子2，3，5，7，然后贪心即可,
 需要高精。
+* [洛谷 P2568] GCD: 基本照[题解](https://blog.csdn.net/acdreamers/article/details/8542292)作的。
+枚举质数 $p$ 求出 $[1,N/p]$ 内欧拉函数的和，乘以2，
+再加上 $[1,N]$ 内的所有质数个数。
 
 ### 07/02
 * [洛谷 P3419] [POI2005]SAM-Toy Cars: 其实就是

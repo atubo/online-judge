@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/04
+* [洛谷 P4197] Peaks: 离线处理 + 平衡树 + 启发式合并。
+将所有询问和道路按困难值排序，处理每个询问时将困难值
+小于等于 $x$ 的道路都加入图中。用并查集维护连通性，
+启发式合并高度权值树。
+
 ### 07/03
 * [洛谷 P3768] 简单的数学题: 杜教筛第一弹，
 基本照[题解](https://oi-wiki.org/math/du-sieves/)抄的。

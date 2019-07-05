@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/05
+* [洛谷 P3455] [POI2007]ZAP-Queries: 莫比乌斯反演裸题。
+
 ### 07/04
 * [洛谷 P4197] Peaks: 离线处理 + 平衡树 + 启发式合并。
 将所有询问和道路按困难值排序，处理每个询问时将困难值

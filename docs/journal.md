@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/06
+* [洛谷 P4075] [SDOI2016]模式字符串: 点分治 + 哈希。
+基本照[题解](https://a-failure.github.io/2019/04/14/SDOI2016-%E6%A8%A1%E5%BC%8F%E5%AD%97%E7%AC%A6%E4%B8%B2/)
+写的。用了无耻O2。
+
 ### 07/05
 * [洛谷 P3455] [POI2007]ZAP-Queries: 莫比乌斯反演裸题。
 

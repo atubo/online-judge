@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/07
+* [洛谷 P1003] 铺地毯: 试炼场水题。
+
 ### 07/06
 * [洛谷 P4075] [SDOI2016]模式字符串: 点分治 + 哈希。
 基本照[题解](https://a-failure.github.io/2019/04/14/SDOI2016-%E6%A8%A1%E5%BC%8F%E5%AD%97%E7%AC%A6%E4%B8%B2/)

@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/08
+* [洛谷 P3242] [HNOI2015]接水果: 又是基本照
+[题解](https://mogicianevian.github.io/2018/03/20/HNOI-2015-%E6%8E%A5%E6%B0%B4%E6%9E%9C%EF%BC%88%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86-DFS%E5%BA%8F-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/)写的。
+将树上的路径包含用DFS序转化为二维平面上的矩形
+对点的覆盖问题。整体二分，每次二分时用扫描线判定
+每个点（水果）被多少个矩形（盘子）覆盖。
+
 ### 07/07
 * [洛谷 P1003] 铺地毯: 试炼场水题。
 * [洛谷 P3107] [USACO14OPEN]里程表Odometer:

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/09
+* [洛谷 P3868] [TJOI2009]猜数字: 中国剩余定理。
+
 ### 07/08
 * [洛谷 P3242] [HNOI2015]接水果: 又是基本照
 [题解](https://mogicianevian.github.io/2018/03/20/HNOI-2015-%E6%8E%A5%E6%B0%B4%E6%9E%9C%EF%BC%88%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86-DFS%E5%BA%8F-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%EF%BC%89/)写的。

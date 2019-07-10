@@ -9,6 +9,7 @@ Journal of the problems I have worked on
 
 ### 07/09
 * [洛谷 P3868] [TJOI2009]猜数字: 中国剩余定理。
+* [洛谷 P3951] 小凯的疑惑: 嗯，两行代码。
 
 ### 07/08
 * [洛谷 P3242] [HNOI2015]接水果: 又是基本照

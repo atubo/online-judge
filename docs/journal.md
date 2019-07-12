@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/10
+* [洛谷P4567] [AHOI2006]文本编辑器: Splay树。
+输入输出有些坑点。
+
 ### 07/09
 * [洛谷 P3327] [SDOI2015]约数个数和: 看题解才会作。
 * [洛谷 P3629] [APIO2010]巡逻: 看题解才知道将最长路上

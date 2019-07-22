@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/21
+* [Leetcode 272] Closest Binary Search Tree Value II:
+最终结果必然在以target为中心，某个半径的范围内。二分
+搜索半径即可。
+
 ### 07/10
 * [洛谷P4567] [AHOI2006]文本编辑器: Splay树。
 输入输出有些坑点。

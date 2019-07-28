@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/27
+* [Leetcode 460] LFU Cache: 为了两个操作都为 $O(1)$
+可用双向链表套双向链表。对每个频率建一个bucket, 不同
+频率的bucket以双向链表连接，同一频率的bucket内是不同
+item的双向链表。递增频率时只须将item从一个bucket移动
+到另一个bucket即可。
+
 ### 07/21
 * [Leetcode 272] Closest Binary Search Tree Value II:
 最终结果必然在以target为中心，某个半径的范围内。二分

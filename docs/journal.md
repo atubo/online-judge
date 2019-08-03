@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/03
+* [洛谷 P2137] Gty的妹子树: 根据题解思路作的。
+分块 + 归并树。每次分块开始时建立归并树，对于块内
+的查询，结果是归并树的结果加上对应操作1和2的调整。
+
 ### 07/27
 * [Leetcode 460] LFU Cache: 为了两个操作都为 $O(1)$
 可用双向链表套双向链表。对每个频率建一个bucket, 不同

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/04
+* [洛谷 P3097] [USACO13DEC]最优挤奶Optimal Milking:
+用了分块的算法，看题解发现线段树也可以解决。
+
 ### 08/03
 * [洛谷 P2137] Gty的妹子树: 根据题解思路作的。
 分块 + 归并树。每次分块开始时建立归并树，对于块内

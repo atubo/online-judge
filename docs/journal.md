@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/06
+* [洛谷 P3393] 逃离僵尸岛: 先用BFS求出所有的危险城市，
+然后分点求最短路。
+
 ### 08/04
 * [洛谷 P3097] [USACO13DEC]最优挤奶Optimal Milking:
 用了分块的算法，看题解发现线段树也可以解决。

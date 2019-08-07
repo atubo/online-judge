@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/07
+* [洛谷 P4253] [SCOI2015]小凸玩密室: 树形DP神题，照
+[题解](https://oi.men.ci/scoi2015-light/)写的。
+
 ### 08/06
 * [洛谷 P3393] 逃离僵尸岛: 先用BFS求出所有的危险城市，
 然后分点求最短路。

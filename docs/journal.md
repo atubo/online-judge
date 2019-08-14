@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/14
+* [洛谷 P3514] [POI2011]LIZ-Lollipop: 看题解作的。
+先找出能构成的最大的奇数和偶数和，再分别用构造性的
+方法求解。
+
 ### 08/07
 * [洛谷 P4253] [SCOI2015]小凸玩密室: 树形DP神题，照
 [题解](https://oi.men.ci/scoi2015-light/)写的。

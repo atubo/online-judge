@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/15
+* [洛谷 P4568] [JLOI2011]飞行路线: 分层图 + Dijkstra
+(SPFA 会TLE）。
+
 ### 08/14
 * [洛谷 P3514] [POI2011]LIZ-Lollipop: 看题解作的。
 先找出能构成的最大的奇数和偶数和，再分别用构造性的

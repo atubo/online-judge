@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/17
+* [洛谷 CF786B] Legacy: 将Dijkstra加以变化，
+用一个线段树ST1维护最短距离，用另一个线段树ST2维护
+T3操作覆盖的范围。每次取出点 $u$ 时，在ST1对T1，T2
+操作进行松弛，从ST2上取出所有覆盖点 $u$ 的T3操作进行
+松弛，并将这些T3操作从ST2上删除。
+
 ### 08/15
 * [洛谷 P4568] [JLOI2011]飞行路线: 分层图 + Dijkstra
 (SPFA 会TLE）。

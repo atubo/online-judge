@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/18
+* [洛谷 P4216] [SCOI2015]情报传递: 树链剖分，一开始
+想用树状数组套线段树在线作，发现会爆内存。改为离线
+按时间排序，可降低一个维度。
+
 ### 08/17
 * [洛谷 CF786B] Legacy: 将Dijkstra加以变化，
 用一个线段树ST1维护最短距离，用另一个线段树ST2维护

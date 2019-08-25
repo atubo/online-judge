@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/25
+* [洛谷 P3588] [POI2015]PUS: 看题解才会作。拓扑排序
++ 用线段树对区间连边。
+
 ### 08/23
 * [洛谷 P4906] 小奔关闹钟: 预处理出每个开关的作用
 范围后BFS即可。注意重边和自环。

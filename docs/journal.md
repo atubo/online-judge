@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/30
+* [洛谷 P4357] [CQOI2016]K远点对: 看了题解才会。KD树。
+
 ### 08/25
 * [洛谷 P3588] [POI2015]PUS: 看题解才会作。拓扑排序
 + 用线段树对区间连边。

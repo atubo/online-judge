@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/01
+* [洛谷 P3721] [AH2017/HNOI2017]单旋: 看题解才会。
+用线段树维护节点深度，离散化后用SBT维护前驱后继，并
+手动维护父子关系。
+
 ### 08/30
 * [洛谷 P4357] [CQOI2016]K远点对: 看了题解才会。KD树。
 

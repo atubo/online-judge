@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/13
+* [洛谷 P3769] [CH弱省胡策R2]TATT: 看题解作的，
+替罪羊式的kd树。
+
 ### 09/07
 * [洛谷 P2081] [NOI2012]迷失游乐园: 树的情况走两遍
 DFS即可。基环树的情况稍微复杂一些。先求出基环，对基环

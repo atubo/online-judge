@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/21
+* [洛谷 P3615] 如厕计划: 又是照题解写的。
+
 ### 09/13
 * [洛谷 P3769] [CH弱省胡策R2]TATT: 看题解作的，
 替罪羊式的kd树。

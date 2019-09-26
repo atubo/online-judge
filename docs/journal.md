@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/04
+* [洛谷 P4175] [CTSC2008]网络管理: 又是照题解写的。
+树状数组套线段树 + DFS序。
+
 ### 09/21
 * [洛谷 P3615] 如厕计划: 又是照题解写的。
 

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/06
+* [洛谷 P4590] [TJOI2018]游园会: 又是照题解写的。
+学习了LCS自动机这么个高级东东。
+
 ### 10/04
 * [洛谷 P4175] [CTSC2008]网络管理: 又是照题解写的。
 树状数组套线段树 + DFS序。

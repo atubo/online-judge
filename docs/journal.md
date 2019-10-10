@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/12
+* [洛谷 P3690] 【模板】Link Cut Tree （动态树）:
+模板题，但一开始按位搞，想多了。AC 1000！
+
 ### 10/09
 * [洛谷 P3472] [POI2008]MAF-Mafia: 易见图必然是一个或
 多个基环树。对于每个基环树，若它没有叶子，则当环长度大于

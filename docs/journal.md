@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/13
+* [洛谷 P3219] [HNOI2012]三角形覆盖问题:
+看题解作的暴力枚举解法，据说有 $O(n \log n)$
+的解法，回头再膜拜之。
+
 ### 10/12
 * [洛谷 P3690] 【模板】Link Cut Tree （动态树）:
 模板题，但一开始按位搞，想多了。AC 1000！

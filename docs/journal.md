@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/16
+* [洛谷 P3643] [APIO2016]划艇: 基本照
+[题解](https://lnrbhaw.github.io/2019/01/24/Luogu-3643-APIO2016-%E5%88%92%E8%89%87/)写的。
+DP + 离散化。其中离散化后的操作比较难想。
+
 ### 10/13
 * [洛谷 P3219] [HNOI2012]三角形覆盖问题:
 看题解作的暴力枚举解法，据说有 $O(n \log n)$

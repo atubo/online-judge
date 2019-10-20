@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/20
+* [洛谷 P4126] [AHOI2009]最小割: 又是看
+题解写的。最小割的可行边和必须边。在剩余
+网络上作Tarjan缩点。
+
 ### 10/18
 * [洛谷 P3294] [SCOI2016]背单词: 主要难度在于
 读懂题义。读懂之后发现其实将后缀关系建树后，

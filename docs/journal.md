@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/22
+* [洛谷 P4067][SDOI2016]储能表: 题解都看了半天。
+数位DP。注意 $zz-z$ 的修正项是考虑 $k$ 的影响。
+
 ### 10/20
 * [洛谷 P4126] [AHOI2009]最小割: 又是看
 题解写的。最小割的可行边和必须边。在剩余

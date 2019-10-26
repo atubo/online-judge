@@ -15,6 +15,7 @@ Journal of the problems I have worked on
 算出几个找规律，发现若令空位数为 $n$ 行数为 $l$
 则有答案为
 $\sum_k {{n+2l} \choose {k(n+2)+l-2}} - {{n+2l} \choose {k(n+2)+l-1}}$
+* [洛谷 P3154] [CQOI2009]循环赛: 记忆化搜索+剪枝。
 
 ### 10/22
 * [洛谷 P4067][SDOI2016]储能表: 题解都看了半天。

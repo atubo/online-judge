@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/27
+* [洛谷 P2730] 魔板 Magic Squares: BFS + 康托展开。
+
 ### 10/26
 * [洛谷 P3266] [JLOI2015]骗我呢: 数字0到 $m$
 之间有 $m+1$ 个空位，据题义可知从一行到下一行

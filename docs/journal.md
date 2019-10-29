@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/29
+* [洛谷 P1820] 寻找AP数: 令自然数为 $x$ 其
+因子数为 $n_f$ 用堆按照 $n_f$ 递增的次序生成
+$x$ 并将其加入一单调队列中。每次二分查找即可。
+
 ### 10/27
 * [洛谷 P2730] 魔板 Magic Squares: BFS + 康托展开。
 

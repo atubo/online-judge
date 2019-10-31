@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/30
+* [洛谷 P2498] [SDOI2012]拯救小云公主: 二分
+判定可行性，通过左上两边和右下两版是否通过
+以boss为圆心， $r$ 为半径的圆连通来判断可行性。
+
 ### 10/29
 * [洛谷 P1820] 寻找AP数: 令自然数为 $x$ 其
 因子数为 $n_f$ 用堆按照 $n_f$ 递增的次序生成

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/02
+* [洛谷 P3309] [SDOI2014]向量集: 基本照题解
+写的。用线段树来维护凸包。
+
 ### 10/30
 * [洛谷 P2498] [SDOI2012]拯救小云公主: 二分
 判定可行性，通过左上两边和右下两版是否通过

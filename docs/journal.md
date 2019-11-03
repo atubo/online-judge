@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/03
+* [洛谷 P4205] [NOI2005]智慧珠游戏: 搜索 +
+剪枝，第一个测试点吸了氧。
+
 ### 11/02
 * [洛谷 P3309] [SDOI2014]向量集: 基本照题解
 写的。用线段树来维护凸包。

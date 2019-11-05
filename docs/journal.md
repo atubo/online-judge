@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/05
+* [洛谷 P3373] 【模板】线段树 2: 模板题，
+维护两个懒标记。
+
 ### 11/03
 * [洛谷 P4205] [NOI2005]智慧珠游戏: 搜索 +
 剪枝，第一个测试点吸了氧。

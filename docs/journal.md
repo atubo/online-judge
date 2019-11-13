@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/13
+* [洛谷 P3175] [HAOI2015]按位或: 神题，照题解
+写的。min-max 容斥 + 几何分布 + 快速子集和。
+
 ### 11/12
 * [洛谷 P4492] [HAOI2018]苹果树: 照题解写的，
 按边统计。

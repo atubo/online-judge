@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/14
+* [洛谷 P2257] YY的GCD: 莫比乌斯反演，还是
+看了题解。
+
 ### 11/13
 * [洛谷 P3175] [HAOI2015]按位或: 神题，照题解
 写的。min-max 容斥 + 几何分布 + 快速子集和。

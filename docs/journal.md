@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/16
+* [洛谷 P3733] [HAOI2017]八纵八横: 照题解写的，
+线性基 + 线段树分治。
+
 ### 11/14
 * [洛谷 P2257] YY的GCD: 莫比乌斯反演，还是
 看了题解。

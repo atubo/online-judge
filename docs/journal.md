@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/28
+* [洛谷 P5137] polynomial: 毒瘤题，想了半天
+数论不成，看题解发现是递归。不过题解里教了个
+比较快的大数乘法。
+
 ### 11/24
 * [洛谷 P2304] [NOI2015]小园丁与老司机:
 第一问比较简单，从上到小分层DP。

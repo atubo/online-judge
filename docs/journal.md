@@ -12,6 +12,8 @@ Journal of the problems I have worked on
 分别存储 $x_i\cdot a_i$ 和 $a_i$ 的前缀和即可。
 * [洛谷 P3765] 总统选举: 用了区间内随机抽样+平衡树
 查询区间内频度+无耻O2。看题解正解是莫尔投票+平衡树。
+* [洛谷 P1208] [USACO1.3]混合牛奶 Mixing Milk:
+试炼场水题。
 
 ### 12/05
 * [洛谷 P3646] [APIO2015]巴厘岛的雕塑: 对答案从高位

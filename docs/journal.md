@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/07
+* [洛谷 P3932] 浮游大陆的68号岛: 用两个树状数组
+分别存储 $x_i\cdot a_i$ 和 $a_i$ 的前缀和即可。
+
 ### 12/05
 * [洛谷 P3646] [APIO2015]巴厘岛的雕塑: 对答案从高位
 到低位试探。观察数据范围，

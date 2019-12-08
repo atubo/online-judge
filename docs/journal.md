@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/08
+* [洛谷 P4284] [SHOI2014]概率充电器: 上下两遍DFS，
+第一遍DFS求出 $Q[u]$ 表示考虑 $u$ 和其子树的贡献时
+$u$ 的充电概率。第二遍DFS求出 $R[u]$ 考虑再加上 $u$
+的父亲的贡献时 $u$ 的充电概率。
+
 ### 12/07
 * [洛谷 P3932] 浮游大陆的68号岛: 用两个树状数组
 分别存储 $x_i\cdot a_i$ 和 $a_i$ 的前缀和即可。

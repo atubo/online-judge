@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/13
+* [洛谷 P2494] [SDOI2011]保密: 先跑一波分数规划
+找出点 $n$ 到所有出入口的最小危险性。再一波二分图
+最小点权覆盖。分数规划用了基于迭代的Dinkelbach算法
+作为优化。
+
 ### 12/08
 * [洛谷 P4284] [SHOI2014]概率充电器: 上下两遍DFS，
 第一遍DFS求出 $Q[u]$ 表示考虑 $u$ 和其子树的贡献时

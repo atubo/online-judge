@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/14
+* [洛谷 P3796] 【模板】AC自动机（加强版）: 模板题。
+
 ### 12/13
 * [洛谷 P2494] [SDOI2011]保密: 先跑一波分数规划
 找出点 $n$ 到所有出入口的最小危险性。再一波二分图

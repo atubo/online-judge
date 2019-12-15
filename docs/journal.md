@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/15
+* [洛谷 P4376] [USACO18OPEN]Milking Order:
+先二分查找最大的 $X$ 然后用优先队列维护入度
+为零的节点来找出字母序最小的拓扑序。
+
 ### 12/14
 * [洛谷 P3796] 【模板】AC自动机（加强版）: 模板题。
 

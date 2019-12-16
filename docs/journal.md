@@ -18,7 +18,7 @@ Journal of the problems I have worked on
 所求答案为 $\sum_m G(n,m)$ 打印出前几项为 $1,2,5,12,29...$
 为 Pell 数。快速幂求解。
 证明： $G(n,m)=\sum_{k=1}^{n-1}F_k G(n-k,m-1)$
-$G(n-1,m)=\sum_{k=1}^{n-2}F_k G(n-1-k,m-1)=\sum_{k=1}^{n-1}F_{k-1}G(n-k,m-1))$
+$G(n-1,m)=\sum_{k=1}^{n-2}F_k G(n-1-k,m-1)=\sum_{k=1}^{n-1}F_{k-1}G(n-k,m-1)$
 有 $G(n,m)-G(n-1,m)=F_1 G(n-1,m-1) + \sum_{k=2}^{n-1} F_{k-2} G(n-k, m-1)$
 化简可得 $G(n,m)=G(n-1,m)+G(n-1,m-1)+G(n-2,m)$
 

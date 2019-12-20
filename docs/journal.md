@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/19
+* [洛谷 P4383] [八省联考2018]林克卡特树lct:
+完全不会作，基本照题解抄的。学习了DP凸优化。
+
 ### 12/15
 * [洛谷 P4376] [USACO18OPEN]Milking Order:
 先二分查找最大的 $X$ 然后用优先队列维护入度

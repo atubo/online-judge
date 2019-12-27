@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/26
+* [洛谷 P3357] 最长k可重线段集问题: 转化为
+最小费用最大流问题。
+
 ### 12/19
 * [洛谷 P4383] [八省联考2018]林克卡特树lct:
 完全不会作，基本照题解抄的。学习了DP凸优化。

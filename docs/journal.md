@@ -13,7 +13,7 @@ $dp(i,1)$ 分别表示到第 $i$ 个位置时珠子是木属性
 和金属性的方法数。有 $dp(i,0)=dp(i-1,1)$ 和
 $dp(i,1)=dp(i-1,0)+dp(i-1,1)$ 可用矩阵乘法表示，
 转移矩阵为
-$$ \bigl( \begin{matrix}1 & 1\\ 0 & 1\end{matrix}\bigr) $$
+$$ \bigl( \begin{matrix}0 & 1\\ 1 & 1\end{matrix}\bigr) $$
 快速幂处理。
 
 ### 12/28

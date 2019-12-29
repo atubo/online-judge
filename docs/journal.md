@@ -13,7 +13,7 @@ $dp(i,1)$ 分别表示到第 $i$ 个位置时珠子是木属性
 和金属性的方法数。有 $dp(i,0)=dp(i-1,1)$ 和
 $dp(i,1)=dp(i-1,0)+dp(i-1,1)$ 可用矩阵乘法表示，
 转移矩阵为
-$\bigl( \begin{matrix}1 & 1\\ 0 & 1\end{matrix}\bigr)$
+$$ \bigl( \begin{matrix}1 & 1\\ 0 & 1\end{matrix}\bigr) $$
 快速幂处理。
 
 ### 12/28
@@ -766,7 +766,7 @@ $x\mod p = 2^x \mod p = 2^{x\mod \phi(p) + \phi(p)}\mod p$
 * [洛谷 P4456] [CQOI2018]交错序列: 本来天真的以为
 用公式 $\sum_{x=\lfloor\frac{n}{2}\rfloor}^{n}{x+1\choose n-x} x^a y^b$
 可以解决，被T飞得很惨。看题解发现正解很天才。将
-$x^a y^b$ 展开成 $y^{a+b-i)$ 形式的级数，再改变求和
+$x^a y^b$ 展开成 $y^{a+b-i}$ 形式的级数，再改变求和
 顺序，先对不同的 $y$ 求和，可用DP + 矩阵快速幂解决，
 再对 $i$ 求和（范围很小）。
 

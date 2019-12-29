@@ -7,6 +7,15 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/29
+* [洛谷 P4910] 帕秋莉的手环: 令 $dp(i,0)$ 和
+$dp(i,1)$ 分别表示到第 $i$ 个位置时珠子是木属性
+和金属性的方法数。有 $dp(i,0)=dp(i-1,1)$ 和
+$dp(i,1)=dp(i-1,0)+dp(i-1,1)$ 可用矩阵乘法表示，
+转移矩阵为
+$\bigl( \begin{smallmatrix}1 & 1\\ 0 & 1\end{smallmatrix}\bigr)$
+快速幂处理。
+
 ### 12/28
 * [洛谷 P2831] 愤怒的小鸟: 状压DP。每个小猪对应
 $a-b$ 平面上的一条直线。状态转移是枚举每条直线，

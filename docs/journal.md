@@ -7,6 +7,15 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/01
+* [洛谷 P4351] [CERC2015]Frightful Formula:
+$l$ 和 $t$ 的贡献比较好算。$C$ 比较麻烦。
+看题解发现依次递推每条对角线的贡献的作法，
+比较巧妙。
+
+***
+### Goodbye 2019
+
 ### 12/30
 * [洛谷 P2479] [SDOI2010]捉迷藏: 这种二维问题可
 先排序降掉一维，另一维用数据结构处理。具体说来，

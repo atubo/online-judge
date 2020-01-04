@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/04
+* [洛谷 P3642] [APIO2016]烟火表演: 神题，
+看题解才会作，用可并堆维护一个凸壳。
+
 ### 01/01
 * [洛谷 P4351] [CERC2015]Frightful Formula:
 $l$ 和 $t$ 的贡献比较好算。$C$ 比较麻烦。

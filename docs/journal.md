@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/05
+* [洛谷 P3808] 【模板】AC自动机（简单版）:
+模板题，注意卡内存。稍微少分配一些。
+
 ### 01/04
 * [洛谷 P3642] [APIO2016]烟火表演: 神题，
 看题解才会作，用可并堆维护一个凸壳。

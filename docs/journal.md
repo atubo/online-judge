@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/10
+* [洛谷 P3382] 【模板】三分法: 模板题。
+
 ### 01/08
 * [洛谷 P5357] 【模板】AC自动机（二次加强版）:
 模板，注意不要每次走到一个节点就追溯一遍 $next$ 指针，

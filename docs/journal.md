@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/20
+* [洛谷 P4320] 道路相遇: 先用Tarjan无向图点
+双连通分量算法求出所有的关节点。对于关节点
+$u$ 若有其孩子 $v$ 满足 $low[v] \ge dfn[u]$
+则在 $v$ 上标记1。对于询问 $(u, v)$ 答案为
+$u$ 和 $v$ 之间DFS树上路径的标记和。用树上差分
+处理。注意对LCA重复计算的判断。
+
 ### 01/10
 * [洛谷 P3382] 【模板】三分法: 模板题。
 

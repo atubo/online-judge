@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/26
+* [洛谷 P3634] [APIO2012]守卫: 照题解写的。
+
 ### 01/20
 * [洛谷 P4320] 道路相遇: 先用Tarjan无向图点
 双连通分量算法求出所有的关节点。对于关节点

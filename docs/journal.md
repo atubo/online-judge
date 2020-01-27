@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/27
+* [洛谷 P1181] 试炼场水题。
+
 ### 01/26
 * [洛谷 P3634] [APIO2012]守卫: 照题解写的。
 

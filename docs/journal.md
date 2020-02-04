@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/04
+* [洛谷 P3374] 【模板】树状数组 1: 模板题。
+
 ### 02/02
 * [洛谷 P3644] [APIO2015]八邻旁之桥: $K=1$
 的情况比较简单。对于 $K=2$ 考虑到当左桥 $p$

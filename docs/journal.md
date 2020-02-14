@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/14
+* [洛谷 P2194] HXY烧情侣: 求出强连通分量后
+取每个强连通分量中的最小权值即可。
+
 ### 02/12
 * [洛谷 P4620] [SDOI2018]荣誉称号: 不会作，
 照题解写的。

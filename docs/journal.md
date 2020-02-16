@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/16
+* [洛谷 P1912] [NOI2009]诗人小G: DP四边形优化
+第一弹。照题解写的，单调队列维护决策单调性。
+
 ### 02/14
 * [洛谷 P2194] HXY烧情侣: 求出强连通分量后
 取每个强连通分量中的最小权值即可。

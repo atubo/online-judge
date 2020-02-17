@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/17
+* [洛谷 P3380] 【模板】二逼平衡树（树套树）:
+模板题，用了O2。
+
 ### 02/16
 * [洛谷 P1912] [NOI2009]诗人小G: DP四边形优化
 第一弹。照题解写的，单调队列维护决策单调性。

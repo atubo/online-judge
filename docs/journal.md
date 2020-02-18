@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/18
+* [洛谷 P2859] [USACO06FEB]摊位预订Stall Reservations:
+将端点排序后处理即可。
+
 ### 02/17
 * [洛谷 P3380] 【模板】二逼平衡树（树套树）:
 模板题，用了O2。

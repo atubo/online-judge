@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/22
+* [洛谷 P3779] [SDOI2017]龙与地下城:
+多项式FFT+快速幂。看题解才知道抛弃小项来加速。
+
 ### 02/18
 * [洛谷 P2859] [USACO06FEB]摊位预订Stall Reservations:
 将端点排序后处理即可。

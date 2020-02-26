@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/26
+* [洛谷 P4005] 小 Y 和地铁: 没想出来，照题解
+写的。DFS + 树状数组。
+
 ### 02/22
 * [洛谷 P3779] [SDOI2017]龙与地下城:
 多项式FFT+快速幂。看题解才知道抛弃小项来加速。

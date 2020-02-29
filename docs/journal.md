@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/02
+* [洛谷 P4314] CPU监控： 巧妙的懒标记方法，
+没想出来，基本照[这篇题解抄的](https://www.cnblogs.com/GXZlegend/p/8315275.html)。
+
 ### 02/26
 * [洛谷 P4005] 小 Y 和地铁: 没想出来，照题解
 写的。DFS + 树状数组。

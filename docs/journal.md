@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/07
+* [洛谷 P3997] [SHOI2013]扇形面积并:将扇形的
+两边分成两个事件，将事件依角度排序。用树状数组
+维护半径覆盖状态。每次找出能覆盖K个扇形的最大
+半径，乘以角度差，加入结果即可。
+
 ### 03/02
 * [洛谷 P4314] CPU监控： 巧妙的懒标记方法，
 没想出来，基本照[这篇题解抄的](https://www.cnblogs.com/GXZlegend/p/8315275.html)。

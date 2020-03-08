@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/08
+* [洛谷 P4097] [HEOI2013]Segment: 李超线段树。
+手写有理数类维护精度。
+
 ### 03/07
 * [洛谷 P3997] [SHOI2013]扇形面积并:将扇形的
 两边分成两个事件，将事件依角度排序。用树状数组

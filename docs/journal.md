@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/14
+* [洛谷 P4768] [NOI2018]归程: 看题解学习了Kruskal重构树
+这个高级东东。
+
 ### 03/08
 * [洛谷 P4097] [HEOI2013]Segment: 李超线段树。
 手写有理数类维护精度。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/15
+* [洛谷 P3524] [POI2011]IMP-Party: 看题解才会的
+奇妙解法。
+
 ### 03/14
 * [洛谷 P4768] [NOI2018]归程: 看题解学习了Kruskal重构树
 这个高级东东。

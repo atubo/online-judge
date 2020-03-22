@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/22
+* [洛谷 P2163] [SHOI2007]园丁的烦恼: 主席树，
+对 $x$ 相同的情况用 $y$ 来解除简并。用了无耻O2 。
+
 ### 03/15
 * [洛谷 P3524] [POI2011]IMP-Party: 看题解才会的
 奇妙解法。

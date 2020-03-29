@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/04
+* [洛谷 P4475] 巧克力王国: KD树，但似乎复杂度有问题，
+不知有没有更优解。用了无耻O2。
+
 ### 03/28
 * [洛谷 P3045] [USACO12FEB]Cow Coupons G: 二分+贪心。
 二分可买牛数 $n$ 对于每个 $n$ 维护两个优先队列， $Q_c$

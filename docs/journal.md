@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/05
+* [洛谷 P2179] [NOI2012]骑行川藏: 由拉格郎日乘子法可知
+对所有 $i$ 有 $k_i (v_i-c_i)v_i^2=\lambda$ 又易知总能量
+是 $\lambda$ 的单调函数，所以先二分求出 $\lambda$ 使得总
+能耗等于 $E_U$ 再对每个 $i$ 求出 $v_i$ 调试时对 $\lambda$
+和 $v_i$ 的上界想的太多，瞄了一眼题解发现设成 $10^5$ 即可。
+
 ### 04/04
 * [洛谷 P4475] 巧克力王国: KD树，但似乎复杂度有问题，
 不知有没有更优解。用了无耻O2。

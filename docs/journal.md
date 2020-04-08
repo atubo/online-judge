@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/11
+* [洛谷 P4557] [JSOI2018]战争: 先求出两个部落的
+凸包 $c_1$ 和 $c_2$ 再求出它们的Minkowski和 $c_M$
+经适当的平移处理后，判断查询向量是否落在 $c_M$ 内。
+
 ### 04/05
 * [洛谷 P2179] [NOI2012]骑行川藏: 由拉格郎日乘子法可知
 对所有 $i$ 有 $k_i (v_i-c_i)v_i^2=\lambda$ 又易知总能量

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/19
+* [洛谷 P3247] [HNOI2016]最小公倍数: 基本照
+[题解](https://www.cnblogs.com/clrs97/p/5406018.html)
+抄的。
+
 ### 04/11
 * [洛谷 P4557] [JSOI2018]战争: 先求出两个部落的
 凸包 $c_1$ 和 $c_2$ 再求出它们的Minkowski和 $c_M$

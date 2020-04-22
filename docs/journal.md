@@ -7,8 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/25
+* [洛谷 P4719] 【模板】"动态 DP"&动态树分治:
+完全照[题解](https://oi-wiki.org/dp/dynamic/)抄的。
+
 ### 04/20
-* [POI2008]TRO-Triangles: 先数学推导一波，若
+* [洛谷 P3476] [POI2008]TRO-Triangles: 先数学推导一波，若
 $P_1$ , $P_2$ , $P_3$ 为逆时针回路，则其面积X2为
 $x_1 y_2 - x_2 y_1) + (x_2-x_1)y_3 + (y_1-y_2)x_3$
 将点按横坐标排序，枚举点 $P_i$ 将其右边的点按逆时针

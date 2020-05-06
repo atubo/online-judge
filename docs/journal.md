@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/10
+* [洛谷 P2166] Gty的超级妹子树: 分块树，基本照题解抄
+的，用了无耻O2。
+
 ### 05/01
 * [洛谷 P1399] [NOI2013]快餐店: 图是一个基环树。
 求出基环，求出基环上每个子树的深度。再对于基环

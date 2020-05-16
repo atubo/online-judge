@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/16
+* [洛谷 P5024] 保卫王国: 动态DP，与P4719基本相同。
+注意施加条件时先浅后深，撤除时先深后浅。用了无耻O2。
+
 ### 05/11
 * [洛谷 P3388] 【模板】割点（割顶）: 模板题。
 

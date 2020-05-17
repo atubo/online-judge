@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/17
+* [洛谷 P4581] [BJOI2014]想法: 看题解才会作。随机算法，
+给每个节点赋一个随机值，每个内部节点维护一个长度为 $K$
+的数组，DFS归并。答案为 $\frac {k RAND_MAX}{F_k}$
+
 ### 05/16
 * [洛谷 P5024] 保卫王国: 动态DP，与P4719基本相同。
 注意施加条件时先浅后深，撤除时先深后浅。用了无耻O2。

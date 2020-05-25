@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/24
+* [洛谷 P3521] [POI2011]ROT-Tree Rotations: 平衡树
++ 启发式合并。用了无耻O2。
+
 ### 05/23
 * [洛谷 P4323] [JSOI2016]独特的树叶: 哈希+两遍DFS
 求出以每个点为根时的哈希值。但看题解才了解了能在第

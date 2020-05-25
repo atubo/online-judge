@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/25
+* [洛谷 P4962] 朋也与光玉: 状压DP，令 $dp[u][s]$ 代表终点为
+$u$ 经过点状态为 $s$ 的最小距离。用BFS可以求出。用
+meet-in-the-middle 优化，对正向图和反向图分别求解，
+最大经过点数分别为 $(K+2)/2$ 和 $(K+1)/2$
+
 ### 05/24
 * [洛谷 P3521] [POI2011]ROT-Tree Rotations: 平衡树
 + 启发式合并。用了无耻O2。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/30
+* [洛谷 P2159] [SHOI2009]舞会: 看题解才会，DP + 高精。
+
 ### 05/25
 * [洛谷 P4962] 朋也与光玉: 状压DP，令 $dp[u][s]$ 代表终点为
 $u$ 经过点状态为 $s$ 的最小距离。用BFS可以求出。用

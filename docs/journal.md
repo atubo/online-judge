@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/02
+* [洛谷 P1758] [NOI2009]管道取珠: 看题解才了解
+把 $\sum a_i^2$ 转化为求两次独立取珠输出序列相同
+的方案数的巧妙解法。
+
 ### 05/30
 * [洛谷 P2159] [SHOI2009]舞会: 看题解才会，DP + 高精。
 

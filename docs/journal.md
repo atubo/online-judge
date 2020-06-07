@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/07
+* [洛谷 P3783] [SDOI2017]天才黑客: 题解都看了半天。
+学习了前后缀优化建图的技巧。
+
 ### 06/02
 * [洛谷 P1758] [NOI2009]管道取珠: 看题解才了解
 把 $\sum a_i^2$ 转化为求两次独立取珠输出序列相同

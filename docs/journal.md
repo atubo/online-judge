@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/14
+* [洛谷 P4770] [NOI2018]你的名字: duliu题，
+题解都看了半天。SAM + 线段树合并。
+
 ### 06/07
 * [洛谷 P3783] [SDOI2017]天才黑客: 题解都看了半天。
 学习了前后缀优化建图的技巧。

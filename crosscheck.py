@@ -88,6 +88,23 @@ def print_tree_dfs(f, adj, root):
 
     dfs(f, adj, 0, -1)
 
+def rand_directed_graph(n, m):
+    # node 0 can reach all other nodes
+    # return list of edges
+    adj = rand_tree(n)
+    ret = []
+    def dfs(adj, u, fa, edges):
+        for v in adj[u]:
+            if v != fa:
+                edges.append((u, v))
+                dfs(adj, v, u, edges)
+    dfs(adj, 0, -1, ret)
+    for _ in range(m-n+1):
+        u = randint(0, n-1)
+        v = randint(0, n-1)
+        ret.append((u, v))
+    return ret
+
 def print_weighted_graph_edges(f, adj, lo, hi):
     """Given adj, this function adds random weight and print the graph"""
     # Note here index is from 1

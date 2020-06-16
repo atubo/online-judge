@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/17
+* [洛谷 P4271] [USACO18FEB]New Barns P: 看题解作的，
+LCT + 并查集维护树直径端点。
+
 ### 06/14
 * [洛谷 P4770] [NOI2018]你的名字: duliu题，
 题解都看了半天。SAM + 线段树合并。

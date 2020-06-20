@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/20
+* [洛谷 P4494] [HAOI2018]反色游戏: 基本照题解抄的，
+Tarjan 找割点。
+
 ### 06/17
 * [洛谷 P4271] [USACO18FEB]New Barns P: 看题解作的，
 LCT + 并查集维护树直径端点。

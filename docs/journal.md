@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/21
+* [洛谷 P3628] [APIO2010]特别行动队: 斜率优化DP。
+
 ### 06/20
 * [洛谷 P4494] [HAOI2018]反色游戏: 基本照题解抄的，
 Tarjan 找割点。

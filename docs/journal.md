@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/27
+* [洛谷 P3402] 可持久化并查集: 模板题。
+
 ### 06/21
 * [洛谷 P3628] [APIO2010]特别行动队: 斜率优化DP。
 

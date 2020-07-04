@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/03
+* [洛谷 P2538] [SCOI2008]城堡: 看题解作的。模拟退火。
+
 ### 06/27
 * [洛谷 P3402] 可持久化并查集: 模板题。
 

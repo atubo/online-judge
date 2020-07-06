@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/05
+* [洛谷 P4249] [WC2007]剪刀石头布: 看题解作的，最小费用流。
+
 ### 07/04
 * [洛谷 P5466] [PKUSC2018]神仙的游戏: 看[题解](https://zhuanlan.zhihu.com/p/51373054)
 作的，NTT + 无耻O2。

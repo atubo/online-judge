@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/08
+* [洛谷 P1783] 海滩防御: 用Kruskal重构树解决之。
+
 ### 07/05
 * [洛谷 P4249] [WC2007]剪刀石头布: 看题解作的，最小费用流。
 

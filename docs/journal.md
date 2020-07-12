@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/112
+* [洛谷 P2382] 化学分子式: 水题。
+
 ### 07/11
 * [洛谷 P2289] [HNOI2004]邮递员: 插头DP第一弹，
 [题解](https://www.cnblogs.com/LadyLex/p/7326874.html)

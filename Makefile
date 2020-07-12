@@ -11,7 +11,7 @@ endif
 ifeq ($(CPP98), 1)
     CC = /usr/bin/g++-4.6
 else
-    CXXFLAGS += -std=c++0x
+    CXXFLAGS += -std=c++1z
     CC = g++
 endif
 

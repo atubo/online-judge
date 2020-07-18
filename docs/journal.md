@@ -7,7 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
-### 07/112
+### 07/18
+* [洛谷 P4516] [JSOI2018]潜入行动: 树上背包，
+但看题解才知道将复杂度降为 $O(n k)$ 的技巧。
+
+### 07/12
 * [洛谷 P2382] 化学分子式: 水题。
 
 ### 07/11

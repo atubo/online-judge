@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/19
+* [洛谷 P3590] [POI2015]TRZ: 看题解作的，三元组
+一维排序，第二维用线段树处理。
+
 ### 07/18
 * [洛谷 P4516] [JSOI2018]潜入行动: 树上背包，
 但看题解才知道将复杂度降为 $O(n k)$ 的技巧。

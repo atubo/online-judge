@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/25
+* [洛谷 P4344] [SHOI2015]脑洞治疗仪: 线段树搞搞。
+
 ### 07/19
 * [洛谷 P3590] [POI2015]TRZ: 看题解作的，三元组
 一维排序，第二维用线段树处理。

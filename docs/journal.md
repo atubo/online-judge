@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/26
+* [洛谷 P5075] [JSOI2012]分零食: 照题解(https://www.itread01.com/content/1543153159.html)
+作的。
+
 ### 07/25
 * [洛谷 P4344] [SHOI2015]脑洞治疗仪: 线段树搞搞。
 

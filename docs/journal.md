@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/01
+* [洛谷 P3300] [SDOI2013]城市规划: 线段树维护
+区间联通性，照题解写的。
+
 ### 07/26
 * [洛谷 P5075] [JSOI2012]分零食: 照题解(https://www.itread01.com/content/1543153159.html)
 作的。

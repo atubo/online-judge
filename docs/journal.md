@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/02
+* [洛谷 P3515] [POI2011]Lightning Conductor:
+对每个点 $j$ 向其右方构造轮廓线 $y_j+\sqrt{x-x_j}$
+对其右方的每个点 $i$ 只需找出覆盖此点的最高的轮廓线即可。
+由于两条轮廓线交点只有一个，可用李超线段树解决。左右两个
+方向各搞一次即可。用了无耻O2。
+
 ### 08/01
 * [洛谷 P3300] [SDOI2013]城市规划: 线段树维护
 区间联通性，照题解写的。

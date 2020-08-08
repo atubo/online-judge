@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/08
+* [洛谷 P4979] 矿洞：坍塌: 用三个线段树搞搞。
+
 ### 08/02
 * [洛谷 P3515] [POI2011]Lightning Conductor:
 对每个点 $j$ 向其右方构造轮廓线 $y_j+\sqrt{x-x_j}$

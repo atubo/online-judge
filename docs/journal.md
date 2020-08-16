@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/15
+* [洛谷 P2521] [HAOI2011]防线修建: 凸包。利用正难则反
+的想法反向处理转化为加点的情况。
+
 ### 08/08
 * [洛谷 P4979] 矿洞：坍塌: 用三个线段树搞搞。
 

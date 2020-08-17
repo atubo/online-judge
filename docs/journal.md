@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/16
+* [洛谷 P5041] [HAOI2009]求回文串: 看题解作的。
+贪心求出最优解相对于原字符串的permutation,再求逆序对数。
+
 ### 08/15
 * [洛谷 P2521] [HAOI2011]防线修建: 凸包。利用正难则反
 的想法反向处理转化为加点的情况。

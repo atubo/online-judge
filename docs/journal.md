@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/22
+* [洛谷 P3106] [USACO14OPEN]Dueling GPSs S: 先对两个
+GPS分别从点N作最短路。然后对每条边考察是不是在到点N的
+最短路上进行赋值，再从点1作最短路。
+
 ### 08/16
 * [洛谷 P5041] [HAOI2009]求回文串: 看题解作的。
 贪心求出最优解相对于原字符串的permutation,再求逆序对数。

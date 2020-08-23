@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/23
+* [洛谷 P4180] [BJWC2010]严格次小生成树: 生成最小生成树后，
+枚举剩下的每条边，找出两端点在树上路径的最大和次大边，可得出
+以此边替换增加的权值，找出最小的即可。树上路径的最大和次大边
+可用倍增处理。
+
 ### 08/22
 * [洛谷 P3106] [USACO14OPEN]Dueling GPSs S: 先对两个
 GPS分别从点N作最短路。然后对每条边考察是不是在到点N的

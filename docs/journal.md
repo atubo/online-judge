@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/29
+* [洛谷 P1232] [NOI2013]树的计数: 神仙题，[题解](https://blog.sengxian.com/solutions/bzoj-3244)
+都没怎么看懂。
+
 ### 08/23
 * [洛谷 P4180] [BJWC2010]严格次小生成树: 生成最小生成树后，
 枚举剩下的每条边，找出两端点在树上路径的最大和次大边，可得出

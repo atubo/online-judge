@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/30
+* [洛谷 P5074] Eat the Trees: 插头DP， 还是照题解写的。
+
 ### 08/29
 * [洛谷 P1232] [NOI2013]树的计数: 神仙题，[题解](https://blog.sengxian.com/solutions/bzoj-3244)
 都没怎么看懂。

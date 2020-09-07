@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/06
+* [洛谷 P4229] 某位歌姬的故事: 神仙题，基本照题解抄的。
+
 ### 08/30
 * [洛谷 P5074] Eat the Trees: 插头DP， 还是照题解写的。
 

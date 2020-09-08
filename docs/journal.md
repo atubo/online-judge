@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/07
+* [洛谷 P3249] [HNOI2016]矿区: 看题解作的，平面图转对偶图第一弹。
+
 ### 09/06
 * [洛谷 P4229] 某位歌姬的故事: 神仙题，基本照题解抄的。
 

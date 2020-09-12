@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/12
+* [洛谷 P3865] 【模板】ST表: 模板题。
+
 ### 09/07
 * [洛谷 P3249] [HNOI2016]矿区: 看题解作的，平面图转对偶图第一弹。
 

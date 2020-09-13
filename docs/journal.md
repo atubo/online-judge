@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/13
+* [洛谷 P3587] [POI2015]POD: 看题解作的，哈希。
+
 ### 09/12
 * [洛谷 P3865] 【模板】ST表: 模板题。
 

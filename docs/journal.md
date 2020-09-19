@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/19
+* [洛谷 P4147] 玉蟾宫: 转化为N个柱状图求最大面积的问题。
+
 ### 09/13
 * [洛谷 P3587] [POI2015]POD: 看题解作的，哈希。
 

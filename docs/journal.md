@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 09/20
+* [洛谷 P4183] [USACO18JAN]Cow at Large P: 点分治，基本
+照题解抄的。
+
 ### 09/19
 * [洛谷 P4147] 玉蟾宫: 转化为N个柱状图求最大面积的问题。
 * [洛谷 P4560] [IOI2014]Wall 砖墙: 线段树，每个操作对应

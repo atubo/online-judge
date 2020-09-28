@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/03
+* [洛谷 P4073] [WC2013]平面图: 平面图转对偶图 + 点定位
++ Kruskal 生成树求树上最短路。
+
+### 09/26
+* [洛谷 P4999] 烦人的数学作业: 数位DP。
+
 ### 09/20
 * [洛谷 P4183] [USACO18JAN]Cow at Large P: 点分治，基本
 照题解抄的。

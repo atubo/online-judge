@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/04
+* [洛谷 P4286] [SHOI2008]安全的航线: 照题解作的。
+
 ### 10/03
 * [洛谷 P4073] [WC2013]平面图: 平面图转对偶图 + 点定位
 + Kruskal 生成树求树上最短路。

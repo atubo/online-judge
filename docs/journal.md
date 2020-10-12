@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/11
+* [洛谷 P4074] [WC2013]糖果公园: 树上带修改莫队，照题解作的。
+
 ### 10/10
 * [洛谷 P3573] [POI2014]RAJ-Rally: 拓扑排序，预处理出
 以某点为终点的最长距离 $L$ 和以某点为起点的最长距离 $R$

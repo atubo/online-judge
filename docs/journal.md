@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/24
+* [洛谷 P3831] [SHOI2012]回家的路: 分层图求最短路。
+
 ### 10/18
 * [洛谷 P3272] [SCOI2011]地板: 状压DP，令 $s$ 表示
 行于行分界线的状态，0表示没有地板向下穿越此分界线，

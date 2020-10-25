@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/25
+* [洛谷 P4654] [CEOI2017]Mousetrap: 神题，照题解作的。
+
 ### 10/24
 * [洛谷 P3831] [SHOI2012]回家的路: 分层图求最短路。
 

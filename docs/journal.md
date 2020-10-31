@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 10/31
+* [洛谷 P1742] 最小圆覆盖: 照题解写的。
+
 ### 10/25
 * [洛谷 P4654] [CEOI2017]Mousetrap: 神题，照题解作的。
 

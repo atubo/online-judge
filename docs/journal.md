@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/01
+* [洛谷 P3101] [USACO14JAN]Ski Course Rating G:
+Kruskal生成树。
+
 ### 10/31
 * [洛谷 P1742] 最小圆覆盖: 照题解写的。
 

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/04
+* [洛谷 P5138] fibonacci: 照题解写的。利用Fibonacci数列
+的性质 $F_{n+m}=F_{m-1}F_n + F_m F_{n+1}$ 将点 $x$ 对点
+$u$ 的贡献分解为与 $x$ 有关的项和于 $u$  有关的项。
+
 ### 11/01
 * [洛谷 P3101] [USACO14JAN]Ski Course Rating G:
 Kruskal生成树。

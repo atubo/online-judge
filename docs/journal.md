@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/05
+* [洛谷 P3967] [TJOI2014]匹配: 对最大匹配的每条边，
+删除之并再求一遍最大匹配，若值变小则为必须边。
+
 ### 11/04
 * [洛谷 P5138] fibonacci: 照题解写的。利用Fibonacci数列
 的性质 $F_{n+m}=F_{m-1}F_n + F_m F_{n+1}$ 将点 $x$ 对点

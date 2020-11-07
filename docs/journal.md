@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/07
+* [洛谷 P4008] [NOI2003]文本编辑器: Splay tree,
+与P4567 [AHOI2006]文本编辑器 类似。
+
 ### 11/05
 * [洛谷 P3967] [TJOI2014]匹配: 对最大匹配的每条边，
 删除之并再求一遍最大匹配，若值变小则为必须边。

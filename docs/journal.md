@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/08
+* [洛谷 P2742] [USACO5.1]圈奶牛Fencing the Cows /【模板】二维凸包:
+模板题。
+
 ### 11/07
 * [洛谷 P4008] [NOI2003]文本编辑器: Splay tree,
 与P4567 [AHOI2006]文本编辑器 类似。

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/11
+* [洛谷 P3631] [APIO2011]方格染色: 分析可知相邻
+两行的关系必为奇数列相同偶数列取反，或偶数列相同
+奇数列取反。再用并查集维护有共同列的行上的限制条件。
+
 ### 11/08
 * [洛谷 P2742] [USACO5.1]圈奶牛Fencing the Cows /【模板】二维凸包:
 模板题。

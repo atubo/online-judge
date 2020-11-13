@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/13
+* [洛谷 P5492] [PKUWC2018]随机算法: 神题，照题解写的。
+
 ### 11/11
 * [洛谷 P3631] [APIO2011]方格染色: 分析可知相邻
 两行的关系必为奇数列相同偶数列取反，或偶数列相同

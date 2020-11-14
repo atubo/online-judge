@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/14
+* [洛谷 P4912] 帕秋莉的魔法: 背包问题，令 $dp(i,j,w)$ 
+表示进行到位置 $i$ 上一个施的魔法为 $j$ 总长度
+为 $w$ 的最大威力。有若 $j\ne i$ $dp(i,j,w)=dp(i-1,j,w)$
+和 $dp(i,i,w)=\max_{k<i}{dp(i,k,w-a_i)}+b_i+w_{k,i}$
+坑点是 $a_i$ 和 $b_i$ 均可能为负。
+
 ### 11/13
 * [洛谷 P5492] [PKUWC2018]随机算法: 神题，照题解写的。
 

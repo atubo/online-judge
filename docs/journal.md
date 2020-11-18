@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/18
+* [洛谷 P3714] [BJOI2017]树的难题: 点分治，
+照题解写的。
+
 ### 11/15
 * [洛谷 P4926] [1007]倍杀测量者: 按倍杀条件在
 选手之间建边，按分数条件将选手和原点之间建边。

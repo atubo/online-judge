@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/21
+* [洛谷 P4705] 玩游戏: NTT, 照题题解写的。
+
 ### 11/18
 * [洛谷 P3714] [BJOI2017]树的难题: 点分治，
 照题解写的。

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/22
+* [洛谷 P3350] [ZJOI2016]旅行者:
+照[题解](https://www.cnblogs.com/CQzhangyu/p/7691157.html)
+写的。分治+最短路。
+
 ### 11/21
 * [洛谷 P4705] 玩游戏: NTT, 照题题解写的。
 

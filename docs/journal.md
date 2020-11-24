@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/23
+* [洛谷 P2109] [NOI2007]生成树计数: 神题，
+照[题解](https://rqy.moe/Solutions/bzoj1494/)写的。
+
 ### 11/22
 * [洛谷 P3350] [ZJOI2016]旅行者:
 照[题解](https://www.cnblogs.com/CQzhangyu/p/7691157.html)

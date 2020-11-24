@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/24
+* [洛谷 P4189] [CTSC2010]星际旅行: 上下两遍DFS。令
+$f(u)$ 表示走完 $u$ 子树后剩余步数。 $g(u)$ 表示走完
+$u$ 子树后的总步数。第一遍DFS求出各点的 $f$ 和 $g$ 值。
+第二遍DFS时从父节点向点 $u$ 传 $f_0$ 和 $g_0$ 对 $u$ 的
+每个子节点 $v$ 先将 $v$ 的贡献从 $f(u)$ 和 $g(u)$ 中撤销，
+再与 $f_0$ 和 $g_0$ 合并，然后递归传入点 $v$
+
 ### 11/23
 * [洛谷 P2109] [NOI2007]生成树计数: 神题，
 照[题解](https://rqy.moe/Solutions/bzoj1494/)写的。

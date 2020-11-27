@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/27
+* [洛谷 P4195] 【模板】扩展BSGS: 模板题。
+
 ### 11/26
 * [洛谷 P4150] [WC2009]最短路问题: 想到了线段树维护区间
 连通性。但没想明白合并的方法。照题解写的。

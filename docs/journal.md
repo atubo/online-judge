@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/28
+* [洛谷 P3606] [USACO17JAN]Building a Tall Barn P:
+利用拉格朗日乘子法可得在实数域内当 $x_i=\lambda \sqrt{a_i}$
+考虑到整数的限制，对 $x_i$ 下取整后，把剩余的牛数贪心的分给
+各个楼层，再贪心的在各个楼层间进行调整。
+
 ### 11/27
 * [洛谷 P4195] 【模板】扩展BSGS: 模板题。
 

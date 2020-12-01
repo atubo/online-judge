@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 11/30
+* [洛谷 P2839] [国家集训队]middle: 主席树，
+照题解写的。
+
 ### 11/28
 * [洛谷 P3606] [USACO17JAN]Building a Tall Barn P:
 利用拉格朗日乘子法可得在实数域内当 $x_i=\lambda \sqrt{a_i}$

@@ -3,7 +3,7 @@ include ../Makefile
 .PHONY: clean-temp
 
 clean-temp:
-	rm input*.txt
-	rm out*.txt
-	rm gmon.out
-	rm prof.txt
+	rm -f input*.txt
+	rm -f out*.txt
+	rm -f gmon.out
+	rm -f prof.txt

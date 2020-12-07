@@ -7,6 +7,16 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/05
+* [洛谷 P5465] [PKUSC2018]星际穿越： 若以从左到右
+$l_i$ 递增构建单调队列，可知最短路径为：若当前节点为
+$u$ $next(u)=min_{v}(v \ge l_u)$ 由此可将所有节点构成
+一颗树。对每个节点 $u$ 计算 $W(u)$ 代表从 $u$ 出发，到
+其左方所有节点的距离和。 有 $W(u)=W(f)-(f-l_u) + u$
+另有 $ans(l,r,x)=ans(0,r,x)-ans(0,l-1,x)$ 求解 $ans(0,r,x)$
+找到 $x$ 的最低祖先 $p$ 满足 $l_p \le r$  从$W_p$ 中扣除
+不足部分并加上高度差的贡献即可 $ans(0,r,x)=W_p-(p-r-1)+(r+1)h$
+
 ### 12/04
 * [洛谷 P3207] [HNOI2010]物品调度: 令 $g=\gcd(d,n)$
 若固定 $y_i$ 变化 $x_i$ 则最终位置一定关于$g$ 同余。

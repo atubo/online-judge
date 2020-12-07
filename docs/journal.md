@@ -7,7 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
-### 12/05
+### 12/07
+* [洛谷 P3378] 【模板】堆: 简单模板题。
+
+### 12/06
 * [洛谷 P5465] [PKUSC2018]星际穿越： 若以从左到右
 $l_i$ 递增构建单调队列，可知最短路径为：若当前节点为
 $u$ 有 $next(u)=min_{v}(v \ge l_u)$ 由此可将所有节点构成

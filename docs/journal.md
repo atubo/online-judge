@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/10
+* [洛谷 P2499] [SDOI2012]象棋: $g=\gcd(a,b)$ 则从
+点 $(x_0, y_0)$ 出发可到的点为 $(x_0+k g, y_0+l g), k, l \in Z$
+枚举 $(x_0, y_0)$ 求出所有起点到所有终点的距离，求二分图
+最小权匹配。
+
 ### 12/07
 * [洛谷 P3378] 【模板】堆: 简单模板题。
 

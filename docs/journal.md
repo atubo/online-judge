@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/16
+* [洛谷 P4747] [CERC2017]Intrinsic Interval:
+不会，照题解[https://www.lagou.com/lgeduarticle/10506.html]
+写的。
+
 ### 12/13
 * [洛谷 P3582] [POI2015]KIN: 利用线段树求区间和最大值。
 根据题目条件，在右端新加一个电影，只需将上一个同样的

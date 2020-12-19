@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/19
+* [洛谷 P4169] [Violet]天使玩偶/SJY摆棋子: 一维排序，
+二维线段树，三维CDQ分治。
+
 ### 12/16
 * [洛谷 P4747] [CERC2017]Intrinsic Interval:
 不会，照题解[https://www.lagou.com/lgeduarticle/10506.html]

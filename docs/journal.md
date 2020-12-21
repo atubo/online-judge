@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/20
+* [洛谷 P5108] 仰望半月的夜空: 后缀数组，将后缀
+数组中的长度递增生成单调队列 $t$ ，再从后往前进行：
+若 $l_i$ 为 $t_i$ 的长度， $c=lcp(t_i, t_{i+1})$
+则将 $[c+1, l_i]$ 区间设为 $t_i$ 的启始位置，线段树
+维护。
+
 ### 12/19
 * [洛谷 P4169] [Violet]天使玩偶/SJY摆棋子: 一维排序，
 二维线段树，三维CDQ分治。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/24
+* [洛谷 P2000] 拯救世界: 照题解作的。生成函数+NTT
+优化高精乘法。
+
 ### 12/22
 * [洛谷 P4207] [NOI2005]月下柠檬树: 对圆和直线的相互
 覆盖关系想不明白。看题解才知道用Simpson法求积分，求每

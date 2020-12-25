@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/25
+* [洛谷 P4518] [JSOI2018]绝地反击: 二分图最大匹配
++ 二分+ 爬山。但似乎不是正解。
+
 ### 12/24
 * [洛谷 P2000] 拯救世界: 照题解作的。生成函数+NTT
 优化高精乘法。

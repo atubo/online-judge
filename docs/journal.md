@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/26
+* [洛谷 P3805] 【模板】manacher算法：模板题。
+
 ### 12/25
 * [洛谷 P4518] [JSOI2018]绝地反击: 二分图最大匹配
 + 二分+ 爬山。但似乎不是正解。

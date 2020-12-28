@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 12/27
+* [洛谷 P3822] [NOI2017] 整数: 用线段树维护进位和
+退位。
+
 ### 12/26
 * [洛谷 P3805] 【模板】manacher算法：模板题。
 

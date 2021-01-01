@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+## 01/01
+* [洛谷 P4649] [IOI2007] training 训练路径:
+神题，照题解作的。
+
+***
+### Goodbye 2020
+
 ### 12/31
 * [洛谷 P5049] [NOIP2018 提高组] 旅行 加强版:
 由题目条件可知图为树或基环树。对于基环树，处理

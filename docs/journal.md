@@ -7,7 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
-## 01/01
+### 01/02
+* [洛谷 P4556] [Vani有约会]雨天的尾巴 /【模板】线段树合并:
+看题解作的：树链剖分 + 权值线段树。
+
+### 01/01
 * [洛谷 P4649] [IOI2007] training 训练路径:
 神题，照题解作的。
 

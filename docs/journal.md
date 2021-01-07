@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/07
+* [洛谷 P3737] [HAOI2014]遥感监测: 每个激光点在 $x$ 轴上
+的可视范围构成一个偏序集，题目就是要求最少反链划分数,根据
+Dilworth对偶定理可转化为最长链的长度。
+
 ### 01/05
 * [洛谷 P5369] [PKUSC2018]最大前缀和: 看题解作的，
 状压DP。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/09
+* [洛谷 P4247] [清华集训2012]序列操作: 不会，照题解作的。
+
 ### 01/08
 * [洛谷 P4525] 【模板】自适应辛普森法1: 模板题。
 

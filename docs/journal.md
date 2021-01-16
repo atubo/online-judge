@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/15
+* [洛谷 P4250] [SCOI2015]小凸想跑步: 分别考虑剩余的
+$n-1$ 条边，题目要求的区域是一些半平面。由此转化为半
+平面交问题。
+
 ### 01/10
 * [洛谷 P3215] [HNOI2011]括号修复 / [JSOI2011]括号序列:
 splay tree维护各种标记。特别的需要维护区间前缀和的最小值。

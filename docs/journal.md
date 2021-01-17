@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/17
+* [洛谷 P4185] [USACO18JAN]MooTube G: 并查集维护联通性。
+
 ### 01/16
 * [洛谷 P2787] 语文1（chin1）- 理理思维: 线段树维护，
 用了O2.

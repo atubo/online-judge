@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/18
+* [洛谷 P4751] 【模板】"动态DP"&动态树分治（加强版）:
+照题解写的。
+
 ### 01/17
 * [洛谷 P4185] [USACO18JAN]MooTube G: 并查集维护联通性。
 

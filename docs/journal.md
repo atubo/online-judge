@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/20
+* [洛谷 P3519] [POI2011]ROZ-Difference: 看题解作的，
+转化为最大连续子段和问题。
+
 ### 01/18
 * [洛谷 P4751] 【模板】"动态DP"&动态树分治（加强版）:
 照题解写的。

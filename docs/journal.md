@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/24
+* [洛谷 P4607] [SDOI2018]反回文串: 神题，照题解作的。
+
 ### 01/20
 * [洛谷 P3519] [POI2011]ROZ-Difference: 看题解作的，
 转化为最大连续子段和问题。

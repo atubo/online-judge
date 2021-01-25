@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/25
+* [洛谷 P4366] [Code+#4]最短路: 对每个点 $u$ 枚举每个位 $i$
+连接点 $u$ 和点 $u \oplus 2^i$ ，Dijkstra 求最短路即可。
+
 ### 01/24
 * [洛谷 P4607] [SDOI2018]反回文串: 神题，照题解作的。
 

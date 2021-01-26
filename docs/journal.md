@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/26
+* [洛谷 P2351] [SDOI2012]吊灯: 看题解才知道关于子树大小的
+结论。
+
 ### 01/25
 * [洛谷 P4366] [Code+#4]最短路: 对每个点 $u$ 枚举每个位 $i$
 连接点 $u$ 和点 $u \oplus 2^i$ ，Dijkstra 求最短路即可。

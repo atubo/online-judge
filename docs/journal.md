@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 01/27
+* [洛谷 P3947] 肝活动: 状压DP。
+
 ### 01/26
 * [洛谷 P2351] [SDOI2012]吊灯: 看题解才知道关于子树大小的
 结论。

@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/03
+* [洛谷 P4931] [MtOI2018]情侣？给我烧了！（加强版）:
+照题解作的。
+
 ### 01/31
 * [洛谷 P4192] 旅行规划: 看题解作的。 分块 + 半平面交。
 

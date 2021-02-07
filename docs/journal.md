@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/07
+* [洛谷 P3630] [APIO2010]信号覆盖: 照题解作的。
+
 ### 02/03
 * [洛谷 P4931] [MtOI2018]情侣？给我烧了！（加强版）:
 照题解作的。

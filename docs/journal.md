@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/10
+* [洛谷 P3771] [CTSC2017]网络: 不会，
+照[题解](https://blog.csdn.net/Dream_Lolita/article/details/84146349)作的。
+
 ### 02/07
 * [洛谷 P3630] [APIO2010]信号覆盖: 照题解作的。
 

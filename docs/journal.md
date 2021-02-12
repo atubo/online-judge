@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/12
+* [洛谷 P4767] [IOI2000]邮局: DP 利用单调性。复杂度似乎
+无保证。看题解发现是四边形优化。
+
 ### 02/10
 * [洛谷 P3771] [CTSC2017]网络: 不会，
 照[题解](https://blog.csdn.net/Dream_Lolita/article/details/84146349)作的。

@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/14
+* [洛谷 P3704] [SDOI2017]数字表格: 取对数后展开可得
+$\log ans = \sum_{T=1}^n \lfloor \frac{n}{T}\rfloor\lfloor\frac{m}{T}\sum_{d|T}\log f_d \mu(\frac{T}{d})$
+为避免取离散对数，两边取指数，分块求积。
+
 ### 02/12
 * [洛谷 P4767] [IOI2000]邮局: DP 利用单调性。复杂度似乎
 无保证。看题解发现是四边形优化。

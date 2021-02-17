@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/17
+* [洛谷 P3244] [HNOI2015]落忆枫音: 看[题解](https://www.cnblogs.com/mrclr/p/10458297.html)
+作的。拓扑排序 + DP。
+
 ### 02/14
 * [洛谷 P3704] [SDOI2017]数字表格: 取对数后展开可得
 $\log ans = \sum_{T=1}^n \lfloor \frac{n}{T}\rfloor\lfloor\frac{m}{T}\sum_{d|T}\log f_d \mu(\frac{T}{d})$

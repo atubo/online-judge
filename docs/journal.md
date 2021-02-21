@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/21
+* [洛谷 P3125] [USACO15OPEN]Bessie's Birthday Buffet S:
+先BFS求出所有点对最短距离，在动态规划求解。
+
 ### 02/20
 * [洛谷 P1981] [NOI2011] 兔兔与蛋蛋游戏:
 照题解作的，二分图博弈。

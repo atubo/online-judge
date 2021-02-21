@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/20
+* [洛谷 P1981] [NOI2011] 兔兔与蛋蛋游戏:
+照题解作的，二分图博弈。
+
 ### 02/17
 * [洛谷 P3244] [HNOI2015]落忆枫音: 看[题解](https://www.cnblogs.com/mrclr/p/10458297.html)
 作的。拓扑排序 + DP。

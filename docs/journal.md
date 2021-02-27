@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 02/28
+* [洛谷 P3576] [POI2014]MRO-Ant colony: 从食蚁兽所在位置
+DFS倒推回叶子节点求出会被吃掉的范围。
+
 ### 02/21
 * [洛谷 P3125] [USACO15OPEN]Bessie's Birthday Buffet S:
 先BFS求出所有点对最短距离，在动态规划求解。

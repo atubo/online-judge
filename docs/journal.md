@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/07
+* [洛谷 P3566] 火星探险问题: 费用流，照题解做的。
+
 ### 03/06
 * [洛谷 P1222] 三角形: 照题解作的，Simpson法。
 

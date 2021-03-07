@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/06
+* [洛谷 P1222] 三角形: 照题解作的，Simpson法。
+
 ### 02/28
 * [洛谷 P3576] [POI2014]MRO-Ant colony: 从食蚁兽所在位置
 DFS倒推回叶子节点求出会被吃掉的范围。

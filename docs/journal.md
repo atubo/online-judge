@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/13
+* [洛谷 P3835] 【模板】可持久化平衡树: 模板题。
+
 ### 03/07
 * [洛谷 P3566] 火星探险问题: 费用流，照题解做的。
 

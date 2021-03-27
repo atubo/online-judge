@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 03/27
+* [洛谷 P3791] 普通数学题: 不会，照题解抄的。
+
 ### 03/14
 * [洛谷 P4270] [USACO18FEB]Cow Gymnasts P: 神题，
 照[题解](https://blog.csdn.net/qq_42101694/article/details/95073581)

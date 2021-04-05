@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/04
+* [Codeforces 15D] Map: 看题解发现建一个城后可暴力
+标记，因为每次至少新标记 $a\cdot b$ 个。所有标记的总复杂度为
+$O(n\cdot m)$
+
 ### 03/27
 * [洛谷 P3791] 普通数学题: 不会，照题解抄的。
 

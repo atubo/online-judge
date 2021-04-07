@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/07
+* [Codeforces 18E] Flag 2: 令 $dp(a, b, i)$ 表示处理到第
+$i$ 行，偶数列字符为 $a$ 奇数列字符为 $b$ 的最小代价。转移
+时可对26 X 26 的字符空间预处理出四块，在 $O(1)$ 的时间内完成
+转移。
+
 ### 04/04
 * [Codeforces 15D] Map: 看题解发现建一个城后可暴力
 标记，因为每次至少新标记 $a\cdot b$ 个。所有标记的总复杂度为

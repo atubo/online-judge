@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/10
+* [Codeforces 15E] Triangles: 照[题解](https://www.cnblogs.com/yyf0309/p/8418287.html)作的。
+
 ### 04/07
 * [Codeforces 18E] Flag 2: 令 $dp(a, b, i)$ 表示处理到第
 $i$ 行，偶数列字符为 $a$ 奇数列字符为 $b$ 的最小代价。转移

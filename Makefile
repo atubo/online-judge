@@ -15,7 +15,7 @@ else
     CC = g++
 endif
 
-.PHONY: latest clean
+.PHONY: latest clean clean-temp
 latest:
 	make $(latest_target)
 
@@ -26,3 +26,9 @@ latest:
 clean:
 	ls *.cpp|sed 's/\.cpp/.o/'|xargs rm -f
 	ls *.cpp|sed 's/\.cpp//'|xargs rm -f
+
+clean-temp:
+	rm -f input*.txt
+	rm -f out*.txt
+	rm -f gmon.out
+	rm -f prof.txt

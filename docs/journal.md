@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/11
+* [Codeforces 19E] Fairy: 照[题解](https://blunt-axe.github.io/2019/05/23/20190523-CF19E-Fairy/)作的。
+
 ### 04/10
 * [Codeforces 15E] Triangles: 照[题解](https://www.cnblogs.com/yyf0309/p/8418287.html)作的。
 

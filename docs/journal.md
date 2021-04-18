@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/17
+* [Codeforces 70D] Professor's task: 凸壳，把它分成上下两部分分别维护更容易些。
+
 ### 04/11
 * [Codeforces 19E] Fairy: 照[题解](https://blunt-axe.github.io/2019/05/23/20190523-CF19E-Fairy/)作的。
 

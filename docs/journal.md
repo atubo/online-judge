@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/18
+* [Codeforces 97C] Winning Strategy: 看题解发现一定是不超过两个
+$P$ 的组合，枚举即可 $O(N^2)
+
 ### 04/17
 * [Codeforces 70D] Professor's task: 凸壳，把它分成上下两部分分别维护更容易些。
 

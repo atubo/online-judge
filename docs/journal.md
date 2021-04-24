@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/24
+* [Codeforces 115B] Lawnmower: DP
+
 ### 04/18
 * [Codeforces 97C] Winning Strategy: 看题解发现一定是不超过两个
 $P$ 的组合，枚举即可 $O(N^2)

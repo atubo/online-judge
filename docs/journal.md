@@ -7,6 +7,13 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 04/25
+* [Codeforces 209C] Trails and Glades: DFS求出联通分量，
+抛弃所有只包含孤立点的分量（除非孤立点是点1）。若包含
+奇度数点的分量数为 $n_o$ 不包含奇度数点的分量数为 $n_e$
+奇度数点的总数为 $2k$ 则若 $n_e+n_c>1$ 答案为 $n_e+k$
+否则为 $k$
+
 ### 04/24
 * [Codeforces 115B] Lawnmower: DP
 

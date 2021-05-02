@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/02
+* [Codeforces 8C] Looking for Order: 状压DP。
+
 ### 04/25
 * [Codeforces 209C] Trails and Glades: DFS求出联通分量，
 抛弃所有只包含孤立点的分量（除非孤立点是点1）。若包含

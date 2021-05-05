@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/04
+* [Codeforces 282C] XOR and OR: 显然字符串只要有1
+必可变换为全1的串，反之亦然。
+
 ### 05/02
 * [Codeforces 8C] Looking for Order: 状压DP。
 

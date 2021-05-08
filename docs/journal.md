@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/08
+* [Codeforces 311E] Biologist: 看题解作的，最小割。
+
 ### 05/04
 * [Codeforces 282C] XOR and OR: 显然字符串只要有1
 必可变换为全1的串，反之亦然。

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/09
+* [Codeforces 8D] Two Friends: 二分，需要判断三个圆是否有公共区域。
+
 ### 05/08
 * [Codeforces 311E] Biologist: 看题解作的，最小割。
 

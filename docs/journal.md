@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/15
+* [Codeforces 13D] Triangles: 照[题解](https://blog.csdn.net/YHYYXT/article/details/52985957)作的。
+
 ### 05/09
 * [Codeforces 8D] Two Friends: 二分，需要判断三个圆是否有公共区域。
 

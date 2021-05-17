@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/16
+* [Codeforces 311B] Cats Transport: 斜率优化DP。
+
 ### 05/15
 * [Codeforces 13D] Triangles: 照[题解](https://blog.csdn.net/YHYYXT/article/details/52985957)作的。
 

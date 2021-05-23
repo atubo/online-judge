@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/22
+* [Codeforces 23E] Tree: 看题解了，令 $dp(i,s)$ 表示
+以 $i$ 为根的联通块大小为 $s$ 的最大乘积。
+
 ### 05/16
 * [Codeforces 311B] Cats Transport: 斜率优化DP。
 

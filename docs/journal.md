@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/23
+* [Codeforces 28C] Bath Queue: 令 $f(i,n,k)$ 表示
+处理到第 $i$ 个房间 ( $i\in[0,n-1]$ ) 学生数为 $n$
+最大队列长度为 $k$ 的几率，令 $g(i,n,k) 表示类似 $f$
+但最大长度小于等于 $k$ 的几率。
+令 $c(n',i)={n\choose n'}(\frac{1}{i+1})^{n'}(1-\frac{1}{i+1})^{n-n'}$
+有 $f(i,n,k)=\sum_{n'}c(n',i)f(i-1,n-n',k)[n'<a_i k] + \sum_{n'}c(n',i)g(i-1,n-n',k)[a_i k \le n' < a_i(k+1)]$
+
 ### 05/22
 * [Codeforces 23E] Tree: 看题解了，令 $dp(i,s)$ 表示
 以 $i$ 为根的联通块大小为 $s$ 的最大乘积。

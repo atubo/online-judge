@@ -10,9 +10,9 @@ Journal of the problems I have worked on
 ### 05/23
 * [Codeforces 28C] Bath Queue: 令 $f(i,n,k)$ 表示
 处理到第 $i$ 个房间 ( $i\in[0,n-1]$ ) 学生数为 $n$
-最大队列长度为 $k$ 的几率，令 $g(i,n,k) 表示类似 $f$
+最大队列长度为 $k$ 的几率，令 $g(i,n,k)$ 表示类似 $f$
 但最大长度小于等于 $k$ 的几率。
-令 $c(n',i)={n\choose n'}(\frac{1}{i+1})^{n'}(1-\frac{1}{i+1})^{n-n'}$
+令 $c(n',i)={n \choose n'}(\frac{1}{i+1})^{n'}(1-\frac{1}{i+1})^{n-n'}$
 有 $f(i,n,k)=\sum_{n'}c(n',i)f(i-1,n-n',k)[n'<a_i k] + \sum_{n'}c(n',i)g(i-1,n-n',k)[a_i k \le n' < a_i(k+1)]$
 
 ### 05/22
@@ -50,7 +50,7 @@ Journal of the problems I have worked on
 
 ### 04/18
 * [Codeforces 97C] Winning Strategy: 看题解发现一定是不超过两个
-$P$ 的组合，枚举即可 $O(N^2)
+$P$ 的组合，枚举即可 $O(N^2)$
 
 ### 04/17
 * [Codeforces 70D] Professor's task: 凸壳，把它分成上下两部分分别维护更容易些。

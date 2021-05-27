@@ -7,6 +7,14 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/26
+* [Codeforces 37D] Lesson Timetable: DP.令 $dp(i,k)$
+表示处理到第 $i$ 个教室，第 $i$ 个教室有 $k$ 个学生
+（包括前面转移过来的）的方案数。有
+$dp(i,k)=\sum_j{k\choose j}dp(i+1,a_{i+1}+k-j)$
+表示有 $k$ 个学生安排在第 $i$ 个教室上第二节课。 $j$
+的范围需考虑第 $i$ 个教室和后续教室的容量。
+
 ### 05/23
 * [Codeforces 28C] Bath Queue: 令 $f(i,n,k)$ 表示
 处理到第 $i$ 个房间 ( $i\in[0,n-1]$ ) 学生数为 $n$

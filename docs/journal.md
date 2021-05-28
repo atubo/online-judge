@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/28
+* [Codeforces 38F] Smart Boy: Min-max + 字符串哈希。
+
 ### 05/26
 * [Codeforces 37D] Lesson Timetable: DP.令 $dp(i,k)$
 表示处理到第 $i$ 个教室，第 $i$ 个教室有 $k$ 个学生

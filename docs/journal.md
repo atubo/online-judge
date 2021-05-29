@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/29
+* [Codeforces 45E] Director: 贪心。
+
 ### 05/28
 * [Codeforces 38F] Smart Boy: Min-max + 字符串哈希。
 

@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/30
+* [Codeforces 46F] Hercule Poirot Problem: 根据
+住户的房间和钥匙信息找出“联通分量“，每个联通分量
+包括房间集合，住户集合，以及钥匙集合。前后两次的
+联通分量应该相同。
+
 ### 05/29
 * [Codeforces 45E] Director: 贪心。
 

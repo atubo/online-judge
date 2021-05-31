@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 05/31
+* [Codeforces 45G] Prime Problem: 欧拉筛 + 暴力枚举。
+由哥德巴赫猜想可知一定至多只需分成3组。暴力测试 $n\in[2,6000]$
+可知一定有解满足较小的质数在 $[1,n]$ 内。
+
 ### 05/30
 * [Codeforces 46F] Hercule Poirot Problem: 根据
 住户的房间和钥匙信息找出“联通分量“，每个联通分量

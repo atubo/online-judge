@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/05
+* [Codeforces 44J] Triminoes: 搜索。
+
 ### 05/31
 * [Codeforces 45G] Prime Problem: 欧拉筛 + 暴力枚举。
 由哥德巴赫猜想可知一定至多只需分成3组。暴力测试 $n\in[2,6000]$

@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/06
+* [Codeforces 47C] Crossword: 穷举。
+
 ### 06/05
 * [Codeforces 44J] Triminoes: 搜索。
 

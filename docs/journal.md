@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/27
+* [Codeforces 44D] Hyperdirve: O-> A -> B 和
+O-> B -> A 的飞船必撞，看证明最先的相撞必是此情形。
+枚举即可。复杂度 $O(n^2)$
+
 ### 06/26
 * [Codeforces 45B] School: 照AC答案写的，但复杂度似乎
 有问题。

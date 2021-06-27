@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 06/26
+* [Codeforces 45B] School: 照AC答案写的，但复杂度似乎
+有问题。
+
 ### 06/06
 * [Codeforces 47C] Crossword: 穷举。
 

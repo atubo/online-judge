@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/03
+* [Codeforces 49E] Common ancestor: 看[题解](https://blog.csdn.net/iceprincess_1968/article/details/79446221)了，
+巧妙的DP。
+
 ### 06/27
 * [Codeforces 44D] Hyperdirve: O-> A -> B 和
 O-> B -> A 的飞船必撞，看证明最先的相撞必是此情形。

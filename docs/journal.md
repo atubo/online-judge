@@ -7,6 +7,11 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/04
+* [Codeforces 50C] Happy Farm 5: 将每个点的四个
+邻居加入点集求凸包。看题解发现有更简单的解法，
+只需求出四条对角线组成的凸包即可。
+
 ### 07/03
 * [Codeforces 49E] Common ancestor: 看[题解](https://blog.csdn.net/iceprincess_1968/article/details/79446221)了，
 巧妙的DP。

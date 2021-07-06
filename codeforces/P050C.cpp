@@ -51,8 +51,6 @@ class Convex {
     for (int i = 0; i < (int)pts.size(); i++) {
       push(pts[i]);
     }
-    push(pts[0]);
-    n_--;
   }
 
   ~Convex() {

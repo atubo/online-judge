@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/10
+* [Codeforces 48E] Ivan the Fool VS Gorynych the Dragon:
+最短路 + 判环 + 最长路。
+
 ### 07/04
 * [Codeforces 50C] Happy Farm 5: 将每个点的四个
 邻居加入点集求凸包。看题解发现有更简单的解法，

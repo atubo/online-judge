@@ -12,11 +12,11 @@ Journal of the problems I have worked on
 可知对不同的 $b$ 只有整数解有可能重复。所以先对不同的
 $b$ 求无理数解的数目。 若 $m \ge b^2$ 有解总数 $2b^2-1$
 整数解总数 $2b-1$ 。若 $m < b^2$ 有解总数 $2m$ 整数解
-总数 $2(b-k)$ $k$ 为满足 $b^2-k^2 \le m$ 的最小的正整数。
+总数 $2(b-k)$ , $k$ 为满足 $b^2-k^2 \le m$ 的最小的正整数。
 接下来求 $1\le b \le n, 1\le c \le m$ 的整数解总数。
-设解为 $-x_0$ 其中 $x_0 > 0$ 有 $x_0^2-2b x_0 + c = $
-则 $c=2x_0 b - x_0^2$ 已知 $c\le 1$ 有
-$b=\lceil \frac {x_0^2+1}{2x_0} \rceil = \lfloor \frac{x_0^2+2x_0}{2x_0}\rfloor = \lfloor \frac{x_0}{2} + 1$
+设解为 $-x_0$ 其中 $x_0 > 0$ 有 $x_0^2-2b x_0 + c = 0$
+则 $c=2x_0 b - x_0^2$ 已知 $c\ge 1$ 有
+$b=\lceil \frac {x_0^2+1}{2x_0} \rceil = \lfloor \frac{x_0^2+2x_0}{2x_0}\rfloor = \lfloor \frac{x_0}{2}\rfloor + 1$
 若 $x_0$ 为奇数有 $b=\frac{x_0+1}{2}$ , $c=x_0$
 若 $x_0$ 为偶数有 $b=\frac{x_0}{2}+1$ , $c=2x_0$
 分别考虑两种情况下 $b$ 和 $c$ 的范围即可。

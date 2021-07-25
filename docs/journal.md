@@ -7,6 +7,12 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/25
+* [Codeforces 48C] The Race: 令10为一个单位， 有
+$\alpha=a+b$ $a$ 和 $b$ 分别为整数和小数部分，有
+第 $n$ 次停靠的站点为 $na+\lfloor nb \rfloor$ 由
+$n$ 个条件求交集即可求出 $b$ 的范围。
+
 ### 07/18
 * [Codeforces 50E] Square Equation Roots: 经分析
 可知对不同的 $b$ 只有整数解有可能重复。所以先对不同的

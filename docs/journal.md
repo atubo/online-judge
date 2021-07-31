@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 07/31
+* [Codeforces 51D] Geometrical problem: 注意0的情况即可。
+
 ### 07/25
 * [Codeforces 48C] The Race: 令10为一个单位， 有
 $\alpha=a+b$ 其中$a$ 和 $b$ 分别为整数和小数部分，有

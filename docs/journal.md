@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/08
+* [Codeforces 51E] Pentagon: 照[题解](https://www.cnblogs.com/nealgavin/archive/2013/03/20/3206119.html)
+作的。
+
 ### 07/31
 * [Codeforces 51D] Geometrical problem: 注意0的情况即可。
 

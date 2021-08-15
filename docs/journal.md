@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/15
+* [Codeforces 51F] Caterpillar: 先作无向图边联通分量缩点，
+转化为树后，枚举每个点作为根，进行树上DP求最小cost。
+
 ### 08/08
 * [Codeforces 51E] Pentagon: 照[题解](https://www.cnblogs.com/nealgavin/archive/2013/03/20/3206119.html)
 作的。

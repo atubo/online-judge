@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/22
+* [Codeforces 54C] First Digit Law: 先求出每个随机数首位是
+1的概率，再 $N$ 个二项式相乘即可。
+
 ### 08/21
 * [Codeforces 53E] Dead Ends: 状压DP，照[题解](https://www.cnblogs.com/saltyfishes/p/7356868.html)写的。
 

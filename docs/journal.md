@@ -7,6 +7,9 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/21
+* [Codeforces 53E] Dead Ends: 状压DP，照[题解](https://www.cnblogs.com/saltyfishes/p/7356868.html)写的。
+
 ### 08/15
 * [Codeforces 51F] Caterpillar: 先作无向图边联通分量缩点，
 转化为树后，枚举每个点作为根，进行树上DP求最小cost。

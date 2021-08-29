@@ -7,6 +7,10 @@ title: Journal
 Journal of the problems I have worked on
 </p>
 
+### 08/30
+* [Codeforces 54D] Writing a Song: 暴力填满所有1的位置，
+再在剩余位置搜索满足0的条件即可。
+
 ### 08/22
 * [Codeforces 54C] First Digit Law: 先求出每个随机数首位是
 1的概率，再 $N$ 个二项式相乘即可。
